@@ -17,19 +17,35 @@
   ══════════════════════════════════════════ -->
   <header class="top-nav" role="banner">
     <div class="container">
-      <a href="#" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
+      <a href="/" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
         <img
-          src="TCJ Website Assets/logos/banner_text_logo.png"
+          src="TCJ Website Assets/icons/Jetsetter text logo.png"
           alt="The Canadian Jetsetter"
           loading="eager"
         />
       </a>
-      <a
-        href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC"
-        class="btn btn-primary btn-sm"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Subscribe →</a>
+
+      <button
+        class="nav-hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-dropdown"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Jetsetter Premium</a></li>
+          <li><a href="#">Jetsetter Economy</a></li>
+          <li><a href="#">Golden Visa</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
@@ -44,9 +60,7 @@
         <p class="hero-location">
           The Best Newsletter for Economy Flight Deals from Toronto, Vancouver &amp; Calgary
         </p>
-        <p class="hero-subtitle">
-          Stop hunting for cheap flights. We find the best economy deals and send them straight to your inbox — so you can book and fly.
-        </p>
+
         <div class="hero-cta-group">
           <a
             href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC"
@@ -57,29 +71,103 @@
           <span class="hero-fine-print">$59.99 + GST/year · 7-day free trial · Cancel anytime</span>
         </div>
 
-        <!-- Hero illustration: airplane with dotted flight path -->
-        <svg class="hero-illustration" viewBox="0 0 380 86" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- Dotted arc flight path -->
-          <path d="M 24 74 C 80 55 170 22 292 28" stroke="#F6F2E7" stroke-width="1.5" stroke-dasharray="5 8" stroke-linecap="round"/>
-          <!-- Origin dot -->
-          <circle cx="24" cy="74" r="3" fill="#F6F2E7" opacity="0.35"/>
-          <!-- Destination dot -->
-          <circle cx="320" cy="33" r="3" fill="#F6F2E7" opacity="0.65"/>
-          <!-- Airplane at end of arc, rotated -8° to follow the path -->
-          <g transform="translate(300, 26) rotate(-8)">
-            <!-- Fuselage -->
-            <path d="M -20 -1.5 L 6 -1.5 Q 13 -1.5 17 0 Q 13 1.5 6 1.5 L -20 1.5 Z" fill="rgba(246,242,231,0.08)" stroke="#F6F2E7" stroke-width="1.4" stroke-linejoin="round"/>
-            <!-- Main wing (swept back) -->
-            <path d="M -4 -1.5 L -10 -13 L -14 -12 L -8 -1.5" stroke="#F6F2E7" stroke-width="1.4" stroke-linejoin="round"/>
-            <path d="M -4 1.5 L -10 13 L -14 12 L -8 1.5" stroke="#F6F2E7" stroke-width="1.4" stroke-linejoin="round"/>
-            <!-- Tail vertical fin -->
-            <path d="M -17 -1.5 L -20 -7 L -23 -6.5 L -19 -1.5" stroke="#F6F2E7" stroke-width="1.3" stroke-linejoin="round"/>
-            <!-- Tail horizontal stabilisers -->
-            <path d="M -17 -1.5 L -23 -2.8 L -23 -1.8 L -17 -0.5" stroke="#F6F2E7" stroke-width="1.2" stroke-linejoin="round"/>
-            <path d="M -17 1.5 L -23 2.8 L -23 1.8 L -17 0.5" stroke="#F6F2E7" stroke-width="1.2" stroke-linejoin="round"/>
-          </g>
-        </svg>
 
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         2b. PAST DEALS GALLERY
+    ══════════════════════════════════════════ -->
+    <section class="deals-section" aria-labelledby="deals-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="deals-heading">Past Deals We've Sent</h2>
+          <p>A taste of what lands in your inbox as a subscriber.</p>
+          <div class="section-divider"></div>
+        </div>
+      </div>
+
+      <div class="deals-track-wrapper">
+        <div class="deals-track" aria-label="Scrolling gallery of past flight deals">
+
+          <!-- Set 1 -->
+          <div class="deal-card">
+            <img src="TCJ Website Assets/icons/Tokyo Window.jpg" alt="Tokyo flight deal" loading="lazy" />
+            <span class="deal-card-label">Tokyo</span>
+          </div>
+          <div class="deal-card">
+            <img src="TCJ Website Assets/icons/Dublin Window 2.jpg" alt="Dublin flight deal" loading="lazy" />
+            <span class="deal-card-label">Dublin</span>
+          </div>
+          <div class="deal-card">
+            <img src="TCJ Website Assets/icons/Lima Window 2.jpg" alt="Lima flight deal" loading="lazy" />
+            <span class="deal-card-label">Lima</span>
+          </div>
+          <div class="deal-card">
+            <img src="TCJ Website Assets/icons/Grand Cayman Window.jpg" alt="Grand Cayman flight deal" loading="lazy" />
+            <span class="deal-card-label">Grand Cayman</span>
+          </div>
+          <div class="deal-card">
+            <img src="TCJ Website Assets/icons/Johannesburg Window.jpg" alt="Johannesburg flight deal" loading="lazy" />
+            <span class="deal-card-label">Johannesburg</span>
+          </div>
+          <div class="deal-card">
+            <img src="TCJ Website Assets/icons/Honolulu Window.jpg" alt="Honolulu flight deal" loading="lazy" />
+            <span class="deal-card-label">Honolulu</span>
+          </div>
+          <div class="deal-card">
+            <img src="TCJ Website Assets/icons/Vancouver Window.jpg" alt="Vancouver flight deal" loading="lazy" />
+            <span class="deal-card-label">Vancouver</span>
+          </div>
+          <div class="deal-card">
+            <img src="TCJ Website Assets/icons/Lisbon Window.jpg" alt="Lisbon flight deal" loading="lazy" />
+            <span class="deal-card-label">Lisbon</span>
+          </div>
+
+          <!-- Set 2 (duplicate for seamless loop) -->
+          <div class="deal-card" aria-hidden="true">
+            <img src="TCJ Website Assets/icons/Tokyo Window.jpg" alt="" loading="lazy" />
+            <span class="deal-card-label">Tokyo</span>
+          </div>
+          <div class="deal-card" aria-hidden="true">
+            <img src="TCJ Website Assets/icons/Dublin Window 2.jpg" alt="" loading="lazy" />
+            <span class="deal-card-label">Dublin</span>
+          </div>
+          <div class="deal-card" aria-hidden="true">
+            <img src="TCJ Website Assets/icons/Lima Window 2.jpg" alt="" loading="lazy" />
+            <span class="deal-card-label">Lima</span>
+          </div>
+          <div class="deal-card" aria-hidden="true">
+            <img src="TCJ Website Assets/icons/Grand Cayman Window.jpg" alt="" loading="lazy" />
+            <span class="deal-card-label">Grand Cayman</span>
+          </div>
+          <div class="deal-card" aria-hidden="true">
+            <img src="TCJ Website Assets/icons/Johannesburg Window.jpg" alt="" loading="lazy" />
+            <span class="deal-card-label">Johannesburg</span>
+          </div>
+          <div class="deal-card" aria-hidden="true">
+            <img src="TCJ Website Assets/icons/Honolulu Window.jpg" alt="" loading="lazy" />
+            <span class="deal-card-label">Honolulu</span>
+          </div>
+          <div class="deal-card" aria-hidden="true">
+            <img src="TCJ Website Assets/icons/Vancouver Window.jpg" alt="" loading="lazy" />
+            <span class="deal-card-label">Vancouver</span>
+          </div>
+          <div class="deal-card" aria-hidden="true">
+            <img src="TCJ Website Assets/icons/Lisbon Window.jpg" alt="" loading="lazy" />
+            <span class="deal-card-label">Lisbon</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container" style="text-align:center; margin-top:36px;">
+        <a
+          href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Get These Deals in Your Inbox →</a>
       </div>
     </section>
 
@@ -131,22 +219,12 @@
 
       <!-- Decorative globe watermark -->
       <div class="why-globe-wrap" aria-hidden="true">
-        <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <clipPath id="globe-clip">
-              <circle cx="150" cy="150" r="138"/>
-            </clipPath>
-          </defs>
-          <circle cx="150" cy="150" r="138" stroke="#8B0000" stroke-width="1.5"/>
-          <g clip-path="url(#globe-clip)">
-            <line x1="12" y1="150" x2="288" y2="150" stroke="#8B0000" stroke-width="1"/>
-            <line x1="150" y1="12" x2="150" y2="288" stroke="#8B0000" stroke-width="1"/>
-            <ellipse cx="150" cy="150" rx="138" ry="52" stroke="#8B0000" stroke-width="1"/>
-            <ellipse cx="150" cy="150" rx="138" ry="98" stroke="#8B0000" stroke-width="1"/>
-            <ellipse cx="150" cy="150" rx="52" ry="138" stroke="#8B0000" stroke-width="1"/>
-            <ellipse cx="150" cy="150" rx="98" ry="138" stroke="#8B0000" stroke-width="1"/>
-          </g>
-        </svg>
+        <img
+          src="TCJ Website Assets/icons/Jetsetter plane with globe red.png"
+          alt=""
+          loading="lazy"
+          width="300"
+        />
       </div>
 
     </section>
@@ -202,102 +280,6 @@
     </section>
 
     <!-- ══════════════════════════════════════════
-         5. PAST DEALS GALLERY
-    ══════════════════════════════════════════ -->
-    <section class="deals-section" aria-labelledby="deals-heading">
-      <div class="container">
-        <div class="section-header">
-          <h2 id="deals-heading">Past Deals We've Sent</h2>
-          <p>A taste of what lands in your inbox as a subscriber.</p>
-          <div class="section-divider"></div>
-        </div>
-      </div>
-
-      <div class="deals-track-wrapper">
-        <div class="deals-track" aria-label="Scrolling gallery of past flight deals">
-
-          <!-- Set 1 -->
-          <div class="deal-card">
-            <img src="TCJ Website Assets/gifs/canadian_jetsetter_website_assets_1.gif" alt="Canadian Jetsetter deal alert" loading="lazy" />
-            <span class="deal-card-label">Deal Alert</span>
-          </div>
-          <div class="deal-card">
-            <img src="TCJ Website Assets/headshots/air_canada_pod_headshot.jpg" alt="Air Canada business class seat" loading="lazy" />
-            <span class="deal-card-label">Air Canada</span>
-          </div>
-          <div class="deal-card">
-            <img src="TCJ Website Assets/gifs/inboxgif.gif" alt="Flight deals in your inbox" loading="lazy" />
-            <span class="deal-card-label">Inbox Ready</span>
-          </div>
-          <div class="deal-card">
-            <img src="TCJ Website Assets/headshots/cathay_pod_headshot.jpg" alt="Cathay Pacific flight" loading="lazy" />
-            <span class="deal-card-label">Cathay Pacific</span>
-          </div>
-          <div class="deal-card">
-            <img src="TCJ Website Assets/gifs/travelgif.gif" alt="Travel more for less" loading="lazy" />
-            <span class="deal-card-label">Travel More</span>
-          </div>
-          <div class="deal-card">
-            <img src="TCJ Website Assets/headshots/green_lounge_headshot.jpg" alt="Airport lounge" loading="lazy" />
-            <span class="deal-card-label">Premium Lounge</span>
-          </div>
-          <div class="deal-card">
-            <img src="TCJ Website Assets/headshots/grey_lounge_headshot.jpg" alt="Airport lounge access" loading="lazy" />
-            <span class="deal-card-label">Lounge Access</span>
-          </div>
-          <div class="deal-card">
-            <img src="TCJ Website Assets/icons/canadian_jetsetter_website_assets.png" alt="Canadian Jetsetter deals" loading="lazy" />
-            <span class="deal-card-label">Members Only</span>
-          </div>
-
-          <!-- Set 2 (duplicate for seamless loop) -->
-          <div class="deal-card" aria-hidden="true">
-            <img src="TCJ Website Assets/gifs/canadian_jetsetter_website_assets_1.gif" alt="" loading="lazy" />
-            <span class="deal-card-label">Deal Alert</span>
-          </div>
-          <div class="deal-card" aria-hidden="true">
-            <img src="TCJ Website Assets/headshots/air_canada_pod_headshot.jpg" alt="" loading="lazy" />
-            <span class="deal-card-label">Air Canada</span>
-          </div>
-          <div class="deal-card" aria-hidden="true">
-            <img src="TCJ Website Assets/gifs/inboxgif.gif" alt="" loading="lazy" />
-            <span class="deal-card-label">Inbox Ready</span>
-          </div>
-          <div class="deal-card" aria-hidden="true">
-            <img src="TCJ Website Assets/headshots/cathay_pod_headshot.jpg" alt="" loading="lazy" />
-            <span class="deal-card-label">Cathay Pacific</span>
-          </div>
-          <div class="deal-card" aria-hidden="true">
-            <img src="TCJ Website Assets/gifs/travelgif.gif" alt="" loading="lazy" />
-            <span class="deal-card-label">Travel More</span>
-          </div>
-          <div class="deal-card" aria-hidden="true">
-            <img src="TCJ Website Assets/headshots/green_lounge_headshot.jpg" alt="" loading="lazy" />
-            <span class="deal-card-label">Premium Lounge</span>
-          </div>
-          <div class="deal-card" aria-hidden="true">
-            <img src="TCJ Website Assets/headshots/grey_lounge_headshot.jpg" alt="" loading="lazy" />
-            <span class="deal-card-label">Lounge Access</span>
-          </div>
-          <div class="deal-card" aria-hidden="true">
-            <img src="TCJ Website Assets/icons/canadian_jetsetter_website_assets.png" alt="" loading="lazy" />
-            <span class="deal-card-label">Members Only</span>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="container" style="text-align:center; margin-top:48px;">
-        <a
-          href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC"
-          class="btn btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Get These Deals in Your Inbox →</a>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════
          6. PRICING
     ══════════════════════════════════════════ -->
     <section class="pricing-section" aria-labelledby="pricing-heading">
@@ -313,22 +295,14 @@
           <p class="pricing-plan-name">Jetsetter Economy</p>
 
           <!-- Boarding pass illustration -->
-          <svg class="pricing-ticket-icon" width="140" height="52" viewBox="0 0 140 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <!-- Left stub -->
-            <path d="M 4 8 A 4 4 0 0 1 8 4 H 62 V 22 A 8 8 0 0 1 62 30 V 48 H 8 A 4 4 0 0 1 4 44 Z" stroke="#F6F2E7" stroke-width="1.4" stroke-linejoin="round"/>
-            <!-- Right body -->
-            <path d="M 78 4 H 132 A 4 4 0 0 1 136 8 V 44 A 4 4 0 0 1 132 48 H 78 V 30 A 8 8 0 0 0 78 22 V 4 Z" stroke="#F6F2E7" stroke-width="1.4" stroke-linejoin="round"/>
-            <!-- Perforated centre line -->
-            <line x1="70" y1="6" x2="70" y2="46" stroke="#F6F2E7" stroke-width="1" stroke-dasharray="2.5 3"/>
-            <!-- Stub placeholder lines -->
-            <line x1="10" y1="18" x2="56" y2="18" stroke="#F6F2E7" stroke-width="1" opacity="0.35"/>
-            <line x1="10" y1="24" x2="44" y2="24" stroke="#F6F2E7" stroke-width="1" opacity="0.35"/>
-            <line x1="10" y1="30" x2="50" y2="30" stroke="#F6F2E7" stroke-width="1" opacity="0.35"/>
-            <!-- Top-down airplane on main ticket body -->
-            <g transform="translate(107, 26)">
-              <path d="M0,-9 C-0.7,-9 -1.2,-8.3 -1.2,-6.5 L-1.2,-1.5 L-9,3 L-9,4.5 L-1.2,3 L-1.2,6 L-3,7 L-3,8.5 L0,7.8 L3,8.5 L3,7 L1.2,6 L1.2,3 L9,4.5 L9,3 L1.2,-1.5 L1.2,-6.5 C1.2,-8.3 0.7,-9 0,-9 Z" stroke="#F6F2E7" stroke-width="1.4" stroke-linejoin="round"/>
-            </g>
-          </svg>
+          <img
+            class="pricing-ticket-icon"
+            src="TCJ Website Assets/icons/boarding pass.png"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            width="160"
+          />
 
           <div class="pricing-price">
             <sup>$</sup>59.99<sub>/yr</sub>
@@ -418,7 +392,7 @@
 
           <div class="about-image-wrap">
             <img
-              src="TCJ Website Assets/headshots/MK406605.JPG"
+              src="TCJ Website Assets/headshots/MK406605 2.JPG"
               alt="Graeme, founder of The Canadian Jetsetter"
               loading="lazy"
             />
@@ -432,7 +406,7 @@
               A proud Canadian travel creator and frequent flyer born and raised in Winnipeg, Manitoba. Surviving cold winters sparked a love for finding great deals and escaping to warmer places.
             </p>
             <p>
-              He figured out how to score cheap cash flight deals and make the most of miles and points to travel in style — and now he shares every single deal with you.
+              Graeme figured out how to score cheap cash flight deals and make the most of miles and points to travel in style — and now he shares every single deal with you.
             </p>
             <a
               href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC"
@@ -456,9 +430,9 @@
           <p id="press-heading" style="font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey-600);margin-bottom:0;">As Seen In</p>
         </div>
         <div class="press-logos">
-          <span class="press-logo">National Post</span>
-          <span class="press-logo">Global News</span>
-          <span class="press-logo">CBC</span>
+          <img class="press-logo" src="TCJ Website Assets/icons/National Post.png" alt="National Post" />
+          <img class="press-logo" src="TCJ Website Assets/icons/Global News.png" alt="Global News" />
+          <img class="press-logo" src="TCJ Website Assets/icons/CBC.png" alt="CBC" />
         </div>
       </div>
     </section>
@@ -471,17 +445,17 @@
         <div class="social-proof-inner">
 
           <div class="social-stat">
-            <span class="social-stat-number">117K+</span>
+            <span class="social-stat-number">100K+</span>
             <span class="social-stat-label">TikTok Followers</span>
           </div>
 
           <div class="social-stat">
-            <span class="social-stat-number">100K+</span>
+            <span class="social-stat-number">120K+</span>
             <span class="social-stat-label">Instagram Followers</span>
           </div>
 
           <div class="social-stat">
-            <span class="social-stat-number">5.6K</span>
+            <span class="social-stat-number">37K+</span>
             <span class="social-stat-label">Newsletter Subscribers</span>
           </div>
 
@@ -554,6 +528,38 @@
   <script>
     // Dynamic copyright year
     document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.nav-hamburger');
+    const dropdown = document.getElementById('nav-dropdown');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !isOpen);
+      dropdown.setAttribute('aria-hidden', isOpen);
+      hamburger.classList.toggle('is-open', !isOpen);
+      dropdown.classList.toggle('is-open', !isOpen);
+    });
+
+    // Close menu when a link is clicked
+    dropdown.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      });
+    });
+
+    // Close menu on outside click
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !dropdown.contains(e.target)) {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      }
+    });
   </script>
 
 </body>
