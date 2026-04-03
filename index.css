@@ -1145,15 +1145,23 @@ footer {
   /* beehiiv embed mobile fix */
   .beehiiv-wrapper {
     width: 100% !important;
-    overflow: hidden !important;
-    padding: 0 10px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: visible !important;
     box-sizing: border-box !important;
   }
   .beehiiv-wrapper iframe {
     width: 100% !important;
+    min-width: 100% !important;
     max-width: 100% !important;
-    min-width: unset !important;
-    box-sizing: border-box !important;
+  }
+  .newsletter-section,
+  .newsletter-box,
+  .newsletter-inner,
+  .newsletter-section .container {
+    max-width: none !important;
   }
 
   /* Switch nav to hamburger */
@@ -1316,6 +1324,15 @@ footer {
   .press-bar .container {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .newsletter-box {
+    border: none !important;
+    box-shadow: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
 
   .newsletter-form {
