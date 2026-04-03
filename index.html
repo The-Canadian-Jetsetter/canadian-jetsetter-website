@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Canadian Jetsetter — Flight Deals &amp; Travel Tips for Canadians</title>
+  <meta name="description" content="The Canadian Jetsetter helps Canadians fly more for less. Get exclusive flight deals, travel tips, and insider advice from Toronto, Vancouver and Calgary." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       1. TOP NAV
+  ══════════════════════════════════════════ -->
+  <header class="top-nav" role="banner">
+    <div class="nav-inner">
+
+      <a href="/" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
+        <img
+          src="TCJ Website Assets/icons/Jetsetter text logo.png"
+          alt="The Canadian Jetsetter"
+          loading="eager"
+        />
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+
+        <div class="nav-item nav-item--dropdown">
+          <button class="nav-link nav-link--btn" aria-expanded="false" aria-haspopup="true">
+            OFFERINGS <span class="nav-chevron" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="nav-submenu" role="menu">
+            <a href="#" role="menuitem">Jetsetter Premium</a>
+            <a href="economy.html" role="menuitem">Jetsetter Economy</a>
+            <a href="#" role="menuitem">Golden Visa</a>
+          </div>
+        </div>
+
+        <a href="#" class="nav-link">LINKS</a>
+        <a href="#" class="nav-link">CREDIT CARDS</a>
+        <a href="#" class="nav-link">BLOG</a>
+        <a href="#" class="nav-link">CONTACT</a>
+
+      </nav>
+
+      <!-- Mobile hamburger (hidden on desktop) -->
+      <button
+        class="nav-hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+    <!-- Mobile dropdown menu -->
+    <div class="nav-mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="#">OFFERINGS</a>
+      <a href="#">JETSETTER PREMIUM</a>
+      <a href="economy.html">JETSETTER ECONOMY</a>
+      <a href="#">GOLDEN VISA</a>
+      <a href="#">LINKS</a>
+      <a href="#">CREDIT CARDS</a>
+      <a href="#">BLOG</a>
+      <a href="#">CONTACT</a>
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════
+         2. HERO
+    ══════════════════════════════════════════ -->
+    <section class="hero" aria-labelledby="hero-heading">
+
+      <!-- Carousel background -->
+      <div class="hero-carousel" aria-hidden="true">
+        <div class="hero-carousel-track">
+          <!-- Set 1 -->
+          <img src="TCJ Website Assets/icons/Grand canyon banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Elephant banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Slide for Home page banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Waterfall banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Beach banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Ski banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Forest banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Iceburg banner.jpg" alt="" />
+          <!-- Set 2 (duplicate for seamless loop) -->
+          <img src="TCJ Website Assets/icons/Grand canyon banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Elephant banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Slide for Home page banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Waterfall banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Beach banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Ski banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Forest banner.jpg" alt="" />
+          <img src="TCJ Website Assets/icons/Iceburg banner.jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- Gradient overlay -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <h1 id="hero-heading">
+          Unpack the Best Deals
+        </h1>
+        <p class="hero-sub">
+          Unlock top deals, earn travel points, and save up to 80% on flights with instant alerts
+        </p>
+        <div class="hero-cta-group">
+          <a href="#" class="btn btn-outline">Jetsetter Free</a>
+          <a href="economy.html" class="btn btn-outline">Jetsetter Economy</a>
+          <a href="jetsetter-premium.html" class="btn btn-outline">Jetsetter Premium</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         3. AS SEEN IN BAR
+    ══════════════════════════════════════════ -->
+    <div class="press-bar" role="region" aria-label="As seen in">
+      <div class="container">
+        <p class="press-bar-label">As Seen In</p>
+        <div class="press-bar-logos">
+          <img class="press-logo" src="TCJ Website Assets/icons/National Post.png" alt="National Post" loading="lazy" />
+          <img class="press-logo press-logo--global" src="TCJ Website Assets/icons/Global News.png" alt="Global News" loading="lazy" />
+          <img class="press-logo" src="TCJ Website Assets/icons/CBC.png" alt="CBC" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         FREE NEWSLETTER
+    ══════════════════════════════════════════ -->
+    <section class="newsletter-section" aria-labelledby="newsletter-heading">
+      <div class="newsletter-box">
+        <div class="container">
+        <div class="newsletter-inner">
+          <h2 id="newsletter-heading">Free Flight Deals to your Inbox</h2>
+          <p class="newsletter-desc">
+            Our free newsletter sends you the best weekly deals from Vancouver, Calgary, Edmonton,
+            Winnipeg, Toronto, Ottawa, Montreal and Halifax!
+          </p>
+          <div class="beehiiv-wrapper" style="width:100%; overflow:hidden; padding: 0 15px; box-sizing:border-box;">
+            <center><iframe src="https://embeds.beehiiv.com/cf928f6f-5523-489b-b125-b1effe279beb?slim=true" data-test-id="beehiiv-embed" height="60" frameborder="0" scrolling="no" style="border-radius: 0px !important; background-color: transparent;"></iframe></center>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         LATEST FROM THE BLOG
+    ══════════════════════════════════════════ -->
+    <section class="blog-section" aria-labelledby="blog-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="blog-heading">Latest From The Blog</h2>
+          <p>Travel tips, flight deals and points strategies for Canadians</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="blog-grid">
+
+          <div class="blog-card">
+            <!-- Replace with blog post image, recommended 600×400px -->
+            <div class="placeholder-img ratio-3-2">[BLOG PHOTO]</div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Points &amp; Miles</span>
+              <h3 class="blog-title">ITA Airways Joins Star Alliance. Here's Why Canadian Travellers Should Pay Attention</h3>
+              <p class="blog-excerpt">A major shift in airline alliances that could change how Canadians earn and redeem points.</p>
+              <a
+                href="https://thecanadianjetsetter.com/2026/03/31/ita-airways-joins-star-alliance-heres-why-canadian-travellers-should-pay-attention/"
+                class="blog-read-more"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Read More →</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <!-- Replace with blog post image, recommended 600×400px -->
+            <div class="placeholder-img ratio-3-2">[BLOG PHOTO]</div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Deals</span>
+              <h3 class="blog-title">New Flying Blue Promo for April: Buy Miles with Up to 45% Off!</h3>
+              <p class="blog-excerpt">A limited time opportunity to stock up on Flying Blue miles at a steep discount.</p>
+              <a
+                href="https://thecanadianjetsetter.com/2026/03/31/new-flying-blue-promo-for-april-buy-miles-with-up-to-45-off/"
+                class="blog-read-more"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Read More →</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <!-- Replace with blog post image, recommended 600×400px -->
+            <div class="placeholder-img ratio-3-2">[BLOG PHOTO]</div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Flight Deals</span>
+              <h3 class="blog-title">Flight Deals from $220 + Direct Flight Guides from Canada!</h3>
+              <p class="blog-excerpt">This week's best economy deals plus direct flight guides from major Canadian cities.</p>
+              <a
+                href="https://thecanadianjetsetter.com/2026/03/30/newsletter-march-30-2026/"
+                class="blog-read-more"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Read More →</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="section-cta">
+          <a
+            href="https://thecanadianjetsetter.com/blog/"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Read More Blogs →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         4. PAST ECONOMY DEALS
+    ══════════════════════════════════════════ -->
+    <section class="deals-section" aria-labelledby="deals-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="deals-heading">Past Economy Travel Deals</h2>
+          <p>A taste of what lands in your inbox as a subscriber.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="deals-grid">
+
+          <div class="deal-card">
+            <!-- Replace with destination photo, recommended 600×400px -->
+            <div class="placeholder-img ratio-3-2">[DEAL PHOTO — Tokyo]</div>
+            <div class="deal-card-body">
+              <span class="deal-price">$896</span>
+              <p class="deal-route">Round Trip Toronto to Tokyo</p>
+            </div>
+          </div>
+
+          <div class="deal-card">
+            <!-- Replace with destination photo, recommended 600×400px -->
+            <div class="placeholder-img ratio-3-2">[DEAL PHOTO — Honolulu]</div>
+            <div class="deal-card-body">
+              <span class="deal-price">$624</span>
+              <p class="deal-route">Round Trip Toronto to Honolulu</p>
+            </div>
+          </div>
+
+          <div class="deal-card">
+            <!-- Replace with destination photo, recommended 600×400px -->
+            <div class="placeholder-img ratio-3-2">[DEAL PHOTO — Lisbon]</div>
+            <div class="deal-card-body">
+              <span class="deal-price">$398</span>
+              <p class="deal-route">Round Trip Toronto to Lisbon</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="section-cta">
+          <a href="economy.html" class="btn btn-primary">Join Jetsetter Economy →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         5. OUR OFFERINGS
+    ══════════════════════════════════════════ -->
+    <section class="offerings-section" aria-labelledby="offerings-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="offerings-heading">Make Your Points Go Further</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="offerings-grid">
+
+          <div class="offering-card">
+            <!-- Replace with Premium product image, recommended 800×450px -->
+            <div class="placeholder-img ratio-16-9">[OFFERING PHOTO — Jetsetter Premium]</div>
+            <div class="offering-body">
+              <p class="offering-eyebrow">Jetsetter Premium</p>
+              <p class="offering-desc">Unlock exclusive access to The Canadian Points Handbook, weekly top-tier points deals, and cash business class discounts.</p>
+              <a href="#" class="btn btn-primary">Get the Best Travel Deals →</a>
+            </div>
+          </div>
+
+          <div class="offering-card">
+            <!-- Replace with Economy product image, recommended 800×450px -->
+            <div class="placeholder-img ratio-16-9">[OFFERING PHOTO — Jetsetter Economy]</div>
+            <div class="offering-body">
+              <p class="offering-eyebrow">Jetsetter Economy</p>
+              <p class="offering-desc">The best economy flight deals from Toronto, Vancouver and Calgary delivered straight to your inbox instantly.</p>
+              <a href="economy.html" class="btn btn-primary">Get Big Travel Savings →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         7. BEST CREDIT CARDS
+    ══════════════════════════════════════════ -->
+    <section class="cards-section" aria-labelledby="cards-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="cards-heading">Best Credit Cards to Get Free Travel ASAP</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="cards-grid">
+
+          <div class="cc-card">
+            <!-- Replace with card product image, recommended 400×250px (credit card ratio) -->
+            <div class="placeholder-img ratio-cc">[CARD IMAGE — Amex Cobalt]</div>
+            <div class="cc-body">
+              <p class="cc-name">American Express Cobalt® Card</p>
+              <p class="cc-bonus">Welcome Bonus up to 15,000 Membership Rewards Points</p>
+              <a
+                href="https://thecanadianjetsetter.milesopedia.com/"
+                class="btn btn-primary btn-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >See Offer →</a>
+            </div>
+          </div>
+
+          <div class="cc-card">
+            <!-- Replace with card product image, recommended 400×250px -->
+            <div class="placeholder-img ratio-cc">[CARD IMAGE — CIBC Aventura Gold]</div>
+            <div class="cc-body">
+              <p class="cc-name">CIBC Aventura® Gold Visa* Card</p>
+              <p class="cc-bonus">Welcome Bonus up to 45,000 Aventura Points</p>
+              <a
+                href="https://thecanadianjetsetter.milesopedia.com/"
+                class="btn btn-primary btn-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >See Offer →</a>
+            </div>
+          </div>
+
+          <div class="cc-card">
+            <!-- Replace with card product image, recommended 400×250px -->
+            <div class="placeholder-img ratio-cc">[CARD IMAGE — Scotiabank Gold Amex]</div>
+            <div class="cc-body">
+              <p class="cc-name">Scotiabank® Gold American Express® Card</p>
+              <p class="cc-bonus">Welcome Bonus up to 40,000 Scene+ Points</p>
+              <a
+                href="https://thecanadianjetsetter.milesopedia.com/"
+                class="btn btn-primary btn-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >See Offer →</a>
+            </div>
+          </div>
+
+          <div class="cc-card">
+            <!-- Replace with card product image, recommended 400×250px -->
+            <div class="placeholder-img ratio-cc">[CARD IMAGE — Amex Platinum]</div>
+            <div class="cc-body">
+              <p class="cc-name">American Express Platinum Card</p>
+              <p class="cc-bonus">Welcome Bonus up to 100,000 Membership Rewards Points</p>
+              <a
+                href="https://thecanadianjetsetter.milesopedia.com/"
+                class="btn btn-primary btn-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >See Offer →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         8. YOUTUBE SECTION
+    ══════════════════════════════════════════ -->
+    <section class="youtube-section">
+      <div class="container">
+        <h2>Featured YouTube Videos</h2>
+        <p>Travel tips, destination guides, and expert advice</p>
+
+        <div class="youtube-grid">
+
+          <a href="https://www.youtube.com/watch?v=OKIBjTg4AF0" target="_blank" class="youtube-card">
+            <div class="youtube-thumb-wrapper">
+              <img src="https://img.youtube.com/vi/OKIBjTg4AF0/maxresdefault.jpg" alt="YouTube Video 1">
+              <div class="play-btn">&#9654;</div>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=HmuDtPJJWrw" target="_blank" class="youtube-card">
+            <div class="youtube-thumb-wrapper">
+              <img src="https://img.youtube.com/vi/HmuDtPJJWrw/maxresdefault.jpg" alt="YouTube Video 2">
+              <div class="play-btn">&#9654;</div>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=AbAyPZQHS3Y" target="_blank" class="youtube-card">
+            <div class="youtube-thumb-wrapper">
+              <img src="https://img.youtube.com/vi/AbAyPZQHS3Y/maxresdefault.jpg" alt="YouTube Video 3">
+              <div class="play-btn">&#9654;</div>
+            </div>
+          </a>
+
+        </div>
+
+        <a href="https://www.youtube.com/@TheCanadianJetsetter" target="_blank" class="btn btn-primary">
+          Browse Our YouTube Library →
+        </a>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         9. SOCIAL PROOF BAR
+    ══════════════════════════════════════════ -->
+    <div class="social-proof-bar" role="region" aria-label="Social media following">
+      <div class="container">
+        <div class="social-proof-inner">
+
+          <div class="social-stat">
+            <span class="social-stat-number">100K+</span>
+            <span class="social-stat-label">TikTok Followers</span>
+          </div>
+
+          <div class="social-stat">
+            <span class="social-stat-number">120K+</span>
+            <span class="social-stat-label">Instagram Followers</span>
+          </div>
+
+          <div class="social-stat">
+            <span class="social-stat-number">37K+</span>
+            <span class="social-stat-label">Newsletter Subscribers</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         10. SOCIAL FOLLOW
+    ══════════════════════════════════════════ -->
+    <section class="social-section" aria-labelledby="social-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="social-heading">Follow me on Instagram and TikTok for travel tips and hacks!</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="social-grid">
+
+          <a href="https://www.instagram.com/p/DWm3epMgsPD/" target="_blank" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="TCJ Website Assets/icons/slot 1.png" alt="Instagram Post">
+              <div class="social-icon instagram-icon">&#128247;</div>
+            </div>
+          </a>
+
+          <a href="https://www.tiktok.com/@thecanadianjetsetter/video/7622389920165891336" target="_blank" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="TCJ Website Assets/icons/slot 2.png" alt="TikTok Video">
+              <div class="social-icon tiktok-icon">&#9654;</div>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/p/DWef0WFEQvD/" target="_blank" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="TCJ Website Assets/icons/slot 3.png" alt="Instagram Post">
+              <div class="social-icon instagram-icon">&#128247;</div>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="social-follow-ctas">
+          <a
+            href="https://www.instagram.com/thecanadianjetsetter"
+            class="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >@thecanadianjetsetter on Instagram →</a>
+          <a
+            href="https://www.tiktok.com/@thecanadianjetsetter"
+            class="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >@thecanadianjetsetter on TikTok →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <!-- ══════════════════════════════════════════
+         8. ABOUT GRAEME
+    ══════════════════════════════════════════ -->
+    <section class="about-section" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-inner">
+
+          <div class="about-image-wrap">
+            <img
+              src="TCJ Website Assets/headshots/MK406605 2.JPG"
+              alt="Graeme, founder of The Canadian Jetsetter"
+              loading="lazy"
+            />
+            <div class="about-image-accent" aria-hidden="true"></div>
+          </div>
+
+          <div class="about-content">
+            <p class="about-eyebrow">Meet the Founder</p>
+            <h2 id="about-heading">Hi, I'm Graeme.</h2>
+            <p>
+              A proud Canadian travel creator and frequent flyer born and raised in Winnipeg, Manitoba. Surviving cold winters sparked a love for finding great deals and escaping to warmer places.
+            </p>
+            <p>
+              Graeme figured out how to score cheap cash flight deals and make the most of miles and points to travel in style — and now he shares every single deal with you.
+            </p>
+            <a
+              href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-top:8px;"
+            >Join Graeme's List →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  <!-- ══════════════════════════════════════════
+       11. FOOTER
+  ══════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+
+        <a href="/" class="footer-logo" aria-label="The Canadian Jetsetter — Home">
+          <img
+            src="TCJ Website Assets/logos/banner_text_logo.png"
+            alt="The Canadian Jetsetter"
+            loading="lazy"
+          />
+        </a>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#">Subscribe</a>
+          <a href="economy.html">Economy</a>
+          <a href="#">Premium</a>
+          <a href="#">About</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+
+        <p class="footer-copy">
+          &copy; <span id="footer-year"></span> The Canadian Jetsetter. All rights reserved.
+        </p>
+
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Dynamic copyright year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Desktop OFFERINGS dropdown
+    const offeringsBtn = document.querySelector('.nav-link--btn');
+    const submenu = document.querySelector('.nav-submenu');
+
+    offeringsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = offeringsBtn.getAttribute('aria-expanded') === 'true';
+      offeringsBtn.setAttribute('aria-expanded', !isOpen);
+      submenu.classList.toggle('is-open', !isOpen);
+    });
+
+    document.addEventListener('click', () => {
+      offeringsBtn.setAttribute('aria-expanded', 'false');
+      submenu.classList.remove('is-open');
+    });
+
+    submenu.addEventListener('click', (e) => e.stopPropagation());
+
+    // Mobile hamburger toggle
+    const hamburger = document.querySelector('.nav-hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !isOpen);
+      mobileMenu.setAttribute('aria-hidden', isOpen);
+      hamburger.classList.toggle('is-open', !isOpen);
+      mobileMenu.classList.toggle('is-open', !isOpen);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+      });
+    });
+  </script>
+
+</body>
+</html>
