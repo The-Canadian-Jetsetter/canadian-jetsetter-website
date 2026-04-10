@@ -1110,3 +1110,25 @@ footer {
     padding: 40px 0 28px;
   }
 }
+
+@media (max-width: 768px) {
+  .testimonials-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    width: 100% !important;
+    padding-bottom: 10px !important;
+  }
+
+  .testimonial-card {
+    flex: 0 0 80vw !important;
+    min-width: 80vw !important;
+    width: 80vw !important;
+    scroll-snap-align: start !important;
+  }
+}
