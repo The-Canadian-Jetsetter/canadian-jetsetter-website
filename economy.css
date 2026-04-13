@@ -302,6 +302,12 @@ body {
   .nav-hamburger { display: none; }
 }
 
+/* Desktop-only line break */
+.br-desktop { display: none; }
+@media (min-width: 769px) {
+  .br-desktop { display: block; }
+}
+
 /* Mobile: hide desktop nav */
 @media (max-width: 768px) {
   .nav-links { display: none; }
@@ -412,7 +418,7 @@ body {
 
 /* ── WHY JETSETTER ECONOMY ─────────────────── */
 .why-section {
-  padding: 11px 0;
+  padding: 51px 0;
   background: var(--cream);
   position: relative;
   overflow: hidden;
@@ -538,7 +544,7 @@ body {
 
 /* ── PAST DEALS ────────────────────────────── */
 .deals-section {
-  padding: 7px 0 13px !important;
+  padding: 47px 0 53px !important;
   background: #300000;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -873,7 +879,7 @@ body {
 
 /* ── AS SEEN IN ────────────────────────────── */
 .press-section {
-  padding: 36px 0;
+  padding: 14px 0;
   background: var(--cream);
 }
 
@@ -1230,6 +1236,32 @@ footer {
     grid-template-columns: 1fr;
     max-width: 360px;
     margin: 0 auto 36px;
+  }
+
+  /* ── AS SEEN IN — mobile layout ── */
+  .press-section .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 20px !important;
+    background: #F6F2E7 !important;
+  }
+
+  .press-logos {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 24px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .press-logo {
+    max-height: 25px !important;
+    max-width: 28vw !important;
+    width: auto !important;
+    object-fit: contain !important;
   }
 }
 

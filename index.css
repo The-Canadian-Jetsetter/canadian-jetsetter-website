@@ -784,15 +784,6 @@ body {
   color: var(--red-light);
 }
 
-/* ── BLOG ACCORDION WRAPPER (desktop: transparent) ── */
-.blog-accordion {
-  display: contents; /* vanishes from layout; card becomes direct flex child */
-}
-
-.blog-accordion-header {
-  display: none; /* hidden on desktop */
-}
-
 /* ── BLOG EXPANDING CARDS ──────────────────── */
 .blog-exp-row {
   display: flex;
@@ -1449,89 +1440,15 @@ footer {
     box-sizing: border-box !important;
   }
 
-  /* ── BLOG SECTION — mobile accordion layout ── */
-  .blog-exp-row {
-    flex-direction: column;
-    height: auto;
-    gap: 12px;
+  /* ── BLOG EXPANDING CARDS — mobile collapsed width ── */
+  .blog-exp-card {
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    min-width: 40px !important;
   }
 
-  /* Card 1: always fully visible */
-  .blog-exp-row > .blog-exp-card:first-child {
-    flex: none;
-    height: 300px;
-    border-radius: 12px;
-  }
-
-  .blog-exp-row > .blog-exp-card:first-child .blog-exp-content {
-    opacity: 1;
-    pointer-events: auto;
-    transition: none;
-  }
-
-  /* Accordion wrappers: restore block on mobile */
-  .blog-accordion {
-    display: block;
-  }
-
-  /* Accordion header bar */
-  .blog-accordion-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background: #761915;
-    color: #fff;
-    padding: 12px 16px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    transition: border-radius 0.25s ease;
-    box-sizing: border-box;
-  }
-
-  .blog-accordion-header[aria-expanded="true"] {
-    border-radius: 8px 8px 0 0;
-  }
-
-  .blog-accordion-title {
-    font-size: 0.88rem;
-    font-weight: 600;
-    line-height: 1.35;
-    color: #fff;
-    flex: 1;
-    padding-right: 12px;
-    text-align: left;
-  }
-
-  .blog-accordion-icon {
-    font-size: 1.4rem;
-    font-weight: 300;
-    line-height: 1;
-    color: #fff;
-    flex-shrink: 0;
-  }
-
-  /* Card inside accordion: collapsed by default */
-  .blog-accordion .blog-exp-card {
-    flex: none !important;
-    height: 0;
-    overflow: hidden;
-    transition: height 0.4s ease;
-    border-radius: 0 0 8px 8px;
-  }
-
-  /* Card inside open accordion */
-  .blog-accordion.is-open .blog-exp-card {
-    height: 280px;
-  }
-
-  /* Content always visible inside accordion card */
-  .blog-accordion .blog-exp-card .blog-exp-content {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    transition: none !important;
+  .blog-exp-card.is-active {
+    flex: 1 !important;
   }
 
   .about-inner {
@@ -1568,6 +1485,10 @@ footer {
     scroll-snap-align: start;
   }
 
+  .offerings-grid .offering-img {
+    height: 375px;
+  }
+
   .youtube-grid {
     grid-template-columns: 1fr;
   }
@@ -1580,6 +1501,31 @@ footer {
 
   .hero {
     min-height: 420px;
+  }
+
+  /* ── CREDIT CARDS — horizontal scroll on mobile ── */
+  .cards-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 16px !important;
+    padding-bottom: 10px !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .cards-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cc-card {
+    flex: 0 0 80vw !important;
+    min-width: 80vw !important;
+    scroll-snap-align: start !important;
   }
 }
 

@@ -416,7 +416,7 @@ body {
 
 /* ── PAST DEALS ────────────────────────────── */
 .deals-section {
-  padding: 3px 0 4px !important;
+  padding: 43px 0 4px !important;
   background: linear-gradient(to bottom, #400000 0%, #a28787 100%);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -468,6 +468,7 @@ body {
 
 .deals-section .section-header h2 {
   margin-bottom: 2px;
+  padding-bottom: 0;
   color: #F6F2E7;
 }
 
@@ -1184,6 +1185,32 @@ body {
   .ct-float-badge {
     display: none;
   }
+
+  /* ── AS SEEN IN — mobile layout ── */
+  .press-section .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 20px !important;
+    background: #F6F2E7 !important;
+  }
+
+  .press-logos {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 24px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .press-logo {
+    max-height: 25px !important;
+    max-width: 28vw !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
 }
 
 /* ── TESTIMONIALS ──────────────────────────── */
@@ -1323,7 +1350,7 @@ body {
 
 /* ── AS SEEN IN ────────────────────────────── */
 .press-section {
-  padding: 36px 0;
+  padding: 14px 0;
   background: var(--cream);
 }
 
