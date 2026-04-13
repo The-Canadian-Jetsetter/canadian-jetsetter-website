@@ -208,6 +208,58 @@
       </div>
     </div>
 
+    <!-- ══════════════════════════════════════════
+         SOCIAL FOLLOW
+    ══════════════════════════════════════════ -->
+    <section class="social-section" aria-labelledby="social-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="social-heading">Follow me on Instagram and TikTok for travel tips and hacks!</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="social-grid">
+
+          <a href="https://www.instagram.com/p/DWm3epMgsPD/" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="TCJ Website Assets/icons/slot 1.png" alt="Instagram Post" loading="lazy">
+              <div class="social-icon instagram-icon">&#128247;</div>
+            </div>
+          </a>
+
+          <a href="https://www.tiktok.com/@thecanadianjetsetter/video/7622389920165891336" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="TCJ Website Assets/icons/slot 2.png" alt="TikTok Video" loading="lazy">
+              <div class="social-icon tiktok-icon">&#9654;</div>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/p/DWef0WFEQvD/" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="TCJ Website Assets/icons/slot 3.png" alt="Instagram Post" loading="lazy">
+              <div class="social-icon instagram-icon">&#128247;</div>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="social-follow-ctas">
+          <a
+            href="https://www.instagram.com/thecanadianjetsetter"
+            class="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >@thecanadianjetsetter on Instagram →</a>
+          <a
+            href="https://www.tiktok.com/@thecanadianjetsetter"
+            class="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >@thecanadianjetsetter on TikTok →</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ══════════════════════════════════════════
@@ -294,7 +346,15 @@
       }
     });
 
-    // ── BLOG FEED ──────────────────────────────
+    // ── BLOG FEED (WordPress XML) ───────────────
+    const WP_NS      = 'http://wordpress.org/export/1.2/';
+    const CONTENT_NS = 'http://purl.org/rss/1.0/modules/content/';
+    const EXCERPT_NS = 'http://wordpress.org/export/1.2/excerpt/';
+    const PAGE_SIZE  = 12;
+
+    let allPosts   = [];
+    let shownCount = 0;
+
     function formatDate(dateStr) {
       const d = new Date(dateStr);
       return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
@@ -314,93 +374,172 @@
         .replace(/"/g, '&quot;');
     }
 
-    // Extract first <img> src from raw HTML string (content field fallback)
     function extractFirstImage(content) {
       if (!content) return '';
       const match = content.match(/<img[^>]+src=["']([^"']+)["']/i);
       return match ? match[1] : '';
     }
 
-    // Thumbnail priority: item.thumbnail → item.enclosure.link → first <img> in content
-    function getThumb(item) {
-      return item.thumbnail
-          || (item.enclosure && item.enclosure.link)
-          || extractFirstImage(item.content)
-          || '';
+    // Returns text content of a namespaced wp: child element
+    function getWpText(el, tag) {
+      return el.getElementsByTagNameNS(WP_NS, tag)[0]?.textContent || '';
+    }
+
+    // Pick the best category label for filter matching
+    function pickCategory(cats) {
+      const filterCats = ['Travel Points', 'Travel Perks'];
+      for (const fc of filterCats) {
+        if (cats.includes(fc)) return fc;
+      }
+      return cats[0] || 'Newsletter';
+    }
+
+    function getActiveCategory() {
+      return document.querySelector('.filter-btn--active')?.dataset.category || 'all';
+    }
+
+    // Re-applies whichever filter button is currently active to all cards in the grid
+    function applyCurrentFilter() {
+      const cat = getActiveCategory();
+      document.querySelectorAll('#blog-grid .blog-card').forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.category === cat) ? '' : 'none';
+      });
     }
 
     function initFilter() {
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const blogCards  = document.querySelectorAll('.blog-card');
-
-      filterBtns.forEach(btn => {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          filterBtns.forEach(b => b.classList.remove('filter-btn--active'));
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('filter-btn--active'));
           btn.classList.add('filter-btn--active');
-
-          const category = btn.dataset.category;
-
-          blogCards.forEach(card => {
-            if (category === 'all' || card.dataset.category === category) {
-              card.style.display = '';
-            } else {
-              card.style.display = 'none';
-            }
-          });
+          applyCurrentFilter();
         });
       });
     }
 
+    function renderCard(post) {
+      const title   = escapeHtml(post.title);
+      const link    = escapeHtml(post.link);
+      const date    = formatDate(post.pubDate);
+      const raw     = post.excerpt.slice(0, 150);
+      const excerpt = escapeHtml(raw) + (post.excerpt.length > 150 ? '\u2026' : '');
+      const cat     = escapeHtml(post.category);
+
+      const imgHtml = post.thumb
+        ? `<a href="${link}" class="blog-card-img-link" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(post.thumb)}" alt="${title}" class="blog-card-img" loading="lazy" onerror="this.parentElement.style.display='none'" /></a>`
+        : '';
+
+      return `
+        <article class="blog-card" data-category="${cat}">
+          ${imgHtml}
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span class="blog-tag">${cat}</span>
+              <span class="blog-date">${date}</span>
+            </div>
+            <h3 class="blog-title">
+              <a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>
+            </h3>
+            <p class="blog-excerpt">${excerpt}</p>
+            <a href="${link}" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More &rarr;</a>
+          </div>
+        </article>`;
+    }
+
+    function showMore(loadMoreBtn) {
+      const gridEl = document.getElementById('blog-grid');
+      const batch  = allPosts.slice(shownCount, shownCount + PAGE_SIZE);
+      gridEl.insertAdjacentHTML('beforeend', batch.map(renderCard).join(''));
+      shownCount += batch.length;
+      if (shownCount >= allPosts.length) loadMoreBtn.style.display = 'none';
+      applyCurrentFilter();
+    }
+
     async function fetchBlogPosts() {
-      const loadingEl = document.getElementById('blog-loading');
-      const errorEl   = document.getElementById('blog-error');
-      const gridEl    = document.getElementById('blog-grid');
+      const loadingEl    = document.getElementById('blog-loading');
+      const errorEl      = document.getElementById('blog-error');
+      const loadMoreWrap = document.querySelector('.load-more-wrap');
 
       try {
-        const res = await fetch(
-          'https://api.rss2json.com/v1/api.json?rss_url=https://thecanadianjetsetter.com/feed/&api_key=&count=10'
-        );
+        const res = await fetch('thecanadianjetsettercom.WordPress.2026-04-10.xml');
         if (!res.ok) throw new Error('Network error');
-        const data = await res.json();
+        const xmlText = await res.text();
 
-        if (data.status !== 'ok' || !data.items || data.items.length === 0) {
-          throw new Error('No posts');
+        const parser = new DOMParser();
+        const doc    = parser.parseFromString(xmlText, 'application/xml');
+
+        if (doc.querySelector('parsererror')) throw new Error('XML parse error');
+
+        const allItems = [...doc.getElementsByTagName('item')];
+
+        // ── Pass 1: build attachment ID → URL map for featured images ──
+        const attachMap = {};
+        for (const item of allItems) {
+          if (getWpText(item, 'post_type') === 'attachment') {
+            const id  = getWpText(item, 'post_id');
+            const url = getWpText(item, 'attachment_url');
+            if (id && url) attachMap[id] = url;
+          }
         }
 
-        gridEl.innerHTML = data.items.map(item => {
-          const title   = escapeHtml(item.title || '');
-          const link    = escapeHtml(item.link  || '#');
-          const date    = formatDate(item.pubDate);
-          const excerpt = escapeHtml(stripHtml(item.description || '').slice(0, 160).trim() + '\u2026');
-          const thumb   = getThumb(item);
+        // ── Pass 2: extract published blog posts ──
+        for (const item of allItems) {
+          if (getWpText(item, 'post_type') !== 'post')    continue;
+          if (getWpText(item, 'status')    !== 'publish') continue;
 
-          // Always render the image-link wrapper (acts as placeholder if img fails)
-          const imgHtml = `<a href="${link}" class="blog-card-img-link" target="_blank" rel="noopener noreferrer">${
-            thumb
-              ? `<img src="${escapeHtml(thumb)}" alt="${title}" class="blog-card-img" loading="lazy" crossorigin="anonymous" onerror="this.style.display='none'" />`
-              : ''
-          }</a>`;
+          const title   = item.getElementsByTagName('title')[0]?.textContent   || '';
+          const link    = item.getElementsByTagName('link')[0]?.textContent    || '#';
+          const pubDate = item.getElementsByTagName('pubDate')[0]?.textContent || '';
 
-          return `
-            <article class="blog-card">
-              ${imgHtml}
-              <div class="blog-card-body">
-                <div class="blog-card-meta">
-                  <span class="blog-tag">Newsletter</span>
-                  <span class="blog-date">${date}</span>
-                </div>
-                <h3 class="blog-title">
-                  <a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>
-                </h3>
-                <p class="blog-excerpt">${excerpt}</p>
-                <a href="${link}" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More &rarr;</a>
-              </div>
-            </article>`;
-        }).join('');
+          const contentEncoded = item.getElementsByTagNameNS(CONTENT_NS, 'encoded')[0]?.textContent || '';
+          const excerptEncoded = item.getElementsByTagNameNS(EXCERPT_NS, 'encoded')[0]?.textContent || '';
 
+          // Prefer excerpt:encoded; fall back to first 150 chars of content body
+          const excerpt = excerptEncoded.trim() || stripHtml(contentEncoded).slice(0, 150).trim();
+
+          // WP categories (domain="category" only, not tags)
+          const cats = [...item.getElementsByTagName('category')]
+            .filter(c => c.getAttribute('domain') === 'category')
+            .map(c => c.textContent.trim());
+
+          // Featured image: _thumbnail_id postmeta → attachMap → first <img> in content
+          let thumbnailId = '';
+          const metas = item.getElementsByTagNameNS(WP_NS, 'postmeta');
+          for (const meta of metas) {
+            if (getWpText(meta, 'meta_key') === '_thumbnail_id') {
+              thumbnailId = getWpText(meta, 'meta_value');
+              break;
+            }
+          }
+          const thumb = (thumbnailId && attachMap[thumbnailId]) || extractFirstImage(contentEncoded) || '';
+
+          allPosts.push({
+            title,
+            link,
+            pubDate,
+            excerpt,
+            category: pickCategory(cats),
+            thumb,
+            date: new Date(pubDate),
+          });
+        }
+
+        // Sort newest first
+        allPosts.sort((a, b) => b.date - a.date);
+
+        // Replace static "Load More" anchor with a JS-powered button
+        const loadMoreBtn = document.createElement('button');
+        loadMoreBtn.className   = 'btn btn-outline-red';
+        loadMoreBtn.textContent = 'Load More Posts';
+        loadMoreBtn.addEventListener('click', () => showMore(loadMoreBtn));
+        loadMoreWrap.innerHTML = '';
+        loadMoreWrap.appendChild(loadMoreBtn);
+
+        showMore(loadMoreBtn);       // render first 12
         loadingEl.style.display = 'none';
         initFilter();
+
       } catch (err) {
+        console.error('Blog feed error:', err);
         loadingEl.style.display = 'none';
         errorEl.style.display   = '';
       }
