@@ -189,39 +189,51 @@
             </div>
           </article>
 
-          <!-- Card 2 -->
-          <article class="blog-exp-card" style="background-color:#0d1625;">
-            <div class="blog-exp-overlay"></div>
-            <div class="blog-exp-content">
-              <span class="blog-tag">Deals</span>
-              <p class="blog-exp-date">Mar 31, 2026</p>
-              <h3 class="blog-exp-title">New Flying Blue Promo for April: Buy Miles with Up to 45% Off!</h3>
-              <p class="blog-exp-excerpt">A limited time opportunity to stock up on Flying Blue miles at a steep discount.</p>
-              <a
-                href="https://thecanadianjetsetter.com/2026/03/31/new-flying-blue-promo-for-april-buy-miles-with-up-to-45-off/"
-                class="blog-exp-read-more"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Read More →</a>
-            </div>
-          </article>
+          <!-- Card 2 — accordion on mobile -->
+          <div class="blog-accordion">
+            <button class="blog-accordion-header" aria-expanded="false">
+              <span class="blog-accordion-title">New Flying Blue Promo for April: Buy Miles with Up to 45% Off!</span>
+              <span class="blog-accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <article class="blog-exp-card" style="background-color:#0d1625;">
+              <div class="blog-exp-overlay"></div>
+              <div class="blog-exp-content">
+                <span class="blog-tag">Deals</span>
+                <p class="blog-exp-date">Mar 31, 2026</p>
+                <h3 class="blog-exp-title">New Flying Blue Promo for April: Buy Miles with Up to 45% Off!</h3>
+                <p class="blog-exp-excerpt">A limited time opportunity to stock up on Flying Blue miles at a steep discount.</p>
+                <a
+                  href="https://thecanadianjetsetter.com/2026/03/31/new-flying-blue-promo-for-april-buy-miles-with-up-to-45-off/"
+                  class="blog-exp-read-more"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Read More →</a>
+              </div>
+            </article>
+          </div>
 
-          <!-- Card 3 -->
-          <article class="blog-exp-card" style="background-color:#0a1f10;">
-            <div class="blog-exp-overlay"></div>
-            <div class="blog-exp-content">
-              <span class="blog-tag">Flight Deals</span>
-              <p class="blog-exp-date">Mar 30, 2026</p>
-              <h3 class="blog-exp-title">Flight Deals from $220 + Direct Flight Guides from Canada!</h3>
-              <p class="blog-exp-excerpt">This week's best economy deals plus direct flight guides from major Canadian cities.</p>
-              <a
-                href="https://thecanadianjetsetter.com/2026/03/30/newsletter-march-30-2026/"
-                class="blog-exp-read-more"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Read More →</a>
-            </div>
-          </article>
+          <!-- Card 3 — accordion on mobile -->
+          <div class="blog-accordion">
+            <button class="blog-accordion-header" aria-expanded="false">
+              <span class="blog-accordion-title">Flight Deals from $220 + Direct Flight Guides from Canada!</span>
+              <span class="blog-accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <article class="blog-exp-card" style="background-color:#0a1f10;">
+              <div class="blog-exp-overlay"></div>
+              <div class="blog-exp-content">
+                <span class="blog-tag">Flight Deals</span>
+                <p class="blog-exp-date">Mar 30, 2026</p>
+                <h3 class="blog-exp-title">Flight Deals from $220 + Direct Flight Guides from Canada!</h3>
+                <p class="blog-exp-excerpt">This week's best economy deals plus direct flight guides from major Canadian cities.</p>
+                <a
+                  href="https://thecanadianjetsetter.com/2026/03/30/newsletter-march-30-2026/"
+                  class="blog-exp-read-more"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Read More →</a>
+              </div>
+            </article>
+          </div>
 
         </div>
 
@@ -658,7 +670,7 @@
       });
     });
 
-    // ── BLOG EXPANDING CARDS ─────────────────────
+    // ── BLOG EXPANDING CARDS (desktop hover) ─────────────────────
     (function () {
       const expCards = document.querySelectorAll('.blog-exp-card');
       function activateCard(target) {
@@ -666,9 +678,39 @@
         target.classList.add('is-active');
       }
       expCards.forEach(function (card) {
-        card.addEventListener('mouseenter', function () { activateCard(card); });
+        card.addEventListener('mouseenter', function () {
+          if (window.innerWidth < 768) return;
+          activateCard(card);
+        });
         card.addEventListener('click', function () {
+          if (window.innerWidth < 768) return;
           if (!card.classList.contains('is-active')) activateCard(card);
+        });
+      });
+    })();
+
+    // ── MOBILE BLOG ACCORDION ────────────────────
+    (function () {
+      document.querySelectorAll('.blog-accordion').forEach(function (accordion) {
+        var header = accordion.querySelector('.blog-accordion-header');
+        var icon   = accordion.querySelector('.blog-accordion-icon');
+
+        header.addEventListener('click', function () {
+          var isOpen = accordion.classList.contains('is-open');
+
+          // Close all other accordions first
+          document.querySelectorAll('.blog-accordion.is-open').forEach(function (other) {
+            if (other !== accordion) {
+              other.classList.remove('is-open');
+              other.querySelector('.blog-accordion-header').setAttribute('aria-expanded', 'false');
+              other.querySelector('.blog-accordion-icon').textContent = '+';
+            }
+          });
+
+          // Toggle this one
+          accordion.classList.toggle('is-open', !isOpen);
+          header.setAttribute('aria-expanded', String(!isOpen));
+          icon.textContent = isOpen ? '+' : '\u2212'; // − (minus sign)
         });
       });
     })();

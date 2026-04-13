@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading… | The Canadian Jetsetter</title>
+  <meta name="description" id="meta-desc" content="" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="blog-post-template.css" />
+  <style>
+    /* ── Loading / error states ── */
+    .post-loading {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      color: rgba(246,242,231,0.7);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
+    }
+    .post-loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(118,25,21,0.35);
+      border-top-color: #d4706c;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .post-error {
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      text-align: center;
+      padding: 64px 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .post-error h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: #fff;
+    }
+    .post-error p {
+      color: rgba(246,242,231,0.7);
+      font-family: 'Inter', sans-serif;
+      max-width: 380px;
+      line-height: 1.6;
+    }
+
+    /* ── Post title ── */
+    .post-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+      font-weight: 700;
+      color: #fff;
+      padding: 4px 20px 18px;
+      line-height: 1.25;
+    }
+
+    /* ── WordPress content base styles ── */
+    .article-body p { margin-bottom: 1rem; }
+    .article-body p:last-child { margin-bottom: 0; }
+    .article-body h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #761915;
+      margin: 28px 0 12px;
+      line-height: 1.2;
+    }
+    .article-body h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #761915;
+      margin: 22px 0 10px;
+      line-height: 1.2;
+    }
+    .article-body h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a0000;
+      margin: 18px 0 8px;
+    }
+    .article-body ul, .article-body ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-body li { margin-bottom: 0.35rem; }
+    .article-body a { color: #761915; text-decoration: underline; }
+    .article-body a:hover { color: #8B0000; }
+    .article-body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 14px 0;
+      display: block;
+    }
+    .article-body strong { color: #1a0000; }
+    .article-body blockquote {
+      border-left: 4px solid #761915;
+      padding: 10px 18px;
+      margin: 20px 0;
+      background: rgba(118,25,21,0.06);
+      border-radius: 0 4px 4px 0;
+      color: #4a2a2a;
+      font-style: italic;
+    }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid #ddd8ca;
+      margin: 28px 0;
+    }
+    /* Gutenberg figure blocks */
+    .article-body figure { margin: 14px 0; }
+    .article-body figure img { margin: 0; }
+    .article-body figcaption {
+      font-size: 0.82rem;
+      color: #6b4a4a;
+      text-align: center;
+      margin-top: 6px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ── Prev/next truncation ── */
+    .btn-post-nav {
+      max-width: 46%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    @media (max-width: 640px) {
+      .btn-post-nav { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dark red background behind navbar + featured image -->
+  <div class="page-header-bg" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════
+       1. TOP NAV
+  ══════════════════════════════════════════ -->
+  <header class="top-nav" role="banner">
+    <div class="container">
+
+      <a href="index.html" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
+        <img
+          src="TCJ Website Assets/icons/Jetsetter text logo.png"
+          alt="The Canadian Jetsetter"
+          loading="eager"
+        />
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <div class="nav-item nav-item--dropdown">
+          <button class="nav-link nav-link--btn" aria-expanded="false" aria-haspopup="true">
+            OFFERINGS <span class="nav-chevron" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="nav-submenu" role="menu">
+            <a href="jetsetter-free.html" role="menuitem">Jetsetter Free</a>
+            <a href="jetsetter-premium.html" role="menuitem">Jetsetter Premium</a>
+            <a href="economy.html" role="menuitem">Jetsetter Economy</a>
+            <a href="golden-visa.html" role="menuitem">Golden Visa</a>
+          </div>
+        </div>
+        <a href="links.html" class="nav-link">LINKS</a>
+        <a href="#" class="nav-link">CREDIT CARDS</a>
+        <a href="blog.html" class="nav-link">BLOG</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+
+      <button
+        class="nav-hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-dropdown"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="jetsetter-free.html">Jetsetter Free</a></li>
+          <li><a href="jetsetter-premium.html">Jetsetter Premium</a></li>
+          <li><a href="economy.html">Jetsetter Economy</a></li>
+          <li><a href="golden-visa.html">Golden Visa</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Loading state -->
+    <div id="post-loading" class="post-loading" aria-live="polite">
+      <div class="post-loading-spinner" aria-hidden="true"></div>
+      <p>Loading post&hellip;</p>
+    </div>
+
+    <!-- Error state -->
+    <div id="post-error" class="post-error" style="display:none">
+      <h2>Post Not Found</h2>
+      <p>Sorry, we couldn't find that post. It may have been moved or the link may be incorrect.</p>
+      <a href="blog.html" class="btn btn-primary" style="margin-top:8px">Back to Blog &rarr;</a>
+    </div>
+
+    <!-- Post content (hidden until loaded) -->
+    <div id="post-wrapper" style="display:none">
+
+      <!-- ══════════════════════════════════════════
+           2. CONTENT + SIDEBAR
+      ══════════════════════════════════════════ -->
+      <div class="post-layout container">
+
+        <!-- ── LEFT COLUMN: Article ────────────── -->
+        <article class="post-content" aria-label="Blog post content">
+
+          <!-- Post date above featured image -->
+          <p class="post-date-label" id="post-date-label"></p>
+
+          <!-- Post title -->
+          <h1 class="post-title" id="post-title-el"></h1>
+
+          <!-- Featured Image -->
+          <img
+            id="post-featured-img"
+            class="featured-image"
+            alt=""
+            loading="eager"
+          />
+
+          <div class="article-body" id="post-body"></div>
+
+        </article>
+
+        <!-- ── RIGHT COLUMN: Sidebar ─────────────── -->
+        <aside class="post-sidebar" aria-label="Sidebar">
+
+          <!-- About Graeme -->
+          <div class="sidebar-card">
+            <img
+              src="TCJ Website Assets/headshots/Graeme Headshot Blog.jpg"
+              alt="Graeme — The Canadian Jetsetter"
+              class="sidebar-headshot"
+            />
+            <h3>Hi, I'm Graeme.</h3>
+            <p>A proud Canadian travel creator born and raised in Winnipeg. I find the best economy flight deals across Canada and share every single one with you.</p>
+            <a
+              href="https://thecanadianjetsetter.beehiiv.com/subscribe"
+              class="btn btn-primary btn-sm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Join My Newsletter &rarr;</a>
+          </div>
+
+          <!-- Jetsetter Economy -->
+          <div class="sidebar-card sidebar-card--economy">
+            <h3>🔓 Jetsetter Economy</h3>
+            <p>Get exclusive flight deals — the ones not shown publicly — sent straight to your inbox every week.</p>
+            <div class="sidebar-price">$59.99<span>/yr</span></div>
+            <a
+              href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC"
+              class="btn-sidebar-economy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Subscribe Now &rarr;</a>
+          </div>
+
+          <!-- Jetsetter Premium -->
+          <div class="sidebar-card sidebar-card--premium">
+            <h3>✨ Jetsetter Premium</h3>
+            <p>Business class deals &amp; points strategies for Canadians who want to travel in style.</p>
+            <a href="jetsetter-premium.html" class="btn btn-primary btn-sm">Learn More &rarr;</a>
+          </div>
+
+        </aside>
+
+      </div><!-- /post-layout -->
+
+      <!-- ══════════════════════════════════════════
+           3. PREV / NEXT NAVIGATION
+      ══════════════════════════════════════════ -->
+      <div class="post-pagination">
+        <div class="container">
+          <div class="post-pagination-inner">
+            <a href="#" id="post-prev" class="btn-post-nav">&larr; Previous Post</a>
+            <a href="#" id="post-next" class="btn-post-nav">Next Post &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           4. SOCIAL PROOF BAR
+      ══════════════════════════════════════════ -->
+      <div class="social-proof-bar" role="region" aria-label="Social media following">
+        <div class="container">
+          <div class="social-proof-inner">
+            <div class="social-stat">
+              <span class="social-stat-number">100K+</span>
+              <span class="social-stat-label">TikTok Followers</span>
+            </div>
+            <div class="social-stat">
+              <span class="social-stat-number">120K+</span>
+              <span class="social-stat-label">Instagram Followers</span>
+            </div>
+            <div class="social-stat">
+              <span class="social-stat-number">37K+</span>
+              <span class="social-stat-label">Newsletter Subscribers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           5. SOCIAL FOLLOW
+      ══════════════════════════════════════════ -->
+      <section class="social-section" aria-labelledby="social-heading">
+        <div class="container">
+
+          <div class="section-header">
+            <h2 id="social-heading">Follow me on Instagram and TikTok for travel tips and hacks!</h2>
+            <div class="section-divider"></div>
+          </div>
+
+          <div class="social-grid">
+
+            <a href="https://www.instagram.com/p/DWm3epMgsPD/" target="_blank" rel="noopener noreferrer" class="social-card">
+              <div class="social-thumb-wrapper">
+                <img src="TCJ Website Assets/icons/slot 1.png" alt="Instagram Post" loading="lazy">
+                <div class="social-icon instagram-icon">&#128247;</div>
+              </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@thecanadianjetsetter/video/7622389920165891336" target="_blank" rel="noopener noreferrer" class="social-card">
+              <div class="social-thumb-wrapper">
+                <img src="TCJ Website Assets/icons/slot 2.png" alt="TikTok Video" loading="lazy">
+                <div class="social-icon tiktok-icon">&#9654;</div>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/p/DWef0WFEQvD/" target="_blank" rel="noopener noreferrer" class="social-card">
+              <div class="social-thumb-wrapper">
+                <img src="TCJ Website Assets/icons/slot 3.png" alt="Instagram Post" loading="lazy">
+                <div class="social-icon instagram-icon">&#128247;</div>
+              </div>
+            </a>
+
+          </div>
+
+          <div class="social-follow-ctas">
+            <a
+              href="https://www.instagram.com/thecanadianjetsetter"
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >@thecanadianjetsetter on Instagram &rarr;</a>
+            <a
+              href="https://www.tiktok.com/@thecanadianjetsetter"
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >@thecanadianjetsetter on TikTok &rarr;</a>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /post-wrapper -->
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       6. FOOTER
+  ══════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+
+        <a href="index.html" class="footer-logo" aria-label="The Canadian Jetsetter — Home">
+          <img
+            src="TCJ Website Assets/logos/banner_text_logo.png"
+            alt="The Canadian Jetsetter"
+            loading="lazy"
+          />
+        </a>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC" target="_blank" rel="noopener noreferrer">Subscribe</a>
+          <a href="economy.html">Economy</a>
+          <a href="jetsetter-premium.html">Premium</a>
+          <a href="#">About</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+
+        <p class="footer-copy">
+          &copy; <span id="footer-year"></span> The Canadian Jetsetter. All rights reserved.
+        </p>
+
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Dynamic copyright year ──────────────────
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // ── Desktop OFFERINGS dropdown ──────────────
+    const offeringsBtn = document.querySelector('.nav-link--btn');
+    const submenu      = document.querySelector('.nav-submenu');
+
+    offeringsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = offeringsBtn.getAttribute('aria-expanded') === 'true';
+      offeringsBtn.setAttribute('aria-expanded', !isOpen);
+      submenu.classList.toggle('is-open', !isOpen);
+    });
+
+    document.addEventListener('click', () => {
+      offeringsBtn.setAttribute('aria-expanded', 'false');
+      submenu.classList.remove('is-open');
+    });
+
+    submenu.addEventListener('click', (e) => e.stopPropagation());
+
+    // ── Hamburger menu toggle ───────────────────
+    const hamburger = document.querySelector('.nav-hamburger');
+    const dropdown  = document.getElementById('nav-dropdown');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !isOpen);
+      dropdown.setAttribute('aria-hidden', isOpen);
+      hamburger.classList.toggle('is-open', !isOpen);
+      dropdown.classList.toggle('is-open', !isOpen);
+    });
+
+    dropdown.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !dropdown.contains(e.target)) {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      }
+    });
+
+    // ── Blog post loader ────────────────────────
+    (async function () {
+      const WP_NS      = 'http://wordpress.org/export/1.2/';
+      const CONTENT_NS = 'http://purl.org/rss/1.0/modules/content/';
+
+      const loadingEl = document.getElementById('post-loading');
+      const errorEl   = document.getElementById('post-error');
+      const wrapperEl = document.getElementById('post-wrapper');
+
+      // Read slug from ?slug= URL parameter
+      const slug = new URLSearchParams(window.location.search).get('slug');
+      console.log('Looking for slug:', slug);
+
+      if (!slug) {
+        window.location.replace('blog.html');
+        return;
+      }
+
+      function getWpText(el, tag) {
+        const byQName = el.getElementsByTagName('wp:' + tag);
+        if (byQName.length) return byQName[0].textContent || '';
+        return el.getElementsByTagNameNS(WP_NS, tag)[0]?.textContent || '';
+      }
+
+      function formatDate(dateStr) {
+        const d = new Date(dateStr);
+        if (isNaN(d)) return '';
+        return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+      }
+
+      function extractFirstImage(content) {
+        if (!content) return '';
+        const m = content.match(/<img[^>]+src=["']([^"']+)["']/i);
+        return m ? m[1] : '';
+      }
+
+      try {
+        const res = await fetch('thecanadianjetsettercom.WordPress.2026-04-10.xml');
+        if (!res.ok) throw new Error('Network response was not ok');
+
+        const xmlText = await res.text();
+        const parser  = new DOMParser();
+        const doc     = parser.parseFromString(xmlText, 'application/xml');
+
+        if (doc.querySelector('parsererror')) throw new Error('XML parse error');
+
+        const allItems = [...doc.getElementsByTagName('item')];
+
+        // ── Pass 1: build attachment ID → URL map ──
+        const attachMap = {};
+        for (const item of allItems) {
+          if (getWpText(item, 'post_type') === 'attachment') {
+            const id  = getWpText(item, 'post_id');
+            const url = getWpText(item, 'attachment_url');
+            if (id && url) attachMap[id] = url;
+          }
+        }
+
+        // ── Pass 2: collect published posts ────────
+        const posts = [];
+        for (const item of allItems) {
+          if (getWpText(item, 'post_type') !== 'post')    continue;
+          if (getWpText(item, 'status')    !== 'publish') continue;
+
+          const postLink = item.getElementsByTagName('link')[0]?.textContent?.trim() || '';
+          const slugFromLink = postLink.split('/').filter(Boolean).pop() || '';
+          const postSlug = getWpText(item, 'post_name').trim() || slugFromLink;
+          console.log('Post slug:', postSlug, '| link:', postLink.slice(-60));
+          const title    = item.getElementsByTagName('title')[0]?.textContent || '';
+          const pubDate  = item.getElementsByTagName('pubDate')[0]?.textContent || '';
+          const content  = (item.getElementsByTagName('content:encoded')[0]
+            || item.getElementsByTagNameNS(CONTENT_NS, 'encoded')[0])?.textContent || '';
+
+          // Featured image: _thumbnail_id → attachMap → first <img> in content
+          let thumbnailId = '';
+          const metas = item.getElementsByTagName('wp:postmeta').length
+            ? item.getElementsByTagName('wp:postmeta')
+            : item.getElementsByTagNameNS(WP_NS, 'postmeta');
+          for (const meta of metas) {
+            if (getWpText(meta, 'meta_key') === '_thumbnail_id') {
+              thumbnailId = getWpText(meta, 'meta_value');
+              break;
+            }
+          }
+          const featuredImg = (thumbnailId && attachMap[thumbnailId])
+            || extractFirstImage(content);
+
+          posts.push({
+            slug:       postSlug,
+            link:       postLink,
+            title,
+            pubDate,
+            content,
+            featuredImg,
+            date: new Date(pubDate),
+          });
+        }
+
+        // Sort newest-first so prev/next are chronologically adjacent
+        posts.sort((a, b) => b.date - a.date);
+
+        // ── Find the requested post ─────────────────
+        const idx = posts.findIndex(p =>
+          p.slug === slug ||
+          p.link.includes('/' + slug + '/')
+        );
+        console.log('Match index:', idx, '| total posts:', posts.length);
+        if (idx === -1) throw new Error('Post not found: ' + slug);
+
+        const post = posts[idx];
+        const next = idx > 0             ? posts[idx - 1] : null; // newer
+        const prev = idx < posts.length - 1 ? posts[idx + 1] : null; // older
+
+        // ── Populate page ───────────────────────────
+        document.title = post.title + ' | The Canadian Jetsetter';
+
+        const dateStr = formatDate(post.pubDate);
+        document.getElementById('post-date-label').textContent = dateStr;
+
+        document.getElementById('post-title-el').textContent = post.title;
+
+        const imgEl = document.getElementById('post-featured-img');
+        if (post.featuredImg) {
+          imgEl.src = post.featuredImg;
+          imgEl.alt = post.title;
+        } else {
+          imgEl.style.display = 'none';
+        }
+
+        // Render WordPress HTML content
+        document.getElementById('post-body').innerHTML = post.content;
+
+        // ── Prev / Next navigation ──────────────────
+        const prevLink = document.getElementById('post-prev');
+        const nextLink = document.getElementById('post-next');
+
+        if (prev) {
+          prevLink.href        = 'blog-post.html?slug=' + encodeURIComponent(prev.slug);
+          prevLink.textContent = '\u2190 ' + prev.title;
+          prevLink.title       = prev.title;
+        } else {
+          prevLink.style.visibility = 'hidden';
+        }
+
+        if (next) {
+          nextLink.href        = 'blog-post.html?slug=' + encodeURIComponent(next.slug);
+          nextLink.textContent = next.title + ' \u2192';
+          nextLink.title       = next.title;
+        } else {
+          nextLink.style.visibility = 'hidden';
+        }
+
+        // ── Reveal post, hide loading ───────────────
+        loadingEl.style.display = 'none';
+        wrapperEl.style.display = '';
+
+      } catch (err) {
+        console.error('Blog post load error:', err);
+        loadingEl.style.display = 'none';
+        errorEl.style.display   = '';
+      }
+    })();
+  </script>
+
+</body>
+</html>

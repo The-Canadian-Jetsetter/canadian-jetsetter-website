@@ -555,6 +555,8 @@ body {
 
 /* ── BLOG CARD ─────────────────────────────── */
 .blog-card {
+  text-decoration: none;
+  color: inherit;
   background: var(--cream-card);
   border: 1px solid var(--cream-border);
   border-radius: 8px;
