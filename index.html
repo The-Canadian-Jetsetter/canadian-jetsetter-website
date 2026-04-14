@@ -63,13 +63,19 @@
 
     <!-- Mobile dropdown menu -->
     <div class="nav-mobile-menu" id="mobile-menu" aria-hidden="true">
-      <a href="#">OFFERINGS</a>
-      <a href="jetsetter-free.html">JETSETTER FREE</a>
-      <a href="jetsetter-premium.html">JETSETTER PREMIUM</a>
-      <a href="economy.html">JETSETTER ECONOMY</a>
-      <a href="golden-visa.html">GOLDEN VISA</a>
-      <a href="#">LINKS</a>
-      <a href="#">CREDIT CARDS</a>
+      <div class="mobile-offerings">
+        <button class="mobile-offerings-btn" aria-expanded="false">
+          OFFERINGS <span class="mobile-offerings-arrow">›</span>
+        </button>
+        <div class="mobile-offerings-sub">
+          <a href="jetsetter-free.html">Jetsetter Free</a>
+          <a href="economy.html">Jetsetter Economy</a>
+          <a href="jetsetter-premium.html">Jetsetter Premium</a>
+          <a href="golden-visa.html">Golden Visa</a>
+        </div>
+      </div>
+      <a href="links.html">LINKS</a>
+      <a href="https://thecanadianjetsetter.milesopedia.com" target="_blank" rel="noopener noreferrer">CREDIT CARDS</a>
       <a href="blog.html">BLOG</a>
       <a href="contact.html">CONTACT</a>
     </div>
@@ -601,9 +607,8 @@
           <a href="jetsetter-free.html">Subscribe</a>
           <a href="economy.html">Economy</a>
           <a href="jetsetter-premium.html">Premium</a>
-          <a href="#">About</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
         </nav>
 
         <p class="footer-copy">
@@ -657,6 +662,18 @@
         mobileMenu.classList.remove('is-open');
       });
     });
+
+    // Mobile OFFERINGS sub-dropdown
+    const mobileOfferingsBtn = document.querySelector('.mobile-offerings-btn');
+    if (mobileOfferingsBtn) {
+      const mobileOfferingsSub = document.querySelector('.mobile-offerings-sub');
+      mobileOfferingsBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = mobileOfferingsBtn.getAttribute('aria-expanded') === 'true';
+        mobileOfferingsBtn.setAttribute('aria-expanded', String(!isOpen));
+        mobileOfferingsSub.classList.toggle('is-open', !isOpen);
+      });
+    }
 
     // ── BLOG EXPANDING CARDS ─────────────────────────────────────
     (function () {

@@ -1590,3 +1590,47 @@ footer {
     padding: 40px 0 28px;
   }
 }
+
+/* ── Mobile OFFERINGS sub-dropdown ──────────── */
+.mobile-offerings-btn {
+  display: block;
+  width: 100%;
+  padding: 13px 24px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--cream);
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, padding-left 0.15s;
+}
+.mobile-offerings-btn:hover {
+  background: rgba(139, 0, 0, 0.35);
+  color: var(--white);
+  padding-left: 32px;
+}
+.mobile-offerings-arrow {
+  display: inline-block;
+  float: right;
+  transition: transform 0.3s ease;
+}
+.mobile-offerings-btn[aria-expanded="true"] .mobile-offerings-arrow {
+  transform: rotate(90deg);
+}
+.mobile-offerings-sub {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: rgba(0, 0, 0, 0.15);
+}
+.mobile-offerings-sub.is-open {
+  max-height: 300px;
+}
+.mobile-offerings-sub a {
+  padding-left: 36px !important;
+}

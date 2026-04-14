@@ -56,13 +56,21 @@
 
       <nav class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="jetsetter-free.html">Jetsetter Free</a></li>
-          <li><a href="jetsetter-premium.html">Jetsetter Premium</a></li>
-          <li><a href="economy.html">Jetsetter Economy</a></li>
-          <li><a href="golden-visa.html">Golden Visa</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="mobile-offerings">
+            <button class="mobile-offerings-btn" aria-expanded="false">
+              OFFERINGS <span class="mobile-offerings-arrow">›</span>
+            </button>
+            <ul class="mobile-offerings-sub">
+              <li><a href="jetsetter-free.html">Jetsetter Free</a></li>
+              <li><a href="economy.html">Jetsetter Economy</a></li>
+              <li><a href="jetsetter-premium.html">Jetsetter Premium</a></li>
+              <li><a href="golden-visa.html">Golden Visa</a></li>
+            </ul>
+          </li>
+          <li><a href="links.html">LINKS</a></li>
+          <li><a href="https://thecanadianjetsetter.milesopedia.com" target="_blank" rel="noopener noreferrer">CREDIT CARDS</a></li>
+          <li><a href="blog.html">BLOG</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
     </div>
@@ -287,9 +295,8 @@
           <a href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC" target="_blank" rel="noopener noreferrer">Subscribe</a>
           <a href="economy.html">Economy</a>
           <a href="jetsetter-premium.html">Premium</a>
-          <a href="#">About</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
         </nav>
 
         <p class="footer-copy">
@@ -353,6 +360,18 @@
         dropdown.classList.remove('is-open');
       }
     });
+
+    // Mobile OFFERINGS sub-dropdown
+    const mobileOfferingsBtn = document.querySelector('.mobile-offerings-btn');
+    if (mobileOfferingsBtn) {
+      const mobileOfferingsSub = document.querySelector('.mobile-offerings-sub');
+      mobileOfferingsBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = mobileOfferingsBtn.getAttribute('aria-expanded') === 'true';
+        mobileOfferingsBtn.setAttribute('aria-expanded', String(!isOpen));
+        mobileOfferingsSub.classList.toggle('is-open', !isOpen);
+      });
+    }
 
     // ── FOLDER TABS ────────────────────────────
     const tabBtns     = document.querySelectorAll('.tab-btn');

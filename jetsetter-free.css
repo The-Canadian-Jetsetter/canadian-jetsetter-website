@@ -1146,6 +1146,82 @@ footer {
     max-width: 360px;
     margin: 0 auto 36px;
   }
+
+  .stats-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  .stat-box {
+    flex: 1 !important;
+    min-width: 0 !important;
+    text-align: center !important;
+    font-size: 0.8rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .stat-box-number {
+    font-size: 1.4rem !important;
+  }
+
+  .stat-box-label {
+    font-size: 0.6rem !important;
+  }
+
+  .testimonials-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 16px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .testimonial-card {
+    flex: 0 0 80vw !important;
+    min-width: 80vw !important;
+    scroll-snap-align: start !important;
+  }
+
+  /* ── Beehiiv embed fix ── */
+  .signup-box {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .signup-section .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .beehiiv-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: unset !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+  }
+
+  .beehiiv-wrapper center,
+  .beehiiv-wrapper iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1159,4 +1235,50 @@ footer {
     max-width: 340px;
     text-align: center;
   }
+}
+
+/* ── Mobile OFFERINGS sub-dropdown ──────────── */
+.mobile-offerings-btn {
+  display: block;
+  width: 100%;
+  padding: 11px 20px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--cream);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, padding-left 0.15s;
+}
+.mobile-offerings-btn:hover {
+  background: rgba(139, 0, 0, 0.35);
+  color: var(--white);
+  padding-left: 26px;
+}
+.mobile-offerings-arrow {
+  display: inline-block;
+  float: right;
+  transition: transform 0.3s ease;
+}
+.mobile-offerings-btn[aria-expanded="true"] .mobile-offerings-arrow {
+  transform: rotate(90deg);
+}
+.mobile-offerings-sub {
+  list-style: none;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: rgba(0, 0, 0, 0.15);
+}
+.mobile-offerings-sub.is-open {
+  max-height: 300px;
+}
+.mobile-offerings-sub li a {
+  padding-left: 32px;
 }
