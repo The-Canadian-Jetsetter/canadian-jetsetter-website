@@ -645,10 +645,17 @@ body {
   border-top: 1px solid var(--border);
 }
 
+.offerings-section .container {
+  max-width: 1300px !important;
+  width: 1300px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .offerings-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 12px;
 }
 
 .offering-card {

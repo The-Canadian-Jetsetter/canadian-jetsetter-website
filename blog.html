@@ -410,10 +410,21 @@
         const labels = cats.concat(tags);
 
         // Render: "All" first, then dynamic labels
+        const labelDisplay = {
+          'travel tips':    'Travel Tips',
+          'all-inclusive':  'All-Inclusive',
+          'aeroplan':       'Aeroplan',
+          'westjet':        'WestJet',
+          'travel hacks':   'Travel Hacks',
+          'amex':           'Amex',
+          'business class': 'Business Class'
+        };
+
         filterInner.insertAdjacentHTML('beforeend',
           '<button class="filter-btn filter-btn--active" data-filter="All">All</button>'
           + labels.map(function (l) {
-              return '<button class="filter-btn" data-filter="' + esc(l) + '">' + esc(l) + '</button>';
+              const display = labelDisplay[l.toLowerCase()] || l;
+              return '<button class="filter-btn" data-filter="' + esc(l) + '">' + esc(display) + '</button>';
             }).join('')
         );
 
