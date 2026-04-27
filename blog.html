@@ -333,7 +333,7 @@
       let allPosts     = [];
       let filtered     = [];
       let visibleCount = PAGE_SIZE;
-      let activeFilter = 'All';
+      let activeFilters = ['All'];
       let searchQuery  = '';
       let debounceTimer = null;
 
@@ -409,23 +409,92 @@
 
         const labels = cats.concat(tags);
 
-        // Render: "All" first, then dynamic labels
+        // Render dropdown with checkboxes
+        const checkboxItems = labels.map(function (l) {
+          return '<label class="filter-checkbox-item">'
+            + '<input type="checkbox" value="' + esc(l) + '">'
+            + '<span class="filter-checkbox-label">' + esc(normalizeLabel(l)) + '</span>'
+            + '</label>';
+        }).join('');
+
         filterInner.insertAdjacentHTML('beforeend',
-          '<button class="filter-btn filter-btn--active" data-filter="All">All</button>'
-          + labels.map(function (l) {
-              return '<button class="filter-btn" data-filter="' + esc(l) + '">' + esc(l) + '</button>';
-            }).join('')
+          '<div class="filter-dropdown" id="filter-dropdown">'
+          + '<button class="filter-dropdown-btn" id="filter-dropdown-btn" aria-expanded="false" aria-haspopup="true">'
+          + 'Filter Posts <span class="filter-chevron">▼</span>'
+          + '</button>'
+          + '<div class="filter-panel" id="filter-panel" hidden>'
+          + '<div class="filter-checkboxes" id="filter-checkboxes">'
+          + '<label class="filter-checkbox-item">'
+          + '<input type="checkbox" value="All" checked>'
+          + '<span class="filter-checkbox-label">All Posts</span>'
+          + '</label>'
+          + checkboxItems
+          + '</div>'
+          + '<div class="filter-panel-footer">'
+          + '<button class="filter-apply-btn" id="filter-apply-btn">Apply</button>'
+          + '<button class="filter-clear-link" id="filter-clear-btn">Clear All</button>'
+          + '</div>'
+          + '</div>'
+          + '</div>'
         );
 
-        // Single delegated click listener — works for dynamically added buttons
-        filterInner.addEventListener('click', function (e) {
-          const btn = e.target.closest('.filter-btn');
-          if (!btn) return;
-          filterInner.querySelectorAll('.filter-btn').forEach(function (b) {
-            b.classList.remove('filter-btn--active');
+        const dropdownBtn = document.getElementById('filter-dropdown-btn');
+        const panel       = document.getElementById('filter-panel');
+        const checkboxesEl = document.getElementById('filter-checkboxes');
+        const applyBtn    = document.getElementById('filter-apply-btn');
+        const clearBtn    = document.getElementById('filter-clear-btn');
+
+        // Toggle panel open/closed
+        dropdownBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const open = dropdownBtn.getAttribute('aria-expanded') === 'true';
+          dropdownBtn.setAttribute('aria-expanded', String(!open));
+          panel.hidden = open;
+        });
+
+        // Close on outside click
+        document.addEventListener('click', function (e) {
+          if (!document.getElementById('filter-dropdown').contains(e.target)) {
+            dropdownBtn.setAttribute('aria-expanded', 'false');
+            panel.hidden = true;
+          }
+        });
+
+        // "All Posts" is mutually exclusive with specific filters
+        checkboxesEl.addEventListener('change', function (e) {
+          const allCb = checkboxesEl.querySelector('input[value="All"]');
+          if (e.target.value === 'All' && e.target.checked) {
+            checkboxesEl.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
+              cb.checked = cb.value === 'All';
+            });
+          } else if (e.target.value !== 'All' && e.target.checked) {
+            allCb.checked = false;
+          }
+          // If nothing checked, revert to All
+          const anyChecked = [...checkboxesEl.querySelectorAll('input[type="checkbox"]')].some(function (cb) {
+            return cb.checked;
           });
-          btn.classList.add('filter-btn--active');
-          activeFilter = btn.dataset.filter;
+          if (!anyChecked) allCb.checked = true;
+        });
+
+        // Apply button
+        applyBtn.addEventListener('click', function () {
+          const checked = [...checkboxesEl.querySelectorAll('input[type="checkbox"]:checked')]
+            .map(function (cb) { return cb.value; });
+          activeFilters = checked.length ? checked : ['All'];
+          dropdownBtn.setAttribute('aria-expanded', 'false');
+          panel.hidden = true;
+          applyFilters();
+        });
+
+        // Clear All button
+        clearBtn.addEventListener('click', function () {
+          checkboxesEl.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
+            cb.checked = cb.value === 'All';
+          });
+          activeFilters = ['All'];
+          dropdownBtn.setAttribute('aria-expanded', 'false');
+          panel.hidden = true;
           applyFilters();
         });
       }
@@ -438,9 +507,11 @@
           const allTerms = (post.categories || []).concat(post.tags || []);
 
           const matchFilter =
-            activeFilter === 'All' ||
-            allTerms.some(function (t) {
-              return t.toLowerCase() === activeFilter.toLowerCase();
+            activeFilters.includes('All') ||
+            activeFilters.some(function (f) {
+              return allTerms.some(function (t) {
+                return t.toLowerCase() === f.toLowerCase();
+              });
             });
 
           const matchSearch =
@@ -475,6 +546,48 @@
       function formatDate(dateStr) {
         const p = dateStr.split('-');
         return MONTHS[parseInt(p[1], 10) - 1] + ' ' + parseInt(p[2], 10) + ', ' + p[0];
+      }
+
+      function normalizeLabel(s) {
+        const map = {
+          'aeroplan':         'Aeroplan',
+          'westjet':          'WestJet',
+          'travel hacks':     'Travel Hacks',
+          'amex':             'Amex',
+          'business class':   'Business Class',
+          'air france':       'Air France',
+          'aer lingus':       'Aer Lingus',
+          'american express': 'American Express',
+          'americanexpress':  'American Express',
+          'airport lounge':   'Airport Lounge',
+          'all-inclusive':    'All-Inclusive',
+          'avion':            'Avion',
+          'bmo':              'BMO',
+          'bonuspoints':      'Bonus Points',
+          'calgary':          'Calgary',
+          'canadian traveler':'Canadian Traveler',
+          'cityguide':        'City Guide',
+          'credit card':      'Credit Card',
+          'credit cards':     'Credit Cards',
+          'etihad':           'Etihad',
+          'flair':            'Flair',
+          'flightdeals':      'Flight Deals',
+          'icelandair':       'Icelandair',
+          'lufthansa':        'Lufthansa',
+          'marriottbonvoy':   'Marriott Bonvoy',
+          'newsletter':       'Newsletter',
+          'oneworld':         'Oneworld',
+          'porter':           'Porter',
+          'porter airlines':  'Porter Airlines',
+          'star alliance':    'Star Alliance',
+          'stopover':         'Stopover',
+          'travel tips':      'Travel Tips',
+          'virgin atlantic':  'Virgin Atlantic',
+          'aircanada':        'Air Canada',
+          'flyingblue':       'Flying Blue',
+          'qatarairways':     'Qatar Airways',
+        };
+        return map[s.toLowerCase()] || s;
       }
 
       function esc(str) {
