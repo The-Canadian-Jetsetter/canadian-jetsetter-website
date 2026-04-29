@@ -149,28 +149,6 @@ body {
   font-size: 0.875rem;
 }
 
-/* ── PLACEHOLDER BOXES ─────────────────────── */
-.placeholder-img {
-  background: #200000;
-  border: 2px dashed #5a2020;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #7a4040;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 8px;
-  width: 100%;
-}
-
-/* Aspect ratio helpers */
-.ratio-3-2   { aspect-ratio: 3 / 2; }
-.ratio-16-9  { aspect-ratio: 16 / 9; }
-.ratio-cc    { aspect-ratio: 85 / 54; }  /* Credit card ratio */
-.ratio-1-1   { aspect-ratio: 1 / 1; }
 
 /* ── TOP NAV ───────────────────────────────── */
 .top-nav {
@@ -878,7 +856,7 @@ body {
 /* ── FREE NEWSLETTER ───────────────────────── */
 .newsletter-section {
   padding: 45px 0;
-  background: transparent;
+  background: #2a0000;
   text-align: center;
   position: relative;
 }
@@ -968,67 +946,11 @@ body {
   opacity: 1;
 }
 
-/* ── BEST CREDIT CARDS ─────────────────────── */
-.cards-section {
-  padding: 60px 0;
-  background: #2a0000;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.cc-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-}
-
-.cc-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--red);
-  box-shadow: 0 8px 32px rgba(139,0,0,0.2);
-}
-
-.cc-body {
-  padding: 16px 18px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.cc-name {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--white);
-  line-height: 1.4;
-  margin-bottom: 8px;
-}
-
-.cc-bonus {
-  font-size: 0.82rem;
-  color: var(--grey-400);
-  line-height: 1.45;
-  margin-bottom: 16px;
-  flex: 1;
-}
-
-.cc-card .btn-sm {
-  align-self: flex-start;
-}
 
 /* ── YOUTUBE SECTION ───────────────────────── */
 .youtube-section {
   padding: 36px 0;
-  background: var(--black);
+  background: #2a0000;
   border-top: 1px solid var(--border);
 }
 
@@ -1151,7 +1073,7 @@ body {
 /* ── SOCIAL FOLLOW ─────────────────────────── */
 .social-section {
   padding: 60px 0;
-  background: #2a0000;
+  background: #120000;
   border-top: 1px solid var(--border);
 }
 
@@ -1334,12 +1256,6 @@ footer {
   text-align: center;
 }
 
-/* ── RESPONSIVE ────────────────────────────── */
-@media (max-width: 1024px) {
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 @media (max-width: 768px) {
   /* beehiiv embed mobile fix */
@@ -1512,39 +1428,9 @@ footer {
     min-height: 420px;
   }
 
-  /* ── CREDIT CARDS — horizontal scroll on mobile ── */
-  .cards-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: none !important;
-    gap: 16px !important;
-    padding-bottom: 10px !important;
-    max-width: none !important;
-    margin: 0 !important;
-  }
-
-  .cards-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .cc-card {
-    flex: 0 0 80vw !important;
-    min-width: 80vw !important;
-    scroll-snap-align: start !important;
-  }
 }
 
 @media (max-width: 640px) {
-  .cards-grid {
-    grid-template-columns: 1fr;
-    max-width: 380px;
-    margin: 0 auto;
-  }
-
   .hero-cta-group {
     flex-direction: column;
     align-items: center;

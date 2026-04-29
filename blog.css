@@ -316,7 +316,7 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-image: url('TCJ Website Assets/icons/Athens banner.jpg');
+  background-image: url('TCJ Website Assets/icons/website banner (1).jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -462,36 +462,196 @@ body {
 .filter-inner {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
-.filter-btn {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--cream);
-  opacity: 0.65;
+/* ── SEARCH BAR ────────────────────────────── */
+.blog-search-input {
+  width: 300px;
+  max-width: 100%;
+  padding: 9px 16px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid #761915;
+  border-radius: 8px;
+  color: var(--white);
   font-family: var(--font);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.blog-search-input::placeholder {
+  color: var(--white);
+  opacity: 0.45;
+}
+
+.blog-search-input:focus {
+  border-color: var(--red);
+  background: rgba(255,255,255,0.11);
+}
+
+.blog-search-input::-webkit-search-cancel-button {
+  filter: invert(0.7);
+  cursor: pointer;
+}
+
+/* ── FILTER DROPDOWN ───────────────────────── */
+.filter-dropdown {
+  position: relative;
+}
+
+.filter-dropdown-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--red);
+  border: 1px solid var(--red);
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  padding: 8px 20px;
+  padding: 9px 20px;
   border-radius: 3px;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, opacity 0.2s, border-color 0.2s;
   white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s;
 }
 
-.filter-btn:hover {
-  opacity: 1;
+.filter-dropdown-btn:hover {
+  background: #6b0000;
+  border-color: #6b0000;
+}
+
+.filter-chevron {
+  font-size: 0.7em;
+  transition: transform 0.2s;
+}
+
+.filter-dropdown-btn[aria-expanded="true"] .filter-chevron {
+  transform: rotate(180deg);
+}
+
+.filter-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 200;
+  width: 300px;
+  max-width: 90vw;
+  background: #1a0000;
+  border: 1px solid var(--red);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.55);
+}
+
+.filter-search-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--cream);
+  font-family: var(--font);
+  font-size: 0.88rem;
+  outline: none;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+
+.filter-search-input::placeholder {
+  color: var(--cream);
+  opacity: 0.4;
+}
+
+.filter-search-input:focus {
   border-color: var(--red);
-  color: var(--white);
 }
 
-.filter-btn--active {
+.filter-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 240px;
+  overflow-y: auto;
+  margin-bottom: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--red) transparent;
+}
+
+.filter-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 4px 2px;
+  border-radius: 3px;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.filter-checkbox-item:hover {
+  background: rgba(139,0,0,0.2);
+}
+
+.filter-checkbox-item input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--red);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.filter-checkbox-label {
+  font-size: 0.88rem;
+  color: var(--cream);
+  line-height: 1.3;
+}
+
+.filter-panel-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 2px;
+}
+
+.filter-apply-btn {
   background: var(--red);
-  border-color: var(--red);
+  border: none;
   color: var(--white);
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 8px 18px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.filter-apply-btn:hover {
+  background: #6b0000;
+}
+
+.filter-clear-link {
+  background: none;
+  border: none;
+  color: var(--cream);
+  opacity: 0.6;
+  font-family: var(--font);
+  font-size: 0.82rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  transition: opacity 0.2s;
+}
+
+.filter-clear-link:hover {
   opacity: 1;
 }
 
@@ -829,13 +989,8 @@ footer {
     font-size: clamp(1.6rem, 8vw, 2.4rem);
   }
 
-  .filter-inner {
-    gap: 8px;
-  }
-
-  .filter-btn {
-    padding: 7px 14px;
-    font-size: 0.8rem;
+  .filter-panel {
+    width: min(300px, 92vw);
   }
 
   .newsletter-box {
@@ -997,36 +1152,12 @@ footer {
   padding-left: 32px;
 }
 
-/* ── SEARCH INPUT ──────────────────────────── */
-.blog-search-input {
-  flex: 1;
-  min-width: 180px;
-  max-width: 300px;
-  padding: 8px 14px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  color: var(--cream);
-  font-family: var(--font);
-  font-size: 0.88rem;
-  outline: none;
-  transition: border-color 0.2s, background 0.2s;
-}
 
-.blog-search-input::placeholder {
-  color: var(--cream);
-  opacity: 0.4;
-}
-
-.blog-search-input:focus {
-  border-color: var(--red);
-  background: rgba(255, 255, 255, 0.11);
-}
-
-/* Clear button rendered by WebKit/Blink */
-.blog-search-input::-webkit-search-cancel-button {
-  filter: invert(0.7);
-  cursor: pointer;
+/* ── DYNAMIC LOADING INDICATOR ────────────── */
+.dyn-loading {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0 8px;
 }
 
 /* ── NO RESULTS ────────────────────────────── */
