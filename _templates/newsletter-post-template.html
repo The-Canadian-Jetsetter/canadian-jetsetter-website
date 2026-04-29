@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  INTERNAL TEMPLATE — DO NOT LINK ON THE WEBSITE             ║
+  ║  For: Jetsetter Econo weekly newsletter posts                ║
+  ║  Spacing rules:                                              ║
+  ║    • 54px between city sections                              ║
+  ║    • 24px between deals within the same city                 ║
+  ╚══════════════════════════════════════════════════════════════╝
+
+  HOW TO USE THIS TEMPLATE
+  ────────────────────────
+  1. Save a copy as newsletter-[month]-[day]-[year].html in the root folder.
+  2. Find every [[PLACEHOLDER]] and replace it with real content.
+  3. Replace every .img-placeholder div with a real <img> tag once images are uploaded.
+  4. Delete any optional sections (sale section, optional intro image).
+  5. Update the prev/next pagination links at the bottom.
+  6. Double-check all t.ly short links before publishing.
+  -->
+
+  <title>[[NEWSLETTER TITLE — e.g. "✈️🇨🇦 Flight Deals from $199 + Airline Promos!"]] | The Canadian Jetsetter</title>
+  <meta name="description" content="[[META DESCRIPTION — 1–2 sentences summarizing top deals, e.g. fares from $199 within Canada, $375 to sun destinations, $569 to Europe.]]" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../blog-post-template.css" />
+
+  <style>
+    /* ── Page header elements ── */
+    .post-date-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #761915;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .post-category {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+      background: #761915;
+      padding: 3px 10px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+    .post-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: #f6f2e7;
+      margin-bottom: 24px;
+    }
+    .article-intro p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #1a1a1a;
+      margin-bottom: 14px;
+    }
+    .section-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #761915;
+      margin: 0 0 14px;
+      line-height: 1.3;
+    }
+
+    /* ══════════════════════════════════════════
+       IMAGE PLACEHOLDER
+       Replace with a real <img class="article-screenshot"> once uploaded.
+    ══════════════════════════════════════════ */
+    .img-placeholder {
+      width: 100%;
+      min-height: 120px;
+      background: #f0ede8;
+      border: 2px dashed #c0b8ad;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 16px 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .img-placeholder span {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #8a7f75;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+
+    /* ══════════════════════════════════════════
+       CITY HEADING
+       Renders as: 📍 H A L I F A X
+    ══════════════════════════════════════════ */
+    .city-heading {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #761915;
+      margin: 54px 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #761915;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    /* First city in the section — no top gap */
+    .article-section > .city-heading:first-of-type,
+    h2.section-heading + .city-heading {
+      margin-top: 0;
+    }
+
+    /* ══════════════════════════════════════════
+       DEAL BLOCK
+       .deal-title  →  "Halifax 🍁 to Glasgow, Scotland"
+       ul.deal-details  →  bullet list (Airline, Price, etc.)
+    ══════════════════════════════════════════ */
+    .deal-block {
+      padding: 18px 0;
+      border-bottom: 1px solid #e8e2d9;
+    }
+    .deal-block + .deal-block {
+      margin-top: 24px;  /* 24px between deals within same city */
+    }
+    .deal-block:last-child {
+      border-bottom: none;
+    }
+    .deal-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 10px;
+      line-height: 1.4;
+    }
+    ul.deal-details {
+      list-style: disc;
+      margin: 0 0 0 20px;
+      padding: 0;
+    }
+    ul.deal-details li {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 2px;
+    }
+    ul.deal-details li strong { color: #1a1a1a; }
+    ul.deal-details li a {
+      color: #761915;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    ul.deal-details li a:hover { text-decoration: underline; }
+
+    /* ── Aeroplan deal variant ── */
+    .deal-block--aeroplan .deal-title { color: #003a7a; }
+    .deal-block--aeroplan ul.deal-details li a { color: #761915; }
+    .aeroplan-label {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #003a7a;
+      background: rgba(0, 58, 122, 0.1);
+      border: 1px solid rgba(0, 58, 122, 0.3);
+      padding: 1px 7px;
+      border-radius: 3px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── Locked (Economy-exclusive) deal variant ── */
+    .deal-block--locked {
+      background: #f9f6f0;
+      border: 1px dashed #c0a96e;
+      border-radius: 6px;
+      padding: 16px 18px;
+    }
+    .deal-block--locked .deal-title { color: #5a4a2a; }
+    .deal-block--locked p {
+      font-size: 0.9rem;
+      color: #6b5a3a;
+      margin: 6px 0 12px;
+      line-height: 1.6;
+    }
+    .btn-unlock {
+      display: inline-block;
+      background: #761915;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .btn-unlock:hover { background: #5a1210; }
+
+    /* ── Sale card variant ── */
+    .deal-card--sale {
+      background: #fffcf5;
+      border-left: 4px solid #b85c00;
+      padding: 16px 18px;
+      border-radius: 4px;
+      margin-bottom: 0;
+    }
+    .deal-card--sale + .deal-card--sale { margin-top: 24px; }
+    .sale-expire {
+      display: block;
+      background: rgba(184, 92, 0, 0.12);
+      border: 1px solid rgba(184, 92, 0, 0.4);
+      color: #b85c00;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 9px;
+      border-radius: 3px;
+      margin-bottom: 8px;
+      font-family: 'Inter', sans-serif;
+      width: fit-content;
+    }
+    .sale-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 10px;
+    }
+    .btn-sale {
+      display: inline-block;
+      background: #b85c00;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .btn-sale:hover { background: #904800; }
+
+    .article-img-caption {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: #888;
+      margin-top: 6px;
+      margin-bottom: 20px;
+    }
+    .article-section { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <!-- Dark red background behind navbar + featured image -->
+  <div class="page-header-bg" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════
+       1. TOP NAV
+  ══════════════════════════════════════════ -->
+  <header class="top-nav" role="banner">
+    <div class="container">
+
+      <a href="../index.html" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
+        <img
+          src="../TCJ Website Assets/icons/Jetsetter text logo.png"
+          alt="The Canadian Jetsetter"
+          loading="eager"
+        />
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <div class="nav-item nav-item--dropdown">
+          <button class="nav-link nav-link--btn" aria-expanded="false" aria-haspopup="true">
+            OFFERINGS <span class="nav-chevron" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="nav-submenu" role="menu">
+            <a href="../jetsetter-free.html" role="menuitem">Jetsetter Free</a>
+            <a href="../jetsetter-premium.html" role="menuitem">Jetsetter Premium</a>
+            <a href="../economy.html" role="menuitem">Jetsetter Economy</a>
+            <a href="../golden-visa.html" role="menuitem">Golden Visa</a>
+          </div>
+        </div>
+        <a href="../links.html" class="nav-link">LINKS</a>
+        <a href="../blog.html" class="nav-link">BLOG</a>
+        <a href="../contact.html" class="nav-link">CONTACT</a>
+      </nav>
+
+      <button
+        class="nav-hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-dropdown"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../jetsetter-free.html">Jetsetter Free</a></li>
+          <li><a href="../jetsetter-premium.html">Jetsetter Premium</a></li>
+          <li><a href="../economy.html">Jetsetter Economy</a></li>
+          <li><a href="../golden-visa.html">Golden Visa</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <div class="post-layout container">
+
+      <!-- ── LEFT COLUMN: Article ────────────── -->
+      <article class="post-content" aria-label="Blog post content">
+
+        <!-- [[DATE — e.g. "April 27, 2026"]] -->
+        <p class="post-date-label">[[Month DD, YYYY]]</p>
+
+        <span class="post-category">Newsletter</span>
+
+        <!-- [[TITLE — include emoji, keep under ~80 chars]] -->
+        <h1 class="post-title">[[✈️🇨🇦 Newsletter Title Here]]</h1>
+
+        <!-- ┌─────────────────────────────────────────────┐
+             │  HEADER IMAGE                               │
+             │  Replace this placeholder with a real <img> │
+             │  once uploaded to WordPress media.          │
+             └─────────────────────────────────────────────┘ -->
+        <!-- REPLACE WITH:
+        <img
+          src="[[https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/YYYY/MM/image-name.jpg]]"
+          alt="[[Alt text matching the newsletter title]]"
+          class="featured-image"
+          loading="eager"
+        />
+        -->
+        <div class="img-placeholder" style="min-height: 220px;">
+          <span>📷 HEADER IMAGE<br>Replace with &lt;img class="featured-image"&gt; once uploaded to WordPress</span>
+        </div>
+
+        <div class="article-body">
+
+          <!-- ┌─────────────────────────────────────┐
+               │  INTRO                              │
+               └─────────────────────────────────────┘ -->
+          <div class="article-intro">
+            <!-- [[INTRO — 1–3 short paragraphs. Start with "Hey Travellers!"
+                  Mention any contests, promos, or highlights upfront.]] -->
+            <p>[[Hey Travellers! Intro text goes here — summarize the week's highlights, any notable promos or contests, and the lowest fares you'll find below.]]</p>
+
+            <!-- OPTIONAL INTRO IMAGE — delete this block if not needed -->
+            <!-- REPLACE WITH:
+            <img
+              src="[[https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/YYYY/MM/intro-image.jpg]]"
+              alt="[[Descriptive alt text]]"
+              class="article-screenshot"
+              loading="lazy"
+            />
+            -->
+            <div class="img-placeholder">
+              <span>📷 OPTIONAL INTRO IMAGE — delete this block if not needed<br>Replace with &lt;img class="article-screenshot"&gt; once uploaded</span>
+            </div>
+            <!-- END OPTIONAL INTRO IMAGE -->
+
+          </div>
+
+          <hr class="article-divider" />
+
+          <!-- ══════════════════════════════════════
+               OPTIONAL: FEATURED SECTION
+               Use this block for any weekly highlight. Examples:
+                 • ⏰ Sales & Promotions  — airline sales, promo codes
+                 • 📰 Aviation News       — route launches, airline updates
+                 • ✍️ Featured Blog Post  — link to a recent article
+                 • 🎉 Contest / Giveaway  — third-party promotions
+               Delete this entire block if there's nothing to feature this week.
+          ══════════════════════════════════════ -->
+          <div class="article-section">
+
+            <!-- [[SECTION TITLE — e.g. "⏰ Sales & Promotions!", "📰 Aviation News", etc.]] -->
+            <h2 class="section-heading">[[Section Title]]</h2>
+
+            <!-- [[SECTION CONTENT — write freely. One or more paragraphs, links, etc.]] -->
+            <p style="font-size:1rem;line-height:1.8;color:#1a1a1a;margin-bottom:14px;">
+              [[Write a short paragraph describing this week's feature — a news item, a contest, a blog post summary, etc. Include a link if relevant: <a href="[[https://URL]]" target="_blank" rel="noopener noreferrer">[[Link text →]]</a>]]
+            </p>
+
+            <!-- OPTIONAL: uncomment this block if the featured section is a sale/promotion this week.
+            <div class="deal-card--sale">
+              <span class="sale-expire">Sale ends [[Month DD, YYYY]]</span>
+              <p class="sale-name">[[Airline Name]] — [[Sale Name / Tagline]]</p>
+              <ul class="deal-details" style="margin-bottom: 12px;">
+                <li><strong>Promo Code:</strong> [[CODE or "No code required"]]</li>
+              </ul>
+              <a
+                href="[[https://AIRLINE-URL]]"
+                class="btn-sale"
+                target="_blank"
+                rel="noopener noreferrer"
+              >View Sale →</a>
+            </div>
+            -->
+
+          </div>
+
+          <hr class="article-divider" />
+          <!-- ══════════════════════════════════════
+               END OPTIONAL FEATURED SECTION
+          ══════════════════════════════════════ -->
+
+          <!-- ┌─────────────────────────────────────┐
+               │  FLIGHT DEALS BY CITY               │
+               └─────────────────────────────────────┘ -->
+          <div class="article-section">
+            <h2 class="section-heading">✈️ Flight Deals by City</h2>
+
+            <!--
+            SPACING (applied by CSS):
+              • 54px above each .city-heading (first city gets 0)
+              • 24px above each .deal-block + .deal-block sibling
+            -->
+
+            <!-- ══════════════════════════════════════
+                 📍 HALIFAX  (2 regular deals)
+            ══════════════════════════════════════ -->
+            <h3 class="city-heading">📍 HALIFAX</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Halifax 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop / 2 Stops]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Halifax 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- ══════════════════════════════════════
+                 📍 MONTRÉAL  (2 regular deals)
+            ══════════════════════════════════════ -->
+            <h3 class="city-heading">📍 MONTRÉAL</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Montréal 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Montréal 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- ══════════════════════════════════════
+                 📍 OTTAWA  (2 regular deals)
+            ══════════════════════════════════════ -->
+            <h3 class="city-heading">📍 OTTAWA</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Ottawa 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Ottawa 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- ══════════════════════════════════════
+                 📍 TORONTO  (1 exclusive + 3 regular + 1 Aeroplan)
+            ══════════════════════════════════════ -->
+            <h3 class="city-heading">📍 TORONTO</h3>
+
+            <!-- Jetsetter Econo exclusive — always first -->
+            <div class="deal-block deal-block--locked">
+              <p class="deal-title">🔒 Toronto 🍁 to [[Vague region, e.g. "Europe"]]</p>
+              <p>From $[[XXX]] CAD RT · [[Direct / 1 Stop]] · [[Season YYYY]] — Exclusive to Jetsetter Economy members.</p>
+              <a href="../economy.html" class="btn-unlock">Unlock with Jetsetter Economy →</a>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Toronto 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Toronto 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Toronto 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- Toronto Aeroplan deal -->
+            <div class="deal-block deal-block--aeroplan">
+              <p class="deal-title" style="color:#761915;">Toronto 🍁 to [[Destination, Country]] <span class="aeroplan-label" style="color:#761915;background:rgba(118,25,21,0.1);border-color:rgba(118,25,21,0.3);">Aeroplan</span></p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> [[XX,XXX]] pts + fees OW</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <span onclick="window.open('[[https://t.ly/XXXXX]]','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Outbound →</span> / <span onclick="window.open('[[https://t.ly/XXXXX]]','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Return →</span></li>
+              </ul>
+            </div>
+
+            <!-- Toronto Aeroplan screenshots — outbound then inbound -->
+            <!-- REPLACE EACH PLACEHOLDER with <img class="article-screenshot"> once uploaded -->
+            <div class="img-placeholder">
+              <span>📷 TORONTO AEROPLAN — Outbound flight screenshot<br>Replace with &lt;img class="article-screenshot"&gt; once uploaded</span>
+            </div>
+            <div class="img-placeholder">
+              <span>📷 TORONTO AEROPLAN — Inbound flight screenshot<br>Replace with &lt;img class="article-screenshot"&gt; once uploaded</span>
+            </div>
+
+            <!-- ══════════════════════════════════════
+                 📍 WINNIPEG  (2 regular deals)
+            ══════════════════════════════════════ -->
+            <h3 class="city-heading">📍 WINNIPEG</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Winnipeg 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Winnipeg 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- ══════════════════════════════════════
+                 📍 EDMONTON  (2 regular deals)
+            ══════════════════════════════════════ -->
+            <h3 class="city-heading">📍 EDMONTON</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Edmonton 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Edmonton 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- ══════════════════════════════════════
+                 📍 CALGARY  (1 exclusive + 3 regular + 1 Aeroplan)
+            ══════════════════════════════════════ -->
+            <h3 class="city-heading">📍 CALGARY</h3>
+
+            <!-- Jetsetter Econo exclusive — always first -->
+            <div class="deal-block deal-block--locked">
+              <p class="deal-title">🔒 Calgary 🍁 to [[Vague region, e.g. "Asia"]]</p>
+              <p>From $[[XXX]] CAD RT · [[Direct / 1 Stop]] · [[Season YYYY]] — Exclusive to Jetsetter Economy members.</p>
+              <a href="../economy.html" class="btn-unlock">Unlock with Jetsetter Economy →</a>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Calgary 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Calgary 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Calgary 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- Calgary Aeroplan deal -->
+            <div class="deal-block deal-block--aeroplan">
+              <p class="deal-title" style="color:#761915;">Calgary 🍁 to [[Destination, Country]] <span class="aeroplan-label" style="color:#761915;background:rgba(118,25,21,0.1);border-color:rgba(118,25,21,0.3);">Aeroplan</span></p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> [[XX,XXX]] pts + fees OW</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <span onclick="window.open('[[https://t.ly/XXXXX]]','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Outbound →</span> / <span onclick="window.open('[[https://t.ly/XXXXX]]','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Return →</span></li>
+              </ul>
+            </div>
+
+            <!-- Calgary Aeroplan screenshots — outbound then inbound -->
+            <!-- REPLACE EACH PLACEHOLDER with <img class="article-screenshot"> once uploaded -->
+            <div class="img-placeholder">
+              <span>📷 CALGARY AEROPLAN — Outbound flight screenshot<br>Replace with &lt;img class="article-screenshot"&gt; once uploaded</span>
+            </div>
+            <div class="img-placeholder">
+              <span>📷 CALGARY AEROPLAN — Inbound flight screenshot<br>Replace with &lt;img class="article-screenshot"&gt; once uploaded</span>
+            </div>
+
+            <!-- ══════════════════════════════════════
+                 📍 VANCOUVER  (1 exclusive + 3 regular + 1 Aeroplan)
+            ══════════════════════════════════════ -->
+            <h3 class="city-heading">📍 VANCOUVER</h3>
+
+            <!-- Jetsetter Econo exclusive — always first -->
+            <div class="deal-block deal-block--locked">
+              <p class="deal-title">🔒 Vancouver 🍁 to [[Vague region, e.g. "Europe"]]</p>
+              <p>From $[[XXX]] CAD RT · [[Direct / 1 Stop]] · [[Season YYYY]] — Exclusive to Jetsetter Economy members.</p>
+              <a href="../economy.html" class="btn-unlock">Unlock with Jetsetter Economy →</a>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Vancouver 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Vancouver 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Vancouver 🍁 to [[Destination, Country]]</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> $[[XXX]] CAD RT</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <a href="[[https://t.ly/XXXXX]]" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- Vancouver Aeroplan deal -->
+            <div class="deal-block deal-block--aeroplan">
+              <p class="deal-title" style="color:#761915;">Vancouver 🍁 to [[Destination, Country]] <span class="aeroplan-label" style="color:#761915;background:rgba(118,25,21,0.1);border-color:rgba(118,25,21,0.3);">Aeroplan</span></p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> [[Airline Name]]</li>
+                <li><strong>Price:</strong> [[XX,XXX]] pts + fees OW</li>
+                <li><strong>Connection:</strong> [[Direct / 1 Stop]]</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> [[Select dates Month–Month YYYY]]</li>
+                <li><strong>Booking Link:</strong> <span onclick="window.open('[[https://t.ly/XXXXX]]','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Outbound →</span> / <span onclick="window.open('[[https://t.ly/XXXXX]]','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Return →</span></li>
+              </ul>
+            </div>
+
+            <!-- Vancouver Aeroplan screenshots — outbound then inbound -->
+            <!-- REPLACE EACH PLACEHOLDER with <img class="article-screenshot"> once uploaded -->
+            <div class="img-placeholder">
+              <span>📷 VANCOUVER AEROPLAN — Outbound flight screenshot<br>Replace with &lt;img class="article-screenshot"&gt; once uploaded</span>
+            </div>
+            <div class="img-placeholder">
+              <span>📷 VANCOUVER AEROPLAN — Inbound flight screenshot<br>Replace with &lt;img class="article-screenshot"&gt; once uploaded</span>
+            </div>
+
+          </div><!-- /article-section -->
+
+        </div><!-- /article-body -->
+      </article><!-- /post-content -->
+
+      <!-- ── RIGHT COLUMN: Sidebar ─────────────── -->
+      <aside class="post-sidebar" aria-label="Sidebar">
+
+        <div class="sidebar-card">
+          <img
+            src="../TCJ Website Assets/headshots/Graeme Headshot Blog.jpg"
+            alt="Graeme — The Canadian Jetsetter"
+            class="sidebar-headshot"
+          />
+          <h3>Hi, I'm Graeme.</h3>
+          <p>A proud Canadian travel creator born and raised in Winnipeg. I find the best economy flight deals across Canada and share every single one with you.</p>
+          <a
+            href="https://thecanadianjetsetter.beehiiv.com/subscribe"
+            class="btn btn-primary btn-sm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Join My Newsletter →</a>
+        </div>
+
+        <div class="sidebar-card sidebar-card--economy">
+          <h3>🔓 Jetsetter Economy</h3>
+          <p>Get exclusive flight deals — the ones not shown publicly — sent straight to your inbox every week.</p>
+          <div class="sidebar-price">$59.99<span>/yr</span></div>
+          <a
+            href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC"
+            class="btn-sidebar-economy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Subscribe Now →</a>
+        </div>
+
+        <div class="sidebar-card sidebar-card--premium">
+          <h3>✨ Jetsetter Premium</h3>
+          <p>Business class deals &amp; points strategies for Canadians who want to travel in style.</p>
+          <a href="../jetsetter-premium.html" class="btn btn-primary btn-sm">Learn More →</a>
+        </div>
+
+      </aside>
+
+    </div><!-- /post-layout -->
+
+    <!-- ══════════════════════════════════════════
+         PREV / NEXT NAVIGATION
+         [[Update both links each week]]
+    ══════════════════════════════════════════ -->
+    <div class="post-pagination">
+      <div class="container">
+        <div class="post-pagination-inner">
+          <!-- Delete whichever link doesn't apply -->
+          <a href="../[[newsletter-previous-month-day-year.html]]" class="btn-post-nav">← [[Previous Issue Short Title]]</a>
+          <a href="../[[newsletter-next-month-day-year.html]]" class="btn-post-nav">[[Next Issue Short Title]] →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         SOCIAL PROOF BAR
+    ══════════════════════════════════════════ -->
+    <div class="social-proof-bar" role="region" aria-label="Social media following">
+      <div class="container">
+        <div class="social-proof-inner">
+          <div class="social-stat">
+            <span class="social-stat-number">100K+</span>
+            <span class="social-stat-label">TikTok Followers</span>
+          </div>
+          <div class="social-stat">
+            <span class="social-stat-number">120K+</span>
+            <span class="social-stat-label">Instagram Followers</span>
+          </div>
+          <div class="social-stat">
+            <span class="social-stat-number">37K+</span>
+            <span class="social-stat-label">Newsletter Subscribers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         SOCIAL FOLLOW
+    ══════════════════════════════════════════ -->
+    <section class="social-section" aria-labelledby="social-heading">
+      <div class="container">
+
+        <div class="section-header">
+          <h2 id="social-heading">Follow me on Instagram and TikTok for travel tips and hacks!</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="social-grid">
+          <a href="https://www.instagram.com/thecanadianjetsetter" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="../TCJ Website Assets/icons/slot 1.png" alt="Instagram Post" loading="lazy">
+              <div class="social-icon instagram-icon">&#128247;</div>
+            </div>
+          </a>
+          <a href="https://www.tiktok.com/@thecanadianjetsetter" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="../TCJ Website Assets/icons/slot 2.png" alt="TikTok Video" loading="lazy">
+              <div class="social-icon tiktok-icon">&#9654;</div>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/thecanadianjetsetter" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="../TCJ Website Assets/icons/slot 3.png" alt="Instagram Post" loading="lazy">
+              <div class="social-icon instagram-icon">&#128247;</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="social-follow-ctas">
+          <a
+            href="https://www.instagram.com/thecanadianjetsetter"
+            class="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >@thecanadianjetsetter on Instagram →</a>
+          <a
+            href="https://www.tiktok.com/@thecanadianjetsetter"
+            class="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >@thecanadianjetsetter on TikTok →</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+
+        <a href="../index.html" class="footer-logo" aria-label="The Canadian Jetsetter — Home">
+          <img
+            src="../TCJ Website Assets/logos/banner_text_logo.png"
+            alt="The Canadian Jetsetter"
+            loading="lazy"
+          />
+        </a>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC" target="_blank" rel="noopener noreferrer">Subscribe</a>
+          <a href="../economy.html">Economy</a>
+          <a href="../jetsetter-premium.html">Premium</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Service</a>
+        </nav>
+
+        <p class="footer-copy">
+          &copy; <span id="footer-year"></span> The Canadian Jetsetter. All rights reserved.
+        </p>
+
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    const offeringsBtn = document.querySelector('.nav-link--btn');
+    const submenu      = document.querySelector('.nav-submenu');
+
+    offeringsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = offeringsBtn.getAttribute('aria-expanded') === 'true';
+      offeringsBtn.setAttribute('aria-expanded', !isOpen);
+      submenu.classList.toggle('is-open', !isOpen);
+    });
+
+    document.addEventListener('click', () => {
+      offeringsBtn.setAttribute('aria-expanded', 'false');
+      submenu.classList.remove('is-open');
+    });
+
+    submenu.addEventListener('click', (e) => e.stopPropagation());
+
+    const hamburger = document.querySelector('.nav-hamburger');
+    const dropdown  = document.getElementById('nav-dropdown');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !isOpen);
+      dropdown.setAttribute('aria-hidden', isOpen);
+      hamburger.classList.toggle('is-open', !isOpen);
+      dropdown.classList.toggle('is-open', !isOpen);
+    });
+
+    dropdown.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !dropdown.contains(e.target)) {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      }
+    });
+  </script>
+
+</body>
+</html>
