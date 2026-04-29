@@ -1414,8 +1414,8 @@ footer {
   .offerings-grid::-webkit-scrollbar { display: none; }
 
   .offerings-grid .offering-card {
-    flex: 0 0 55vw !important;
-    min-width: 55vw !important;
+    flex: 0 0 78vw !important;
+    min-width: 78vw !important;
     scroll-snap-align: start !important;
     flex-shrink: 0 !important;
   }
