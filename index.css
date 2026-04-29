@@ -1392,26 +1392,41 @@ footer {
     margin: 0 auto;
   }
 
+  .offerings-section .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
   .offerings-grid {
-    display: flex;
-    flex-direction: row;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    gap: 16px;
-    padding: 0 20px;
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: scroll !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 16px !important;
+    padding: 0 16px !important;
+    cursor: grab !important;
   }
 
   .offerings-grid::-webkit-scrollbar { display: none; }
 
   .offerings-grid .offering-card {
-    flex-shrink: 0;
-    width: 80vw;
-    scroll-snap-align: start;
+    flex: 0 0 55vw !important;
+    min-width: 55vw !important;
+    scroll-snap-align: start !important;
+    flex-shrink: 0 !important;
   }
 
   .offerings-grid .offering-img {
     height: 375px;
+  }
+
+  .offerings-premium-desc {
+    padding: 0 24px;
+    text-align: center;
   }
 
   .youtube-grid {
@@ -1528,4 +1543,39 @@ footer {
 }
 .mobile-offerings-sub a {
   padding-left: 36px !important;
+}
+
+/* ── TCJ LATEST ACCORDION — hard override ──────────────────────────── */
+#tcj-latest-accordion {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  height: 420px !important;
+  width: 100% !important;
+}
+
+#tcj-latest-accordion > div {
+  flex-direction: row !important;
+  flex-shrink: 0 !important;
+}
+
+@media screen and (min-width: 0px) {
+  #tcj-latest-accordion {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    height: 420px !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  #tcj-latest-accordion > div.panel {
+    flex-shrink: 0 !important;
+    flex-direction: row !important;
+    min-width: 70px !important;
+    height: 420px !important;
+    display: block !important;
+  }
+  #tcj-latest-accordion > div.panel.open {
+    flex: 1 !important;
+  }
 }

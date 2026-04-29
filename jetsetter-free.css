@@ -1282,3 +1282,7 @@ footer {
 .mobile-offerings-sub li a {
   padding-left: 32px;
 }
+
+@media (max-width: 768px) {
+  .desktop-only { display: none; }
+}
