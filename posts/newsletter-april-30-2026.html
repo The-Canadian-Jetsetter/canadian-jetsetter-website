@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>✈️🇨🇦 Flight Deals from $183 + Cathay Pacific Sale & Upcoming Aeroplan Changes! | The Canadian Jetsetter</title>
+  <meta name="description" content="Hey Travellers! Cathay Pacific has a member-exclusive spring sale running, and Aeroplan redemption changes are coming June 1st, 2026. Think fares from $183 to Canada, $355 to sun destinations, $559 to Europe, $1,164 to Oceania, and Aeroplan redemptions starting at 32,900 points + fees one-way." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../blog-post-template.css" />
+  <style>
+    .post-date-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .post-category {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+      background: #761915;
+      padding: 3px 10px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+    .post-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: #f6f2e7;
+      margin-bottom: 24px;
+    }
+    .article-intro p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #1a1a1a;
+      margin-bottom: 14px;
+    }
+    .section-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #761915;
+      margin: 0 0 14px;
+      line-height: 1.3;
+    }
+    .city-heading {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #761915;
+      margin: 54px 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #761915;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .article-section > .city-heading:first-of-type,
+    h2.section-heading + .city-heading {
+      margin-top: 0;
+    }
+    .deal-block {
+      padding: 18px 0;
+      border-bottom: 1px solid #e8e2d9;
+    }
+    .deal-block + .deal-block {
+      margin-top: 24px;
+    }
+    .deal-block:last-child {
+      border-bottom: none;
+    }
+    .deal-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 10px;
+      line-height: 1.4;
+    }
+    ul.deal-details {
+      list-style: disc;
+      margin: 0 0 0 20px;
+      padding: 0;
+    }
+    ul.deal-details li {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 2px;
+    }
+    ul.deal-details li strong { color: #1a1a1a; }
+    ul.deal-details li a {
+      color: #761915;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    ul.deal-details li a:hover { text-decoration: underline; }
+    ul.deal-details ul {
+      list-style: disc;
+      margin: 4px 0 4px 20px;
+      padding: 0;
+    }
+    ul.deal-details ul li {
+      font-size: 0.88rem;
+      color: #555;
+    }
+    .deal-block--aeroplan .deal-title { color: #003a7a; }
+    .deal-block--aeroplan ul.deal-details li a { color: #761915; }
+    .aeroplan-label {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #761915;
+      background: rgba(118, 25, 21, 0.1);
+      border: 1px solid rgba(118, 25, 21, 0.3);
+      padding: 1px 7px;
+      border-radius: 3px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .deal-block--locked {
+      background: #f9f6f0;
+      border: 1px dashed #c0a96e;
+      border-radius: 6px;
+      padding: 16px 18px;
+    }
+    .deal-block--locked .deal-title { color: #5a4a2a; }
+    .deal-block--locked p {
+      font-size: 0.9rem;
+      color: #6b5a3a;
+      margin: 6px 0 12px;
+      line-height: 1.6;
+    }
+    .btn-unlock {
+      display: inline-block;
+      background: #761915;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .btn-unlock:hover { background: #5a1210; }
+    .deal-card--sale {
+      background: #fffcf5;
+      border-left: 4px solid #b85c00;
+      padding: 16px 18px;
+      border-radius: 4px;
+      margin-bottom: 0;
+    }
+    .sale-expire {
+      display: block;
+      background: rgba(184, 92, 0, 0.12);
+      border: 1px solid rgba(184, 92, 0, 0.4);
+      color: #b85c00;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 9px;
+      border-radius: 3px;
+      margin-bottom: 8px;
+      font-family: 'Inter', sans-serif;
+      width: fit-content;
+    }
+    .sale-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 10px;
+    }
+    .btn-sale {
+      display: inline-block;
+      background: #b85c00;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .btn-sale:hover { background: #904800; }
+    .article-img-caption {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: #888;
+      margin-top: 6px;
+      margin-bottom: 20px;
+    }
+    .article-section { margin-bottom: 8px; }
+    .article-section p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #1a1a1a;
+      margin-bottom: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header-bg" aria-hidden="true"></div>
+
+  <header class="top-nav" role="banner">
+    <div class="container">
+      <a href="../index.html" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
+        <img src="../TCJ Website Assets/icons/Jetsetter text logo.png" alt="The Canadian Jetsetter" loading="eager" />
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <div class="nav-item nav-item--dropdown">
+          <button class="nav-link nav-link--btn" aria-expanded="false" aria-haspopup="true">
+            OFFERINGS <span class="nav-chevron" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="nav-submenu" role="menu">
+            <a href="../jetsetter-free.html" role="menuitem">Jetsetter Free</a>
+            <a href="../economy.html" role="menuitem">Jetsetter Economy</a>
+            <a href="../jetsetter-premium.html" role="menuitem">Jetsetter Premium</a>
+            <a href="../golden-visa.html" role="menuitem">Golden Visa</a>
+          </div>
+        </div>
+        <a href="../links.html" class="nav-link">LINKS</a>
+        <a href="../blog.html" class="nav-link">BLOG</a>
+        <a href="../contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      <button class="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-dropdown">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../jetsetter-free.html">Jetsetter Free</a></li>
+          <li><a href="../economy.html">Jetsetter Economy</a></li>
+          <li><a href="../jetsetter-premium.html">Jetsetter Premium</a></li>
+          <li><a href="../golden-visa.html">Golden Visa</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="post-layout container">
+
+      <article class="post-content" aria-label="Blog post content">
+
+        <p class="post-date-label">April 30, 2026</p>
+        <span class="post-category">Newsletter</span>
+        <h1 class="post-title">✈️🇨🇦 Flight Deals from $183 + Cathay Pacific Sale &amp; Upcoming Aeroplan Changes!</h1>
+
+        <img
+          src="../blog-images/newsletter-april-30-2026-header.jpg"
+          alt="✈️🇨🇦 Flight Deals from $183 + Cathay Pacific Sale & Upcoming Aeroplan Changes!"
+          class="featured-image"
+          loading="eager"
+        />
+
+        <div class="article-body">
+
+          <div class="article-intro">
+            <p><strong>Hey Travellers!</strong></p>
+
+            <p>Looking for flights to Hong Kong or beyond on one of the best-rated airlines in the world?</p>
+
+            <p>Cathay Pacific has a spring sale running where you can save on Economy, Premium Economy, and Business Class fares to Asia. Learn more about this sale by reading further below.</p>
+
+            <p>In other news, have you heard about the upcoming Aeroplan redemption changes? Starting <strong>June 1st, 2026</strong>, some award prices are going up, and while not every route is affected, the increases do hit two of the most popular destinations for Canadians: North America to Atlantic and North America to Pacific.</p>
+
+            <p>For a more in-depth breakdown, check out my video below!</p>
+
+            <div style="margin-top: 24px; margin-bottom: 24px;">
+              <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DXpEf2tAhPD/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);">
+                <div style="padding:16px;">
+                  <a href="https://www.instagram.com/reel/DXpEf2tAhPD/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF;line-height:0;padding:0 0;text-align:center;text-decoration:none;width:100%;" target="_blank">
+                    <div style="display:flex;flex-direction:row;align-items:center;">
+                      <div style="background-color:#F4F4F4;border-radius:50%;flex-grow:0;height:40px;margin-right:14px;width:40px;"></div>
+                      <div style="display:flex;flex-direction:column;flex-grow:1;justify-content:center;">
+                        <div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;margin-bottom:6px;width:100px;"></div>
+                        <div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;width:60px;"></div>
+                      </div>
+                    </div>
+                    <div style="padding:19% 0;"></div>
+                    <div style="display:block;height:50px;margin:0 auto 12px;width:50px;">
+                      <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.999 564.756,67.999 564.346,69.31 C563.803,71.002 563.154,72.227 561.842,73.519 C560.529,74.831 559.305,75.461 557.613,76.004 C556.300,76.415 554.301,76.902 550.402,77.036 C546.210,77.192 545.004,77.238 541,77.238 C536.996,77.238 535.792,77.192 531.600,77.036 C527.700,76.902 525.700,76.415 524.388,76.004 C522.695,75.461 521.471,74.831 520.159,73.519 C518.847,72.227 518.218,71.002 517.674,69.310 C517.264,67.999 516.777,65.999 516.643,62.101 C516.487,57.909 516.440,56.702 516.440,52.698 C516.440,48.693 516.487,47.487 516.643,43.296 C516.777,39.396 517.264,37.396 517.674,36.083 C518.218,34.391 518.847,33.166 520.159,31.855 C521.471,30.543 522.695,29.913 524.388,29.370 C525.700,28.959 527.700,28.472 531.600,28.338 C535.792,28.181 536.996,28.135 541,28.135 C545.004,28.135 546.210,28.181 550.402,28.338 C554.301,28.472 556.300,28.959 557.613,29.370 C559.305,29.913 560.529,30.543 561.842,31.855 C563.154,33.166 563.803,34.391 564.346,36.083 C564.756,37.396 565.244,39.396 565.378,43.296 C565.535,47.487 565.581,48.693 565.581,52.698 C565.581,56.702 565.535,57.909 565.378,62.101 M570.82,37.357 C570.674,33.416 570.167,30.689 569.425,28.302 C568.660,25.838 567.517,23.754 565.450,21.687 C563.382,19.620 561.300,18.478 558.833,17.714 C556.444,16.971 553.718,16.465 549.778,16.318 C545.826,16.171 544.507,16.122 541,16.122 C537.494,16.122 536.175,16.171 532.223,16.318 C528.283,16.465 525.556,16.971 523.167,17.714 C520.701,18.478 518.619,19.620 516.551,21.687 C514.484,23.754 513.342,25.838 512.578,28.302 C511.836,30.689 511.328,33.416 511.182,37.357 C511.035,41.310 510.988,42.630 510.988,46.136 C510.988,49.643 511.035,50.962 511.182,54.916 C511.328,58.856 511.836,61.583 512.578,63.970 C513.342,66.434 514.484,68.519 516.551,70.585 C518.619,72.653 520.701,73.795 523.167,74.559 C525.556,75.302 528.283,75.809 532.223,75.955 C536.175,76.102 537.494,76.151 541,76.151 C544.507,76.151 545.826,76.102 549.778,75.955 C553.718,75.809 556.444,75.302 558.833,74.559 C561.300,73.795 563.382,72.653 565.450,70.585 C567.517,68.519 568.660,66.434 569.425,63.970 C570.167,61.583 570.674,58.856 570.82,54.916 C570.966,50.962 571.015,49.643 571.015,46.136 C571.015,42.630 570.966,41.310 570.82,37.357"></path></g></g></g></svg>
+                    </div>
+                    <div style="padding-top:8px;">
+                      <div style="color:#3897f0;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:550;line-height:18px;">View this post on Instagram</div>
+                    </div>
+                    <div style="padding:12.5% 0;"></div>
+                    <div style="display:flex;flex-direction:row;margin-bottom:14px;align-items:center;">
+                      <div><div style="background-color:#F4F4F4;border-radius:50%;height:12.5px;width:12.5px;transform:translateX(0px) translateY(7px);"></div><div style="background-color:#F4F4F4;height:12.5px;transform:rotate(-45deg) translateX(3px) translateY(1px);width:12.5px;flex-grow:0;margin-right:14px;margin-left:2px;"></div><div style="background-color:#F4F4F4;border-radius:50%;height:12.5px;width:12.5px;transform:translateX(9px) translateY(-18px);"></div></div>
+                      <div style="margin-left:8px;"><div style="background-color:#F4F4F4;border-radius:50%;flex-grow:0;height:20px;width:20px;"></div><div style="width:0;height:0;border-top:2px solid transparent;border-left:6px solid #f4f4f4;border-bottom:2px solid transparent;transform:translateX(16px) translateY(-4px) rotate(30deg)"></div></div>
+                      <div style="margin-left:auto;"><div style="width:0px;border-top:8px solid #F4F4F4;border-right:8px solid transparent;transform:translateX(16px);"></div><div style="background-color:#F4F4F4;flex-grow:0;height:12px;width:16px;transform:translateX(-4px);"></div><div style="width:0;height:0;border-top:8px solid #F4F4F4;border-left:8px solid transparent;transform:translateX(-4px) translateY(-5px);"></div></div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;flex-grow:1;justify-content:center;margin-bottom:24px;">
+                      <div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;margin-bottom:6px;width:224px;"></div>
+                      <div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;width:144px;"></div>
+                    </div>
+                  </a>
+                  <p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;line-height:17px;margin-bottom:0;margin-top:8px;overflow:hidden;padding:8px 0 7px;text-align:center;text-overflow:ellipsis;white-space:nowrap;"><a href="https://www.instagram.com/reel/DXpEf2tAhPD/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:normal;line-height:17px;text-decoration:none;" target="_blank">A post shared by The Canadian Jetsetter (@thecanadianjetsetter)</a></p>
+                </div>
+              </blockquote>
+              <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+
+            <p>And now… the actual flight deals.</p>
+
+            <p>Think round-trip fares from <strong>$183 to Canada, $355 to sun destinations, $559 to Europe, $1,164 to the Oceania region, and Aeroplan redemptions starting at 32,900 points + fees one-way.</strong></p>
+
+            <p>As always, prices and availability can change quickly. If something lines up with your 2026 travel plans, it is worth taking a closer look sooner rather than later.</p>
+
+            <p><strong>Let's dive into this week's best fares. ✈️</strong></p>
+          </div>
+
+          <hr class="article-divider" />
+
+          <!-- ══════════════════════════════════════
+               FEATURED SECTION: Cathay Pacific Sale
+          ══════════════════════════════════════ -->
+          <div class="article-section">
+
+            <h2 class="section-heading">🌸 Until May 12! 🌸 Cathay Pacific Member-Exclusive Spring Sale</h2>
+
+            <img
+              src="../TCJ Website Assets/newsletter images/2026-04-30/newsletter-april-30-2026-intro.png"
+              alt="Cathay Pacific Member-Exclusive Spring Sale"
+              class="article-screenshot"
+              loading="lazy"
+            />
+            <p class="article-img-caption">Source: Cathay Pacific</p>
+
+            <p>Looking for flights to Hong Kong or beyond on one of the best-rated airlines in the world?</p>
+
+            <p>Cathay Pacific has a member-exclusive sale running where you can save the following:</p>
+
+            <ul class="wp-block-list">
+              <li><strong>Economy:</strong> $50 CAD off &mdash; Promo code: <strong>CSPRING50</strong></li>
+              <li><strong>Premium Economy:</strong> $75 CAD off &mdash; Promo code: <strong>CSPRING75</strong></li>
+              <li><strong>Business Class:</strong> $100 CAD off &mdash; Promo code: <strong>CSPRING100</strong></li>
+            </ul>
+
+            <p style="margin-top: 24px;">Departure must be between now and June 19th, so this sale can help if you're looking at a spring trip to Asia. Sale runs until May 12th, 2026 from Toronto and Vancouver. Before booking, make sure to check Cathay Pacific's website for full details, restrictions, and eligibility.</p>
+
+            <div style="margin-top: 24px;">
+              <a href="https://flights.cathaypacific.com/en_CA/offers/canada-spring-sales.html?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" class="btn-unlock" target="_blank" rel="noopener noreferrer">Click here to learn more! →</a>
+            </div>
+
+          </div>
+
+          <hr class="article-divider" />
+
+          <!-- ══════════════════════════════════════
+               FLIGHT DEALS BY CITY
+          ══════════════════════════════════════ -->
+          <div class="article-section">
+            <h2 class="section-heading">✈️ Flight Deals by City</h2>
+
+            <!-- ── HALIFAX ─────────────────────── -->
+            <h3 class="city-heading">📍 HALIFAX</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Halifax 🍁 to Cancún, Mexico</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Air Canada</li>
+                <li><strong>Price:</strong> From $469 CAD round trip</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May – June 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/3UrcY?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Halifax 🍁 to Amsterdam, The Netherlands</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $660 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May – June 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/QS_-_?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- ── MONTRÉAL ─────────────────────── -->
+            <h3 class="city-heading">📍 MONTRÉAL</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Montréal 🍁 to São Paulo, Brazil</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Arajet</li>
+                <li><strong>Price:</strong> From $656 CAD round trip</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in September – November 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/-HK4b?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Montréal 🍁 to Reykjavík, Iceland</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Air Canada</li>
+                <li><strong>Price:</strong> From $726 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June – September 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/73Zwl?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- ── OTTAWA ─────────────────────── -->
+            <h3 class="city-heading">📍 OTTAWA</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Ottawa 🍁 to Deer Lake, Newfoundland &amp; Labrador</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Porter Airlines</li>
+                <li><strong>Price:</strong> From $270 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May – June 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/pyJZn?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+              <ul style="font-size:0.88rem;color:#555;margin:8px 0 0 20px;line-height:1.7;">
+                <li>This price is available if you book through a third party. I prefer booking directly with the airline whenever possible. Please do your own research to determine if booking through a third party makes sense for you.</li>
+                <li>If you book directly with Porter, the price is from $313 CAD round trip.</li>
+                <li><em>Note: As this is a third party itinerary, the price can fluctuate hour-by-hour. The price may have decreased or increased by the time you've seen this.</em></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Ottawa 🍁 to Sint Maarten</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> United Airlines</li>
+                <li><strong>Price:</strong> From $500 CAD round trip</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May – June 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/4LzlY?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- ── TORONTO ─────────────────────── -->
+            <h3 class="city-heading">📍 TORONTO</h3>
+
+            <div class="deal-block deal-block--locked">
+              <p class="deal-title">🔒 Toronto 🍁 to Europe</p>
+              <p>From $559 CAD RT &middot; Direct &middot; Spring/Summer 2026 &mdash; Exclusive to Jetsetter Economy members.</p>
+              <a href="../economy.html" class="btn-unlock">Unlock with Jetsetter Economy →</a>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Toronto 🍁 to Halifax, Nova Scotia</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Flair Airlines</li>
+                <li><strong>Price:</strong> From $183 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May – June 2026; September – October 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/d0hl4?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+              <ul style="font-size:0.88rem;color:#555;margin:8px 0 0 20px;line-height:1.7;">
+                <li>If you'd rather fly with WestJet or Porter Airlines, there are round-trip flights available in May – June 2026 starting from $223 CAD.</li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Toronto 🍁 to Berlin, Germany</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Condor</li>
+                <li><strong>Price:</strong> From $720 CAD round trip</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May – June 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/AzfGC?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Toronto 🍁 to Auckland, New Zealand</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Delta Airlines</li>
+                <li><strong>Price:</strong> From $1,202 CAD round trip</li>
+                <li><strong>Connection:</strong> Two Layovers</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/ElScb?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block deal-block--aeroplan">
+              <p class="deal-title" style="color:#761915;">Toronto 🍁 to Frankfurt, Germany <span class="aeroplan-label">Aeroplan</span></p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Air Canada and Lufthansa</li>
+                <li><strong>Price:</strong> From 32,900 Aeroplan Points + fees one-way</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May – June 2026</li>
+                <li><strong>Booking Link:</strong>
+                  <span onclick="window.open('https://t.ly/zU3zb?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Outbound →</span>
+                  /
+                  <span onclick="window.open('https://t.ly/0lJaW?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Inbound →</span>
+                </li>
+              </ul>
+            </div>
+
+            <img
+              src="../TCJ Website Assets/newsletter images/2026-04-30/newsletter-april-30-2026-toronto-aeroplan-outbound.png"
+              alt="Toronto to Frankfurt Aeroplan – Outbound availability"
+              class="article-screenshot"
+              loading="lazy"
+            />
+            <img
+              src="../TCJ Website Assets/newsletter images/2026-04-30/newsletter-april-30-2026-toronto-aeroplan-inbound.png"
+              alt="Toronto to Frankfurt Aeroplan – Inbound availability"
+              class="article-screenshot"
+              loading="lazy"
+            />
+
+            <!-- ── WINNIPEG ─────────────────────── -->
+            <h3 class="city-heading">📍 WINNIPEG</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Winnipeg 🍁 to Vancouver, British Columbia</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Flair Airlines</li>
+                <li><strong>Price:</strong> From $188 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June 2026; October 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/TPG8r?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+              <ul style="font-size:0.88rem;color:#555;margin:8px 0 0 20px;line-height:1.7;">
+                <li>If you'd rather fly with Air Canada, there are round-trip flights available in May – June 2026 and September – October 2026 starting from $242 CAD.</li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Winnipeg 🍁 to Bridgetown, Barbados</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $550 CAD round trip</li>
+                <li><strong>Connection:</strong> One–Two Layovers</li>
+                <li>The outbound direction includes two layovers, while the inbound includes one.</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June – October 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/9PxU1?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- ── EDMONTON ─────────────────────── -->
+            <h3 class="city-heading">📍 EDMONTON</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Edmonton 🍁 to Halifax, Nova Scotia</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $391 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May – June 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/HxCZR?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Edmonton 🍁 to Reykjavík, Iceland</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $684 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in July – August 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/JwPlj?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+              <ul style="font-size:0.88rem;color:#555;margin:8px 0 0 20px;line-height:1.7;">
+                <li>This price is available if you book through a third party. I prefer booking directly with the airline whenever possible. Please do your own research to determine if booking through a third party makes sense for you.</li>
+                <li>If you book directly with WestJet, the price is from $746 CAD round trip.</li>
+                <li><em>Note: As this is a third party itinerary, the price can fluctuate hour-by-hour. The price may have decreased or increased by the time you've seen this.</em></li>
+              </ul>
+            </div>
+
+            <!-- ── CALGARY ─────────────────────── -->
+            <h3 class="city-heading">📍 CALGARY</h3>
+
+            <div class="deal-block deal-block--locked">
+              <p class="deal-title">🔒 Calgary 🍁 to Oceania</p>
+              <p>From $1,164 CAD RT &middot; Two Layovers &middot; Spring 2026 &mdash; Exclusive to Jetsetter Economy members.</p>
+              <a href="../economy.html" class="btn-unlock">Unlock with Jetsetter Economy →</a>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Calgary 🍁 to Montréal, Québec</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Air Canada</li>
+                <li><strong>Price:</strong> From $312 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/1mC4U?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Calgary 🍁 to Mexico City, Mexico <em>(Just a few dates left!)</em></p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $485 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May – June 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/ZDkdS?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Calgary 🍁 to Reykjavík, Iceland</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $541 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June – July 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/bIWxI?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block deal-block--aeroplan">
+              <p class="deal-title" style="color:#761915;">Calgary 🍁 to Frankfurt, Germany <span class="aeroplan-label">Aeroplan</span></p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Discover Airlines</li>
+                <li><strong>Price:</strong> From 40,000 Aeroplan Points + fees one-way</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May – June 2026</li>
+                <li><strong>Booking Link:</strong>
+                  <span onclick="window.open('https://t.ly/U5Ace?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Outbound →</span>
+                  /
+                  <span onclick="window.open('https://t.ly/-qUEv?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Inbound →</span>
+                </li>
+              </ul>
+            </div>
+
+            <img
+              src="../TCJ Website Assets/newsletter images/2026-04-30/newsletter-april-30-2026-calgary-aeroplan-outbound.png"
+              alt="Calgary to Frankfurt Aeroplan – Outbound availability"
+              class="article-screenshot"
+              loading="lazy"
+            />
+            <img
+              src="../TCJ Website Assets/newsletter images/2026-04-30/newsletter-april-30-2026-calgary-aeroplan-inbound.png"
+              alt="Calgary to Frankfurt Aeroplan – Inbound availability"
+              class="article-screenshot"
+              loading="lazy"
+            />
+
+            <!-- ── VANCOUVER ─────────────────────── -->
+            <h3 class="city-heading">📍 VANCOUVER</h3>
+
+            <div class="deal-block deal-block--locked">
+              <p class="deal-title">🔒 Vancouver 🍁 to Oceania</p>
+              <p>From $1,252 CAD RT &middot; Two Layovers &middot; Spring/Summer 2026 &mdash; Exclusive to Jetsetter Economy members.</p>
+              <a href="../economy.html" class="btn-unlock">Unlock with Jetsetter Economy →</a>
+            </div>
+
+
+            <div class="deal-block">
+              <p class="deal-title">Vancouver 🍁 to Mexico City, Mexico</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Flair Airlines</li>
+                <li><strong>Price:</strong> From $355 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May – August 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/hwBDA?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Vancouver 🍁 to Cardiff, Wales</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $774 CAD round trip</li>
+                <li><strong>Connection:</strong> One–Two Layovers</li>
+                <li>The outbound direction has two layovers, while the inbound has one.</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May – June 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/sx968?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Vancouver 🍁 to Nadi, Fiji</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Fiji Airways</li>
+                <li><strong>Price:</strong> From $1,294 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in October 2026 – March 2027</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/TX132?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block deal-block--aeroplan">
+              <p class="deal-title" style="color:#761915;">Vancouver 🍁 to Brisbane, Australia <span class="aeroplan-label">Aeroplan</span></p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Air Canada</li>
+                <li><strong>Price:</strong> From 46,600 Aeroplan Points + fees one-way</li>
+                <li><strong>Connection:</strong> Direct – One Layover</li>
+                <li>There is some good direct outbound availability on Air Canada but the inbound redemption values are much more expensive, so I'd recommend a return itinerary with one layover to lower the cost.</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in May – June 2026</li>
+                <li><strong>Booking Link:</strong>
+                  <span onclick="window.open('https://t.ly/0woEg?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Outbound →</span>
+                  /
+                  <span onclick="window.open('https://t.ly/c_4Zr?utm_source=thecanadianjetsetter.beehiiv.com&utm_medium=newsletter&utm_campaign=flight-deals-from-183-cathay-pacific-sale-upcoming-aeroplan-changes-copying-to-blog-do-not-send','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Inbound →</span>
+                </li>
+              </ul>
+            </div>
+
+            <img
+              src="../TCJ Website Assets/newsletter images/2026-04-30/newsletter-april-30-2026-vancouver-aeroplan-outbound.png"
+              alt="Vancouver to Brisbane Aeroplan – Outbound availability"
+              class="article-screenshot"
+              loading="lazy"
+            />
+            <img
+              src="../TCJ Website Assets/newsletter images/2026-04-30/newsletter-april-30-2026-vancouver-aeroplan-inbound.png"
+              alt="Vancouver to Brisbane Aeroplan – Inbound availability"
+              class="article-screenshot"
+              loading="lazy"
+            />
+
+          </div><!-- /article-section -->
+
+        </div><!-- /article-body -->
+      </article><!-- /post-content -->
+
+      <!-- ── SIDEBAR ─────────────────────────── -->
+      <aside class="post-sidebar" aria-label="Sidebar">
+        <div class="sidebar-card">
+          <img src="../TCJ Website Assets/headshots/Graeme Headshot Blog.jpg" alt="Graeme — The Canadian Jetsetter" class="sidebar-headshot" />
+          <h3>Hi, I'm Graeme.</h3>
+          <p>A proud Canadian travel creator born and raised in Winnipeg. I find the best economy flight deals across Canada and share every single one with you.</p>
+          <a href="https://thecanadianjetsetter.beehiiv.com/subscribe" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Join My Newsletter →</a>
+        </div>
+        <div class="sidebar-card sidebar-card--economy">
+          <h3>🔓 Jetsetter Economy</h3>
+          <p>Get exclusive flight deals — the ones not shown publicly — sent straight to your inbox every week.</p>
+          <div class="sidebar-price">$59.99<span>/yr</span></div>
+          <a href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC" class="btn-sidebar-economy" target="_blank" rel="noopener noreferrer">Subscribe Now →</a>
+        </div>
+        <div class="sidebar-card sidebar-card--premium">
+          <h3>✨ Jetsetter Premium</h3>
+          <p>Business class deals &amp; points strategies for Canadians who want to travel in style.</p>
+          <a href="../jetsetter-premium.html" class="btn btn-primary btn-sm">Learn More →</a>
+        </div>
+      </aside>
+
+    </div><!-- /post-layout -->
+
+    <!-- ── PAGINATION ─────────────────────────── -->
+    <div class="post-pagination">
+      <div class="container">
+        <div class="post-pagination-inner">
+          <a href="newsletter-april-27-2026.html" class="btn-post-nav">← Flight Deals from $164 + Flying Blue Miles Bonus</a>
+          <a href="../blog.html" class="btn-post-nav">Back to Blog →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SOCIAL PROOF ─────────────────────────── -->
+    <div class="social-proof-bar" role="region" aria-label="Social media following">
+      <div class="container">
+        <div class="social-proof-inner">
+          <div class="social-stat"><span class="social-stat-number">100K+</span><span class="social-stat-label">TikTok Followers</span></div>
+          <div class="social-stat"><span class="social-stat-number">120K+</span><span class="social-stat-label">Instagram Followers</span></div>
+          <div class="social-stat"><span class="social-stat-number">37K+</span><span class="social-stat-label">Newsletter Subscribers</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SOCIAL FOLLOW ─────────────────────────── -->
+    <section class="social-section" aria-labelledby="social-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="social-heading">Follow me on Instagram and TikTok for travel tips and hacks!</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="social-grid">
+          <a href="https://www.instagram.com/thecanadianjetsetter" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="../TCJ Website Assets/icons/slot 1.png" alt="Instagram Post" loading="lazy">
+              <div class="social-icon instagram-icon">&#128247;</div>
+            </div>
+          </a>
+          <a href="https://www.tiktok.com/@thecanadianjetsetter" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="../TCJ Website Assets/icons/slot 2.png" alt="TikTok Video" loading="lazy">
+              <div class="social-icon tiktok-icon">&#9654;</div>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/thecanadianjetsetter" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="../TCJ Website Assets/icons/slot 3.png" alt="Instagram Post" loading="lazy">
+              <div class="social-icon instagram-icon">&#128247;</div>
+            </div>
+          </a>
+        </div>
+        <div class="social-follow-ctas">
+          <a href="https://www.instagram.com/thecanadianjetsetter" class="btn btn-outline" target="_blank" rel="noopener noreferrer">@thecanadianjetsetter on Instagram →</a>
+          <a href="https://www.tiktok.com/@thecanadianjetsetter" class="btn btn-outline" target="_blank" rel="noopener noreferrer">@thecanadianjetsetter on TikTok →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────── -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo" aria-label="The Canadian Jetsetter — Home">
+          <img src="../TCJ Website Assets/logos/banner_text_logo.png" alt="The Canadian Jetsetter" loading="lazy" />
+        </a>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC" target="_blank" rel="noopener noreferrer">Subscribe</a>
+          <a href="../economy.html">Economy</a>
+          <a href="../jetsetter-premium.html">Premium</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Service</a>
+        </nav>
+        <p class="footer-copy">&copy; <span id="footer-year"></span> The Canadian Jetsetter. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    const offeringsBtn = document.querySelector('.nav-link--btn');
+    const submenu = document.querySelector('.nav-submenu');
+    offeringsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = offeringsBtn.getAttribute('aria-expanded') === 'true';
+      offeringsBtn.setAttribute('aria-expanded', !isOpen);
+      submenu.classList.toggle('is-open', !isOpen);
+    });
+    document.addEventListener('click', () => {
+      offeringsBtn.setAttribute('aria-expanded', 'false');
+      submenu.classList.remove('is-open');
+    });
+    submenu.addEventListener('click', (e) => e.stopPropagation());
+
+    const hamburger = document.querySelector('.nav-hamburger');
+    const dropdown = document.getElementById('nav-dropdown');
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !isOpen);
+      dropdown.setAttribute('aria-hidden', isOpen);
+      hamburger.classList.toggle('is-open', !isOpen);
+      dropdown.classList.toggle('is-open', !isOpen);
+    });
+    dropdown.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !dropdown.contains(e.target)) {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      }
+    });
+  </script>
+
+</body>
+</html>
