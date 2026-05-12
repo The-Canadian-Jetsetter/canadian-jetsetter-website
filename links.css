@@ -732,6 +732,12 @@ footer {
 }
 
 /* ── MOBILE ────────────────────────────────── */
+@media (max-width: 768px) {
+  .embed-block {
+    margin-top: 36px !important;
+  }
+}
+
 @media (max-width: 480px) {
   .hero { padding: 48px 20px 56px; }
 
