@@ -9,6 +9,99 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="index.css" />
+
+  <style>
+    /* Latest Blog: Card Grid */
+    .blog-cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 900px) {
+      .blog-cards-row { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 580px) {
+      .blog-cards-row { grid-template-columns: 1fr; }
+    }
+    .blog-card {
+      background: #1a0505;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    }
+    .blog-card-img-link { display: block; }
+    .blog-card-img-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+    .blog-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .blog-card:hover .blog-card-img-wrap img {
+      transform: scale(1.04);
+    }
+    .blog-card-body {
+      padding: 20px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .blog-card-date {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.02em;
+    }
+    .blog-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin: 0 0 10px;
+      color: #fff;
+    }
+    .blog-card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .blog-card-title a:hover { color: #e0191e; }
+    .blog-card-excerpt {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+      margin: 0 0 16px;
+      flex: 1;
+    }
+    .blog-card-read-more {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #e0191e;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.15s;
+      align-self: flex-start;
+    }
+    .blog-card-read-more:hover { color: #ff4444; }
+  </style>
 </head>
 <body>
 
@@ -173,38 +266,56 @@
         </div>
 
         <!-- latest-blog-start -->
-        <div class="blog-exp-row">
+        <div class="blog-cards-row">
 
-          <article class="blog-exp-card is-active" style="background-image:url('blog-images/Apr-9.jpg'); background-color:#0d1625;">
-            <div class="blog-exp-overlay"></div>
-            <div class="blog-exp-content">
-              <span class="blog-tag">Newsletter</span>
-              <p class="blog-exp-date">Apr 9, 2026</p>
-              <h3 class="blog-exp-title">✈️🇨🇦 Flight Deals from $199 + Icelandair Contest &amp; Airline Promos!</h3>
-              <p class="blog-exp-excerpt">Hey Travellers! Are you a “really bad” photographer who is interested in Iceland? Icelandair has a fun contest running where they’re searching for a “really…</p>
-              <a href="posts/newsletter-april-9-2026.html" class="blog-exp-read-more">Read More &#8594;</a>
+          <article class="blog-card">
+            <a href="posts/flair-cancun-winter-2026.html" class="blog-card-img-link">
+              <div class="blog-card-img-wrap">
+                <img src="blog-images/Blog-May12-Header.jpg" alt="Flair Cancun Winter 2026" loading="lazy" />
+              </div>
+            </a>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-tag">Airline News</span>
+                <span class="blog-card-date">May 12, 2026</span>
+              </div>
+              <h3 class="blog-card-title"><a href="posts/flair-cancun-winter-2026.html">Flair is Bringing Cancun Back This Winter. Nonstop from Edmonton, Calgary, and Montreal.</a></h3>
+              <p class="blog-card-excerpt">Flair Airlines is launching nonstop seasonal service to Cancun from Edmonton, Calgary, and Montreal starting December 2026, with base fares from $259.</p>
+              <a href="posts/flair-cancun-winter-2026.html" class="blog-card-read-more">Read More &#8594;</a>
             </div>
           </article>
 
-          <article class="blog-exp-card" style="background-image:url('blog-images/Apr7-Header.jpg'); background-color:#0a1f10;">
-            <div class="blog-exp-overlay"></div>
-            <div class="blog-exp-content">
-              <span class="blog-tag">Credit Cards</span>
-              <p class="blog-exp-date">Apr 7, 2026</p>
-              <h3 class="blog-exp-title">Skip the FX Fees: Two Scotiabank Cards with Limited-Time Welcome Offers</h3>
-              <p class="blog-exp-excerpt">If you've ever come home from a trip abroad and winced at your credit card statement, you already know the sting of foreign transaction fees. That quiet 2.5%…</p>
-              <a href="posts/two-canadian-credit-cards-with-no-foreign-transaction-fee-and-why-travellers-should-pay-attention.html" class="blog-exp-read-more">Read More &#8594;</a>
+          <article class="blog-card">
+            <a href="posts/rove-aeroplan-transfer-partner.html" class="blog-card-img-link">
+              <div class="blog-card-img-wrap">
+                <img src="blog-images/Blog-May11-Header.jpg" alt="Rove Now Transfers to Aeroplan" loading="lazy" />
+              </div>
+            </a>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-tag">Points &amp; Miles</span>
+                <span class="blog-card-date">May 11, 2026</span>
+              </div>
+              <h3 class="blog-card-title"><a href="posts/rove-aeroplan-transfer-partner.html">Rove Now Transfers to Aeroplan: What Canadian Travellers Need to Know</a></h3>
+              <p class="blog-card-excerpt">Aeroplan is now a Rove transfer partner at a 1:1 ratio, with a limited-time 25% transfer bonus through June 6, 2026. Here's what it means for Canadian travellers.</p>
+              <a href="posts/rove-aeroplan-transfer-partner.html" class="blog-card-read-more">Read More &#8594;</a>
             </div>
           </article>
 
-          <article class="blog-exp-card" style="background-image:url('blog-images/Apr-6.jpg'); background-color:#0d1520;">
-            <div class="blog-exp-overlay"></div>
-            <div class="blog-exp-content">
-              <span class="blog-tag">Newsletter</span>
-              <p class="blog-exp-date">Apr 6, 2026</p>
-              <h3 class="blog-exp-title">✈️🇨🇦 Flight Deals from $200 + Last Chance on the Marriott Bonvoy Limited-Time Offer!</h3>
-              <p class="blog-exp-excerpt">Hey Travellers! Who else ate way too much chocolate this long weekend? 🐰🍫 Speaking of sweet things, the Marriott Bonvoy® American Express® Card's limited-time…</p>
-              <a href="posts/newsletter-april-6-2026.html" class="blog-exp-read-more">Read More &#8594;</a>
+          <article class="blog-card">
+            <a href="posts/newsletter-may-11-2026.html" class="blog-card-img-link">
+              <div class="blog-card-img-wrap">
+                <img src="blog-images/newsletter-may-11-2026-header.jpg" alt="Newsletter May 11 2026" loading="lazy" />
+              </div>
+            </a>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-tag">Newsletter</span>
+                <span class="blog-card-date">May 11, 2026</span>
+              </div>
+              <h3 class="blog-card-title"><a href="posts/newsletter-may-11-2026.html">✈️🇨🇦 Flight Deals from $273 + Rove Now Transfers to Aeroplan!</a></h3>
+              <p class="blog-card-excerpt">Big news for Canadians using Rove — Aeroplan is now a Rove transfer partner at 1:1, with a 25% bonus through June 6. Think fares from $273 to Canada and $421 to sun destinations.</p>
+              <a href="posts/newsletter-may-11-2026.html" class="blog-card-read-more">Read More &#8594;</a>
             </div>
           </article>
 
