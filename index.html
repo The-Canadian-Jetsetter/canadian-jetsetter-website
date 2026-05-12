@@ -11,18 +11,51 @@
   <link rel="stylesheet" href="index.css" />
 
   <style>
+    /* Latest Blog: widen the section container on desktop */
+    .blog-section .container {
+      max-width: 1400px;
+    }
+
     /* Latest Blog: Card Grid */
     .blog-cards-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 36px;
       margin-bottom: 48px;
     }
     @media (max-width: 900px) {
       .blog-cards-row { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 580px) {
-      .blog-cards-row { grid-template-columns: 1fr; }
+
+    /* Mobile: horizontal scroll carousel */
+    @media (max-width: 768px) {
+      .blog-section .container {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .blog-section .section-header,
+      .blog-section .section-cta {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .blog-cards-row {
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        gap: 16px;
+        padding: 4px 20px 16px;
+        margin-bottom: 32px;
+        scrollbar-width: none;
+      }
+      .blog-cards-row::-webkit-scrollbar {
+        display: none;
+      }
+      .blog-card {
+        flex: 0 0 75vw;
+        max-width: 300px;
+        min-width: 240px;
+      }
     }
     .blog-card {
       background: #1a0505;
