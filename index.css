@@ -701,6 +701,9 @@ body {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
+.blog-section .container {
+  max-width: 1600px !important;
+}
 
 .blog-grid {
   display: grid;
