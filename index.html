@@ -134,6 +134,49 @@
       align-self: flex-start;
     }
     .blog-card-read-more:hover { color: #ff4444; }
+
+    /* Mobile scroll indicators — hidden on desktop */
+    @keyframes blogHintFade {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .blog-scroll-hint { display: none; }
+    @media (max-width: 768px) {
+      .blog-scroll-hint {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 0 20px 4px;
+        margin-top: -12px;
+        margin-bottom: 24px;
+        animation: blogHintFade 0.8s ease 0.4s both;
+      }
+      .blog-swipe-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #761915;
+      }
+      .blog-dots {
+        display: flex;
+        gap: 7px;
+        align-items: center;
+      }
+      .blog-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.2);
+        transition: background 0.25s ease, transform 0.25s ease;
+      }
+      .blog-dot--active {
+        background: #761915;
+        transform: scale(1.3);
+      }
+    }
   </style>
 </head>
 <body>
@@ -354,6 +397,16 @@
 
         </div>
         <!-- latest-blog-end -->
+
+        <!-- Mobile: swipe hint + dot indicators -->
+        <div class="blog-scroll-hint" aria-hidden="true">
+          <span class="blog-swipe-label">Swipe to see more →</span>
+          <div class="blog-dots" id="blog-carousel-dots">
+            <span class="blog-dot blog-dot--active"></span>
+            <span class="blog-dot"></span>
+            <span class="blog-dot"></span>
+          </div>
+        </div>
 
         <div class="section-cta">
           <a
@@ -850,6 +903,25 @@
         pointsSlider.scrollLeft = scrollLeft - walk;
       });
     }
+
+    // ── BLOG CAROUSEL: DOT INDICATORS ────────────────────────────
+    (function () {
+      const row  = document.querySelector('.blog-cards-row');
+      const dots = document.querySelectorAll('#blog-carousel-dots .blog-dot');
+      if (!row || !dots.length) return;
+      row.addEventListener('scroll', function () {
+        const card = row.querySelector('.blog-card');
+        if (!card) return;
+        const cardWidth = card.offsetWidth + 16; // 16px = mobile gap
+        const idx = Math.min(
+          Math.round(row.scrollLeft / cardWidth),
+          dots.length - 1
+        );
+        dots.forEach(function (d, i) {
+          d.classList.toggle('blog-dot--active', i === idx);
+        });
+      }, { passive: true });
+    })();
   </script>
 
 </body>
