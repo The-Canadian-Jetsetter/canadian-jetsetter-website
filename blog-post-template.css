@@ -392,6 +392,15 @@ body {
 .article-intro p { margin-bottom: 0.9rem; }
 .article-intro p:last-child { margin-bottom: 0; }
 
+.article-body p { margin-bottom: 1.25rem; }
+.article-body p:last-child { margin-bottom: 0; }
+
+.has-small-font-size {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: #888;
+}
+
 .article-divider {
   border: none;
   margin: 30px 0;
