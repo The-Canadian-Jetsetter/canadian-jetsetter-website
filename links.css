@@ -385,6 +385,25 @@ body {
   flex-shrink: 0;
 }
 
+.offering-pen {
+  width: 60px;
+  height: 60px;
+  display: block;
+  flex-shrink: 0;
+  transform-origin: 13% 83%;
+  animation: pen-write 2s ease-in-out infinite;
+}
+
+@keyframes pen-write {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(0deg); }
+  40%  { transform: rotate(-12deg); }
+  60%  { transform: rotate(10deg); }
+  75%  { transform: rotate(-5deg); }
+  90%  { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
 /* ── BEEHIIV EMBED BLOCK ───────────────────── */
 .embed-block {
   display: flex;
