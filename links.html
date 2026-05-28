@@ -11,6 +11,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="links.css" />
+  <style>
+    .booking-links-section { background: #761915; padding: 56px 0; }
+    .booking-links-heading { color: #F6F2E7; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; text-align: center; letter-spacing: -0.01em; margin-bottom: 12px; }
+    .booking-links-subtext { color: #F6F2E7; text-align: center; font-size: 1rem; opacity: 0.85; margin-bottom: 24px; }
+    .booking-links-divider { border: none; border-top: 1px solid rgba(255,255,255,0.35); margin: 0 0 32px; }
+    .booking-links-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-bottom: 28px; }
+    .booking-link-btn { background: #F6F2E7; color: #761915; padding: 12px 20px; font-size: 0.9rem; font-weight: 700; border-radius: 4px; text-decoration: none; display: inline-block; text-align: center; transition: background 0.2s, transform 0.15s; }
+    .booking-link-btn:hover { background: #ffffff; transform: translateY(-1px); }
+    .booking-links-disclaimer { color: #F6F2E7; text-align: center; font-size: 0.78rem; opacity: 0.65; margin: 0; }
+    @media (max-width: 768px) { .booking-links-section { padding: 40px 0; } .booking-links-row { gap: 10px; } }
+  </style>
 </head>
 <body>
 
@@ -290,7 +301,27 @@
     </section>
 
     <!-- ══════════════════════════════════════════
-         4. SOCIAL PROOF BAR
+         4. HELPFUL BOOKING LINKS
+    ══════════════════════════════════════════ -->
+    <section class="booking-links-section">
+      <div class="container">
+        <h2 class="booking-links-heading">Helpful Booking Links</h2>
+        <p class="booking-links-subtext">Search flights, hotels, packages and more using our trusted booking partners.</p>
+        <hr class="booking-links-divider">
+        <div class="booking-links-row">
+          <a href="https://www.kqzyfj.com/click-101414786-12342718?url=https%3A%2F%2Fwww.flighthub.com%2F" target="_blank" rel="noopener noreferrer" class="booking-link-btn">FlightHub</a>
+          <a href="https://skyscanner.pxf.io/enEN4j" target="_blank" rel="noopener noreferrer" class="booking-link-btn">Skyscanner</a>
+          <a href="https://travelbrands.sjv.io/3kZEPB" target="_blank" rel="noopener noreferrer" class="booking-link-btn">RedTag</a>
+          <a href="https://www.anrdoezrs.net/click-101414786-13882994?url=https%3A%2F%2Fwww.expedia.ca%2F" target="_blank" rel="noopener noreferrer" class="booking-link-btn">Expedia</a>
+          <a href="https://www.awin1.com/cread.php?awinmid=6776&awinaffid=2753186" target="_blank" rel="noopener noreferrer" class="booking-link-btn">Booking.com</a>
+          <a href="https://www.awin1.com/cread.php?awinmid=19859&awinaffid=2753186" target="_blank" rel="noopener noreferrer" class="booking-link-btn">Kiwi</a>
+        </div>
+        <p class="booking-links-disclaimer">These are affiliate links. Using them supports The Canadian Jetsetter at no extra cost to you.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         5. SOCIAL PROOF BAR
     ══════════════════════════════════════════ -->
     <div class="social-proof-bar" role="region" aria-label="Social media following">
       <div class="container">
