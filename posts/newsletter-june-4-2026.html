@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>✈️🇨🇦 Flight Deals from $287 + 25% Off Canadian Airlines + WestJet CFAR Explained! | The Canadian Jetsetter</title>
+  <meta name="description" content="All major Canadian airlines are offering 25% off select base fares until June 8th, plus a look at WestJet's new Cancel For Any Reason feature. Round-trip fares from $287 to Canada, $418 to Europe, $840 to Asia, and Aeroplan from 28,100 points + fees one-way." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../blog-post-template.css" />
+  <style>
+    .post-date-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .post-category {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+      background: #761915;
+      padding: 3px 10px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+    .post-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: #f6f2e7;
+      margin-bottom: 24px;
+    }
+    .article-intro p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #1a1a1a;
+      margin-bottom: 14px;
+    }
+    .section-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #761915;
+      margin: 0 0 14px;
+      line-height: 1.3;
+    }
+    .city-heading {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #761915;
+      margin: 54px 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #761915;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .article-section > .city-heading:first-of-type,
+    h2.section-heading + .city-heading {
+      margin-top: 0;
+    }
+    .deal-block {
+      padding: 18px 0;
+      border-bottom: 1px solid #e8e2d9;
+    }
+    .deal-block + .deal-block {
+      margin-top: 24px;
+    }
+    .deal-block:last-child {
+      border-bottom: none;
+    }
+    .deal-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 10px;
+      line-height: 1.4;
+    }
+    ul.deal-details {
+      list-style: disc;
+      margin: 0 0 0 20px;
+      padding: 0;
+    }
+    ul.deal-details li {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 2px;
+    }
+    ul.deal-details li strong { color: #1a1a1a; }
+    ul.deal-details li a {
+      color: #761915;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    ul.deal-details li a:hover { text-decoration: underline; }
+    ul.deal-details ul {
+      list-style: disc;
+      margin: 4px 0 4px 20px;
+      padding: 0;
+    }
+    ul.deal-details ul li {
+      font-size: 0.88rem;
+      color: #555;
+    }
+    .deal-block--aeroplan .deal-title { color: #003a7a; }
+    .deal-block--aeroplan ul.deal-details li a { color: #761915; }
+    .aeroplan-label {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #761915;
+      background: rgba(118, 25, 21, 0.1);
+      border: 1px solid rgba(118, 25, 21, 0.3);
+      padding: 1px 7px;
+      border-radius: 3px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .deal-block--locked {
+      background: #f9f6f0;
+      border: 1px dashed #c0a96e;
+      border-radius: 6px;
+      padding: 16px 18px;
+    }
+    .deal-block--locked .deal-title { color: #5a4a2a; }
+    .deal-block--locked p {
+      font-size: 0.9rem;
+      color: #6b5a3a;
+      margin: 6px 0 12px;
+      line-height: 1.6;
+    }
+    .btn-unlock {
+      display: inline-block;
+      background: #761915;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .btn-unlock:hover { background: #5a1210; }
+    .article-img-caption {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: #888;
+      margin-top: 6px;
+      margin-bottom: 20px;
+    }
+    .article-section { margin-bottom: 8px; }
+    .article-section p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #1a1a1a;
+      margin-bottom: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header-bg" aria-hidden="true"></div>
+
+  <header class="top-nav" role="banner">
+    <div class="container">
+      <a href="../index.html" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
+        <img src="../TCJ Website Assets/icons/Jetsetter text logo.png" alt="The Canadian Jetsetter" loading="eager" />
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <div class="nav-item nav-item--dropdown">
+          <button class="nav-link nav-link--btn" aria-expanded="false" aria-haspopup="true">
+            OFFERINGS <span class="nav-chevron" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="nav-submenu" role="menu">
+            <a href="../jetsetter-free.html" role="menuitem">Jetsetter Free</a>
+            <a href="../economy.html" role="menuitem">Jetsetter Economy</a>
+            <a href="../jetsetter-premium.html" role="menuitem">Jetsetter Premium</a>
+            <a href="../golden-visa.html" role="menuitem">Golden Visa</a>
+          </div>
+        </div>
+        <a href="../links.html" class="nav-link">LINKS</a>
+        <a href="../blog.html" class="nav-link">BLOG</a>
+        <a href="../contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      <button class="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-dropdown">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../jetsetter-free.html">Jetsetter Free</a></li>
+          <li><a href="../economy.html">Jetsetter Economy</a></li>
+          <li><a href="../jetsetter-premium.html">Jetsetter Premium</a></li>
+          <li><a href="../golden-visa.html">Golden Visa</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="post-layout container">
+
+      <article class="post-content" aria-label="Blog post content">
+
+        <p class="post-date-label">June 4, 2026</p>
+        <span class="post-category">Newsletter</span>
+        <h1 class="post-title">✈️🇨🇦 Flight Deals from $287 + 25% Off Canadian Airlines + WestJet CFAR Explained!</h1>
+
+        <img
+          src="../blog-images/newsletter-june-4-2026-header.jpg"
+          alt="✈️🇨🇦 Flight Deals from $287 + 25% Off Canadian Airlines + WestJet CFAR Explained!"
+          class="featured-image"
+          loading="eager"
+        />
+
+        <div class="article-body">
+
+          <div class="article-intro">
+            <p><strong>Hey Travellers!</strong></p>
+
+            <p>Earlier this week the main Canadian airlines were offering up to 20% off.<br /><strong>Now it's 25% off!</strong></p>
+
+            <p>Check out the details below and make sure to visit their websites to learn about exclusions and blackout dates. <strong>All these promotions end June 8th, 2026.</strong></p>
+
+            <ul style="margin: 0 0 14px 20px; line-height: 1.8; color: #1a1a1a; font-size: 1rem;">
+              <li><strong>WestJet:</strong> 25% off select base fares worldwide with promo code <strong>9X6V2YW</strong>. <a href="https://t.ly/t2qok" target="_blank" rel="noopener noreferrer" style="color:#761915;font-weight:700;text-decoration:none;">Click here to learn more</a>.</li>
+              <li><strong>Air Canada:</strong> 25% off select base fares worldwide with promo code <strong>CVJU4VK1</strong>. <a href="https://t.ly/YklTF" target="_blank" rel="noopener noreferrer" style="color:#761915;font-weight:700;text-decoration:none;">Click here to learn more</a>.</li>
+              <li><strong>Porter Airlines:</strong> 25% off select base fares with promo code <strong>0PQ3Q4</strong>. <a href="https://t.ly/c5u5P" target="_blank" rel="noopener noreferrer" style="color:#761915;font-weight:700;text-decoration:none;">Click here to learn more</a>.</li>
+              <li><strong>Air Transat:</strong> 25% off select base fares worldwide. For flights between June 3rd – December 15th, 2026, use promo code <strong>WOC5WCA25</strong>; for flights between January 6th – March 25th, 2027, use promo code <strong>91U36CA25</strong>. <a href="https://t.ly/TjnHk" target="_blank" rel="noopener noreferrer" style="color:#761915;font-weight:700;text-decoration:none;">Click here to learn more</a>.</li>
+            </ul>
+
+            <img
+              src="../blog-images/newsletter-june-4-2026-intro.jpg"
+              alt="Flight deals intro"
+              class="article-screenshot"
+              loading="lazy"
+              style="margin-top: 24px; margin-bottom: 24px;"
+            />
+
+            <p>On another note, have you heard the news about <strong>WestJet</strong> now offering "<strong>Cancel For Any Reason?</strong>" Essentially, you can cancel your flight for any reason up to 24 hours before departure and get a percentage of your money back to your original payment method.</p>
+
+            <p>The question is, <em>how does it work exactly?</em> And do <em>other Canadian airlines</em> have something similar?</p>
+
+            <p>I answer these questions in my recent blog, which you can read by <a href="https://t.ly/ylqb0" style="color:#761915;font-weight:600;text-decoration:none;">clicking here</a>.</p>
+
+            <p>And now… the actual flight deals. Think round-trip fares from <strong>$287 to Canada, $418 to Europe, $840 to Asia</strong>, and Aeroplan redemptions starting at <strong>28,100 points + fees</strong> one-way.</p>
+
+            <p>As always, prices and availability can change quickly. If something lines up with your 2026 travel plans, it is worth taking a closer look sooner rather than later.</p>
+
+            <p><strong>Let's dive into this week's best fares. ✈️</strong></p>
+          </div>
+
+          <hr class="article-divider" />
+
+          <!-- ══════════════════════════════════════
+               FLIGHT DEALS BY CITY
+          ══════════════════════════════════════ -->
+          <div class="article-section">
+            <h2 class="section-heading">✈️ Flight Deals by City</h2>
+
+            <!-- ── HALIFAX ─────────────────────── -->
+            <h3 class="city-heading">📍 HALIFAX</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Halifax 🍁 to Lisbon, Portugal</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $418 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June – August 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/eCs9H" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+              <ul style="font-size:0.88rem;color:#555;margin:8px 0 0 20px;line-height:1.7;">
+                <li>Keeping this deal in from the previous newsletter. To fly direct from Canada to Europe from $418 CAD is an incredible deal!</li>
+                <li>This price is available if you book through a third party. I prefer booking directly with the airline whenever possible. Please do your own research to determine if booking through a third party makes sense for you.</li>
+                <li>If you book this itinerary directly with WestJet, the price is from $489 CAD round trip.</li>
+                <li>Note: As this is a third party itinerary, the price can fluctuate hour-by-hour. The price may have decreased or increased by the time you've seen this.</li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Halifax 🍁 to Dublin, Ireland</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $428 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in August – September 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/wgoPD" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+              <ul style="font-size:0.88rem;color:#555;margin:8px 0 0 20px;line-height:1.7;">
+                <li>This deal is $74 CAD less expensive compared to just a few days ago.</li>
+                <li>This price is available if you book through a third party. I prefer booking directly with the airline whenever possible. Please do your own research to determine if booking through a third party makes sense for you.</li>
+                <li>If you book this itinerary directly with WestJet, the price is from $450 CAD round trip.</li>
+                <li>Note: As this is a third party itinerary, the price can fluctuate hour-by-hour. The price may have decreased or increased by the time you've seen this.</li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Halifax 🍁 to Seoul, South Korea</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $1,239 CAD round trip</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in September 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/qNkKM" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- ── MONTRÉAL ─────────────────────── -->
+            <h3 class="city-heading">📍 MONTRÉAL</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Montréal 🍁 to Brussels, Belgium</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Air Transat</li>
+                <li><strong>Price:</strong> From $629 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June 2026; September 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/lSYhp" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+              <ul style="font-size:0.88rem;color:#555;margin:8px 0 0 20px;line-height:1.7;">
+                <li>This deal is $30 CAD less expensive compared to last week. Not a massive difference but still $30 saved.</li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Montréal 🍁 to Seoul, South Korea</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $1,095 CAD round trip</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in September 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/cXgij" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- ── OTTAWA ─────────────────────── -->
+            <h3 class="city-heading">📍 OTTAWA</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Ottawa 🍁 to Dublin, Ireland</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $747 CAD round trip</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in August – October 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/HrdEu" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Ottawa 🍁 to Seoul, South Korea</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $1,094 CAD round trip</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in September 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/ratVG" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- ── TORONTO ─────────────────────── -->
+            <h3 class="city-heading">📍 TORONTO</h3>
+
+            <div class="deal-block deal-block--locked">
+              <p class="deal-title">🔒 Toronto 🍁 to Europe</p>
+              <p>From $456 CAD RT &middot; Direct &middot; Summer 2026 &mdash; Exclusive to Jetsetter Economy members.</p>
+              <a href="../economy.html" class="btn-unlock">Unlock with Jetsetter Economy →</a>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Toronto 🍁 to Calgary, Alberta</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Air Canada and WestJet</li>
+                <li><strong>Price:</strong> From $295 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in July 2026; September – October 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/ek5oy" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Toronto 🍁 to Glasgow, Scotland</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $579 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June – September 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/RR-c_" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Toronto 🍁 to Seoul, South Korea</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $1,094 CAD round trip</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in September 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/cS9kC" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block deal-block--aeroplan">
+              <p class="deal-title" style="color:#761915;">Toronto 🍁 to Reykjavík, Iceland <span class="aeroplan-label">Aeroplan</span></p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Air Canada</li>
+                <li><strong>Price:</strong> From 28,100 Aeroplan Points + fees one-way</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June – July 2026</li>
+                <li><strong>Booking Link:</strong>
+                  <span onclick="window.open('https://t.ly/fMo7y','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Outbound →</span>
+                  /
+                  <span onclick="window.open('https://t.ly/w5lqe','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Inbound →</span>
+                </li>
+              </ul>
+            </div>
+
+            <img
+              src="../blog-images/newsletter-june-4-2026-toronto-aeroplan-outbound.png"
+              alt="Toronto to Reykjavík Aeroplan – Outbound availability"
+              class="article-screenshot"
+              loading="lazy"
+            />
+            <img
+              src="../blog-images/newsletter-june-4-2026-toronto-aeroplan-inbound.png"
+              alt="Toronto to Reykjavík Aeroplan – Inbound availability"
+              class="article-screenshot"
+              loading="lazy"
+            />
+
+            <!-- ── WINNIPEG ─────────────────────── -->
+            <h3 class="city-heading">📍 WINNIPEG</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Winnipeg 🍁 to Halifax, Nova Scotia</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $300 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June – September 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/k7M--" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Winnipeg 🍁 to Reykjavík, Iceland</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $554 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in July – August 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/Czzo8" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+              <ul style="font-size:0.88rem;color:#555;margin:8px 0 0 20px;line-height:1.7;">
+                <li>This deal is $103 CAD less expensive compared to last week. This is an amazing deal to fly direct round-trip from Canada to Europe! Reykjavík is also a great gateway to fly to mainland Europe.</li>
+              </ul>
+            </div>
+
+            <!-- ── EDMONTON ─────────────────────── -->
+            <h3 class="city-heading">📍 EDMONTON</h3>
+
+            <div class="deal-block">
+              <p class="deal-title">Edmonton 🍁 to Reykjavík, Iceland <em style="font-size:0.85rem;font-weight:400;color:#555;">(Extra!)</em></p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $533 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in July – August 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/VdDx0" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+              <ul style="font-size:0.88rem;color:#555;margin:8px 0 0 20px;line-height:1.7;">
+                <li>Keeping this extra deal in the newsletter while it's still live — it's an amazing deal!</li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Edmonton 🍁 to Dublin, Ireland</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $770 CAD round trip</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in September – October 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/DX6JV" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Edmonton 🍁 to Seoul, South Korea</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $936 CAD round trip</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in September 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/F-0hH" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <!-- ── CALGARY ─────────────────────── -->
+            <h3 class="city-heading">📍 CALGARY</h3>
+
+            <div class="deal-block deal-block--locked">
+              <p class="deal-title">🔒 Calgary 🍁 to Asia</p>
+              <p>From $941 CAD RT &middot; Direct &middot; Fall 2026 &mdash; Exclusive to Jetsetter Economy members.</p>
+              <a href="../economy.html" class="btn-unlock">Unlock with Jetsetter Economy →</a>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Calgary 🍁 to Toronto, Ontario</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Air Canada and WestJet</li>
+                <li><strong>Price:</strong> From $287 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in September – October 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/O5OZU" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Calgary 🍁 to Reykjavík, Iceland</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $539 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June – September 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/Ykw8-" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Calgary 🍁 to Dublin, Ireland</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $751 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June 2026; September 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/iEUyx" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block deal-block--aeroplan">
+              <p class="deal-title" style="color:#761915;">Calgary 🍁 to Zurich, Switzerland <span class="aeroplan-label">Aeroplan</span></p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> United Airlines, Edelweiss Air, and Air Canada</li>
+                <li><strong>Price:</strong> From 40,000 Aeroplan Points + fees one-way</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June 2026 – May 2027</li>
+                <li><strong>Booking Link:</strong>
+                  <span onclick="window.open('https://t.ly/Mw7bF','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Outbound →</span>
+                  /
+                  <span onclick="window.open('https://t.ly/pvuX7','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Inbound →</span>
+                </li>
+              </ul>
+            </div>
+
+            <img
+              src="../blog-images/newsletter-june-4-2026-calgary-aeroplan-outbound.png"
+              alt="Calgary to Zurich Aeroplan – Outbound availability"
+              class="article-screenshot"
+              loading="lazy"
+            />
+            <img
+              src="../blog-images/newsletter-june-4-2026-calgary-aeroplan-inbound.png"
+              alt="Calgary to Zurich Aeroplan – Inbound availability"
+              class="article-screenshot"
+              loading="lazy"
+            />
+
+            <!-- ── VANCOUVER ─────────────────────── -->
+            <h3 class="city-heading">📍 VANCOUVER</h3>
+
+            <div class="deal-block deal-block--locked">
+              <p class="deal-title">🔒 Vancouver 🍁 to Asia</p>
+              <p>From $840 CAD RT &middot; One Layover &middot; Fall 2026 &mdash; Exclusive to Jetsetter Economy members.</p>
+              <a href="../economy.html" class="btn-unlock">Unlock with Jetsetter Economy →</a>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Vancouver 🍁 to Québec City, Québec</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Air Canada</li>
+                <li><strong>Price:</strong> From $435 CAD round trip</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in July 2026; September 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/w6Yug" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Vancouver 🍁 to Dublin, Ireland</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> WestJet</li>
+                <li><strong>Price:</strong> From $749 CAD round trip</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in September – October 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/RUaM6" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+            </div>
+
+            <div class="deal-block">
+              <p class="deal-title">Vancouver 🍁 to Federal Territory of Kuala Lumpur, Malaysia</p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Philippine Airlines</li>
+                <li><strong>Price:</strong> From $958 CAD round trip</li>
+                <li><strong>Connection:</strong> One Layover</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June 2026</li>
+                <li><strong>Booking Link:</strong> <a href="https://t.ly/aAw8p" target="_blank" rel="noopener noreferrer">Click here for this deal →</a></li>
+              </ul>
+              <ul style="font-size:0.88rem;color:#555;margin:8px 0 0 20px;line-height:1.7;">
+                <li>The return direction has a daytime layover in Manila.</li>
+              </ul>
+            </div>
+
+            <div class="deal-block deal-block--aeroplan">
+              <p class="deal-title" style="color:#761915;">Vancouver 🍁 to Frankfurt, Germany <span class="aeroplan-label">Aeroplan</span></p>
+              <ul class="deal-details">
+                <li><strong>Airline:</strong> Air Canada</li>
+                <li><strong>Price:</strong> From 37,600 Aeroplan Points + fees one-way</li>
+                <li><strong>Connection:</strong> Direct</li>
+                <li><strong>Class:</strong> Economy</li>
+                <li><strong>Dates:</strong> Select Dates in June – July 2026; September – November 2026; February – March 2027; May 2027</li>
+                <li><strong>Booking Link:</strong>
+                  <span onclick="window.open('https://t.ly/PLCer','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Outbound →</span>
+                  /
+                  <span onclick="window.open('https://t.ly/V8F02','_blank')" style="color:#761915;font-weight:600;cursor:pointer;">Book Inbound →</span>
+                </li>
+              </ul>
+            </div>
+
+            <img
+              src="../blog-images/newsletter-june-4-2026-vancouver-aeroplan-outbound.png"
+              alt="Vancouver to Frankfurt Aeroplan – Outbound availability"
+              class="article-screenshot"
+              loading="lazy"
+            />
+            <img
+              src="../blog-images/newsletter-june-4-2026-vancouver-aeroplan-inbound.png"
+              alt="Vancouver to Frankfurt Aeroplan – Inbound availability"
+              class="article-screenshot"
+              loading="lazy"
+            />
+
+          </div><!-- /article-section -->
+
+        </div><!-- /article-body -->
+      </article><!-- /post-content -->
+
+      <!-- ── SIDEBAR ─────────────────────────── -->
+      <aside class="post-sidebar" aria-label="Sidebar">
+        <div class="sidebar-card">
+          <img src="../TCJ Website Assets/headshots/Graeme Headshot Blog.jpg" alt="Graeme — The Canadian Jetsetter" class="sidebar-headshot" />
+          <h3>Hi, I'm Graeme.</h3>
+          <p>A proud Canadian travel creator born and raised in Winnipeg. I find the best economy flight deals across Canada and share every single one with you.</p>
+          <a href="https://thecanadianjetsetter.beehiiv.com/subscribe" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Join My Newsletter →</a>
+        </div>
+        <div class="sidebar-card sidebar-card--economy">
+          <h3>🔓 Jetsetter Economy</h3>
+          <p>Get exclusive flight deals — the ones not shown publicly — sent straight to your inbox every week.</p>
+          <div class="sidebar-price">$59.99<span>/yr</span></div>
+          <a href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC" class="btn-sidebar-economy" target="_blank" rel="noopener noreferrer">Subscribe Now →</a>
+        </div>
+        <div class="sidebar-card sidebar-card--premium">
+          <h3>✨ Jetsetter Premium</h3>
+          <p>Business class deals &amp; points strategies for Canadians who want to travel in style.</p>
+          <a href="../jetsetter-premium.html" class="btn btn-primary btn-sm">Learn More →</a>
+        </div>
+        <div class="sidebar-card sidebar-card--economy">
+          <h3>Helpful Booking Links</h3>
+          <p>Search flights, hotels, packages and more using our trusted booking partners.</p>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="https://www.kqzyfj.com/click-101414786-12342718?url=https%3A%2F%2Fwww.flighthub.com%2F" class="btn-sidebar-economy" target="_blank" rel="noopener noreferrer">FlightHub →</a>
+            <a href="https://skyscanner.pxf.io/enEN4j" class="btn-sidebar-economy" target="_blank" rel="noopener noreferrer">Skyscanner →</a>
+            <a href="https://travelbrands.sjv.io/3kZEPB" class="btn-sidebar-economy" target="_blank" rel="noopener noreferrer">RedTag →</a>
+            <a href="https://www.anrdoezrs.net/click-101414786-13882994?url=https%3A%2F%2Fwww.expedia.ca%2F" class="btn-sidebar-economy" target="_blank" rel="noopener noreferrer">Expedia →</a>
+            <a href="https://www.awin1.com/cread.php?awinmid=6776&awinaffid=2753186" class="btn-sidebar-economy" target="_blank" rel="noopener noreferrer">Booking.com →</a>
+            <a href="https://www.awin1.com/cread.php?awinmid=19859&awinaffid=2753186" class="btn-sidebar-economy" target="_blank" rel="noopener noreferrer">Kiwi →</a>
+          </div>
+          <p style="font-size: 0.65rem; color: rgba(255,255,255,0.6); margin-top: 12px; margin-bottom: 0; line-height: 1.4;">These are affiliate links. Using them supports The Canadian Jetsetter at no extra cost to you.</p>
+        </div>
+      </aside>
+
+    </div><!-- /post-layout -->
+
+    <!-- ── PAGINATION ─────────────────────────── -->
+    <div class="post-pagination">
+      <div class="container">
+        <div class="post-pagination-inner">
+          <a href="newsletter-june-1-2026.html" class="btn-post-nav">← Flight Deals from $292 + Airline Sales Extended Until Tonight!</a>
+          <a href="../blog.html" class="btn-post-nav">Back to Blog →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SOCIAL PROOF ─────────────────────────── -->
+    <div class="social-proof-bar" role="region" aria-label="Social media following">
+      <div class="container">
+        <div class="social-proof-inner">
+          <div class="social-stat"><span class="social-stat-number">100K+</span><span class="social-stat-label">TikTok Followers</span></div>
+          <div class="social-stat"><span class="social-stat-number">120K+</span><span class="social-stat-label">Instagram Followers</span></div>
+          <div class="social-stat"><span class="social-stat-number">37K+</span><span class="social-stat-label">Newsletter Subscribers</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SOCIAL FOLLOW ─────────────────────────── -->
+    <section class="social-section" aria-labelledby="social-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="social-heading">Follow me on Instagram and TikTok for travel tips and hacks!</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="social-grid">
+          <a href="https://www.instagram.com/thecanadianjetsetter" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="../TCJ Website Assets/icons/slot 1.png" alt="Instagram Post" loading="lazy">
+              <div class="social-icon instagram-icon">&#128247;</div>
+            </div>
+          </a>
+          <a href="https://www.tiktok.com/@thecanadianjetsetter" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="../TCJ Website Assets/icons/slot 2.png" alt="TikTok Video" loading="lazy">
+              <div class="social-icon tiktok-icon">&#9654;</div>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/thecanadianjetsetter" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div class="social-thumb-wrapper">
+              <img src="../TCJ Website Assets/icons/slot 3.png" alt="Instagram Post" loading="lazy">
+              <div class="social-icon instagram-icon">&#128247;</div>
+            </div>
+          </a>
+        </div>
+        <div class="social-follow-ctas">
+          <a href="https://www.instagram.com/thecanadianjetsetter" class="btn btn-outline" target="_blank" rel="noopener noreferrer">@thecanadianjetsetter on Instagram →</a>
+          <a href="https://www.tiktok.com/@thecanadianjetsetter" class="btn btn-outline" target="_blank" rel="noopener noreferrer">@thecanadianjetsetter on TikTok →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────── -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo" aria-label="The Canadian Jetsetter — Home">
+          <img src="../TCJ Website Assets/logos/banner_text_logo.png" alt="The Canadian Jetsetter" loading="lazy" />
+        </a>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="https://buy.stripe.com/aEUbKC9S22f2h1u7sC" target="_blank" rel="noopener noreferrer">Subscribe</a>
+          <a href="../economy.html">Economy</a>
+          <a href="../jetsetter-premium.html">Premium</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Service</a>
+        </nav>
+        <p class="footer-copy">&copy; <span id="footer-year"></span> The Canadian Jetsetter. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    const offeringsBtn = document.querySelector('.nav-link--btn');
+    const submenu = document.querySelector('.nav-submenu');
+    offeringsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = offeringsBtn.getAttribute('aria-expanded') === 'true';
+      offeringsBtn.setAttribute('aria-expanded', !isOpen);
+      submenu.classList.toggle('is-open', !isOpen);
+    });
+    document.addEventListener('click', () => {
+      offeringsBtn.setAttribute('aria-expanded', 'false');
+      submenu.classList.remove('is-open');
+    });
+    submenu.addEventListener('click', (e) => e.stopPropagation());
+
+    const hamburger = document.querySelector('.nav-hamburger');
+    const dropdown = document.getElementById('nav-dropdown');
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !isOpen);
+      dropdown.setAttribute('aria-hidden', isOpen);
+      hamburger.classList.toggle('is-open', !isOpen);
+      dropdown.classList.toggle('is-open', !isOpen);
+    });
+    dropdown.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !dropdown.contains(e.target)) {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      }
+    });
+  </script>
+
+</body>
+</html>
