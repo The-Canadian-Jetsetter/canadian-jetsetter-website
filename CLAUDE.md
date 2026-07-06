@@ -97,6 +97,18 @@ Always copy footer exactly from `economy.html`.
 
 ---
 
+## Blog Publishing — Source of Truth
+
+**`posts.json` is the single source of truth for the blog listing.** `blog.html`'s `POSTS_DATA` and the "Latest From The Blog" cards in `index.html` are GENERATED from it by `inject_posts.py`. NEVER hand-edit `POSTS_DATA` in `blog.html` or the homepage cards directly — any such edit is wiped the next time `inject_posts.py` runs, which is how posts have silently disappeared before.
+
+Adding or changing a post, in order:
+1. Put the post HTML in `posts/` (the filename becomes the `slug`).
+2. Add/edit its entry in `posts.json`. Every entry needs: `slug` (= filename without `.html`), `date` as `YYYY-MM-DD`, `excerpt`, a LOCAL `featured_image` (`blog-images/…`, never an off-site URL), and `categories`/`tags`.
+3. Run `python3 inject_posts.py` to regenerate `blog.html` and `index.html`.
+4. Run `python3 check_posts.py` — it must pass before committing.
+
+---
+
 ## Git
 
 ```bash
