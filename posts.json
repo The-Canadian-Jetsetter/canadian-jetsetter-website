@@ -108,12 +108,17 @@
     ]
   },
   {
+    "slug": "newsletter-may-25-2026",
     "title": "✈️🇨🇦 Flight Deals from $256 + Don't Miss These WestJet and Air Transat Sales!",
-    "date": "May 25, 2026",
-    "category": "Newsletter",
-    "url": "posts/newsletter-may-25-2026.html",
-    "image": "blog-images/newsletter-may-25-2026-header.jpg",
-    "excerpt": "WestJet and Air Transat both have limited-time sales on now. Plus flight deals from $256 to Canada, $333 to sun destinations, $468 to Europe, $983 to Asia, and Aeroplan from 31,000 points + fees one-way."
+    "date": "2026-05-25",
+    "excerpt": "WestJet and Air Transat both have limited-time sales on now. Plus flight deals from $256 to Canada, $333 to sun destinations, $468 to Europe, $983 to Asia, and Aeroplan from 31,000 points + fees one-way.",
+    "featured_image": "blog-images/newsletter-may-25-2026-header.jpg",
+    "categories": [
+      "Newsletter"
+    ],
+    "tags": [
+      "Newsletter"
+    ]
   },
   {
     "slug": "newsletter-may-21-2026",
@@ -134,7 +139,7 @@
     "title": "✈️🇨🇦 Flight Deals from $199 + Icelandair Contest & Airline Promos!",
     "date": "2026-04-09",
     "excerpt": "Hey Travellers! Are you a “really bad” photographer who is interested in Iceland? Icelandair has a fun contest running where they’re searching for a “really…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/04/Apr-9.jpg",
+    "featured_image": "blog-images/Apr-9.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -148,7 +153,7 @@
     "title": "Skip the FX Fees: Two Scotiabank Cards with Limited-Time Welcome Offers",
     "date": "2026-04-07",
     "excerpt": "If you've ever come home from a trip abroad and winced at your credit card statement, you already know the sting of foreign transaction fees. That quiet 2.5%…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/04/Apr7-Header.jpg",
+    "featured_image": "blog-images/Apr7-Header.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -165,7 +170,7 @@
     "title": "Air Canada Is Bringing the Sun Next Winter With New Canary Islands Flights + Much More!",
     "date": "2026-04-06",
     "excerpt": "Air Canada is going big on winter sun for the 2026-27 season, and for Canadian travellers already dreaming about escaping next year’s cold, this is a pretty…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/04/Apr6-Header.jpg",
+    "featured_image": "blog-images/Apr6-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -182,7 +187,7 @@
     "title": "✈️🇨🇦 Flight Deals from $200 + Last Chance on the Marriott Bonvoy Limited-Time Offer!",
     "date": "2026-04-06",
     "excerpt": "Hey Travellers! Who else ate way too much chocolate this long weekend? 🐰🍫 Speaking of sweet things, the Marriott Bonvoy® American Express® Card’s limited-time…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/04/Apr-6.jpg",
+    "featured_image": "blog-images/Apr-6.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -196,7 +201,7 @@
     "title": "✈️🇨🇦 Flight Deals from $222 + Your Marriott Points Are Worth 3x More Than You Think!",
     "date": "2026-04-02",
     "excerpt": "Hey Travellers! Firstly, it’s almost Easter long weekend, so I hope you have a relaxing few days filled with delicious chocolate and quality time with family &…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/04/Apr-2-Header.jpg",
+    "featured_image": "blog-images/Apr-2-Header.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -210,7 +215,7 @@
     "title": "WestJet and Triangle Rewards launch new loyalty partnership",
     "date": "2026-04-01",
     "excerpt": "If you’re the kind of traveller who loves squeezing extra value out of everyday spending, this is a partnership worth paying attention to. WestJet Rewards and…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/04/Apr1-Header.jpg",
+    "featured_image": "blog-images/Apr1-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -225,7 +230,7 @@
     "title": "ITA Airways Joins Star Alliance. Here’s Why Canadian Travellers Should Pay Attention",
     "date": "2026-03-31",
     "excerpt": "If you love flying with Star Alliance airlines like Air Canada, United, Lufthansa, or SWISS, there’s a meaningful new addition to the mix. ITA Airways has…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar31-1-Header.jpg",
+    "featured_image": "blog-images/Mar31-1-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -241,7 +246,7 @@
     "title": "New Flying Blue Promo for April: Buy Miles with Up to 45% Off!",
     "date": "2026-03-31",
     "excerpt": "If you’ve been eyeing a Flying Blue redemption and need to top up on miles to make it happen, this one might be worth a look. For a limited time, the Air…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar31-Header.jpg",
+    "featured_image": "blog-images/Mar31-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -257,7 +262,7 @@
     "title": "✈️🇨🇦 Flight Deals from $220 + Direct Flight Guides from Canada!",
     "date": "2026-03-30",
     "excerpt": "Hey Travellers! It’s already the end of March… where did the last three months go?! I know a lot of you are in the process of planning trips for the summer and…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar-30.jpg",
+    "featured_image": "blog-images/Mar-30.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -271,7 +276,7 @@
     "title": "United Airlines Is Bringing Bed-Like Seats to Economy",
     "date": "2026-03-27",
     "excerpt": "If you’ve ever boarded a long-haul flight and secretly hoped nobody would sit beside you, United Airlines is basically turning that dream into a product. This…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar27-Header.jpg",
+    "featured_image": "blog-images/Mar27-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -286,7 +291,7 @@
     "title": "✈️🇨🇦 Flight Deals from $159 + Montreal’s New Airport + South Korea Points Hack!",
     "date": "2026-03-26",
     "excerpt": "Hey Travellers! Remember last week when I shared that Montréal was getting a new airport terminal and Porter Airlines would be announcing some new routes?…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar-26.jpg",
+    "featured_image": "blog-images/Mar-26.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -300,7 +305,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $979 + Sunwing and Air Transat Promos!",
     "date": "2026-03-25",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar-25.jpg",
+    "featured_image": "blog-images/Mar-25.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -315,7 +320,7 @@
     "title": "This New Amex Bonus Unlocks Cheap Korean Air Flights to Seoul",
     "date": "2026-03-24",
     "excerpt": "Every once in a while, a points opportunity comes along that feels a little… hidden. Not flashy. Not obvious. But if you know where to look, it unlocks…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar24-1-Header.jpg",
+    "featured_image": "blog-images/Mar24-1-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -329,7 +334,7 @@
     "title": "New Porter Routes Will Take Flight from MET Airport in Montréal!",
     "date": "2026-03-24",
     "excerpt": "Some genuinely exciting aviation news is unfolding in Montréal! For decades, Montréal–Trudeau International Airport has been the city’s primary gateway. But…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar24-Header.jpg",
+    "featured_image": "blog-images/Mar24-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -343,7 +348,7 @@
     "title": "✈️🇨🇦 Flight Deals from $126 + Icelandair & Air Transat Sales Ending Tonight!",
     "date": "2026-03-23",
     "excerpt": "Hey Travellers! If you’re looking at booking flights to Europe, Africa, or some Southern destinations, you may want to look into the following two promotions…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar-23.jpg",
+    "featured_image": "blog-images/Mar-23.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -357,7 +362,7 @@
     "title": "A Second Airport for Montréal? Here’s Why MET Could Change the Game",
     "date": "2026-03-20",
     "excerpt": "Some genuinely exciting aviation news is unfolding in Montréal, and this one has the potential to reshape how people in the region fly across Canada. Most…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar20-Header.jpg",
+    "featured_image": "blog-images/Mar20-Header.jpg",
     "categories": [
       "General Travel"
     ],
@@ -373,7 +378,7 @@
     "title": "A Major AMEX x Flying Blue Transfer Bonus Just Dropped for Canadians!",
     "date": "2026-03-19",
     "excerpt": "If you collect points in Canada, this is one of the most exciting promotions we’ve seen in quite some time! Right now, American Express Membership Rewards…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar19-Header.jpg",
+    "featured_image": "blog-images/Mar19-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -388,7 +393,7 @@
     "title": "✈️🇨🇦 Flight Deals from $197 + Exciting AMEX x Flying Blue Transfer Bonus!",
     "date": "2026-03-19",
     "excerpt": "Hey Travellers! Some exciting news in the aviation industry that affects anyone who lives or plans on visiting Montréal, Québec in the future! You’ve likely…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/WordPress-Header-Images-5.jpg",
+    "featured_image": "blog-images/WordPress-Header-Images-5.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -402,7 +407,7 @@
     "title": "How to Get to Dublin from Canada: Every Route Explained",
     "date": "2026-03-17",
     "excerpt": "Today is March 17, St. Patrick’s Day, which makes it the perfect day to explore a trip to Ireland’s capital. Dublin remains one of the most popular European…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar17-Header.jpg",
+    "featured_image": "blog-images/Mar17-Header.jpg",
     "categories": [
       "General Travel"
     ],
@@ -420,7 +425,7 @@
     "title": "Why Flights Are Getting More Expensive Right Now",
     "date": "2026-03-16",
     "excerpt": "If you’ve been searching for flights lately and noticed prices creeping up, you’re not imagining it. Airlines in Canada and around the world are starting to…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar16-Header.jpg",
+    "featured_image": "blog-images/Mar16-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -433,7 +438,7 @@
     "title": "✈️🇨🇦 Flight Deals from $102 + Extended Freedom Mobile Plan Ends Today!",
     "date": "2026-03-16",
     "excerpt": "Hey Travellers! In case you didn’t jump on this promotion last week, you have another chance.But only until tonight! 😃 Freedom Mobile extended their standout…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar-16.jpg",
+    "featured_image": "blog-images/Mar-16.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -447,7 +452,7 @@
     "title": "5 Travel Credit Cards to Consider for Summer Travel in 2026",
     "date": "2026-03-13",
     "excerpt": "Summer travel is approaching quickly, and if you are planning a trip in the coming months, now can be a great time to think about applying for a travel credit…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar13-Header.jpg",
+    "featured_image": "blog-images/Mar13-Header.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -463,7 +468,7 @@
     "title": "✈️🇨🇦 Flight Deals from $182 in Canada, $547 to Europe + Icelandair Sale!",
     "date": "2026-03-12",
     "excerpt": "Hey Travellers! If Iceland has been on your travel radar, now might be a great time to take a closer look. 🇮🇸 Icelandair has launched a new sale from multiple…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar-12.jpg",
+    "featured_image": "blog-images/Mar-12.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -478,7 +483,7 @@
     "title": "How to Get to Paris from Canada: Every Route Explained",
     "date": "2026-03-11",
     "excerpt": "Paris remains one of the most iconic destinations in Europe for Canadian travellers. Whether you are visiting for the food, art, architecture, or simply to…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar11-Header.jpg",
+    "featured_image": "blog-images/Mar11-Header.jpg",
     "categories": [
       "General Travel"
     ],
@@ -497,7 +502,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $1,029 + Sunwing and Air Transat Promos!",
     "date": "2026-03-11",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar-11.jpg",
+    "featured_image": "blog-images/Mar-11.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -512,7 +517,7 @@
     "title": "Rogers Launches Canada’s First World Legend Mastercard With $495 Annual Fee",
     "date": "2026-03-10",
     "excerpt": "Rogers Bank has introduced a new premium credit card in Canada, the Rogers Red World Legend Mastercard. The card marks the first time the World Legend tier…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar10-Header-1.jpg",
+    "featured_image": "blog-images/Mar10-Header-1.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -527,7 +532,7 @@
     "title": "U.S. Preclearance Now Available at Billy Bishop Airport!",
     "date": "2026-03-09",
     "excerpt": "Great news for travellers flying from downtown Toronto to the United States! As of March 10, 2026, passengers departing from Billy Bishop Toronto City Airport…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar9-Header.jpg",
+    "featured_image": "blog-images/Mar9-Header.jpg",
     "categories": [
       "General Travel"
     ],
@@ -541,7 +546,7 @@
     "title": "✈️🇨🇦 Flight Deals from $126 + $40 Freedom Mobile Plan + WestJet Flash Sale!",
     "date": "2026-03-09",
     "excerpt": "Hey Travellers! For anyone who loves a good deal (which I'm sure is everyone subscribed to this newsletter), you’ll want to keep on reading. 🤓 Two promotions…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar-9.jpg",
+    "featured_image": "blog-images/Mar-9.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -556,7 +561,7 @@
     "title": "How to Get to London from Canada: Every Route Explained",
     "date": "2026-03-06",
     "excerpt": "London remains one of the most popular international destinations for Canadian travellers. Whether you are visiting for history, theatre, business, or a…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar6-2-Header.jpg",
+    "featured_image": "blog-images/Mar6-2-Header.jpg",
     "categories": [
       "General Travel"
     ],
@@ -575,7 +580,7 @@
     "title": "United and Neo Financial Introduce a New Rewards Card!",
     "date": "2026-03-06",
     "excerpt": "A new airline credit card is about to enter the Canadian market and it could be an interesting option for travellers who frequently fly with United Airlines…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar6-Header.jpg",
+    "featured_image": "blog-images/Mar6-Header.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -590,7 +595,7 @@
     "title": "✈️🇨🇦 Flight Deals from $89 + Limited-Time Aeroplan Promo!",
     "date": "2026-03-05",
     "excerpt": "Hey Travellers! Quick heads up for the points collectors out there. There’s currently a limited time bonus on purchased Air Canada Aeroplan points, with some…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar-5.jpg",
+    "featured_image": "blog-images/Mar-5.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -604,7 +609,7 @@
     "title": "WestJet and Virgin Atlantic Expand Loyalty Benefits, Unlocking More Value for Canadian Travellers",
     "date": "2026-03-04",
     "excerpt": "Big loyalty news for Canadians who fly WestJet and love stretching their points across the Atlantic. WestJet and Virgin Atlantic have expanded their…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar4-Header.jpg",
+    "featured_image": "blog-images/Mar4-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -619,7 +624,7 @@
     "title": "Aeroplan's Newest Promo: Up to 90% Bonus on Purchased Points!",
     "date": "2026-03-04",
     "excerpt": "Aeroplan has launched another strong promotion, great if you need to top up your points or are wanting to redeem for a specific trip. From now until March 19,…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar-4-Header.jpg",
+    "featured_image": "blog-images/Mar-4-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -634,7 +639,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $1,009 + Limited-Time Promos!",
     "date": "2026-03-04",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar-4.jpg",
+    "featured_image": "blog-images/Mar-4.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -648,7 +653,7 @@
     "title": "Flying Blue March 2026 Promo: Europe from Ottawa, Toronto, and Montreal",
     "date": "2026-03-03",
     "excerpt": "Flying Blue is the loyalty program for Air France, KLM, and select partner airlines. Members earn miles when flying or through partners, and those miles can be…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/Mar3-Header.jpg",
+    "featured_image": "blog-images/Mar3-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -664,7 +669,7 @@
     "title": "✈️🇨🇦 Flight Deals from $99 + The Stopover Guide!",
     "date": "2026-03-02",
     "excerpt": "Hey Travellers, Happy March! As you start planning more of your 2026 trips, here’s something worth thinking about. Instead of treating your connection city as…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/03/March-2.jpg",
+    "featured_image": "blog-images/March-2.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -678,7 +683,7 @@
     "title": "A Quick Guide to Air Canada Mainline, Rouge, and Express",
     "date": "2026-02-27",
     "excerpt": "If you have ever booked a flight and noticed it says Air Canada, Air Canada Rouge, or Air Canada Express, you are not alone. They are all part of the same…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb27-Header.jpg",
+    "featured_image": "blog-images/Feb27-Header.jpg",
     "categories": [
       "General Travel"
     ],
@@ -692,7 +697,7 @@
     "title": "✈️🇨🇦 Flight Deals from $99 + Heading to the UK? Read This!",
     "date": "2026-02-26",
     "excerpt": "Hey Travellers! If the UK is on your 2026 radar, this is important. As of February 25, 2026, many travellers now need to apply for an Electronic Travel…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb-26-Image-1.jpg",
+    "featured_image": "blog-images/Feb-26-Image-1.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -706,7 +711,7 @@
     "title": "🇬🇧 Important Update for Travellers: The UK Now Requires an Electronic Travel Authorization",
     "date": "2026-02-25",
     "excerpt": "If you are planning a trip to the United Kingdom, there is an important update you need to know. Starting February 25, 2026, many travellers will need to apply…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb25-Header.jpg",
+    "featured_image": "blog-images/Feb25-Header.jpg",
     "categories": [
       "General Travel"
     ],
@@ -721,7 +726,7 @@
     "title": "🌴 Escape to the Sun ☀️ Dominican Republic from $1,009, Mexico from $1,239",
     "date": "2026-02-25",
     "excerpt": "Hola, Travellers! 🌍 While this newsletter is focused on bringing you the best all-inclusive escapes, your safety always comes first. As you’ve likely heard,…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb-25.jpg",
+    "featured_image": "blog-images/Feb-25.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -736,7 +741,7 @@
     "title": "Turn Your Transit Into Travel: Top Airline Stopover Programs From Canada in 2026",
     "date": "2026-02-24",
     "excerpt": "If you’re flying internationally from Canada this year, there’s a world of extra adventure waiting between flights. Rather than just passing through airports…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb24-Header.jpg",
+    "featured_image": "blog-images/Feb24-Header.jpg",
     "categories": [
       "General Travel"
     ],
@@ -755,7 +760,7 @@
     "title": "✈️🇨🇦 Flight Deals from $99 + WestJet's Birthday Sale!",
     "date": "2026-02-23",
     "excerpt": "Hey Travellers! WestJet is celebrating and Canadians get the gift. 🎁 For today only, you can save up to 30% off select base fares with the birthday sale from…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb-23-2.jpg",
+    "featured_image": "blog-images/Feb-23-2.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -770,7 +775,7 @@
     "title": "Toronto Meets Madrid: Iberia Starts Flights in June 2026",
     "date": "2026-02-20",
     "excerpt": "If you blinked in November, you might have missed this exciting news. Back in the fall, Iberia quietly announced that it will begin nonstop service between…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb20-Header.jpg",
+    "featured_image": "blog-images/Feb20-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -787,7 +792,7 @@
     "title": "Porter Expands Again: New U.S. Cities, More Sun, and Stronger Regional Flying!",
     "date": "2026-02-19",
     "excerpt": "Some interesting news out of Porter Airlines this week! If you’ve been watching Porter over the past couple of years, you know the growth has been steady and…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb19-Header-1.jpg",
+    "featured_image": "blog-images/Feb19-Header-1.jpg",
     "categories": [
       "Airline News"
     ],
@@ -801,7 +806,7 @@
     "title": "✈️🇨🇦 Flight Deals from $141 + Elevated Marriott Amex Offer Reminder!",
     "date": "2026-02-19",
     "excerpt": "Hey Travellers! Points are up and fares are down. First, a quick reminder that the elevated Marriott Bonvoy American Express offers are live. You can earn up…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb-19.jpg",
+    "featured_image": "blog-images/Feb-19.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -815,7 +820,7 @@
     "title": "Flying Blue Promo: Buy Miles with Up to 45% Off!",
     "date": "2026-02-18",
     "excerpt": "If you’ve been eyeing a Flying Blue redemption and just need a few more miles to make it happen, this one might be worth a look. For a limited time, the Air…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb18-Header.jpg",
+    "featured_image": "blog-images/Feb18-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -832,7 +837,7 @@
     "title": "🌴 Escape to the Sun ☀️ Dominican Republic from $969, Mexico from $1,169",
     "date": "2026-02-18",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb-18.jpg",
+    "featured_image": "blog-images/Feb-18.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -847,7 +852,7 @@
     "title": "New Era of Ultra Long-Haul Flying: Air Canada Orders Airbus A350-1000 Aircrafts",
     "date": "2026-02-17",
     "excerpt": "Great news for Canadian travellers! Air Canada has officially announced it will acquire eight Airbus A350-1000 aircrafts, with the option to purchase eight…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb17-Header.jpg",
+    "featured_image": "blog-images/Feb17-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -862,7 +867,7 @@
     "title": "Etihad Airways launches Calgary–Abu Dhabi nonstop!",
     "date": "2026-02-16",
     "excerpt": "Big news for Western Canadian travellers. Etihad Airways has announced a brand new nonstop route between Calgary and Abu Dhabi, marking the only direct…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb16-Header.jpg",
+    "featured_image": "blog-images/Feb16-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -879,7 +884,7 @@
     "title": "✈️🇨🇦 Flight Deals from $114 + Major Airline Sales Ending Soon!",
     "date": "2026-02-16",
     "excerpt": "Hey Travellers! 🚨 Major airline sales are LIVE — but not for long. 🚨 Most of Canada’s major carriers have some sort of promotion happening right now… and a…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb-16.jpg",
+    "featured_image": "blog-images/Feb-16.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -893,7 +898,7 @@
     "title": "✈️🇨🇦 Flight Deals from $108 + Up to 110K Marriott Bonvoy Points!",
     "date": "2026-02-05",
     "excerpt": "Hey Travellers! Exciting credit card news! The Marriott Bonvoy American Express and Marriott Bonvoy Business American Express cards now feature an increased…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb-5.jpg",
+    "featured_image": "blog-images/Feb-5.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -907,7 +912,7 @@
     "title": "Air Canada Boosts Winter Service to Latin America and Europe!",
     "date": "2026-02-04",
     "excerpt": "Air Canada is expanding its international network for winter 2026, adding new service to South America, strengthening European routes and introducing its…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb4-2-Header.jpg",
+    "featured_image": "blog-images/Feb4-2-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -922,7 +927,7 @@
     "title": "Canadian AMEX Alert: Earn Up to 110,000 Marriott Bonvoy Points!",
     "date": "2026-02-04",
     "excerpt": "If you’ve been thinking about upping your hotel points game, now is the time. American Express Canada has just more than doubled the welcome bonus on both the…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb4-Header.jpg",
+    "featured_image": "blog-images/Feb4-Header.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -938,7 +943,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $595 + Final Days for Air Canada Vacations Sale!",
     "date": "2026-02-04",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb-4.jpg",
+    "featured_image": "blog-images/Feb-4.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -952,7 +957,7 @@
     "title": "Flying Blue February 2026 Promo: Europe from Montreal and Toronto",
     "date": "2026-02-02",
     "excerpt": "Flying Blue is the loyalty program for Air France, KLM, and select partner airlines. Members earn miles when flying or through partners, and those miles can be…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb2-Header.jpg",
+    "featured_image": "blog-images/Feb2-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -963,7 +968,7 @@
     "title": "✈️🇨🇦 Flight Deals from $95 + International Aeroplan redemptions starting at 33,900 points!",
     "date": "2026-02-02",
     "excerpt": "Hey Travellers! That flight seat map you’re staring at? It’s not telling you the full story. Today’s video and blog highlight explain how to truly check how…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/02/Feb-2.jpg",
+    "featured_image": "blog-images/Feb-2.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -977,7 +982,7 @@
     "title": "How to (Potentially) Save Big on Air Canada Business Class Flights!",
     "date": "2026-01-30",
     "excerpt": "Business class does not have to cost a fortune. With a little insider knowledge and a few smart tricks, you can book select Air Canada flights within North…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan30-Header.jpg",
+    "featured_image": "blog-images/Jan30-Header.jpg",
     "categories": [
       "General Travel"
     ],
@@ -992,7 +997,7 @@
     "title": "✈️🇨🇦 Flight Deals from $83 + BMO x Porter Card Promos Ending Jan 31!",
     "date": "2026-01-29",
     "excerpt": "Hey Travellers! You have two days left to grab the limited-time BMO x Porter credit card bonuses, which are especially compelling if you fly Porter often and…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan-29.jpg",
+    "featured_image": "blog-images/Jan-29.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1021,7 +1026,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $645!",
     "date": "2026-01-28",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan-28.jpg",
+    "featured_image": "blog-images/Jan-28.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1036,7 +1041,7 @@
     "title": "✈️🇨🇦 Flight Deals from $114 + Canada Goes Long Haul!",
     "date": "2026-01-26",
     "excerpt": "Hey Travellers! We’re kicking things off this week with some exciting route news before diving into the deals. Within days of each other, WestJet and Air…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan-26.jpg",
+    "featured_image": "blog-images/Jan-26.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1052,7 +1057,7 @@
     "title": "Air Transat to Launch Loyalty Program with Desjardins and Visa",
     "date": "2026-01-23",
     "excerpt": "Air Transat is set to join the loyalty program space later this year, giving Canadians another way to earn and redeem rewards while travelling. The leisure…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan23-3-Header.jpg",
+    "featured_image": "blog-images/Jan23-3-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -1068,7 +1073,7 @@
     "title": "RBC Avion Visa Infinite Just Increased Its Welcome Bonus: Here’s Why It Matters",
     "date": "2026-01-23",
     "excerpt": "Canadians, heads up. One of the most versatile travel credit cards in the country just increased its welcome bonus, and if you value flexible airline points,…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan23-2-Header.jpg",
+    "featured_image": "blog-images/Jan23-2-Header.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -1084,7 +1089,7 @@
     "title": "Canada Goes Long-Haul: WestJet and Air Canada's Newly Announced Routes",
     "date": "2026-01-23",
     "excerpt": "Canadian aviation just got a lot more interesting. Within days of each other, WestJet and Air Canada announced two major long-haul additions that expand…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan23-Header-new.jpg",
+    "featured_image": "blog-images/Jan23-Header-new.jpg",
     "categories": [
       "Airline News"
     ],
@@ -1097,7 +1102,7 @@
     "title": "✈️🇨🇦 Flight Deals from $95 + Avion Bonus & Icelandair Sale Ending Today!",
     "date": "2026-01-22",
     "excerpt": "Hey Travellers! We’re kicking things off this week with two timely highlights before diving into the deals. First, the RBC Avion Visa Infinite Card just rolled…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan-22-Header.jpg",
+    "featured_image": "blog-images/Jan-22-Header.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1111,7 +1116,7 @@
     "title": "Why Airline Seat Maps Don’t Show How Full Your Flight Really Is",
     "date": "2026-01-21",
     "excerpt": "If you have ever opened your airline app, tapped on the seat map, and tried to guess how full your flight is, you are not alone. It is a common habit among…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan21-Header.jpg",
+    "featured_image": "blog-images/Jan21-Header.jpg",
     "categories": [
       "General Travel"
     ],
@@ -1125,7 +1130,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $569!",
     "date": "2026-01-21",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan-21.jpg",
+    "featured_image": "blog-images/Jan-21.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1140,7 +1145,7 @@
     "title": "✈️🇨🇦 Flight Deals from $111 + Porter Card Promo & Icelandair Sale Ending Soon!",
     "date": "2026-01-19",
     "excerpt": "Hey Travellers! We’re kicking things off this week with two offers nearing the runway. First, there’s less than two weeks left to grab the limited-time BMO x…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan-19.jpg",
+    "featured_image": "blog-images/Jan-19.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1154,7 +1159,7 @@
     "title": "Vancouver to Tokyo: Comparing Air Canada, ANA, JAL, and ZIPAIR",
     "date": "2026-01-16",
     "excerpt": "Flying nonstop from Vancouver to Tokyo is one of the most exciting long haul routes from Canada. In roughly ten hours, you can leave the Pacific Northwest and…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan16-Header.jpg",
+    "featured_image": "blog-images/Jan16-Header.jpg",
     "categories": [
       "General Travel"
     ],
@@ -1168,7 +1173,7 @@
     "title": "WestJet Is Reversing Its Controversial Seat Changes. Here’s What Travellers Need to Know",
     "date": "2026-01-16",
     "excerpt": "For months, WestJet travellers have been bracing themselves for a noticeably tighter onboard experience. Now, after widespread backlash and a viral moment that…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan16-Blog2-Header.jpg",
+    "featured_image": "blog-images/Jan16-Blog2-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -1182,7 +1187,7 @@
     "title": "✈️🇨🇦 Flight Deals from $95 + Icelandair Sale!",
     "date": "2026-01-15",
     "excerpt": "Hey Travellers! ✈️ The new year is the perfect time to start planning your next adventure, and Icelandair’s limited-time sale makes it easier than ever to…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan-15-Header.jpg",
+    "featured_image": "blog-images/Jan-15-Header.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1196,7 +1201,7 @@
     "title": "How to Spot WestJet’s New Economy Seat Layout Before You Book",
     "date": "2026-01-14",
     "excerpt": "You may have noticed more discussion recently around WestJet’s newer economy seat layout, which features reduced legroom and limited recline. The good news?…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan14-Blog1-Header-1.jpg",
+    "featured_image": "blog-images/Jan14-Blog1-Header-1.jpg",
     "categories": [
       "General Travel"
     ],
@@ -1211,7 +1216,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $579 + Deals on Deals!",
     "date": "2026-01-14",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan-14-Header.jpg",
+    "featured_image": "blog-images/Jan-14-Header.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1225,7 +1230,7 @@
     "title": "Sale Alert: Iceland and Europe – Your 2026 Adventure Awaits!",
     "date": "2026-01-13",
     "excerpt": "The new year is the perfect time to start dreaming about your next adventure, and Icelandair’s limited-time sale for Toronto, Vancouver, and Halifax make it…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan13-2-Header.jpg",
+    "featured_image": "blog-images/Jan13-2-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -1240,7 +1245,7 @@
     "title": "Flying Blue January 2026 Promo: 45,000-Mile Business Class Deal (But there’s a catch!)",
     "date": "2026-01-13",
     "excerpt": "Flying Blue program started 2026 with a Promo Reward that will definitely catch the attention of certain Canadian travellers. Flying Blue is known for its…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan13-Header.jpg",
+    "featured_image": "blog-images/Jan13-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -1255,7 +1260,7 @@
     "title": "✈️🇨🇦 Flight Deals from $83 + Don’t Miss This TD First Class Travel Promotion!",
     "date": "2026-01-12",
     "excerpt": "Hey Travellers! ✈️ We’re kicking things off this week with a travel credit card offer worth highlighting, especially if you’re looking for a strong all-around…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan-12.jpg",
+    "featured_image": "blog-images/Jan-12.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1269,7 +1274,7 @@
     "title": "How Much Legroom Do Canadian Airlines Actually Give You?",
     "date": "2026-01-09",
     "excerpt": "If you’ve been scrolling social media this week, you might have seen that WestJet video go viral showing a passenger struggling to fit their legs under the…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan9-Blog2-Header.jpg",
+    "featured_image": "blog-images/Jan9-Blog2-Header.jpg",
     "categories": [
       "General Travel"
     ],
@@ -1283,7 +1288,7 @@
     "title": "Track Your Air Canada Aeroplan Status in 2026 with This Free Spreadsheet!",
     "date": "2026-01-09",
     "excerpt": "If you are aiming to earn or maintain Air Canada Aeroplan Elite status, there is an important change you need to know about this year. The way you earn status…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan9-Header.jpg",
+    "featured_image": "blog-images/Jan9-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -1298,7 +1303,7 @@
     "title": "BMO’s VIPorter Credit Cards Are Offering Big Welcome Bonuses Right Now",
     "date": "2026-01-08",
     "excerpt": "If Porter Airlines is part of your regular travel routine, BMO’s current VIPorter credit card offers are worth a closer look. Until January 31, 2026, both the…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan8-Header.jpg",
+    "featured_image": "blog-images/Jan8-Header.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -1313,7 +1318,7 @@
     "title": "✈️🇨🇦 Flight Deals from $111 + BMO VIPorter Mastercard Limited-Time Deal!",
     "date": "2026-01-08",
     "excerpt": "Hey Travellers! ✈️ We’re starting this week with a limited-time credit card offer worth showcasing, especially if Porter Airlines is part of your regular…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan-8.jpg",
+    "featured_image": "blog-images/Jan-8.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1327,7 +1332,7 @@
     "title": "Flair Airlines Launches a New Ticket Resale Option!",
     "date": "2026-01-07",
     "excerpt": "Flair Airlines has quietly rolled out something we haven’t seen before from a North American airline: the ability to resell your airline ticket if you can’t…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan7-Header.jpg",
+    "featured_image": "blog-images/Jan7-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -1341,7 +1346,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $589 + New Sales!",
     "date": "2026-01-07",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan-7.jpg",
+    "featured_image": "blog-images/Jan-7.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1355,7 +1360,7 @@
     "title": "The AMEX to Marriott Bonvoy 30% Transfer Bonus Is Back!",
     "date": "2026-01-06",
     "excerpt": "Every so often, a points transfer bonus comes along that’s worth more than a quick glance. For Canadians holding American Express Membership Rewards points,…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan6-Header.jpg",
+    "featured_image": "blog-images/Jan6-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -1370,7 +1375,7 @@
     "title": "Massive News for Canadians: AMEX Membership Rewards Now Transfer 1:1 to Flying Blue!",
     "date": "2026-01-05",
     "excerpt": "If you collect American Express Membership Rewards points in Canada, this is huge news and easily one of the most exciting loyalty updates we’ve seen in a long…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan5-Header.jpg",
+    "featured_image": "blog-images/Jan5-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -1385,7 +1390,7 @@
     "title": "✈️🇨🇦 Flight Deals from $102 + Amex Points Just Got Better!",
     "date": "2026-01-05",
     "excerpt": "Hey Travellers! ✈️ Happy New Year! Hope 2026 is already off to a great start and that you’re finding time to think about where this year might take you, from a…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2026/01/Jan-5.jpg",
+    "featured_image": "blog-images/Jan-5.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1399,7 +1404,7 @@
     "title": "How to Get to Iceland from Canada: Every Route Explained",
     "date": "2025-12-31",
     "excerpt": "Iceland has been capturing the attention of Canadian travellers for several years and is now more popular than ever. From dramatic waterfalls and volcanoes to…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-31-Header.jpg",
+    "featured_image": "blog-images/Dec-31-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -1413,7 +1418,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $699 + Happy New Year!",
     "date": "2025-12-31",
     "excerpt": "Happy New Year, Jetsetters! 🥂 Thank you for being part of this community. I’m incredibly grateful for your continued support and for following along. Wishing…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-31.jpg",
+    "featured_image": "blog-images/Dec-31.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1428,7 +1433,7 @@
     "title": "Porter’s 50th Embraer E195-E2: Why It Matters",
     "date": "2025-12-30",
     "excerpt": "Porter Airlines just quietly crossed a major milestone. If you’re a Canadian traveller, this is one of those aviation stories that is super exciting. As of…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-30-Header.jpg",
+    "featured_image": "blog-images/Dec-30-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -1442,7 +1447,7 @@
     "title": "Yes, You Can Fly Non-Stop From Toronto or Montreal to Tokyo!",
     "date": "2025-12-29",
     "excerpt": "If you're from Toronto or Montreal, and Japan has been sitting on your travel wish list, this might be the nudge you’ve been waiting for. Air Canada offers…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-29-SecondBlog-Header.jpg",
+    "featured_image": "blog-images/Dec-29-SecondBlog-Header.jpg",
     "categories": [
       "Airline News"
     ],
@@ -1456,7 +1461,7 @@
     "title": "Aeroplan's Latest Deal: Up to 30% Discount on Points!",
     "date": "2025-12-29",
     "excerpt": "Aeroplan has a live promotion for the next few weeks! From now until January 24, 2026 at 11:59pm PT, Aeroplan members can receive up to 30% off when purchasing…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-29-Header.jpg",
+    "featured_image": "blog-images/Dec-29-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -1471,7 +1476,7 @@
     "title": "✈️🇨🇦 Flight Deals from $105 + Last Chance for Scotiabank Gold Amex Offer!",
     "date": "2025-12-29",
     "excerpt": "Hey Travellers! ✈️💳 Hope you’re having a great week and finding a little time to dream about your next trip, whether that’s a quick winter escape, a spring…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-29-2.jpg",
+    "featured_image": "blog-images/Dec-29-2.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1485,7 +1490,7 @@
     "title": "✈️🇨🇦 Flight Deals from $95 + Four Credit Card Offers Expiring!",
     "date": "2025-12-22",
     "excerpt": "Hey Travellers! ✈️💳 Firstly, Happy Holidays! Whether you’re travelling to see loved ones, sneaking away somewhere warm, or already planning your next adventure…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-22.jpg",
+    "featured_image": "blog-images/Dec-22.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1499,7 +1504,7 @@
     "title": "Air Transat Launches First-Ever Toronto–Tirana Flights + More Summer 2026 Flights",
     "date": "2025-12-19",
     "excerpt": "Air Transat is doubling down on its role as Canada’s leisure airline and for summer 2026, it’s doing so with its most ambitious network expansion ever. The…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec19-Header-123.jpg",
+    "featured_image": "blog-images/Dec19-Header-123.jpg",
     "categories": [
       "Airline News"
     ],
@@ -1512,7 +1517,7 @@
     "title": "British Airways Avios Devaluation Is Now Live: Here’s What Canadians Should Know",
     "date": "2025-12-19",
     "excerpt": "If British Airways Avios plays a role in your points strategy — especially if you earn points through RBC Avion or American Express Membership Rewards — a…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec19-Header.jpg",
+    "featured_image": "blog-images/Dec19-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -1526,7 +1531,7 @@
     "title": "✈️🇨🇦 Flight Deals from $116 + 50,000-Point Scotiabank Gold Amex Offer!",
     "date": "2025-12-18",
     "excerpt": "Hey Travellers! This week’s newsletter kicks off with a limited-time reminder you don’t want to miss — one of Canada’s strongest travel credit card offers is…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-18.jpg",
+    "featured_image": "blog-images/Dec-18.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1540,7 +1545,7 @@
     "title": "Why Flights From the U.S. to Canada Are Often Cheaper Than the Other Way Around",
     "date": "2025-12-17",
     "excerpt": "If you’ve ever searched transborder flights and thought, “Wait… how does this make sense?” — you’re not alone. Recently, I spotted a one-way Las Vegas →…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec17-Header.jpg",
+    "featured_image": "blog-images/Dec17-Header.jpg",
     "categories": [
       "General Travel"
     ],
@@ -1554,7 +1559,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $725 + Contest Alert!",
     "date": "2025-12-17",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-17.jpg",
+    "featured_image": "blog-images/Dec-17.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1569,7 +1574,7 @@
     "title": "Air France KLM Flying Blue Miles Sale: Only Until December 22, 2025",
     "date": "2025-12-16",
     "excerpt": "Air France KLM’s Flying Blue program is back with one of its most popular recurring promotions — a buy-miles event offering either up to an 80% bonus or up to…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec16-Header.jpg",
+    "featured_image": "blog-images/Dec16-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -1583,7 +1588,7 @@
     "title": "✈️🇨🇦 Flight Deals from $95 + FIFA World Cup Ticket Lottery Now Open!",
     "date": "2025-12-15",
     "excerpt": "Hey Travellers! ✈️💸 This week’s newsletter kicks off with an important update for soccer fans: FIFA World Cup 26™ ticket prices are now out, and the lottery to…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-15.jpg",
+    "featured_image": "blog-images/Dec-15.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1597,7 +1602,7 @@
     "title": "Why the Amex Cobalt Remains One of the Best Points Cards in the World",
     "date": "2025-12-12",
     "excerpt": "If you follow the Canadian points landscape closely, you’ll know the recent annual fee increase on the American Express Cobalt Card (from $155.88 to $191.88…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec12-Header.jpg",
+    "featured_image": "blog-images/Dec12-Header.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -1612,7 +1617,7 @@
     "title": "✈️🇨🇦 Flight Deals from $99 + Top 2026 Points Deals to Grab!",
     "date": "2025-12-11",
     "excerpt": "Hey Travellers! ✈️💸 If you’re trying to stretch your points further this upcoming year, you’ll want to check out a video I dropped recently. It covers some…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-11.jpg",
+    "featured_image": "blog-images/Dec-11.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1626,7 +1631,7 @@
     "title": "4 Limited-Time Credit Card Offers About to Expire in Canada!",
     "date": "2025-12-10",
     "excerpt": "Some of the best credit card offers in Canada aren’t meant to last forever — and right now, several elevated welcome bonuses are quietly set to disappear. Over…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Credit-Card-Dec-10-header-2.jpg",
+    "featured_image": "blog-images/Credit-Card-Dec-10-header-2.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -1641,7 +1646,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $595!",
     "date": "2025-12-10",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-10.jpg",
+    "featured_image": "blog-images/Dec-10.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1656,7 +1661,7 @@
     "title": "✈️🇨🇦 Flight Deals from $105 + Big Rewards with TD First Class Card!",
     "date": "2025-12-08",
     "excerpt": "Hey Travellers! ✈️💸 If you’re looking for a travel credit card that actually pulls its weight — this one’s worth a look. The TD First Class Travel® Visa…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-8.jpg",
+    "featured_image": "blog-images/Dec-8.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1670,7 +1675,7 @@
     "title": "The Best Points Sweet Spots Canadians Can Book Right Now + Three New Toronto Routes for 2026!",
     "date": "2025-12-05",
     "excerpt": "I’ve been spending a lot of time lately combing through route announcements, checking award calendars, and testing different transfer options — and the more I…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec5-Header-Updated.jpg",
+    "featured_image": "blog-images/Dec5-Header-Updated.jpg",
     "categories": [
       "Airline News",
       "Credit Cards",
@@ -1689,7 +1694,7 @@
     "title": "✈️🇨🇦 Flight Deals from $77 + Cyber Week Savings & Exclusive Points Bonus!",
     "date": "2025-12-04",
     "excerpt": "Hey Travellers! ✈️💸 The Scotiabank Platinum® and Gold® American Express® Cards have strong promos — and you only have until the end of the month before it…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-4.jpg",
+    "featured_image": "blog-images/Dec-4.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1703,7 +1708,7 @@
     "title": "A Canadian Guide to Maximizing Marriott Bonvoy",
     "date": "2025-12-04",
     "excerpt": "Ever dreamed of unlocking luxury hotel stays, suite upgrades, and elite perks without spending thousands of dollars per night? That’s exactly what happened…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec3Blog-Header.jpg",
+    "featured_image": "blog-images/Dec3Blog-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -1718,7 +1723,7 @@
     "title": "Air Canada Doubles Down on Europe: New Summer 2026 Routes You’ll Want on Your Radar",
     "date": "2025-12-03",
     "excerpt": "Air Canada is levelling up big time for Summer 2026, providing more choice, more convenience, and more dreamy Euro escapes for Canadian travellers. With new…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec3-NewHeader-2.jpg",
+    "featured_image": "blog-images/Dec3-NewHeader-2.jpg",
     "categories": [
       "Airline News"
     ],
@@ -1732,7 +1737,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $555 + Cyber Week Sales! ✈️",
     "date": "2025-12-03",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-3.jpg",
+    "featured_image": "blog-images/Dec-3.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1746,7 +1751,7 @@
     "title": "Flying Blue December Promo: Ottawa’s Best Deal to Europe",
     "date": "2025-12-02",
     "excerpt": "Flying Blue Promo Rewards are one of the easiest ways Canadians can save big when booking Air France or KLM flights with Miles. Each month, Flying Blue…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-2-Header2.jpg",
+    "featured_image": "blog-images/Dec-2-Header2.jpg",
     "categories": [
       "Airline News",
       "Travel Points"
@@ -1763,7 +1768,7 @@
     "title": "Aeroplan's Black Friday Mystery Bonus: Up to 100% Bonus on Purchased Points!",
     "date": "2025-12-01",
     "excerpt": "Aeroplan has launched one of its strongest promotions of the year just in time for Black Friday. From now until December 17, 2025 at 11:59pm PT, Aeroplan…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-1-Header.jpg",
+    "featured_image": "blog-images/Dec-1-Header.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -1779,7 +1784,7 @@
     "title": "✈️🇨🇦 Flight Deals from $113 + Aeroplan Mystery Bonus & Cyber Monday Sales!",
     "date": "2025-12-01",
     "excerpt": "Hey Travellers! ✈️💸 Aeroplan’s Black Friday Mystery Bonus is live — and this is one of the most exciting points promos of the year. Until December 17, members…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/12/Dec-1.jpg",
+    "featured_image": "blog-images/Dec-1.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1793,7 +1798,7 @@
     "title": "✈️🇨🇦 Flight Deals from $192 + Cathay Pacific Black Friday Mega Sale & Aeroplan eStore Bonuses!",
     "date": "2025-11-27",
     "excerpt": "Hey Travellers! ✈️💸 Only three days left to take advantage of Cathay Pacific’s Black Friday Mega Sale, with round-trip fares from $642CAD to 80+ destinations…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Nov-27.jpg",
+    "featured_image": "blog-images/Nov-27.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1807,7 +1812,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $509 + Black Friday Sales! ✈️",
     "date": "2025-11-26",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Nov-26.jpg",
+    "featured_image": "blog-images/Nov-26.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1822,7 +1827,7 @@
     "title": "✈️🇨🇦 Flight Deals from $105 + Cathay Black Friday Sale & Final Day for Avion Bonus!",
     "date": "2025-11-24",
     "excerpt": "Hey Travellers! ✈️💸 Late November is deal season — and this week delivers. We’re kicking things off with Cathay Pacific’s Black Friday Mega Sale, with…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Nov-24.jpg",
+    "featured_image": "blog-images/Nov-24.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1836,7 +1841,7 @@
     "title": "✈️🇨🇦 Flight Deals: Europe from $498, Asia from $564 + Iceland Sale & WestJet’s New 2026 Destinations!",
     "date": "2025-11-20",
     "excerpt": "Hey Travellers! ✈️💸 Late November may be getting cold outside but it’s coming in hot with some amazing travel updates — starting with Icelandair’s Aurora…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Nov-20.jpg",
+    "featured_image": "blog-images/Nov-20.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1850,7 +1855,7 @@
     "title": "WestJet Just Made Summer 2026 WAY More Exciting for Canadians ✈️",
     "date": "2025-11-19",
     "excerpt": "If you’re already daydreaming about your 2026 vacations, WestJet just gave us a whole lot more reasons to get excited. The airline just announced its summer…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Nov-19-blog-photo-header-2.jpg",
+    "featured_image": "blog-images/Nov-19-blog-photo-header-2.jpg",
     "categories": [
       "Airline News"
     ],
@@ -1864,7 +1869,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $525 + Early Black Friday Deals! ✈️",
     "date": "2025-11-19",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Nov-19.jpg",
+    "featured_image": "blog-images/Nov-19.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1878,7 +1883,7 @@
     "title": "I Ranked EVERY Aeroplan Partner Airline! ✈️",
     "date": "2025-11-18",
     "excerpt": "If you’ve ever searched for flights using Aeroplan points, you’ve probably seen something shocking: Air Canada charging 300,000+ points for a business-class…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Blog-29-Graphics-I-Ranked-EVERY-Aeroplan-Partner-Airline-and-How-to-Save-Up-to-6×-Points.jpg",
+    "featured_image": "blog-images/Blog-29-Graphics-I-Ranked-EVERY-Aeroplan-Partner-Airline-and-How-to-Save-Up-to-6×-Points.jpg",
     "categories": [
       "General Travel",
       "Travel Points"
@@ -1893,7 +1898,7 @@
     "title": "✈️🇨🇦 Flight Deals: Europe from $550, Asia from $567 + RBC Avion Bonus Ends Next Week! 🚨",
     "date": "2025-11-17",
     "excerpt": "Hey Travellers! ✈️💸 Mid-November is serving up some serious travel vibes — Porter Airlines is running a time-limited sale that ends tonight, so if you’ve been…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Nov-17.jpg",
+    "featured_image": "blog-images/Nov-17.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1907,7 +1912,7 @@
     "title": "✈️🇨🇦 Flight Deals: Europe from $520, Asia from $581 + Airline Sales End Tonight! 🚨",
     "date": "2025-11-14",
     "excerpt": "Hey Travellers! ✈️💸 Nothing like a mid-November surprise: Air Canada, WestJet, and Porter have all dropped fresh airfare sales — but they end tonight. Whether…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Nov-14-2.jpg",
+    "featured_image": "blog-images/Nov-14-2.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1921,7 +1926,7 @@
     "title": "✈️🇨🇦 Flight Deals: Canada from $95, Europe from $510 + Flair’s Early Black Friday Sale!",
     "date": "2025-11-10",
     "excerpt": "Hey Travellers! ✈️💸 Black Friday is starting early this year — Flair Airlines is kicking things off with an Early Black Friday Sale! It’s the perfect time to…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Nov-10.jpg",
+    "featured_image": "blog-images/Nov-10.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1935,7 +1940,7 @@
     "title": "Major Changes Coming to the Amex Platinum Card: What Canadian Cardholders Need to Know",
     "date": "2025-11-07",
     "excerpt": "American Express Canada has officially announced a major change to one of its most iconic cards — the American Express Platinum Card. Starting January 1, 2027,…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/9.jpg",
+    "featured_image": "blog-images/9.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -1949,7 +1954,7 @@
     "title": "✈️🇨🇦 Flight Deals: Europe from $552, Asia from $765 + Earn Big with RBC’s Avion Bonus!",
     "date": "2025-11-06",
     "excerpt": "Hey Travellers! 💳✈️ This week, we’re showcasing an amazing offer on the RBC Avion Visa Infinite Card, now with a limited-time welcome bonus of up to 55,000…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Nov-6.jpg",
+    "featured_image": "blog-images/Nov-6.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1963,7 +1968,7 @@
     "title": "Limited-Time Offer: Earn Up to 55,000 Avion Points with the RBC Avion Visa Infinite Card!",
     "date": "2025-11-05",
     "excerpt": "If you’ve been dreaming of turning everyday spending into your next big getaway, the RBC Avion Visa Infinite card might just be your new travel companion. It’s…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/happy-man-avion-blog.jpg",
+    "featured_image": "blog-images/happy-man-avion-blog.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -1978,7 +1983,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $535! ✈️",
     "date": "2025-11-05",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Nov-5.jpg",
+    "featured_image": "blog-images/Nov-5.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -1993,7 +1998,7 @@
     "title": "💳 The Real Value of Canadian Credit Card Points — Finally Explained",
     "date": "2025-11-04",
     "excerpt": "Canadian banks spend millions every year promoting their travel rewards programs — yet they make it nearly impossible to understand what those points are…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Cover-Photo.jpg",
+    "featured_image": "blog-images/Cover-Photo.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -2006,7 +2011,7 @@
     "title": "FlyingBlue November 2025 Promo: Business Class to Europe from 45,000 Miles",
     "date": "2025-11-03",
     "excerpt": "Canadians, here’s a travel hack you won’t want to miss: Air France and KLM have just dropped some of their business class award flights by 25% this November,…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Screenshot-2025-11-03-at-4.52.56-PM.png",
+    "featured_image": "blog-images/Screenshot-2025-11-03-at-4.52.56-PM.png",
     "categories": [
       "Travel Points"
     ],
@@ -2021,7 +2026,7 @@
     "title": "✈️🇨🇦 Flight Deals: Hawaii from $350, Europe from $530 + Save on Travel Fees Abroad!",
     "date": "2025-11-03",
     "excerpt": "Hey Travellers! 💸✈️ This week, we’re showing you how to skip those hidden travel fees once and for all — and how the EQ Bank Card can help you keep more money…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/11/Nov-3.jpg",
+    "featured_image": "blog-images/Nov-3.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2035,7 +2040,7 @@
     "title": "✈️ ZIPAIR’s Lie-Flat Seats: Business Class Comfort for a Fraction of the Price",
     "date": "2025-10-31",
     "excerpt": "Source: zipair.net",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/service_seat_flat.e5d2e8f.jpeg",
+    "featured_image": "blog-images/service_seat_flat.e5d2e8f.jpeg",
     "categories": [
       "General Travel"
     ],
@@ -2050,7 +2055,7 @@
     "title": "✈️ Air Transat Expands Its Horizons: Six Exciting New Destinations for 2025–26",
     "date": "2025-10-30",
     "excerpt": "Air Transat is spreading its wings again — and this time, they’re reaching six brand-new destinations across four continents. From vibrant Latin American…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/Airplane.jpg",
+    "featured_image": "blog-images/Airplane.jpg",
     "categories": [
       "Airline News"
     ],
@@ -2064,7 +2069,7 @@
     "title": "✈️🇨🇦 Spooky Flight Deals: Europe from $490, Asia from $761 + Scotiabank Amex Offer Ends Tomorrow! 🎃",
     "date": "2025-10-30",
     "excerpt": "Hey Travellers! 💸✈️ Halloween isn’t the only thing giving us chills this week — these airfare deals are downright spooktacular! WestJet, Flair, and Porter…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/Oct-30.jpg",
+    "featured_image": "blog-images/Oct-30.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2078,7 +2083,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $469 + Final Days for Sunwing sale! ✈️",
     "date": "2025-10-29",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/Oct-29.jpg",
+    "featured_image": "blog-images/Oct-29.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2092,7 +2097,7 @@
     "title": "✈️🇨🇦 Flight Deals: Mexico from $267, Europe from $613 + Scotiabank Offer Ends Oct 31!",
     "date": "2025-10-27",
     "excerpt": "Hey Travellers! 💸✈️ This week is all about seat sales and savings! 💥✈️ Both WestJet and Flair Airlines are running major airfare sales — from sunny escapes in…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/Oct-27.jpg",
+    "featured_image": "blog-images/Oct-27.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2119,7 +2124,7 @@
     "title": "✈️🇨🇦 Flight Deals: Europe from $561, Asia from $665 + Flight Sales!",
     "date": "2025-10-23",
     "excerpt": "Hey Travellers! 💸✈️ This week is all about snagging the best seats before they’re gone. ✈️💨 Air Canada, WestJet, and Flair have all dropped fresh seat sales —…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/Oct-23-2.jpg",
+    "featured_image": "blog-images/Oct-23-2.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2133,7 +2138,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $555! ✈️",
     "date": "2025-10-22",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/Oct-22.jpg",
+    "featured_image": "blog-images/Oct-22.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2147,7 +2152,7 @@
     "title": "Three New International Routes Coming to Toronto in 2026",
     "date": "2025-10-21",
     "excerpt": "Great news for all you Toronto-based Jetsetters! Toronto Pearson is expanding its global reach next summer with three new routes spanning three continents:…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/Toronto-2.jpg",
+    "featured_image": "blog-images/Toronto-2.jpg",
     "categories": [
       "Airline News"
     ],
@@ -2158,7 +2163,7 @@
     "title": "✈️🇨🇦 Flight Deals: Europe from $564, Asia from $627 + Scotiabank Gold Amex Offer Ends Oct 31! 💳",
     "date": "2025-10-20",
     "excerpt": "Hey Travellers! 💳✈️ This week’s newsletter is packed with ways to travel smarter and further. First up — if you’re a resident of Ontario, you could win 1…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/WordPress-Header-Images-4.jpg",
+    "featured_image": "blog-images/WordPress-Header-Images-4.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2173,7 +2178,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $535! ✈️",
     "date": "2025-10-16",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/Cuba.jpg",
+    "featured_image": "blog-images/Cuba.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2188,7 +2193,7 @@
     "title": "Lufthansa Takes Luxury to New Heights: Allegris Cabins Land on Frankfurt–Toronto Route",
     "date": "2025-10-15",
     "excerpt": "Lufthansa is taking the in-flight experience to new heights this winter — literally. The airline’s highly anticipated Allegris cabins have officially landed on…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/5-blog20.jpg",
+    "featured_image": "blog-images/5-blog20.jpg",
     "categories": [
       "Airline News"
     ],
@@ -2203,7 +2208,7 @@
     "title": "✈️🇨🇦 Flight Deals: Costa Rica from $338, Europe from $570 + more steals!",
     "date": "2025-10-14",
     "excerpt": "Hey Travellers! 💸✈️ While most people wait for peak-season sunshine, the real jetsetters know the magic of off-season travel. Think fewer crowds, cheaper…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/Paris-2.jpg",
+    "featured_image": "blog-images/Paris-2.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2217,7 +2222,7 @@
     "title": "Air Canada’s A321XLR: The Game-Changer for Medium-Haul International Travel",
     "date": "2025-10-14",
     "excerpt": "Air Canada is preparing to make a big splash in its fleet with the Airbus A321XLR, a plane designed to stretch the limits of narrow-body aircraft. For…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/Mallorca.jpg",
+    "featured_image": "blog-images/Mallorca.jpg",
     "categories": [
       "Airline News"
     ],
@@ -2231,7 +2236,7 @@
     "title": "Why Premium Aeroplan Cards Are More Important Than Ever",
     "date": "2025-10-13",
     "excerpt": "Here's something that might surprise you: Air Canada just made premium Aeroplan credit cards more valuable than they've ever been. Not less valuable – more.…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/8.jpg",
+    "featured_image": "blog-images/8.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -2247,7 +2252,7 @@
     "title": "The Hidden RBC Credit Card Combo That Outperforms Amex Cobalt",
     "date": "2025-10-12",
     "excerpt": "I want to share a strategy that’s been overlooked in the Canadian credit card space, yet it offers remarkable value. At a time when many loyalty programs are…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/09/6-1.jpg",
+    "featured_image": "blog-images/6-1.jpg",
     "categories": [
       "Credit Cards",
       "Travel Points"
@@ -2264,7 +2269,7 @@
     "title": "The Aeroplan Program Transformation: What Recent Changes Mean for Members",
     "date": "2025-10-10",
     "excerpt": "Air Canada’s Aeroplan program has long been a favourite among Canadian travellers looking to maximize their points. But recent changes to redemption rates mark…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/09/Blog-13-Graphics-The-Aeroplan-Program-Transformation-Recent-Changes-in-Redemption-Values-3.png",
+    "featured_image": "blog-images/Blog-13-Graphics-The-Aeroplan-Program-Transformation-Recent-Changes-in-Redemption-Values-3.png",
     "categories": [
       "Airline News",
       "Travel Points"
@@ -2280,7 +2285,7 @@
     "title": "✈️🇨🇦 Flight Deals: Europe from $394, Asia from $679 + How to Avoid Travel Fees Abroad",
     "date": "2025-10-09",
     "excerpt": "Hey Travellers! 💸✈️ Before diving into this week’s flight deals, here’s a quick heads-up on something every jetsetter should know: the hidden fees that can…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/London-Oct-9.jpg",
+    "featured_image": "blog-images/London-Oct-9.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2295,7 +2300,7 @@
     "title": "🌴 Escape to the Sun: All-Inclusive Getaways from $585! ✈️",
     "date": "2025-10-08",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/Oct-8.jpg",
+    "featured_image": "blog-images/Oct-8.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2310,7 +2315,7 @@
     "title": "Porter Airlines Heats Up Winter Travel with Exciting New Sun Routes",
     "date": "2025-10-07",
     "excerpt": "Winter in Canada can be beautiful, but let's be honest – sometimes you just need to escape to warmer climates! And Porter Airlines is making it easier than…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/1-1.jpg",
+    "featured_image": "blog-images/1-1.jpg",
     "categories": [
       "Airline News"
     ],
@@ -2325,7 +2330,7 @@
     "title": "✈️🇨🇦 Flight Deals: Hawaii from $291, Europe from $390 + More Airline Sales 🔥",
     "date": "2025-10-06",
     "excerpt": "Hey Travellers! 🇨🇦 Canada’s top airlines are at it again with fresh airfare deals you won’t want to miss! ✈️ Air Canada, WestJet, and Flair have all launched…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/WordPress-Header-Images-3.jpg",
+    "featured_image": "blog-images/WordPress-Header-Images-3.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2339,7 +2344,7 @@
     "title": "✈️🇨🇦 Flight Deals: Hawaii from $306, Peru from $392 + Airline Sales 🔥",
     "date": "2025-10-02",
     "excerpt": "Hey Travellers! 🇨🇦 October is bringing the heat with incredible flight deals and great airline sales happening right now! ✈️ Air Canada, WestJet, and Flair are…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/Hawaii.jpg",
+    "featured_image": "blog-images/Hawaii.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2353,7 +2358,7 @@
     "title": "🚨 Extended! Air Canada Vacations Sale + All-Inclusive Deals from $585",
     "date": "2025-10-01",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/10/Mexico-2.jpg",
+    "featured_image": "blog-images/Mexico-2.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2367,7 +2372,7 @@
     "title": "✈️🇨🇦 Hawaii from $334, Europe from $503 + 70% Bonus Virgin Points",
     "date": "2025-09-29",
     "excerpt": "Hey Travellers! 🇨🇦 Fall is serving up some seriously sweet deals, and we're here for it! ✈️ Whether you're eyeing flights to Europe from Toronto for just $503…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/09/Paris.jpg",
+    "featured_image": "blog-images/Paris.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2395,7 +2400,7 @@
     "title": "Last Call, Last Chance! 🚨 All-Inclusive Deals from $565 + Air Canada Vacations Sale ✈️",
     "date": "2025-09-24",
     "excerpt": "Hola, Travellers! 🌍 The Canadian Jetsetter is here, serving up a tropical cocktail of all-inclusive deals once again. From the tequila-infused shores of Mexico…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/09/All-Inclusive.jpg",
+    "featured_image": "blog-images/All-Inclusive.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2409,7 +2414,7 @@
     "title": "Score Big: TD First Class Travel Visa Infinite Delivers Up to $1,400 in Value",
     "date": "2025-09-24",
     "excerpt": "Canadian travel enthusiasts, listen up! One of the year's most compelling credit card promotions has landed, and it's perfect timing for your 2026 travel…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/09/6.jpg",
+    "featured_image": "blog-images/6.jpg",
     "categories": [
       "Credit Cards"
     ],
@@ -2424,7 +2429,7 @@
     "title": "Air Canada's 2026 Aeroplan Overhaul Analysis",
     "date": "2025-09-23",
     "excerpt": "Air Canada recently announced sweeping changes to the Aeroplan elite status program that will fundamentally alter how Canadians earn and maintain elite…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/09/Assessment-and-Recommendations-e1758735794491.jpg",
+    "featured_image": "blog-images/Assessment-and-Recommendations-e1758735794491.jpg",
     "categories": [
       "Airline News",
       "Travel Points"
@@ -2441,7 +2446,7 @@
     "title": "✈️🇨🇦 Airline Sales Expire Tomorrow Night + Coast-to-Coast Deals",
     "date": "2025-09-22",
     "excerpt": "Hey Travellers! 🇨🇦 Ready to transform your travel dreams into reality? ✈️ We've got Canadian airline sales happening RIGHT NOW — with Air Canada offering 15%…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/09/Mexico.jpg",
+    "featured_image": "blog-images/Mexico.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2454,7 +2459,7 @@
     "title": "TD Aeroplan vs TD First Class Travel: The Ultimate Showdown",
     "date": "2025-09-19",
     "excerpt": "The Canadian credit card landscape has been fundamentally disrupted. TD Bank has launched an unprecedented welcome bonus on their First Class Travel Visa…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/09/Blog-11-Graphics-TD-Aeroplan-vs-TD-First-Class-Travel-The-Ultimate-Canadian-Credit-Card-Showdown-2.jpg",
+    "featured_image": "blog-images/Blog-11-Graphics-TD-Aeroplan-vs-TD-First-Class-Travel-The-Ultimate-Canadian-Credit-Card-Showdown-2.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -2471,7 +2476,7 @@
     "title": "✈️🇨🇦 Major Airline Sales Live Now + TD First Class Travel Card Promo!",
     "date": "2025-09-18",
     "excerpt": "Hey Travellers! 🇨🇦 Ready to transform your travel dreams into reality? ✈️ We've got major Canadian airline sales happening RIGHT NOW — with Air Canada offering…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/09/WordPress-Header-Images.jpg",
+    "featured_image": "blog-images/WordPress-Header-Images.jpg",
     "categories": [
       "Newsletter"
     ],
@@ -2485,7 +2490,7 @@
     "title": "FIFA World Cup 26™ Visa Presale Draw",
     "date": "2025-09-04",
     "excerpt": "The countdown to the FIFA World Cup 26™ is on! Starting September 10, 2025, Visa cardholders get exclusive first access to tickets through the Visa Presale…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/09/Visa.jpg",
+    "featured_image": "blog-images/Visa.jpg",
     "categories": [
       "Credit Cards",
       "Travel Perks"
@@ -2502,7 +2507,7 @@
     "title": "Air Canada's Winter Game-Changer: Direct Flights to Rio, Santiago & 11 More Routes",
     "date": "2025-09-03",
     "excerpt": "Air Canada just dropped some seriously exciting news for Canadian travelers craving warm-weather escapes. The airline is launching 13 new routes this winter,…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/08/Rio-and-Santiago.jpg",
+    "featured_image": "blog-images/Rio-and-Santiago.jpg",
     "categories": [
       "Airline News"
     ],
@@ -2516,7 +2521,7 @@
     "title": "The Truth About Third-Party Flight Bookings: A Quick Guide",
     "date": "2025-09-02",
     "excerpt": "When you’re searching for flights online, chances are you’ll see results from websites like Expedia, Kayak, Skyscanner, or Google Flights. They’re convenient,…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/08/Third-Party.jpg",
+    "featured_image": "blog-images/Third-Party.jpg",
     "categories": [
       "General Travel"
     ],
@@ -2531,7 +2536,7 @@
     "title": "Aeroplan's Up to 85% Bonus Points Deal is Back – But Should You Buy?",
     "date": "2025-08-29",
     "excerpt": "Aeroplan just dropped another juicy buy points promotion, and my inbox is already blowing up with questions about whether this deal is worth it. Here's the…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/08/The-Deal-Breakdown.jpg",
+    "featured_image": "blog-images/The-Deal-Breakdown.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -2549,7 +2554,7 @@
     "title": "Accessing Premium Airlines Through Alternative Points Programs",
     "date": "2025-08-28",
     "excerpt": "Strategic utilization of airline partnerships represents one of the most overlooked opportunities in travel optimization. Through this approach, I've…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/08/Flying-around-the-world.jpg",
+    "featured_image": "blog-images/Flying-around-the-world.jpg",
     "categories": [
       "Travel Perks",
       "Travel Points"
@@ -2569,7 +2574,7 @@
     "title": "How I Buy Airline Points for Incredible Business Class Flights",
     "date": "2025-08-27",
     "excerpt": "Strategic point purchasing represents one of the most powerful yet misunderstood methods for accessing premium cabin flights at substantial discounts. Through…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/08/Typing-on-computer.jpg",
+    "featured_image": "blog-images/Typing-on-computer.jpg",
     "categories": [
       "Travel Perks",
       "Travel Points"
@@ -2591,7 +2596,7 @@
     "title": "My Canadian Travel Points Strategy for 2025",
     "date": "2025-08-26",
     "excerpt": "As we settle into 2025, the travel rewards landscape continues evolving rapidly. While premium travel costs soar, strategic point optimization remains the most…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/08/Credit-cards.jpg",
+    "featured_image": "blog-images/Credit-cards.jpg",
     "categories": [
       "Credit Cards",
       "Travel Points"
@@ -2612,7 +2617,7 @@
     "title": "Aeroplan Just Updated Their Points Chart AGAIN - Here's What Changed (And My Biggest Warning)",
     "date": "2025-08-25",
     "excerpt": "Aeroplan has released their latest quarterly update to their flight reward chart, and one number stands out dramatically: +74,200 points. That's how much MORE…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/08/AC-Map.jpg",
+    "featured_image": "blog-images/AC-Map.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -2628,7 +2633,7 @@
     "title": "Last Call: American Express Canada's Incredible Elevated Offers Expire August 18th, 2025 💳",
     "date": "2025-08-12",
     "excerpt": "American Express Canada has been running some absolutely incredible elevated welcome bonuses, and they expire August 18th, 2025. With just a week remaining,…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/08/Deciding.png",
+    "featured_image": "blog-images/Deciding.png",
     "categories": [
       "Credit Cards"
     ],
@@ -2645,7 +2650,7 @@
     "title": "What’s the New Amex Aeroplan Reserve Bonus in 2025? 💳",
     "date": "2025-06-24",
     "excerpt": "Hey travelers, it’s Graeme — your Canadian Jetsetter, here to keep you in the loop on the best credit card deals in the country. And today, we’re diving into…",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2025/06/amex-aeroplan-reserve-card-metal-1024x768-1.jpg",
+    "featured_image": "blog-images/amex-aeroplan-reserve-card-metal-1024x768-1.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -2656,7 +2661,7 @@
     "title": "Airport Lounge Access Explained: The Ultimate Guide for Canadians ✈️",
     "date": "2024-11-26",
     "excerpt": "We’ll cover all the ways you can get into those exclusive lounges—whether it’s through credit cards, business class tickets, or a bit of savvy know-how.",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2024/11/frugal-flyer-dTjHiWrHqbk-unsplash-scaled.jpg",
+    "featured_image": "blog-images/frugal-flyer-dTjHiWrHqbk-unsplash-scaled.jpg",
     "categories": [
       "Travel Perks"
     ],
@@ -2672,7 +2677,7 @@
     "title": "My Travel Points Strategy for 2024: The Ultimate Guide for Canadians!",
     "date": "2024-11-26",
     "excerpt": "I’m not out here spending thousands on fancy business class seats. Nope! I’m using miles and points, baby, and today I’m going to break down my travel points strategy for 2024 so you can fly high without breaking the bank.",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2024/11/best-credit-cards-in-canada-featured-image.jpg",
+    "featured_image": "blog-images/best-credit-cards-in-canada-featured-image.jpg",
     "categories": [
       "Travel Points"
     ],
@@ -2688,7 +2693,7 @@
     "title": "How I Scored $17,754 of FREE Business Class Travel Around the World 🌍",
     "date": "2024-11-26",
     "excerpt": "They say some experiences are once-in-a-lifetime, but what if you could have that experience over and over again? That’s exactly what I did, and it didn’t cost me a fortune.",
-    "featured_image": "https://thecanadianjetsetter.com/wp-content/uploads/sites/50560/2024/11/frugal-flyer-X-NV0o57-Po-unsplash-scaled.jpg",
+    "featured_image": "blog-images/frugal-flyer-X-NV0o57-Po-unsplash-scaled.jpg",
     "categories": [
       "Travel Points"
     ],
