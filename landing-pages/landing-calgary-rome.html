@@ -120,7 +120,7 @@
     <!-- ══════════════════════════════════════════
          7. CHECKOUT SECTION
     ══════════════════════════════════════════ -->
-    <section id="checkout" class="checkout-section" aria-labelledby="checkout-heading">
+    <section id="checkout-section" class="checkout-section" aria-labelledby="checkout-heading">
       <div class="container">
         <div class="section-header">
           <h2 id="checkout-heading">Subscribe to Jetsetter Economy</h2>
@@ -135,9 +135,7 @@
              directly on this page with minimal friction.
              ============================================================ -->
 
-        <div class="checkout-placeholder">
-          [ Checkout embed goes here ]
-        </div>
+        <div id="checkout"></div>
 
       </div>
     </section>
@@ -455,6 +453,9 @@
       window.addEventListener('load', updateStickyCTA);
     })();
   </script>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="/checkout.js"></script>
 
 </body>
 </html>
