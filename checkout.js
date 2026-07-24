@@ -10,7 +10,7 @@ async function initialize() {
 
   // Function to get the client secret from our server
   const fetchClientSecret = async () => {
-    const response = await fetch("/create-checkout-session", {
+    const response = await fetch("https://checkout.thecanadianjetsetter.com/create-checkout-session", {
       method: "POST",
     });
     const { clientSecret } = await response.json();
