@@ -19,6 +19,9 @@ h1, h2, h3 {
   --red:          #761915;
   --red-light:    #8f1f1a;
   --red-glow:     rgba(118, 25, 21, 0.35);
+  --economy-red:       #8B0000;
+  --economy-red-light: #a80000;
+  --economy-glow:      rgba(139, 0, 0, 0.35);
   --black:        #1a0000;
   --card-bg:      #240000;
   --border:       #3d0000;
@@ -501,6 +504,151 @@ body {
   }
 }
 
+/* ── ECONOMY UPSELL ────────────────────────── */
+.economy-upsell-section {
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--black);
+  background-image: url('TCJ Website Assets/icons/Link page banner 2.jpg');
+  background-size: 300px auto;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.economy-upsell-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(118, 25, 21, 0.35) 0%, rgba(26, 0, 0, 0.5) 100%);
+}
+
+.economy-upsell-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.economy-upsell-card {
+  max-width: 1052px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border: 1px solid var(--economy-red);
+  border-radius: 14px;
+  padding: 32px 48px;
+  box-shadow: 0 0 60px rgba(139, 0, 0, 0.22);
+}
+
+.economy-upsell-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 48px;
+  align-items: center;
+  text-align: left;
+}
+
+.economy-upsell-eyebrow {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--economy-red-light);
+  margin-bottom: 10px;
+}
+
+.economy-upsell-card h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.economy-upsell-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--grey-400);
+  margin: 0;
+}
+
+.economy-upsell-aside {
+  text-align: center;
+}
+
+.economy-upsell-callout {
+  background: rgba(139, 0, 0, 0.16);
+  border: 1px solid rgba(139, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 16px 22px;
+  margin-bottom: 20px;
+}
+
+.economy-upsell-callout p {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--cream);
+  margin: 0;
+}
+
+.economy-upsell-callout strong {
+  color: var(--white);
+  font-weight: 800;
+}
+
+.economy-upsell-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn-economy {
+  background: var(--economy-red);
+  color: var(--white);
+  box-shadow: 0 4px 24px var(--economy-glow);
+}
+
+.btn-economy:hover {
+  background: var(--economy-red-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px var(--economy-glow);
+}
+
+.economy-upsell-secondary-link {
+  font-size: 0.88rem;
+  color: var(--grey-400);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+
+.economy-upsell-secondary-link:hover {
+  color: var(--cream);
+}
+
+@media (max-width: 900px) {
+  .economy-upsell-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .economy-upsell-body {
+    margin: 0 auto;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .economy-upsell-section {
+    padding: 32px 0;
+  }
+
+  .economy-upsell-card {
+    padding: 32px 24px;
+  }
+}
+
 /* ── WHAT'S INSIDE ─────────────────────────── */
 .inside-section {
   padding: 64px 0;
@@ -542,6 +690,7 @@ body {
   text-align: inherit;
   cursor: pointer;
   perspective: 1200px;
+  transition: transform 0.2s ease;
 }
 
 .inside-card-inner {
@@ -620,6 +769,19 @@ body {
 @media (max-width: 900px) {
   .inside-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Desktop-only hover lift; scoped to true hover + fine pointer so it
+   never fires on tap/touch. Lives on .inside-card (the outer perspective
+   wrapper), not .inside-card-inner, so it can't fight the flip rotateY. */
+@media (hover: hover) and (pointer: fine) {
+  .inside-card:hover {
+    transform: translateY(-5px) scale(1.02);
+  }
+
+  .inside-card:hover .inside-card-face {
+    box-shadow: 0 0 40px rgba(118, 25, 21, 0.22);
   }
 }
 
