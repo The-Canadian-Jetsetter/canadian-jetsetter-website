@@ -402,12 +402,35 @@ body {
   margin-bottom: 16px;
 }
 
+.deal-price-original {
+  position: relative;
+  display: inline-block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.8rem;
+  color: #cc2200;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.deal-price-original::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 3px;
+  background: #cc2200;
+  transform: rotate(-8deg);
+}
+
 .deal-price {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(5.5rem, 14vw, 9rem);
   font-weight: 900;
   color: var(--cream);
   line-height: 1;
+  margin-top: -10px;
   margin-bottom: 20px;
   text-shadow: 0 0 40px rgba(118, 25, 21, 0.5), 0 2px 6px rgba(0, 0, 0, 0.6);
 }
@@ -446,6 +469,89 @@ body {
 
   .deal-price {
     font-size: clamp(5rem, 22vw, 7rem);
+  }
+}
+
+/* ── MINI BENEFITS CARDS ───────────────────── */
+.benefits-cards {
+  background: #300000;
+  padding-top: 16px;
+  padding-bottom: 32px;
+}
+
+.benefits-cards .section-header h2 {
+  color: var(--cream);
+}
+
+.benefits-cards .section-header {
+  margin-bottom: 24px;
+}
+
+.benefits-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.benefit-card {
+  background: var(--cream);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(26, 0, 0, 0.08);
+  padding: 22px 20px;
+  text-align: center;
+}
+
+.benefit-icon {
+  display: block;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.benefit-title {
+  font-family: var(--font);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: 6px;
+}
+
+.benefit-text {
+  font-size: 0.85rem;
+  color: var(--cream-muted);
+  line-height: 1.5;
+}
+
+@media (min-width: 769px) {
+  .benefit-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(26, 0, 0, 0.16);
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .benefit-card {
+    padding: 16px;
+  }
+
+  .benefit-icon {
+    font-size: 24px;
+  }
+
+  .benefit-title {
+    font-size: 1rem;
+  }
+
+  .benefit-text {
+    font-size: 0.8rem;
   }
 }
 
