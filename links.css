@@ -35,7 +35,7 @@ h1, h2, h3 {
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--black);
+  background: linear-gradient(180deg, #000000 0%, #6C0000 50%, #000000 100%);
   color: var(--white);
   font-family: var(--font);
   line-height: 1.6;
@@ -258,33 +258,13 @@ body {
   .nav-hamburger { display: none; }
 }
 
-/* ── HERO ──────────────────────────────────── */
-.hero {
-  position: relative;
-  padding: 64px 24px 72px;
+/* ── SOCIAL ICONS BAR ──────────────────────── */
+.social-bar {
+  padding: 32px 24px 24px;
   text-align: center;
-  background: url('TCJ Website Assets/icons/Link page banner 2.jpg') center/cover no-repeat;
-  overflow: hidden;
 }
 
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.hero-logo {
-  height: 52px;
-  width: auto;
-  display: block;
-}
-
-/* ── HERO SOCIAL ICONS ─────────────────────── */
+/* ── SOCIAL ICONS ──────────────────────────── */
 .social-icons {
   display: flex;
   flex-direction: row;
@@ -297,10 +277,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: #1a1a1a;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #6C0000;
+  border: 2px solid rgba(255, 255, 255, 0.6);
   text-decoration: none;
   transition: background 0.2s ease;
   flex-shrink: 0;
@@ -313,14 +294,11 @@ body {
 
 @media (min-width: 769px) {
   .social-icons { gap: 40px; }
-  .social-icon  { width: 80px; height: 80px; border-radius: 20px; }
-  .social-icon svg { width: 37px; height: 37px; }
 }
 
 /* ── LINKS SECTION ─────────────────────────── */
 .links-section {
   padding: 16px 24px 80px;
-  background: var(--black);
 }
 
 .links-container {
@@ -341,67 +319,60 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* ── OFFERING ICON CARDS ───────────────────── */
-.offering-cards {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
+/* ── FEATURED BUTTONS (2×2 GRID) ───────────── */
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-.offering-card {
+.featured-btn {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 120px;
-  height: 120px;
-  background: #761915;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
+  align-items: stretch;
+  min-height: 72px;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 0px 14px 0px 14px;
+  transition: filter 0.2s ease, transform 0.2s ease;
 }
 
-.offering-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-}
-
-.offering-icon {
-  display: block;
+.featured-btn-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  width: 56px;
+  background: #ffffff;
+  color: #a40505;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 0px 0px 0px 14px;
 }
 
-.offering-gif {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0;
+.featured-btn-label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #a40505;
+  color: #ffffff;
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 16px 12px;
+  border-radius: 0px 14px 0px 0px;
+  box-shadow: 0 4px 0px #6c0000, 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.offering-pen {
-  width: 60px;
-  height: 60px;
-  display: block;
-  flex-shrink: 0;
-  transform-origin: 13% 83%;
-  animation: pen-write 2s ease-in-out infinite;
-}
-
-@keyframes pen-write {
-  0%   { transform: rotate(0deg); }
-  20%  { transform: rotate(0deg); }
-  40%  { transform: rotate(-12deg); }
-  60%  { transform: rotate(10deg); }
-  75%  { transform: rotate(-5deg); }
-  90%  { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
+.featured-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
 }
 
 /* ── BEEHIIV EMBED BLOCK ───────────────────── */
@@ -432,17 +403,6 @@ body {
   display: block;
   width: 100%;
   max-width: 500px;
-}
-
-.offering-label {
-  font-family: var(--font);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--cream);
-  text-align: center;
-  line-height: 1.2;
 }
 
 /* ── CREDIT CARD FLIP ANIMATION ───────────── */
@@ -601,10 +561,10 @@ body {
   background: rgba(118, 25, 21, 0.12);
 }
 
-/* ── CREDIT CARD GRID ──────────────────────── */
-.cc-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+/* ── CREDIT CARDS & TOOLS LIST ─────────────── */
+.cc-list {
+  display: flex;
+  flex-direction: column;
   gap: 12px;
   max-width: 500px;
   margin: 0 auto;
@@ -612,35 +572,34 @@ body {
 }
 
 .cc-card {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 14px;
-  background: #f0ede8;
-  border-radius: 12px;
-  padding: 12px 14px;
+  background: #ffffff;
+  border-radius: 50px;
+  padding: 14px 28px 14px 72px;
   text-decoration: none;
   width: 100%;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
   transform: none !important;
   animation: none !important;
   transition: none !important;
 }
 
-.cc-badge {
+.cc-icon {
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
   flex-shrink: 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
-  background: #761915;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.badge-logo {
-  width: 40px;
-  height: auto;
+  width: 70px;
+  height: 70px;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.4));
 }
 
 .cc-card-info {
@@ -653,25 +612,25 @@ body {
 
 .cc-card-name {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 0.88rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  color: #1a0000;
+  color: #333333;
   line-height: 1.2;
 }
 
 .cc-apply {
   font-family: var(--font);
-  font-size: 0.58rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: #761915;
+  color: #999999;
   line-height: 1;
 }
 
 /* ── HELPFUL BOOKING LINKS ─────────────────── */
 .booking-links-section {
-  background: #761915;
+  background: #0d0000;
   padding: 56px 0;
 }
 
@@ -741,42 +700,6 @@ body {
   }
 }
 
-/* ── SOCIAL PROOF BAR ──────────────────────── */
-.social-proof-bar {
-  background: var(--red);
-  padding: 28px 0;
-}
-
-.social-proof-inner {
-  display: flex;
-  justify-content: center;
-  gap: 48px;
-  flex-wrap: wrap;
-}
-
-.social-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-
-.social-stat-number {
-  font-size: 1.75rem;
-  font-weight: 900;
-  color: var(--white);
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-
-.social-stat-label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.82);
-}
-
 /* ── FOOTER ────────────────────────────────── */
 footer {
   background: #0a0000;
@@ -830,7 +753,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .hero { padding: 48px 20px 56px; }
+  .social-bar { padding: 24px 20px 20px; }
 
   .links-section { padding: 0 20px 64px; }
 
@@ -840,24 +763,17 @@ footer {
   }
 
   .cc-card {
-    padding: 10px 10px;
+    padding: 14px 20px 14px 68px;
     gap: 10px;
   }
 
-  .cc-badge {
-    width: 42px;
-    height: 42px;
-  }
-
   .cc-card-name {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .cc-apply {
-    font-size: 0.55rem;
+    font-size: 0.75rem;
   }
-
-  .social-proof-inner { gap: 28px; }
 }
 
 /* ── Mobile OFFERINGS sub-dropdown ──────────── */
