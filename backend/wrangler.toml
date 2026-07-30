@@ -8,3 +8,7 @@ directory = "./public"
 
 [vars]
 ENVIRONMENT = "production"
+
+[observability.logs]
+enabled = true
+invocation_logs = true
