@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe to Jetsetter Economy - The Canadian Jetsetter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <!-- Meta Pixel Base Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1050064854097732');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1050064854097732&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Base Code -->
+
+  <!-- Capture UTM Parameters for Ad Attribution -->
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'];
+      var stored = {};
+      utmKeys.forEach(function(key) {
+        if (params.get(key)) {
+          stored[key] = params.get(key);
+        }
+      });
+      if (Object.keys(stored).length > 0) {
+        sessionStorage.setItem('tcj_utm', JSON.stringify(stored));
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Top Navigation - Matches Main Site -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="https://thecanadianjetsetter.com" class="nav-logo">
+        <span class="logo-text">THE CANADIAN<br>JETSETTER</span>
+      </a>
+      
+      <!-- Navigation Links -->
+      <div class="nav-links">
+        <!-- Offerings Dropdown -->
+        <div class="nav-item dropdown">
+          <button class="nav-link dropdown-toggle">OFFERINGS</button>
+          <div class="dropdown-menu">
+            <a href="https://thecanadianjetsetter.com/jetsetter-premium" class="dropdown-item">JETSETTER PREMIUM</a>
+            <a href="https://thecanadianjetsetter.com/jetsetter-economy" class="dropdown-item">JETSETTER ECONOMY</a>
+            <a href="https://thecanadianjetsetter.com/golden-visa" class="dropdown-item">GOLDEN VISA</a>
+          </div>
+        </div>
+        
+        <a href="https://thecanadianjetsetter.com/links" class="nav-link">LINKS</a>
+        <a href="https://thecanadianjetsetter.milesopedia.com/compare/credit-cards/" class="nav-link">CREDIT CARDS</a>
+        <a href="https://thecanadianjetsetter.com/blog/" class="nav-link">BLOG</a>
+        <a href="https://thecanadianjetsetter.com/contact" class="nav-link">CONTACT</a>
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <section class="hero-compact">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Toronto → Lisbon for $398 return.<br>I find deals like this every week.</h1>
+        <p class="hero-intro">I'm Graeme — I scout economy flight deals from Toronto, Vancouver, and Calgary and send them straight to your inbox the moment they drop. No noise. Just real deals worth booking.</p>
+        <p class="hero-value">Over 38,000 Canadian travellers are already on the list. Join them free for 7 days.</p>
+      </div>
+      <div class="hero-image">
+        <img src="graeme-headshot.png" alt="Graeme from The Canadian Jetsetter" class="headshot">
+      </div>
+    </div>
+  </section>
+  <section class="benefits-compact">
+    <div class="container-narrow">
+      <div class="benefits-row">
+        <div class="benefit-compact">
+          <span class="benefit-emoji">✈</span>
+          <p><strong>20+ deals per city</strong>, every month</p>
+        </div>
+        <div class="benefit-compact">
+          <span class="benefit-emoji">📍</span>
+          <p><strong>Toronto, Vancouver & Calgary</strong> departures</p>
+        </div>
+        <div class="benefit-compact">
+          <span class="benefit-emoji">💰</span>
+          <p><strong>CA$59.99/year</strong> — less than $5/month</p>
+        </div>
+        <div class="benefit-compact">
+          <span class="benefit-emoji">✅</span>
+          <p><strong>7-day free trial</strong> — cancel anytime</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="deals-section">
+    <div class="container-narrow">
+      <h2 class="deals-heading">What a typical week looks like</h2>
+      <p class="deals-subtitle">Recent deals sent to subscribers:</p>
+      <div class="deals-grid">
+        <div class="deal-card">
+          <div class="deal-route">Toronto → Lisbon</div>
+          <div class="deal-price">$398 return</div>
+          <div class="deal-note">Sent March 2026 — 847 subscribers booked</div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-route">Toronto → Tokyo</div>
+          <div class="deal-price">$612 return</div>
+          <div class="deal-note">Sent February 2026 — economy nonstop</div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-route">Vancouver → Dublin</div>
+          <div class="deal-price">$490 return</div>
+          <div class="deal-note">Sent March 2026 — shoulder season deal</div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-route">Calgary → Paris</div>
+          <div class="deal-price">$520 return</div>
+          <div class="deal-note">Sent January 2026 — Air Transat sale</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="checkout-section">
+    <div class="container-narrow">
+      <div class="checkout-intro">
+        <h2>Start Your 7-Day Free Trial</h2>
+        <p>Join thousands of Canadians who are already saving on flights. Cancel anytime during your trial.</p>
+      </div>
+      <div id="checkout"></div>
+      <div class="secure-note">
+        <p>🔒 Secure checkout powered by Stripe · Cancel anytime</p>
+      </div>
+    </div>
+  </section>
+  <section class="testimonials-compact">
+    <div class="container-narrow">
+      <h3>What travelers are saying</h3>
+      <div class="testimonials-row">
+        <div class="testimonial-compact">
+          <p>"I booked Toronto to Lisbon for under $400 after getting Graeme's alert. The subscription paid for itself on the first deal."</p>
+          <span class="author">— Sarah T., Toronto</span>
+        </div>
+        <div class="testimonial-compact">
+          <p>"I've been on a lot of deals newsletters. This one actually sends deals worth booking — not just sales from airlines I'd never fly."</p>
+          <span class="author">— Michael R., Vancouver</span>
+        </div>
+        <div class="testimonial-compact">
+          <p>"Got an alert for a Tokyo flight at $612 return. I've been trying to book that trip for years. Bought it within 20 minutes."</p>
+          <span class="author">— Priya K., Calgary</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="simple-footer">
+    <p>Questions? Email me at <a href="mailto:info@canadianjetsetter.com">info@canadianjetsetter.com</a></p>
+  </footer>
+
+  <!-- Load checkout.js ONCE (was duplicated before - now fixed) -->
+  <script src="checkout.js"></script>
+  <script>
+    // Mobile menu toggle
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const dropdown = document.querySelector('.dropdown');
+    
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+    
+    // Mobile dropdown toggle
+    if (dropdown && window.innerWidth <= 768) {
+      const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+      dropdownToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        dropdown.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>

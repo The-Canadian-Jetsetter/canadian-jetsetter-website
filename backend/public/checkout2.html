@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe — The Canadian Jetsetter</title>
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Base */
+    html { scroll-behavior: smooth; }
+    ::selection { background: #961B11; color: #ffffff; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #F8EFE0;
+      color: #000000;
+      line-height: 1.6;
+    }
+
+    /* Simple Footer */
+    .simple-footer {
+      background: #4E7180;
+      color: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .simple-footer p { font-size: 16px; }
+    .simple-footer a { color: #ffffff; font-weight: 600; text-decoration: underline; }
+    .simple-footer a:hover { opacity: 0.8; }
+
+    /* ===== Checkout2 Page ===== */
+
+    .c2-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Nav */
+    .c2-nav {
+      background: #000000;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 0 20px;
+    }
+
+    .c2-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 64px;
+    }
+
+    .c2-nav-logo {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+    }
+
+    .c2-nav-cta {
+      background: #961B11;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: opacity 0.2s;
+    }
+
+    .c2-nav-cta:hover { opacity: 0.85; }
+
+    /* Hero */
+    .c2-hero {
+      background: #000000;
+      color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .c2-eyebrow {
+      display: inline-block;
+      background: #111111;
+      border: 1px solid #333333;
+      color: #bbbbbb;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .c2-hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .c2-red { color: #961B11; }
+
+    .c2-hero-sub {
+      font-size: 17px;
+      color: #aaaaaa;
+      max-width: 520px;
+      margin: 0 auto 32px;
+      line-height: 1.65;
+    }
+
+    .c2-cta-btn {
+      display: block;
+      width: 100%;
+      background: #961B11;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      padding: 18px 24px;
+      border-radius: 6px;
+      text-align: center;
+      transition: opacity 0.2s;
+      margin-bottom: 14px;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+    }
+
+    .c2-cta-btn:hover { opacity: 0.88; }
+
+    .c2-fine-print {
+      font-size: 13px;
+      color: #666666;
+      margin-bottom: 36px;
+    }
+
+    .c2-divider {
+      height: 1px;
+      background: #222222;
+      margin-bottom: 32px;
+    }
+
+    .c2-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .c2-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .c2-stat-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .c2-stat-label {
+      font-size: 11px;
+      color: #666666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Inbox section */
+    .c2-inbox-section {
+      background: #F8EFE0;
+      padding: 40px 20px;
+    }
+
+    .c2-section-heading {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 800;
+      color: #000000;
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+
+    .c2-deals-wrapper {
+      background: #000000;
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .c2-deals-grid-v2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .c2-deal-card-v2 {
+      background: #F8EFE0;
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .c2-deal-route-v2 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    .c2-deal-price-v2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #961B11;
+      margin-bottom: 6px;
+    }
+
+    .c2-deal-meta {
+      font-size: 11px;
+      color: #666666;
+      margin-bottom: 10px;
+    }
+
+    .c2-deal-badge {
+      display: inline-block;
+      background: #000000;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    /* Value section */
+    .c2-value-section {
+      background: #F8EFE0;
+      padding: 40px 20px;
+      border-top: 1px solid #e0d3bc;
+    }
+
+    .c2-value-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .c2-value-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      border-top: 3px solid #961B11;
+    }
+
+    .c2-value-num {
+      font-size: 36px;
+      font-weight: 800;
+      color: #000000;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .c2-value-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 8px;
+    }
+
+    .c2-value-desc {
+      font-size: 14px;
+      color: #555555;
+      line-height: 1.55;
+    }
+
+    /* Testimonials section */
+    .c2-testimonials-section {
+      background: #F8EFE0;
+      padding: 40px 20px;
+      border-top: 1px solid #e0d3bc;
+    }
+
+    .c2-testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .c2-testimonial-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 24px;
+      border-left: 4px solid #961B11;
+    }
+
+    .c2-testimonial-text {
+      font-size: 15px;
+      color: #000000;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .c2-testimonial-author {
+      font-size: 13px;
+      font-weight: 600;
+      color: #4E7180;
+    }
+
+    /* Checkout section */
+    .c2-checkout-section {
+      background: #000000;
+      padding: 40px 20px;
+    }
+
+    #checkout {
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .c2-price-box {
+      background: #111111;
+      border: 1px solid #222222;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .c2-price-plan {
+      font-size: 12px;
+      color: #777777;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .c2-price-amount {
+      font-size: 40px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+
+    .c2-price-per {
+      font-size: 18px;
+      font-weight: 400;
+      color: #888888;
+    }
+
+    .c2-price-note {
+      font-size: 13px;
+      color: #666666;
+    }
+
+    .c2-trust-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .c2-trust-item {
+      background: #111111;
+      border: 1px solid #222222;
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .c2-trust-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .c2-trust-text {
+      font-size: 13px;
+      color: #cccccc;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .c2-submit-btn {
+      display: block;
+      width: 100%;
+      background: #961B11;
+      color: #ffffff;
+      text-align: center;
+      font-weight: 700;
+      font-size: 17px;
+      padding: 18px 24px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      margin-top: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .c2-submit-btn:hover { opacity: 0.88; }
+
+    .c2-checkout-fine-print {
+      text-align: center;
+      font-size: 12px;
+      color: #555555;
+      margin-top: 16px;
+      line-height: 1.55;
+    }
+
+    .c2-trial-bar {
+      background: #4E7180;
+      color: #ffffff;
+      text-align: center;
+      padding: 16px 20px;
+      margin-top: 36px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      line-height: 1.4;
+    }
+
+    /* Desktop — 600px+ */
+    @media (min-width: 600px) {
+      .c2-hero h1 { font-size: 48px; }
+      .c2-hero-sub { font-size: 18px; }
+
+      .c2-value-grid { flex-direction: row; }
+      .c2-value-card { flex: 1; }
+
+      .c2-testimonials-grid { grid-template-columns: 1fr 1fr; }
+
+      #checkout {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
+
+    /* Mobile — Stripe embed runs full width */
+    @media (max-width: 599px) {
+      .c2-checkout-section {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .c2-checkout-section .c2-container {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  </style>
+
+  <!-- Meta Pixel Base Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1050064854097732');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1050064854097732&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Base Code -->
+
+  <!-- Capture UTM Parameters for Ad Attribution -->
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'];
+      var stored = {};
+      utmKeys.forEach(function(key) {
+        if (params.get(key)) stored[key] = params.get(key);
+      });
+      if (Object.keys(stored).length > 0) {
+        sessionStorage.setItem('tcj_utm', JSON.stringify(stored));
+      }
+    })();
+  </script>
+</head>
+<body class="c2-page">
+
+  <!-- Nav -->
+  <nav class="c2-nav">
+    <div class="c2-nav-inner">
+      <a href="https://thecanadianjetsetter.com" class="c2-nav-logo">THE CANADIAN JETSETTER</a>
+      <a href="#checkout" class="c2-nav-cta">Subscribe</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="c2-hero">
+    <div class="c2-container">
+      <span class="c2-eyebrow">Trusted by 38,000+ Canadian travellers</span>
+      <h1>Stop overpaying.<br><span class="c2-red">Start flying more.</span></h1>
+      <p class="c2-hero-sub">Get economy flight deals from Toronto, Vancouver &amp; Calgary sent straight to your inbox — before seats sell out.</p>
+      <a href="#checkout" class="c2-cta-btn">Start your 7-day free trial</a>
+      <p class="c2-fine-print">Then CA$59.99/year &middot; less than $5/month &middot; cancel anytime</p>
+      <div class="c2-divider"></div>
+      <div class="c2-stats">
+        <div class="c2-stat">
+          <span class="c2-stat-num">38K+</span>
+          <span class="c2-stat-label">subscribers</span>
+        </div>
+        <div class="c2-stat">
+          <span class="c2-stat-num">20+</span>
+          <span class="c2-stat-label">deals/city/month</span>
+        </div>
+        <div class="c2-stat">
+          <span class="c2-stat-num">&lt;$5</span>
+          <span class="c2-stat-label">per month</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inbox preview section -->
+  <section class="c2-inbox-section">
+    <div class="c2-container">
+      <h2 class="c2-section-heading">This is what your inbox looks like</h2>
+      <div class="c2-deals-wrapper">
+        <div class="c2-deals-grid-v2">
+          <div class="c2-deal-card-v2">
+            <div class="c2-deal-route-v2">Toronto &rarr; Lisbon</div>
+            <div class="c2-deal-price-v2">$398</div>
+            <div class="c2-deal-meta">Return &middot; March 2026</div>
+            <span class="c2-deal-badge">Economy</span>
+          </div>
+          <div class="c2-deal-card-v2">
+            <div class="c2-deal-route-v2">Toronto &rarr; Tokyo</div>
+            <div class="c2-deal-price-v2">$612</div>
+            <div class="c2-deal-meta">Return &middot; Feb 2026</div>
+            <span class="c2-deal-badge">Economy</span>
+          </div>
+          <div class="c2-deal-card-v2">
+            <div class="c2-deal-route-v2">Vancouver &rarr; Dublin</div>
+            <div class="c2-deal-price-v2">$490</div>
+            <div class="c2-deal-meta">Return &middot; March 2026</div>
+            <span class="c2-deal-badge">Economy</span>
+          </div>
+          <div class="c2-deal-card-v2">
+            <div class="c2-deal-route-v2">Calgary &rarr; Paris</div>
+            <div class="c2-deal-price-v2">$520</div>
+            <div class="c2-deal-meta">Return &middot; Jan 2026</div>
+            <span class="c2-deal-badge">Economy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value section -->
+  <section class="c2-value-section">
+    <div class="c2-container">
+      <h2 class="c2-section-heading">Deals you can't find yourself</h2>
+      <div class="c2-value-grid">
+        <div class="c2-value-card">
+          <span class="c2-value-num">20+</span>
+          <div class="c2-value-title">deals per city</div>
+          <p class="c2-value-desc">Every month, curated specifically for Toronto, Vancouver &amp; Calgary departures.</p>
+        </div>
+        <div class="c2-value-card">
+          <span class="c2-value-num">2hr</span>
+          <div class="c2-value-title">average alert speed</div>
+          <p class="c2-value-desc">Get notified before the deal disappears — most fares vanish within hours.</p>
+        </div>
+        <div class="c2-value-card">
+          <span class="c2-value-num">&lt;$5</span>
+          <div class="c2-value-title">per month</div>
+          <p class="c2-value-desc">CA$59.99/year. One booked deal and it pays for itself many times over.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="c2-testimonials-section">
+    <div class="c2-container">
+      <h2 class="c2-section-heading">Real travellers, real savings</h2>
+      <div class="c2-testimonials-grid">
+        <div class="c2-testimonial-card">
+          <p class="c2-testimonial-text">"I booked Toronto to Lisbon for under $400 after getting Graeme's alert. The subscription paid for itself on the first deal."</p>
+          <span class="c2-testimonial-author">— Sarah T., Toronto</span>
+        </div>
+        <div class="c2-testimonial-card">
+          <p class="c2-testimonial-text">"I've been on a lot of deals newsletters. This one actually sends deals worth booking — not just sales from airlines I'd never fly."</p>
+          <span class="c2-testimonial-author">— Michael R., Vancouver</span>
+        </div>
+        <div class="c2-testimonial-card">
+          <p class="c2-testimonial-text">"Got an alert for a Tokyo flight at $612 return. I've been trying to book that trip for years. Bought it within 20 minutes."</p>
+          <span class="c2-testimonial-author">— Priya K., Calgary</span>
+        </div>
+        <div class="c2-testimonial-card">
+          <p class="c2-testimonial-text">"Two trips to Europe in one year, both under $500 return from Toronto. I tell everyone to sign up."</p>
+          <span class="c2-testimonial-author">— David L., Toronto</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checkout section -->
+  <section class="c2-checkout-section">
+    <div class="c2-container">
+
+      <!-- Price display -->
+      <div class="c2-price-box">
+        <p class="c2-price-plan">Jetsetter Economy</p>
+        <p class="c2-price-amount">CA$59.99<span class="c2-price-per">/year</span></p>
+        <p class="c2-price-note">7-day free trial &middot; then billed annually &middot; cancel anytime</p>
+      </div>
+
+      <!-- Trust strip 2x2 -->
+      <div class="c2-trust-strip">
+        <div class="c2-trust-item">
+          <span class="c2-trust-icon">🔒</span>
+          <span class="c2-trust-text">Secure checkout</span>
+        </div>
+        <div class="c2-trust-item">
+          <span class="c2-trust-icon">⚡</span>
+          <span class="c2-trust-text">Powered by Stripe</span>
+        </div>
+        <div class="c2-trust-item">
+          <span class="c2-trust-icon">🗓</span>
+          <span class="c2-trust-text">7-day free trial</span>
+        </div>
+        <div class="c2-trust-item">
+          <span class="c2-trust-icon">✕</span>
+          <span class="c2-trust-text">Cancel anytime</span>
+        </div>
+      </div>
+
+      <!-- Stripe embedded checkout -->
+      <div id="checkout"></div>
+
+      <!-- Submit CTA -->
+      <a href="#checkout" class="c2-submit-btn">Start my free trial &rarr;</a>
+
+      <!-- Fine print -->
+      <p class="c2-checkout-fine-print">By starting your trial you agree to our terms. You will not be charged until your 7-day free trial ends. Cancel anytime before then at no cost.</p>
+
+      <!-- Trial reassurance bar -->
+      <div class="c2-trial-bar">
+        Your 7-day free trial starts today — no charge until after your trial ends
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="simple-footer">
+    <p>Questions? Email <a href="mailto:info@canadianjetsetter.com">info@canadianjetsetter.com</a></p>
+  </footer>
+
+  <script src="checkout.js"></script>
+
+</body>
+</html>

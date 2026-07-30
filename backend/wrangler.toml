@@ -1,0 +1,10 @@
+name = "jetsetter-checkout"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Serve static files from public folder
+[assets]
+directory = "./public"
+
+[vars]
+ENVIRONMENT = "production"

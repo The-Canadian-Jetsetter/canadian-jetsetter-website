@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Canadian Jetsetter — Flight Deals for Canadians</title>
+  <meta name="description" content="Get the best flight deals from Toronto, Vancouver and Calgary straight to your inbox. Join 38,000+ Canadian travellers. Try free for 7 days.">
+
+  <!-- Meta Pixel Base Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1050064854097732');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1050064854097732&ev=PageView&noscript=1"/>
+  </noscript>
+
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ── Tokens ── */
+    :root {
+      --cream:   #F8EFE0;
+      --cream-dk:#EFE3CC;
+      --red:     #961B11;
+      --red-dk:  #7A1610;
+      --slate:   #4E7180;
+      --slate-dk:#3D5A68;
+      --black:   #0D0D0D;
+      --grey:    #555555;
+      --border:  #DDD0B8;
+      --white:   #FFFFFF;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--cream);
+      color: var(--black);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    ::selection { background: var(--red); color: var(--white); }
+
+    /* ── Utility ── */
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 32px; }
+    .container-sm { max-width: 1400px; margin: 0 auto; padding: 0 32px; }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal[data-delay="1"] { transition-delay: 0.1s; }
+    .reveal[data-delay="2"] { transition-delay: 0.2s; }
+    .reveal[data-delay="3"] { transition-delay: 0.3s; }
+    .reveal[data-delay="4"] { transition-delay: 0.4s; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ── NAV ── */
+    .nav {
+      background: var(--cream);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      line-height: 1.3;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+
+    .nav-links a {
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--red); }
+
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 6px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--red-dk) !important; color: var(--white) !important; }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--black);
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0; right: 0;
+        background: var(--cream);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a {
+        width: 100%;
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-cta { border-radius: 0; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #2C4F5F 0%, #961B11 100%);
+      color: var(--white);
+      padding: 80px 32px 88px;
+    }
+
+    .hero-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4.5vw, 52px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero h1 span { color: #FFCF77; }
+
+    .hero-sub {
+      font-size: 18px;
+      line-height: 1.7;
+      opacity: 0.92;
+      margin-bottom: 28px;
+      max-width: 1400px;
+    }
+
+    .hero-social {
+      font-size: 14px;
+      opacity: 0.8;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-social-dot {
+      width: 8px; height: 8px;
+      background: #4ADE80;
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--white);
+      color: var(--red);
+      font-weight: 800;
+      font-size: 15px;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    .btn-ghost {
+      display: inline-block;
+      border: 2px solid rgba(255,255,255,0.5);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+
+    .hero-trial { font-size: 13px; opacity: 0.7; margin-top: 12px; }
+
+    /* Hero image card */
+    .hero-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 32px 28px;
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    .hero-headshot {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.6);
+      object-fit: cover;
+      margin-bottom: 16px;
+    }
+
+    .hero-card-name {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-title {
+      font-size: 13px;
+      opacity: 0.75;
+      margin-bottom: 20px;
+    }
+
+    .hero-card-stat {
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .hero-card-stat strong { display: block; font-size: 22px; font-weight: 800; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--black);
+      color: var(--white);
+      padding: 20px 32px;
+    }
+
+    .trust-bar-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .trust-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: #FFCF77;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how {
+      background: var(--white);
+      padding: 80px 32px;
+    }
+
+    .section-label {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 800;
+      color: var(--black);
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+    }
+
+    .section-sub {
+      text-align: center;
+      font-size: 17px;
+      color: var(--grey);
+      max-width: 1400px;
+      margin: 0 auto 56px;
+      line-height: 1.7;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 36px 28px;
+      border-radius: 16px;
+      background: var(--cream);
+      position: relative;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 20px;
+      font-weight: 800;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .step-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--black);
+    }
+
+    .step-card p { font-size: 15px; color: var(--grey); line-height: 1.65; }
+
+    @media (max-width: 700px) {
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── DEALS SHOWCASE ── */
+    .deals {
+      background: var(--cream);
+      padding: 80px 32px;
+    }
+
+    .deals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 1400px;
+      margin: 0 auto 40px;
+    }
+
+    .deal-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--red);
+      border-radius: 14px;
+      padding: 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: default;
+    }
+
+    .deal-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+    }
+
+    .deal-route {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+
+    .deal-price {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--red);
+      margin-bottom: 8px;
+    }
+
+    .deal-meta {
+      font-size: 13px;
+      color: var(--grey);
+      line-height: 1.5;
+    }
+
+    .deal-badge {
+      display: inline-block;
+      background: #DCFCE7;
+      color: #166534;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .deals-cta-wrap { text-align: center; }
+
+    .deals-disclaimer {
+      font-size: 13px;
+      color: var(--grey);
+      margin-top: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .deals-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      background: var(--white);
+      padding: 80px 32px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 28px;
+      border-top: 4px solid var(--red);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stars {
+      color: #F59E0B;
+      font-size: 16px;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-card blockquote {
+      font-size: 15px;
+      color: var(--black);
+      line-height: 1.7;
+      font-style: italic;
+      flex: 1;
+      margin-bottom: 18px;
+    }
+
+    .testimonial-author {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--slate);
+    }
+
+    .testimonial-location { font-size: 13px; color: var(--grey); font-weight: 400; }
+
+    @media (max-width: 900px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── PRICING ── */
+    .pricing {
+      background: var(--cream);
+      padding: 80px 32px;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border-radius: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.1);
+    }
+
+    .pricing-header {
+      background: linear-gradient(135deg, #2C4F5F 0%, #961B11 100%);
+      color: var(--white);
+      padding: 36px 40px;
+      text-align: center;
+    }
+
+    .pricing-name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 10px;
+    }
+
+    .pricing-price {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .pricing-price sup { font-size: 24px; vertical-align: top; margin-top: 10px; }
+
+    .pricing-period {
+      font-size: 15px;
+      opacity: 0.75;
+      margin-top: 4px;
+    }
+
+    .pricing-trial {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 16px;
+    }
+
+    .pricing-body { padding: 36px 40px; }
+
+    .pricing-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--cream-dk);
+      font-size: 15px;
+      color: var(--black);
+    }
+
+    .pricing-feature:last-of-type { border-bottom: none; }
+
+    .pricing-check {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      color: var(--red);
+      margin-top: 1px;
+    }
+
+    .pricing-footer { padding: 0 40px 36px; text-align: center; }
+
+    .btn-cta {
+      display: block;
+      background: var(--red);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 800;
+      padding: 18px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-cta:hover { background: var(--red-dk); transform: translateY(-2px); }
+
+    .pricing-guarantee {
+      font-size: 13px;
+      color: var(--grey);
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      background: var(--white);
+      padding: 80px 32px;
+    }
+
+    .faq-list {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 22px 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-family: var(--font);
+      line-height: 1.4;
+    }
+
+    .faq-question:hover { color: var(--red); }
+
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--red);
+      transition: transform 0.25s;
+    }
+
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer { max-height: 400px; }
+
+    .faq-answer p {
+      font-size: 15px;
+      color: var(--grey);
+      padding-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: linear-gradient(135deg, #2C4F5F 0%, #961B11 100%);
+      padding: 80px 32px;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .final-cta h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+    }
+
+    .final-cta p {
+      font-size: 18px;
+      opacity: 0.85;
+      max-width: 1400px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .final-cta .btn-primary {
+      font-size: 16px;
+      padding: 18px 40px;
+    }
+
+    .final-cta-note { font-size: 13px; opacity: 0.65; margin-top: 14px; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 40px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    @media (max-width: 640px) {
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+
+    /* ── STICKY MOBILE CTA ── */
+    .sticky-bottom {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--red);
+      padding: 14px 24px;
+      z-index: 200;
+    }
+
+    .sticky-bottom a {
+      display: block;
+      color: var(--white);
+      text-align: center;
+      font-weight: 800;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      .sticky-bottom { display: block; }
+      .final-cta { padding-bottom: 100px; }
+    }
+
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="The Canadian Jetsetter home">
+        THE CANADIAN<br>JETSETTER
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="https://thecanadianjetsetter.com/jetsetter-premium">Premium</a>
+        <a href="https://thecanadianjetsetter.com/jetsetter-economy">Economy</a>
+        <a href="https://thecanadianjetsetter.com/blog/">Blog</a>
+        <a href="https://thecanadianjetsetter.com/contact">Contact</a>
+        <a href="/checkout.html" class="nav-cta">Start Free Trial</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="hero-eyebrow">Canada's #1 Flight Deals Newsletter</span>
+        <h1>
+          Stop paying full price.<br>
+          <span>Start flying for less.</span>
+        </h1>
+        <p class="hero-sub">
+          I scout economy flight deals from Toronto, Vancouver, and Calgary every week and send them straight to your inbox the moment they drop. No noise — just real deals worth booking.
+        </p>
+        <div class="hero-social" aria-live="polite">
+          <span class="hero-social-dot" aria-hidden="true"></span>
+          38,000+ Canadian travellers already subscribed
+        </div>
+        <div class="hero-actions">
+          <a href="/checkout.html" class="btn-primary">Start Free Trial — 7 Days Free</a>
+          <a href="#how-it-works" class="btn-ghost">See how it works</a>
+        </div>
+        <p class="hero-trial">No credit card required to start · CA$59.99/yr after trial · Cancel anytime</p>
+      </div>
+
+      <!-- Floating card -->
+      <div class="hero-card" aria-hidden="true">
+        <img src="graeme-headshot.png" alt="" class="hero-headshot">
+        <div class="hero-card-name">Graeme</div>
+        <div class="hero-card-title">Founder, The Canadian Jetsetter</div>
+        <div class="hero-card-stat">
+          <strong>38,000+</strong>
+          Canadian subscribers
+        </div>
+        <div class="hero-card-stat">
+          <strong>20+ deals</strong>
+          sent per city, every month
+        </div>
+        <div class="hero-card-stat">
+          <strong>$398</strong>
+          Toronto → Lisbon, March 2026
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar" role="complementary" aria-label="Trust indicators">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <!-- Plane icon -->
+        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19 2c-2-2-4-2-5.5-.5L10 5 1.8 6.2l5.1 5.1L5 14l-2 2 4 1 1 4 2-2 2.9-1.9 5.1 5.1z"/>
+        </svg>
+        20+ deals per city monthly
+      </div>
+      <div class="trust-item">
+        <!-- Map pin icon -->
+        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        Toronto, Vancouver & Calgary
+      </div>
+      <div class="trust-item">
+        <!-- Dollar icon -->
+        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+        CA$59.99/year — less than $5/mo
+      </div>
+      <div class="trust-item">
+        <!-- Shield icon -->
+        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        7-day free trial · cancel anytime
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how-it-works">
+    <div class="container">
+      <p class="section-label reveal">Simple as that</p>
+      <h2 class="section-title reveal">How Jetsetter Economy works</h2>
+      <p class="section-sub reveal">No algorithms. No AI-generated noise. Just me finding the best flight deals from Canadian cities and sending them to you.</p>
+
+      <div class="steps-grid">
+        <div class="step-card reveal" data-delay="1">
+          <div class="step-number" aria-hidden="true">1</div>
+          <h3>I find the deal</h3>
+          <p>I manually scan fares from Toronto, Vancouver, and Calgary airports every day — looking for prices significantly below the market average.</p>
+        </div>
+        <div class="step-card reveal" data-delay="2">
+          <div class="step-number" aria-hidden="true">2</div>
+          <h3>You get the alert</h3>
+          <p>The moment a real deal drops, you get an email with the route, price, travel dates, and a direct booking link. No fluff.</p>
+        </div>
+        <div class="step-card reveal" data-delay="3">
+          <div class="step-number" aria-hidden="true">3</div>
+          <h3>You book and save</h3>
+          <p>Flight deals disappear fast — sometimes in hours. Because you're subscribed, you always get first access before prices bounce back.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEALS SHOWCASE -->
+  <section class="deals">
+    <div class="container">
+      <p class="section-label reveal">Real deals, real prices</p>
+      <h2 class="section-title reveal">What a typical week looks like</h2>
+      <p class="section-sub reveal">Recent deals sent to Jetsetter Economy subscribers — these are the actual prices members booked at.</p>
+
+      <div class="deals-grid">
+        <div class="deal-card reveal" data-delay="1">
+          <span class="deal-badge">847 booked this deal</span>
+          <div class="deal-route">Toronto &rarr; Lisbon</div>
+          <div class="deal-price">$398 return</div>
+          <div class="deal-meta">Sent March 2026 &middot; Economy nonstop &middot; Multiple dates available</div>
+        </div>
+        <div class="deal-card reveal" data-delay="2">
+          <span class="deal-badge">Limited availability</span>
+          <div class="deal-route">Toronto &rarr; Tokyo</div>
+          <div class="deal-price">$612 return</div>
+          <div class="deal-meta">Sent February 2026 &middot; Economy direct &middot; Spring dates</div>
+        </div>
+        <div class="deal-card reveal" data-delay="3">
+          <span class="deal-badge">Shoulder season find</span>
+          <div class="deal-route">Vancouver &rarr; Dublin</div>
+          <div class="deal-price">$490 return</div>
+          <div class="deal-meta">Sent March 2026 &middot; Economy &middot; Great for a Europe trip</div>
+        </div>
+        <div class="deal-card reveal" data-delay="4">
+          <span class="deal-badge">Airline sale</span>
+          <div class="deal-route">Calgary &rarr; Paris</div>
+          <div class="deal-price">$520 return</div>
+          <div class="deal-meta">Sent January 2026 &middot; Air Transat sale &middot; Summer dates</div>
+        </div>
+      </div>
+
+      <div class="deals-cta-wrap">
+        <a href="/checkout.html" class="btn-cta" style="display:inline-block; max-width:360px;">
+          Get deals like these in your inbox &rarr;
+        </a>
+        <p class="deals-disclaimer">Try free for 7 days. No commitment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <p class="section-label reveal">38,000+ happy subscribers</p>
+      <h2 class="section-title reveal">Travellers who saved big</h2>
+      <p class="section-sub reveal">Real feedback from real subscribers — Canadians who found their next trip through The Canadian Jetsetter.</p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal" data-delay="1">
+          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>
+            "I booked Toronto to Lisbon for under $400 after getting Graeme's alert. The subscription literally paid for itself on the very first deal I booked."
+          </blockquote>
+          <div class="testimonial-author">
+            Sarah T.
+            <span class="testimonial-location"> &mdash; Toronto, ON</span>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" data-delay="2">
+          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>
+            "I've been on a lot of deals newsletters. This one actually sends deals worth booking — not just airline sales I'd never fly. Genuinely different."
+          </blockquote>
+          <div class="testimonial-author">
+            Michael R.
+            <span class="testimonial-location"> &mdash; Vancouver, BC</span>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" data-delay="3">
+          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>
+            "Got an alert for a Tokyo flight at $612 return. I've been trying to book that trip for years. Bought it within 20 minutes. Unreal value."
+          </blockquote>
+          <div class="testimonial-author">
+            Priya K.
+            <span class="testimonial-location"> &mdash; Calgary, AB</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container-sm">
+      <p class="section-label reveal">Simple pricing</p>
+      <h2 class="section-title reveal">Jetsetter Economy</h2>
+      <p class="section-sub reveal">One plan. Everything included. Less than a cup of coffee a month.</p>
+
+      <div class="pricing-card reveal">
+        <div class="pricing-header">
+          <div class="pricing-name">Jetsetter Economy</div>
+          <div class="pricing-price"><sup>CA$</sup>59<sup style="font-size:28px;">.99</sup></div>
+          <div class="pricing-period">per year</div>
+          <div class="pricing-trial">7-day free trial included</div>
+        </div>
+
+        <div class="pricing-body">
+          <div class="pricing-feature">
+            <svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            20+ curated economy deals per city, every month
+          </div>
+          <div class="pricing-feature">
+            <svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Departures from Toronto, Vancouver &amp; Calgary
+          </div>
+          <div class="pricing-feature">
+            <svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Instant email alerts the moment a deal drops
+          </div>
+          <div class="pricing-feature">
+            <svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Direct booking links — no middleman markup
+          </div>
+          <div class="pricing-feature">
+            <svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Cancel anytime — no questions asked
+          </div>
+        </div>
+
+        <div class="pricing-footer">
+          <a href="/checkout.html" class="btn-cta">Start My Free Trial</a>
+          <p class="pricing-guarantee">No charge for 7 days. Then CA$59.99/year. Cancel before your trial ends and you'll never be billed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <p class="section-label reveal">Got questions?</p>
+      <h2 class="section-title reveal">Frequently asked questions</h2>
+
+      <div class="faq-list" role="list">
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            Do I actually need a credit card to start the free trial?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — we use Stripe to process payments and they require a card to hold your trial. But you will not be charged anything for 7 days. If you cancel before the trial ends, you pay nothing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            Which cities do deals depart from?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Jetsetter Economy covers departures from Toronto (YYZ/YTZ), Vancouver (YVR), and Calgary (YYC). We focus exclusively on Canadian departure cities so every deal is actually useful to you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            How often will I receive deal alerts?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>It depends on what the market is doing — we only send alerts when there's a genuinely good deal worth booking. On average, subscribers receive 5–8 deals per week across all three cities. We never pad the list with mediocre fares.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            Are these economy-class flights only?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — Jetsetter Economy focuses exclusively on economy class deals. If you're interested in business class and points travel, check out Jetsetter Premium.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            How do I cancel my subscription?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>You can cancel anytime by emailing <a href="mailto:info@canadianjetsetter.com" style="color:var(--red);font-weight:600;">info@canadianjetsetter.com</a>. No forms, no runaround. Just email us and we'll take care of it immediately.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            What's the difference between Economy and Premium?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Jetsetter Economy covers cash-price economy deals. Jetsetter Premium covers business class deals, points redemptions, and credit card strategy for Canadians who want to travel in luxury for less. You can check out Premium at <a href="https://thecanadianjetsetter.com/jetsetter-premium" style="color:var(--red);font-weight:600;">thecanadianjetsetter.com/jetsetter-premium</a>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2 class="reveal">Ready to stop overpaying for flights?</h2>
+    <p>Join 38,000+ Canadians who get real flight deals in their inbox every week.</p>
+    <a href="/checkout.html" class="btn-primary">Start My 7-Day Free Trial</a>
+    <p class="final-cta-note">CA$59.99/year after your trial &middot; Cancel anytime</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        THE CANADIAN<br>JETSETTER
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://thecanadianjetsetter.com/jetsetter-premium">Jetsetter Premium</a>
+        <a href="https://thecanadianjetsetter.com/jetsetter-economy">Jetsetter Economy</a>
+        <a href="https://thecanadianjetsetter.com/blog/">Blog</a>
+        <a href="https://thecanadianjetsetter.com/contact">Contact</a>
+        <a href="mailto:info@canadianjetsetter.com">Email Us</a>
+      </nav>
+      <span class="footer-copy">&copy; 2026 The Canadian Jetsetter</span>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-bottom" role="complementary" aria-label="Subscribe call to action">
+    <a href="/checkout.html">Start Free Trial &mdash; 7 Days Free &rarr;</a>
+  </div>
+
+  <script>
+    // Mobile nav
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(el => {
+          el.classList.remove('open');
+          el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Open clicked (unless it was already open)
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Hide sticky bar when footer is visible
+    const footer = document.querySelector('.footer');
+    const sticky = document.querySelector('.sticky-bottom');
+    if (sticky && footer) {
+      const obs = new IntersectionObserver(entries => {
+        sticky.style.display = entries[0].isIntersecting ? 'none' : 'block';
+      }, { threshold: 0.1 });
+      obs.observe(footer);
+    }
+  </script>
+</body>
+</html>

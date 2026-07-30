@@ -1,0 +1,14 @@
+node_modules/
+.env
+.dev.vars
+.wrangler/
+dist/
+worker-configuration.d.ts
+
+# System files
+.DS_Store
+*.log
+
+# Editor files
+.vscode/
+.idea/

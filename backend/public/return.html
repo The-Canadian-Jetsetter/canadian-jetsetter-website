@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Jetsetter Economy — The Canadian Jetsetter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Meta Pixel Base Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1050064854097732');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1050064854097732&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Base Code -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F6F2E7;
+      color: #F6F2E7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV VARIABLES ─────────────────────────── */
+    :root {
+      --border: #3d0000;
+      --white:  #ffffff;
+      --cream:  #F6F2E7;
+    }
+
+    /* ── TOP NAV ───────────────────────────────── */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 0, 0, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .top-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 57px;
+      position: relative;
+      padding-left: 8px;
+      max-width: none;
+      padding-top: 0;
+      padding-bottom: 0;
+      flex: unset;
+    }
+
+    .nav-logo {
+      flex: 1;
+      padding-left: 0;
+    }
+
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      padding: 5px 0;
+    }
+
+    /* Hamburger button */
+    .nav-hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-end;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--cream);
+      border-radius: 2px;
+      transition: width 0.2s, transform 0.25s, opacity 0.2s;
+    }
+
+    .nav-hamburger span:nth-child(1) { width: 22px; }
+    .nav-hamburger span:nth-child(2) { width: 16px; }
+    .nav-hamburger span:nth-child(3) { width: 22px; }
+
+    .nav-hamburger:hover span { background: var(--white); }
+
+    /* Animate to X when open */
+    .nav-hamburger.is-open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+      width: 22px;
+    }
+    .nav-hamburger.is-open span:nth-child(2) {
+      opacity: 0;
+      width: 0;
+    }
+    .nav-hamburger.is-open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+      width: 22px;
+    }
+
+    /* Dropdown menu */
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 1px);
+      right: 0;
+      background: #1a0000;
+      border: 1px solid var(--border);
+      border-top: 2px solid #8B0000;
+      border-radius: 0 0 8px 8px;
+      min-width: 220px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+      display: none;
+    }
+
+    .nav-dropdown.is-open {
+      display: block;
+    }
+
+    .nav-dropdown ul {
+      list-style: none;
+      padding: 6px 0;
+    }
+
+    .nav-dropdown ul li a {
+      display: block;
+      padding: 11px 20px;
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: background 0.15s, color 0.15s, padding-left 0.15s;
+    }
+
+    .nav-dropdown ul li a:hover {
+      background: rgba(139, 0, 0, 0.35);
+      color: var(--white);
+      padding-left: 26px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .return-card {
+      background: #2a0f0f;
+      border: 1px solid rgba(246,242,231,0.1);
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .return-icon {
+      font-size: 3rem;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #F6F2E7;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(246,242,231,0.8);
+      margin-bottom: 12px;
+    }
+
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: #c0392b;
+      margin: 24px auto;
+      border-radius: 2px;
+    }
+
+    .what-next {
+      background: rgba(246,242,231,0.05);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+      text-align: left;
+    }
+
+    .what-next h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c0392b;
+      margin-bottom: 16px;
+    }
+
+    .what-next ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .what-next ul li {
+      padding: 8px 0;
+      font-size: 0.95rem;
+      color: rgba(246,242,231,0.85);
+      border-bottom: 1px solid rgba(246,242,231,0.07);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .what-next ul li:last-child {
+      border-bottom: none;
+    }
+
+    .return-button {
+      display: inline-block;
+      background: #c0392b;
+      color: #F6F2E7;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-top: 24px;
+      transition: background 0.2s;
+    }
+
+    .return-button:hover {
+      background: #a93226;
+    }
+
+    .contact-info {
+      font-size: 0.85rem;
+      margin-top: 16px;
+      color: rgba(246,242,231,0.5);
+    }
+
+    .contact-info a {
+      color: rgba(246,242,231,0.7);
+    }
+
+    .hidden { display: none; }
+
+    .loading-spinner {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    ul.error-list {
+      text-align: left;
+      margin: 16px 0;
+      padding-left: 20px;
+      color: rgba(246,242,231,0.7);
+    }
+
+    ul.error-list li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-nav" role="banner">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; padding-top:0; padding-bottom:0;">
+      <a href="https://thecanadianjetsetter.com/" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
+        <img src="AprilDeal/TCJ Website Assets/icons/Jetsetter text logo.png" alt="The Canadian Jetsetter" loading="eager" style="height:36px;" />
+      </a>
+      <button class="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-dropdown">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
+        <ul>
+          <li><a href="https://thecanadianjetsetter.com/">Home</a></li>
+          <li><a href="https://thecanadianjetsetter.com/jetsetter-premium">Jetsetter Premium</a></li>
+          <li><a href="/AprilDeal/economy.html">Jetsetter Economy</a></li>
+          <li><a href="https://thecanadianjetsetter.com/golden-visa">Golden Visa</a></li>
+          <li><a href="https://thecanadianjetsetter.com/blog/">Blog</a></li>
+          <li><a href="https://thecanadianjetsetter.com/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <section id="success" class="hidden">
+      <div class="return-card">
+        <div class="return-icon">🛫</div>
+        <h1>You're In!</h1>
+        <p>Welcome to Jetsetter Economy. Your 7-day free trial has started.</p>
+        <p>A confirmation email is on its way to <strong><span id="customer-email"></span></strong></p>
+        <div class="divider"></div>
+        <div class="what-next">
+          <h3>What happens next</h3>
+          <ul>
+            <li>✉️ Check your inbox for a welcome email</li>
+            <li>✈️ Flight deals will start arriving as soon as we find them</li>
+            <li>💳 Your card won't be charged for 7 days</li>
+            <li>❌ Cancel anytime during the trial. No questions asked!</li>
+          </ul>
+        </div>
+        <p class="contact-info">Questions? Email <a href="mailto:graeme@thecanadianjetsetter.com">graeme@thecanadianjetsetter.com</a></p>
+        <a href="https://thecanadianjetsetter.com" class="return-button">Back to Main Site →</a>
+      </div>
+    </section>
+
+    <section id="error" class="hidden">
+      <div class="return-card">
+        <div class="return-icon">❌</div>
+        <h1>Payment Incomplete</h1>
+        <p>Your payment was not completed. This can happen if:</p>
+        <ul class="error-list">
+          <li>The payment was canceled</li>
+          <li>There was an issue with your card</li>
+          <li>The session expired</li>
+        </ul>
+        <a href="/AprilDeal/economy.html" class="return-button">Try Again →</a>
+      </div>
+    </section>
+
+    <section id="loading">
+      <div class="return-card">
+        <div class="loading-spinner">⏳</div>
+        <p>Confirming your subscription...</p>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="return.js"></script>
+  <script>
+    const hamburger = document.querySelector('.nav-hamburger');
+    const dropdown = document.getElementById('nav-dropdown');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !isOpen);
+      dropdown.setAttribute('aria-hidden', isOpen);
+      hamburger.classList.toggle('is-open', !isOpen);
+      dropdown.classList.toggle('is-open', !isOpen);
+    });
+
+    dropdown.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !dropdown.contains(e.target)) {
+        hamburger.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        dropdown.classList.remove('is-open');
+      }
+    });
+  </script>
+
+<footer role="contentinfo" style="background:#0d0404; padding:40px 24px; margin-top:auto;">
+  <div style="max-width:900px; margin:0 auto;">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:24px; text-align:center;">
+
+      <a href="https://thecanadianjetsetter.com/" aria-label="The Canadian Jetsetter — Home">
+        <img src="AprilDeal/TCJ Website Assets/logos/Banner text logo light 2.png" alt="The Canadian Jetsetter" loading="lazy" style="height:32px;" />
+      </a>
+
+      <nav aria-label="Footer navigation" style="display:flex; flex-wrap:wrap; gap:16px 24px; justify-content:center;">
+        <a href="/AprilDeal/economy.html" style="color:rgba(246,242,231,0.6); text-decoration:none; font-size:0.875rem;">Subscribe</a>
+        <a href="/AprilDeal/economy.html" style="color:rgba(246,242,231,0.6); text-decoration:none; font-size:0.875rem;">Economy</a>
+        <a href="https://thecanadianjetsetter.com/jetsetter-premium" style="color:rgba(246,242,231,0.6); text-decoration:none; font-size:0.875rem;">Premium</a>
+        <a href="#" style="color:rgba(246,242,231,0.6); text-decoration:none; font-size:0.875rem;">About</a>
+        <a href="https://thecanadianjetsetter.com/privacy-policy" style="color:rgba(246,242,231,0.6); text-decoration:none; font-size:0.875rem;">Privacy Policy</a>
+        <a href="https://thecanadianjetsetter.com/terms" style="color:rgba(246,242,231,0.6); text-decoration:none; font-size:0.875rem;">Terms of Service</a>
+      </nav>
+
+      <p style="color:rgba(246,242,231,0.4); font-size:0.8rem;">
+        &copy; <span id="footer-year-return"></span> The Canadian Jetsetter. All rights reserved.
+      </p>
+
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('footer-year-return').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
