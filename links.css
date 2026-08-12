@@ -258,6 +258,66 @@ body {
   .nav-hamburger { display: none; }
 }
 
+/* ── HERO ──────────────────────────────────── */
+/* Copied from blog.css's .hero — update the background-image url below to swap the photo. */
+.hero {
+  padding: 56px 0 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-image: url('TCJ Website Assets/icons/Iceland banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #761915 0%, #000000 100%);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+  color: #e8e8e8;
+  text-transform: uppercase;
+}
+
+.hero-sub {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-weight: 500;
+  color: var(--white);
+  max-width: 620px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 36px 0 40px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.6rem, 8vw, 2.4rem);
+  }
+}
+
 /* ── SOCIAL ICONS BAR ──────────────────────── */
 .social-bar {
   padding: 32px 24px 24px;
@@ -330,21 +390,46 @@ body {
 }
 
 .featured-btn {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 72px;
+  justify-content: flex-end;
+  min-height: 130px;
   text-decoration: none;
   cursor: pointer;
-  background: linear-gradient(135deg, #6C0000 0%, #4A0C0C 50%, #6C0000 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  padding: 20px 16px;
+  padding: 16px 14px;
+  overflow: hidden;
   transition: filter 0.2s ease, transform 0.2s ease;
 }
 
+.featured-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    #000000 0%,
+    #761915 30%,
+    rgba(118, 25, 21, 0) 70%
+  );
+  opacity: 0.72;
+  z-index: 1;
+}
+
+.featured-btn--free    { background-image: url('TCJ Website Assets/icons/Tokyo palace 2.jpg');    background-position: 60% 35%; }
+.featured-btn--economy { background-image: url('TCJ Website Assets/icons/Pyramid banner.jpg');     background-position: 55% 55%; }
+.featured-btn--premium { background-image: url('TCJ Website Assets/icons/Tokyo Banner 2.jpg');     background-position: 62% 25%; }
+.featured-btn--blog    { background-image: url('TCJ Website Assets/icons/website banner (1).jpg'); background-position: 30% 65%; }
+
 .featured-btn-label {
+  position: relative;
+  z-index: 2;
   color: #F6F2E7;
   font-family: var(--font);
   font-size: 0.9rem;
@@ -352,6 +437,32 @@ body {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-align: center;
+}
+
+.featured-btn-subtitle {
+  position: relative;
+  z-index: 2;
+  color: rgba(246, 242, 231, 0.8);
+  font-family: var(--font);
+  font-size: 0.72rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.featured-btn-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  background: #F6F2E7;
+  color: #761915;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
 .featured-btn:hover {
@@ -731,8 +842,17 @@ footer {
 
 /* ── MOBILE ────────────────────────────────── */
 @media (max-width: 768px) {
+  .hero {
+    display: none;
+  }
+
   .embed-block {
-    margin-top: 36px !important;
+    margin-top: 12px !important;
+  }
+
+  .link-group {
+    margin-top: 16px;
+    gap: 6px;
   }
 }
 
