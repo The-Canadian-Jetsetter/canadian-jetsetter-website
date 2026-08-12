@@ -679,7 +679,12 @@ body {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
   transform: none !important;
   animation: none !important;
-  transition: none !important;
+  transition: filter 0.2s ease, transform 0.2s ease !important;
+}
+
+.cc-card:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px) !important;
 }
 
 .cc-icon {
