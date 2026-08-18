@@ -385,7 +385,7 @@ body {
 
 .handbook-hero-inner {
   display: grid;
-  grid-template-columns: 420px 1fr;
+  grid-template-columns: 490px 1fr;
   gap: 56px;
   align-items: center;
 }
@@ -413,6 +413,46 @@ body {
   color: rgba(246, 242, 231, 0.8);
   max-width: 480px;
   margin-bottom: 32px;
+}
+
+.handbook-countdown {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 6px;
+  margin-bottom: 34px;
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(240, 180, 41, 0.35);
+  border-radius: 14px;
+  padding: 14px 26px;
+}
+
+.handbook-countdown-label {
+  font-size: clamp(1rem, 1.7vw, 1.3rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(246, 242, 231, 0.75);
+}
+
+.handbook-countdown-timer {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #F0B429;
+  font-variant-numeric: tabular-nums;
+}
+
+.handbook-countdown.is-ended .handbook-countdown-timer {
+  font-family: inherit;
+  color: rgba(246, 242, 231, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .handbook-price-block {
@@ -506,6 +546,16 @@ body {
     margin-right: auto;
   }
 
+  .handbook-countdown {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 4px;
+    margin-bottom: 30px;
+    padding: 14px 22px;
+  }
+
   .handbook-price-block {
     flex-direction: column;
     align-items: center;
@@ -529,6 +579,10 @@ body {
 @media (max-width: 640px) {
   .handbook-hero {
     padding: 56px 0;
+  }
+
+  .handbook-countdown-timer {
+    font-size: 1.5rem;
   }
 }
 
