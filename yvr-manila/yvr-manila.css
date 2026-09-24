@@ -1,0 +1,346 @@
+/* ============================================
+   THE CANADIAN JETSETTER — YVR TO MANILA DEAL PAGE
+   Builds on ../economy.css (nav, buttons, footer, variables)
+   ============================================ */
+
+/* ── HERO ──────────────────────────────────── */
+.deal-hero {
+  background-image: url('manila-hero.jpg') !important;
+  padding: 72px 0 84px;
+}
+
+.deal-hero-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+
+.deal-hero h1 {
+  font-size: clamp(1.9rem, 4.6vw, 3.6rem);
+  letter-spacing: 0.04em;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.deal-hero .hero-location {
+  margin-bottom: 0;
+}
+
+.deal-photo-credit {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  z-index: 2;
+  font-size: 0.7rem;
+  color: var(--cream);
+  opacity: 0.75;
+}
+
+/* ── SECTIONS ──────────────────────────────── */
+.deal-section {
+  padding: 48px 0;
+}
+
+.deal-section--cream {
+  background: var(--cream);
+  color: var(--cream-text);
+}
+
+.deal-section--cream .section-header h2 { color: var(--cream-text); }
+.deal-section--cream .section-header p  { color: var(--cream-muted); }
+
+.deal-prose {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--cream);
+}
+
+.deal-prose p + p { margin-top: 12px; }
+
+/* ── AT A GLANCE ───────────────────────────── */
+.deal-glance {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--cream-card);
+  border: 1px solid var(--cream-border);
+  border-top: 3px solid var(--red);
+  border-radius: 8px;
+  padding: 8px 24px;
+}
+
+.deal-glance-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--cream-border);
+}
+
+.deal-glance-row:last-child { border-bottom: none; }
+
+.deal-glance dt {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  padding-top: 3px;
+}
+
+.deal-glance dd {
+  color: #3a1a1a;
+}
+
+.deal-glance dd strong { color: var(--cream-text); }
+
+/* ── FIGURES ───────────────────────────────── */
+.deal-figure {
+  max-width: 860px;
+  margin: 32px auto 0;
+  text-align: center;
+}
+
+.deal-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+}
+
+.deal-section--cream .deal-figure img {
+  border-color: var(--cream-border);
+  box-shadow: 0 8px 24px rgba(26,0,0,0.12);
+}
+
+.deal-figure figcaption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--grey-400);
+}
+
+.deal-section--cream .deal-figure figcaption { color: var(--cream-muted); }
+
+/* ── ITINERARY ─────────────────────────────── */
+.deal-legs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.deal-leg {
+  background: var(--cream-card);
+  border: 1px solid var(--cream-border);
+  border-radius: 8px;
+  padding: 20px 22px;
+}
+
+.deal-leg-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+.deal-leg ul {
+  list-style: none;
+  color: #3a1a1a;
+}
+
+.deal-leg li {
+  padding: 5px 0;
+  border-bottom: 1px solid var(--cream-border);
+}
+
+.deal-leg li:last-child { border-bottom: none; }
+
+.deal-leg-total {
+  margin-top: 10px;
+  font-weight: 700;
+  color: var(--cream-text);
+}
+
+.deal-price-line {
+  max-width: 860px;
+  margin: 24px auto 0;
+  text-align: center;
+  font-size: 1.05rem;
+  color: #3a1a1a;
+}
+
+.deal-price-line strong { color: var(--red); }
+
+/* ── HOW TO BOOK ───────────────────────────── */
+.deal-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.deal-option {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.deal-option-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey-400);
+  margin-bottom: 4px;
+}
+
+.deal-option h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.deal-option p {
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+
+.deal-option .btn { margin-top: 4px; }
+
+.deal-ota-list {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.deal-ota-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--cream);
+}
+
+.deal-ota-list li:first-child span:last-child {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.deal-option p.deal-note {
+  font-size: 0.9rem;
+  color: var(--grey-400);
+  margin-bottom: 0;
+}
+
+/* ── EXAMPLE DATES ─────────────────────────── */
+.deal-dates {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.deal-date-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  text-align: center;
+}
+
+.deal-date-sub {
+  font-size: 0.78rem;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+/* ── GOOD TO KNOW ──────────────────────────── */
+.deal-know-list {
+  list-style: none;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.deal-know-list li {
+  position: relative;
+  padding: 10px 0 10px 22px;
+  border-bottom: 1px solid var(--border);
+  color: var(--cream);
+}
+
+.deal-know-list li:last-child { border-bottom: none; }
+
+.deal-know-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 19px;
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  border-radius: 50%;
+}
+
+.deal-know-list a {
+  color: var(--cream);
+  text-decoration: underline;
+}
+
+.deal-know-list a:hover { color: var(--white); }
+
+/* ── RESPONSIVE ────────────────────────────── */
+@media (max-width: 768px) {
+  .deal-hero {
+    padding: 48px 0 56px !important;
+  }
+
+  .deal-section {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .deal-glance {
+    padding: 4px 16px;
+  }
+
+  .deal-glance-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .deal-legs,
+  .deal-options {
+    grid-template-columns: 1fr;
+  }
+
+  .deal-option {
+    padding: 22px 18px;
+  }
+
+  .deal-dates {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .deal-date-btn {
+    min-width: 0;
+    width: 100%;
+  }
+}
