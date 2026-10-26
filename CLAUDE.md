@@ -33,7 +33,8 @@ Rebuilding the website for **The Canadian Jetsetter** — a Canadian flight deal
 ├── inject_posts.py             Blog injection script
 ├── TCJ Website Assets/
 │   ├── logos/
-│   │   └── jetsetter text logo.png   (navbar logo)
+│   │   ├── site-header-logo-white.png      (header bar logo)
+│   │   └── site-header-logo-charcoal.png   (mobile menu panel logo)
 │   └── [other images]
 ```
 
@@ -46,32 +47,10 @@ Rebuilding the website for **The Canadian Jetsetter** — a Canadian flight deal
 ### Colors
 - Dark red: `#761915`
 - Cream: `#F6F2E7`
-- Black (navbar/footer): `#000000`
+- Black (footer): `#000000`
 
-### Navbar — Desktop
-- Black background
-- Logo (`TCJ Website Assets/logos/jetsetter text logo.png`) left-aligned
-- Nav links centered: OFFERINGS (dropdown) / LINKS / CREDIT CARDS / BLOG / CONTACT
-- Link color: `#F6F2E7`, uppercase, wide letter-spacing
-- Subtle dark red bottom border
-- Hover: dark red
-
-### Navbar — Mobile (below 768px)
-- Hamburger icon (three lines), right side, `#F6F2E7`
-- Dropdown: black background
-
-### Mobile Menu Structure
-```
-OFFERINGS (expandable)
-  ├── Jetsetter Free → jetsetter-free.html
-  ├── Jetsetter Economy → economy.html
-  ├── Jetsetter Premium → jetsetter-premium.html
-  └── Golden Visa → golden-visa.html
-LINKS → links.html
-
-BLOG → blog.html
-CONTACT → contact.html
-```
+### Header
+See **Site header** below. The header (desktop and mobile menu) comes from `site-header-nav.jsonc` and `site-header.css`; it switches to the mobile menu below 900px.
 
 ### Hero Sections
 - Slim banner style
@@ -89,7 +68,7 @@ Always copy footer exactly from `economy.html`.
 ## Key Rules
 
 1. **Always read `economy.html` before creating or significantly editing a page** — it's the design source of truth
-2. **Mobile responsive** — use media query breakpoint at 768px
+2. **Mobile responsive** — use media query breakpoint at 768px (the site header uses its own 900px breakpoint; see Site header)
 3. **Use `!important`** when overriding styles that aren't responding
 4. **When asked to apply changes across all pages**, apply to: `index.html`, `economy.html`, `jetsetter-premium.html`, `jetsetter-free.html`, `golden-visa.html`, `blog.html`, `contact.html`, `links.html`
 5. **New pages** get their own `.css` file (e.g. `golden-visa.html` + `golden-visa.css`)
