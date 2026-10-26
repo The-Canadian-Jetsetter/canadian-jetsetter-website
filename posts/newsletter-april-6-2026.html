@@ -8,7 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../blog-post-template.css" />
+  <link rel="stylesheet" href="../blog-post-template.css?v=dc074d94" />
+  <!-- site-header-head-start -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&amp;family=Young+Serif&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site-header.css?v=432bafa1" />
+  <script src="/site-header.js?v=18effb22" defer></script>
+  <!-- site-header-head-end -->
 </head>
 <body>
 
@@ -18,61 +25,76 @@
   <!-- ══════════════════════════════════════════
        1. TOP NAV
   ══════════════════════════════════════════ -->
-  <header class="top-nav" role="banner">
-    <div class="container">
+  <!-- site-header-start -->
+  <header class="site-header" data-site-header>
+    <div class="site-header__bar">
+      <div class="site-header__wrap site-header__bar-inner">
+        <a href="/" class="site-header__brand"><img class="site-header__logo" src="/TCJ%20Website%20Assets/logos/site-header-logo-white.png" alt="The Canadian Jetsetter" width="465" height="96" /></a>
 
-      <a href="../index.html" class="nav-logo" aria-label="The Canadian Jetsetter — Home">
-        <img
-          src="../TCJ Website Assets/icons/Jetsetter text logo.png"
-          alt="The Canadian Jetsetter"
-          loading="eager"
-        />
-      </a>
+        <!-- Desktop menu -->
+        <nav class="site-header__desktop" aria-label="Main">
+          <ul class="site-header__top">
+            <li>
+              <button type="button" class="site-header__top-link" aria-expanded="false" aria-controls="site-header-panel-offerings" data-panel-toggle="offerings">Offerings<svg class="site-header__chevron" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg></button>
+              <!-- Full-width panel under the bar, right after its button so keyboard users reach its links next -->
+              <div class="site-header__panel" id="site-header-panel-offerings" data-panel="offerings">
+                <div class="site-header__panel-inner">
+                  <div class="site-header__wrap">
+                    <ul class="site-header__panel-links">
+                      <li><a href="/jetsetter-free.html">Jetsetter Free</a></li>
+                      <li><a href="/economy.html">Jetsetter Economy</a></li>
+                      <li><a href="/jetsetter-premium.html">Jetsetter Premium</a></li>
+                      <li><a href="/points-handbook.html">Points Handbook</a></li>
+                      <li><a href="/golden-visa.html">Golden Visa</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a class="site-header__top-link" href="/links.html">Links</a></li>
+            <li><a class="site-header__top-link" href="/blog.html">Blog</a></li>
+            <li><a class="site-header__top-link" href="/contact.html">Contact</a></li>
+          </ul>
+        </nav>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <div class="nav-item nav-item--dropdown">
-          <button class="nav-link nav-link--btn" aria-expanded="false" aria-haspopup="true">
-            OFFERINGS <span class="nav-chevron" aria-hidden="true">&#9662;</span>
-          </button>
-          <div class="nav-submenu" role="menu">
-            <a href="../jetsetter-free.html" role="menuitem">Jetsetter Free</a>
-            <a href="../economy.html" role="menuitem">Jetsetter Economy</a>
-            <a href="../jetsetter-premium.html" role="menuitem">Jetsetter Premium</a>
-            <a href="../points-handbook.html" role="menuitem">Points Handbook</a>
-            <a href="../golden-visa.html" role="menuitem">Golden Visa</a>
-          </div>
-        </div>
-        <a href="../links.html" class="nav-link">LINKS</a>
-        <a href="../blog.html" class="nav-link">BLOG</a>
-        <a href="../contact.html" class="nav-link">CONTACT</a>
-      </nav>
+        <!-- Mobile menu button -->
+        <button type="button" class="site-header__menu-button" aria-expanded="false" aria-controls="site-header-drawer" data-drawer-open>
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+          <span class="site-header__vh">Menu</span>
+        </button>
+      </div>
+    </div>
 
-      <button
-        class="nav-hamburger"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-        aria-controls="nav-dropdown"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../jetsetter-free.html">Jetsetter Free</a></li>
-          <li><a href="../economy.html">Jetsetter Economy</a></li>
-          <li><a href="../jetsetter-premium.html">Jetsetter Premium</a></li>
-          <li><a href="../points-handbook.html">Points Handbook</a></li>
-          <li><a href="../golden-visa.html">Golden Visa</a></li>
-          <li><a href="../blog.html">Blog</a></li>
-          <li><a href="../contact.html">Contact</a></li>
+    <!-- Mobile drawer -->
+    <div class="site-header__scrim" data-drawer-scrim></div>
+    <div class="site-header__drawer" id="site-header-drawer" role="dialog" aria-modal="true" aria-label="Menu" data-drawer>
+      <div class="site-header__drawer-head">
+        <span class="site-header__brand"><img class="site-header__logo" src="/TCJ%20Website%20Assets/logos/site-header-logo-charcoal.png" alt="The Canadian Jetsetter" width="465" height="96" /></span>
+        <button type="button" class="site-header__drawer-close" data-drawer-close>
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+          <span class="site-header__vh">Close menu</span>
+        </button>
+      </div>
+      <nav aria-label="Main">
+        <ul class="site-header__drawer-list">
+          <li>
+            <button type="button" class="site-header__drawer-link" aria-expanded="false" aria-controls="site-header-sub-offerings" data-sub-toggle>Offerings<svg class="site-header__chevron" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg></button>
+            <ul class="site-header__drawer-sub" id="site-header-sub-offerings" hidden>
+              <li><a href="/jetsetter-free.html">Jetsetter Free</a></li>
+              <li><a href="/economy.html">Jetsetter Economy</a></li>
+              <li><a href="/jetsetter-premium.html">Jetsetter Premium</a></li>
+              <li><a href="/points-handbook.html">Points Handbook</a></li>
+              <li><a href="/golden-visa.html">Golden Visa</a></li>
+            </ul>
+          </li>
+          <li><a class="site-header__drawer-link" href="/links.html">Links</a></li>
+          <li><a class="site-header__drawer-link" href="/blog.html">Blog</a></li>
+          <li><a class="site-header__drawer-link" href="/contact.html">Contact</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
+  <!-- site-header-end -->
 
   <main>
 
@@ -1363,54 +1385,6 @@
   <script>
     // Dynamic copyright year
     document.getElementById('footer-year').textContent = new Date().getFullYear();
-
-    // Desktop OFFERINGS dropdown
-    const offeringsBtn = document.querySelector('.nav-link--btn');
-    const submenu      = document.querySelector('.nav-submenu');
-
-    offeringsBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = offeringsBtn.getAttribute('aria-expanded') === 'true';
-      offeringsBtn.setAttribute('aria-expanded', !isOpen);
-      submenu.classList.toggle('is-open', !isOpen);
-    });
-
-    document.addEventListener('click', () => {
-      offeringsBtn.setAttribute('aria-expanded', 'false');
-      submenu.classList.remove('is-open');
-    });
-
-    submenu.addEventListener('click', (e) => e.stopPropagation());
-
-    // Hamburger menu toggle
-    const hamburger = document.querySelector('.nav-hamburger');
-    const dropdown  = document.getElementById('nav-dropdown');
-
-    hamburger.addEventListener('click', () => {
-      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', !isOpen);
-      dropdown.setAttribute('aria-hidden', isOpen);
-      hamburger.classList.toggle('is-open', !isOpen);
-      dropdown.classList.toggle('is-open', !isOpen);
-    });
-
-    dropdown.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.setAttribute('aria-expanded', 'false');
-        dropdown.setAttribute('aria-hidden', 'true');
-        hamburger.classList.remove('is-open');
-        dropdown.classList.remove('is-open');
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !dropdown.contains(e.target)) {
-        hamburger.setAttribute('aria-expanded', 'false');
-        dropdown.setAttribute('aria-hidden', 'true');
-        hamburger.classList.remove('is-open');
-        dropdown.classList.remove('is-open');
-      }
-    });
   </script>
 
 </body>

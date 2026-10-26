@@ -320,6 +320,7 @@ body {
 /* ── HERO ──────────────────────────────────── */
 .hero {
   padding: 80px 0 100px;
+  --site-header-hero-pad: 80px;  /* site-header.css adds the header height on top */
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -914,6 +915,7 @@ footer {
 @media (max-width: 640px) {
   .hero {
     padding: 60px 0 80px;
+    --site-header-hero-pad: 60px;  /* site-header.css adds the header height on top */
   }
 
   .expert-countries-list {

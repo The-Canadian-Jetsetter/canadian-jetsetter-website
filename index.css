@@ -356,6 +356,7 @@ body {
 .hero {
   position: relative;
   min-height: 520px;
+  --site-header-hero-min: 520px;  /* site-header.css adds the header height on top */
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -1444,6 +1445,7 @@ footer {
 
   .hero {
     min-height: 420px;
+    --site-header-hero-min: 420px;
   }
 
 }

@@ -1,0 +1,55 @@
+// Site header menu: the single source for every link in the header.
+// After editing, run:  python3 inject_header.py
+// That rewrites the header on every page that has the site-header markers.
+// Lines starting with // are comments (the script removes them before reading the JSON).
+// Labels are written in title case; the top-level ones are shown in capitals by CSS.
+{
+  // The cards site. Change this one line when the cards site moves to its launch address.
+  "cardsSiteBase": "https://travel-cards-site.canadianjetsetter.workers.dev",
+
+  "logo": {
+    "href": "/",
+    "src": "/TCJ Website Assets/logos/site-header-logo-white.png",
+    "panelSrc": "/TCJ Website Assets/logos/site-header-logo-charcoal.png",
+    "alt": "The Canadian Jetsetter",
+    "width": 465,
+    "height": 96
+  },
+
+  // Top-level menu, in display order
+  "items": [
+    {
+      "kind": "dropdown",
+      "id": "offerings",
+      "label": "Offerings",
+      "items": [
+        { "label": "Jetsetter Free", "href": "/jetsetter-free.html" },
+        { "label": "Jetsetter Economy", "href": "/economy.html" },
+        { "label": "Jetsetter Premium", "href": "/jetsetter-premium.html" },
+        { "label": "Points Handbook", "href": "/points-handbook.html" },
+        { "label": "Golden Visa", "href": "/golden-visa.html" }
+      ]
+    },
+    {
+      "kind": "cards",
+      "id": "cards",
+      "label": "Cards",
+      // To show the Cards menu, change the next line to:  "enabled": true,
+      "enabled": false,
+      // Card links and images are paths on the cards site (cardsSiteBase is added in front)
+      "cards": [
+        { "name": "The Platinum Card®", "href": "/cards/amex-platinum/", "image": "/images/cards/amex-platinum.webp", "width": 480, "height": 304 },
+        { "name": "American Express Cobalt® Card", "href": "/cards/amex-cobalt/", "image": "/images/cards/amex-cobalt.webp", "width": 480, "height": 304 },
+        { "name": "American Express® Gold Rewards Card", "href": "/cards/amex-gold-rewards/", "image": "/images/cards/amex-gold-rewards.webp", "width": 480, "height": 304 },
+        { "name": "American Express® Aeroplan®* Reserve Card", "href": "/cards/amex-aeroplan-reserve/", "image": "/images/cards/amex-aeroplan-reserve.webp", "width": 480, "height": 304 },
+        { "name": "American Express® Aeroplan®* Card", "href": "/cards/amex-aeroplan/", "image": "/images/cards/amex-aeroplan.webp", "width": 480, "height": 304 },
+        { "name": "Marriott Bonvoy® American Express®* Card", "href": "/cards/marriott-bonvoy-amex/", "image": "/images/cards/marriott-bonvoy-amex.webp", "width": 320, "height": 202 }
+      ],
+      // "All cards" link under the list; hidden on the cards site too. Set "show": true to add it.
+      "allCards": { "label": "All cards", "href": "/", "show": false }
+    },
+    { "kind": "link", "label": "Links", "href": "/links.html" },
+    { "kind": "link", "label": "Blog", "href": "/blog.html" },
+    { "kind": "link", "label": "Contact", "href": "/contact.html" }
+  ]
+}

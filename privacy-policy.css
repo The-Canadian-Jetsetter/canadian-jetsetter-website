@@ -324,6 +324,7 @@ body {
 /* ── HERO (slim banner) ──────────────────────── */
 .hero {
   padding: 64px 0 72px;
+  --site-header-hero-pad: 64px;  /* site-header.css adds the header height on top */
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -507,6 +508,7 @@ footer {
 @media (max-width: 768px) {
   .hero {
     padding: 48px 0 56px;
+    --site-header-hero-pad: 48px;  /* site-header.css adds the header height on top */
   }
 
   .terms-section {

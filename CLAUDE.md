@@ -109,6 +109,21 @@ Adding or changing a post, in order:
 
 ---
 
+## Site header
+
+The header is shared with the cards site and written into every page by `inject_header.py`, between `<!-- site-header-head-start/end -->` (in `<head>`) and `<!-- site-header-start/end -->` (in `<body>`) markers. Never hand-edit between the markers.
+
+- **Files:** `site-header.css` (styles), `site-header.js` (dropdown, mobile menu, glass-to-solid on scroll), `site-header-nav.jsonc` (menu data: every link, the logos, and the cards site address `cardsSiteBase`).
+- **After any change** to the menu data, `site-header.css`, `site-header.js` or `blog-post-template.css`, run `python3 inject_header.py`. It rewrites the header on every page with the markers and refreshes the `?v=` version tags so browsers load the change.
+- **CARDS menu:** switched off for now. To show it, change `"enabled": false` to `"enabled": true` on the Cards entry in `site-header-nav.jsonc` (a comment marks the line), then run `inject_header.py`.
+- **Glass or solid bar, per page:**
+  - Glass (over a hero photo): `<body class="site-header-glass">` and `data-site-header-hero` on the hero element. The hero extends up behind the bar; the page's own CSS sets `--site-header-hero-pad` (and `--site-header-hero-min` if the hero has a min-height) next to the hero's own values, so its content stays in place.
+  - Solid (no photo behind the header): no body class.
+- **Option C** (darker near-black maroon solid bar plus a soft drop shadow) is set for posts in `blog-post-template.css` and for Points Handbook in `points-handbook.css`.
+- **Still on the old header** (not converted yet): `landing-pages/`, `AprilDeal/`, `backend/`, `yvr-manila/`, `flying-with-your-dog.html`, the top-level post-style pages (`newsletter-april-9-2026.html`, `newsletter-april-13-2026.html`, `scotiabank-fx-fees.html`, `westjet-triangle-rewards.html`, `blog-post.html`), and `blog-accordion.html` (no header at all). The old `.top-nav` CSS stays in the per-page CSS files for them.
+
+---
+
 ## Git
 
 ```bash

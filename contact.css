@@ -324,6 +324,7 @@ body {
 /* ── HERO ──────────────────────────────────── */
 .hero {
   padding: 56px 0 64px;
+  --site-header-hero-pad: 56px;  /* site-header.css adds the header height on top */
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -892,6 +893,7 @@ footer {
 @media (max-width: 640px) {
   .hero {
     padding: 40px 0 48px;
+    --site-header-hero-pad: 40px;  /* site-header.css adds the header height on top */
   }
 
   .contact-section {

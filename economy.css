@@ -316,6 +316,7 @@ body {
 /* ── HERO ──────────────────────────────────── */
 .hero {
   padding: 80px 0 100px;
+  --site-header-hero-pad: 80px;  /* site-header.css adds the header height on top */
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1123,6 +1124,7 @@ footer {
 
   .hero {
     padding: 10px 0 8px !important;
+    --site-header-hero-pad: 10px;  /* site-header.css adds the header height on top */
   }
 
   footer {

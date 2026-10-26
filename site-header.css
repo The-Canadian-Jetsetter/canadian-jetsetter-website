@@ -1,0 +1,437 @@
+/* ============================================
+   SITE HEADER
+   Shared with the cards site (travel-cards-site, SiteMenu.astro, maroon theme + tiles style).
+   Markup is written into each page by inject_header.py from site-header-nav.jsonc;
+   behaviour is in site-header.js.
+
+   Two versions, chosen per page with a class on <body>:
+   - <body class="site-header-glass">: translucent glass bar over a hero photo. Mark the hero with
+     data-site-header-hero; it extends up behind the bar. Once the hero scrolls out from under the
+     bar, the bar fades to the solid version.
+   - no class: solid bar throughout.
+   ============================================ */
+
+:root {
+  --site-header-h: 3.75rem;  /* bar height; 4.5rem on desktop */
+}
+
+.site-header {
+  --sh-red: #400000;
+  --sh-fg: #ffffff;
+  --sh-hover: rgba(255, 255, 255, 0.14);   /* pill behind menu items on hover/focus */
+  --sh-active-line: #ffffff;               /* underline on the open item */
+  /* Glass: maroon only, very dark and nearly solid behind the logo on the left, fading so the photo
+     shows through more on the right */
+  --sh-glass: linear-gradient(90deg, rgba(40, 0, 0, 0.95) 0, rgba(64, 0, 0, 0.8) 40%, rgba(64, 0, 0, 0.45) 100%);
+  /* Solid: the same red, more opaque */
+  --sh-solid: linear-gradient(90deg, rgba(64, 0, 0, 0.94), rgba(64, 0, 0, 0.82));
+  --sh-edge: rgba(255, 255, 255, 0.22);      /* thin light outline along the bottom */
+  --sh-highlight: rgba(255, 255, 255, 0.12); /* faint highlight along the top */
+
+  /* Dropdown panels and mobile menu: white */
+  --sh-panel-bg: #ffffff;
+  --sh-panel-fg: #2b2a2c;      /* charcoal */
+  --sh-panel-muted: #6b6866;   /* stone: chevrons, arrows */
+  --sh-panel-hover: #e4e1de;   /* pebble */
+  --sh-panel-hover-fg: #9e3440;  /* cranberry */
+  --sh-panel-line: #e4e1de;
+  --sh-panel-focus: #1f5fa8;   /* harbour blue */
+  --sh-panel-active-line: #2b2a2c;
+  --sh-panel-shadow: 0 18px 36px -20px rgba(8, 28, 44, 0.28);
+  --sh-card-shadow: 0 6px 12px -6px rgba(8, 28, 44, 0.45);
+
+  --sh-font: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sh-font-display: "Young Serif", Georgia, "Times New Roman", serif;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: var(--sh-font);
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+}
+.site-header *,
+.site-header *::before,
+.site-header *::after { box-sizing: border-box; }
+
+.site-header :focus-visible { outline: 3px solid var(--sh-fg); outline-offset: 3px; }
+.site-header__panel :focus-visible,
+.site-header__drawer :focus-visible { outline-color: var(--sh-panel-focus); }
+
+.site-header__wrap {
+  width: min(100% - 2.5rem, 1120px);
+  margin-inline: auto;
+}
+
+.site-header__vh {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ---- Header bar ---- */
+.site-header__bar {
+  position: relative;
+  z-index: 2;
+  color: var(--sh-fg);
+  padding-top: env(safe-area-inset-top, 0px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  /* Glass edges: a faint highlight along the top, a thin light outline along the bottom */
+  box-shadow: inset 0 1px 0 var(--sh-highlight), inset 0 -1px 0 var(--sh-edge);
+}
+/* The glass and solid fills are two layers, so the bar can fade between them */
+.site-header__bar::before,
+.site-header__bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.site-header__bar::before { background: var(--sh-glass); opacity: 0; }
+.site-header__bar::after { background: var(--sh-solid); }
+/* Glass pages: glass while the hero is behind the bar */
+.site-header-glass .site-header:not(.is-past-hero) .site-header__bar::before { opacity: 1; }
+.site-header-glass .site-header:not(.is-past-hero) .site-header__bar::after { opacity: 0; }
+/* Fade only after the first check, so a page opened part-way down doesn't flash glass first */
+.site-header.is-ready .site-header__bar::before,
+.site-header.is-ready .site-header__bar::after { transition: opacity 0.3s ease; }
+/* No blur support: glass pages use the solid bar throughout */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .site-header-glass .site-header .site-header__bar::before { opacity: 0; }
+  .site-header-glass .site-header .site-header__bar::after { opacity: 1; }
+}
+
+.site-header__bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: var(--site-header-h);
+}
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0;
+  border-radius: 4px;
+  color: var(--sh-fg);
+}
+/* Height sets the size; the file is 3x this for sharp high-resolution screens */
+.site-header__logo { display: block; height: 2rem; width: auto; max-width: none; }
+
+.site-header__desktop { display: none; }
+.site-header__top { list-style: none; margin: 0; padding: 0; display: flex; gap: 0.5rem; }
+.site-header__top > li { margin: 0; padding: 0; }
+.site-header__top-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  margin: 0;
+  padding: 0 0.85rem;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--sh-fg);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  /* Soft shadow under the white text, for the lighter right side of the glass */
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+}
+.site-header__top-link:hover,
+.site-header__top-link:focus-visible { background: var(--sh-hover); color: var(--sh-fg); }
+.site-header__top-link[aria-expanded="true"] {
+  background: transparent;
+  text-decoration: underline 2px var(--sh-active-line);
+  text-underline-offset: 0.45em;
+}
+.site-header__top-link[aria-expanded="true"]:hover,
+.site-header__top-link[aria-expanded="true"]:focus-visible { background: var(--sh-hover); }
+.site-header__top-link svg,
+.site-header__menu-button svg { filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45)); }
+
+.site-header__chevron {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.25s ease;
+}
+[aria-expanded="true"] > .site-header__chevron { transform: rotate(180deg); }
+
+.site-header__menu-button {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0 -0.6rem 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--sh-fg);
+  cursor: pointer;
+}
+.site-header__menu-button:hover { background: var(--sh-hover); }
+.site-header__menu-button svg,
+.site-header__drawer-close svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+
+/* ---- Desktop panels: slide down from under the bar ---- */
+.site-header__panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  /* Clip above (so it appears from under the bar) but leave room for the shadow below */
+  clip-path: inset(0 0 -48px 0);
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 0s linear 0.3s;
+}
+.site-header__panel.open { visibility: visible; pointer-events: auto; transition: visibility 0s; }
+.site-header__panel-inner {
+  background: var(--sh-panel-bg);
+  color: var(--sh-panel-fg);
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--sh-panel-line);
+  box-shadow: var(--sh-panel-shadow);
+  text-shadow: none;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+.site-header__panel.open .site-header__panel-inner { transform: none; }
+
+.site-header__panel-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1rem;
+}
+.site-header__panel-links a,
+.site-header__all-cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--sh-panel-line);
+  font-family: var(--sh-font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--sh-panel-fg);
+  text-decoration: none;
+}
+/* Offerings: plain text links, no divider lines */
+.site-header__panel-links a { border-bottom: 0; }
+.site-header__arrow { color: var(--sh-panel-muted); transition: transform 0.2s ease; }
+.site-header__all-cards:hover .site-header__arrow,
+.site-header__all-cards:focus-visible .site-header__arrow { transform: translateX(4px); }
+.site-header__all-cards:hover,
+.site-header__all-cards:focus-visible { border-bottom-color: var(--sh-panel-fg); }
+/* Panel links: the text turns cranberry on hover and keyboard focus */
+.site-header__panel-links a,
+.site-header__card-links a { transition: color 0.15s ease; }
+.site-header__panel-links a:hover,
+.site-header__panel-links a:focus-visible,
+.site-header__card-links a:hover,
+.site-header__card-links a:focus-visible { color: var(--sh-panel-hover-fg); }
+
+.site-header__panel-cards { display: grid; gap: 1.5rem; }
+/* Cards: a compact grid, each card's full name centred under its image */
+.site-header__card-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 1rem 0.5rem;
+}
+.site-header__card-links a {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 0.6rem;
+  height: 100%;
+  padding: 0.5rem;
+  border-radius: 10px;
+  color: var(--sh-panel-fg);
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+}
+.site-header__card-links a span { max-width: 11rem; }
+.site-header__card-links img,
+.site-header__sub-card img {
+  display: block;
+  width: 5rem;
+  height: auto;
+  flex: none;
+  border-radius: 5px;
+  box-shadow: var(--sh-card-shadow);
+}
+.site-header__all-cards { justify-self: start; min-width: 14rem; }
+/* ® / ™ / * in card names: small superscripts that don't change the line height */
+.site-header__reg {
+  font-size: 0.6em;
+  line-height: 0;
+  vertical-align: 0.55em;
+  margin-left: 0.04em;
+}
+
+/* ---- Mobile drawer ---- */
+.site-header__scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(8, 28, 44, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+.site-header__scrim.open { opacity: 1; visibility: visible; transition: opacity 0.3s ease; }
+
+.site-header__drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 31;
+  width: min(86vw, 22rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--sh-panel-bg);
+  color: var(--sh-panel-fg);
+  padding: env(safe-area-inset-top, 0px) 0 calc(2.5rem + env(safe-area-inset-bottom, 0px));
+  box-shadow: -12px 0 32px -12px rgba(8, 28, 44, 0.4);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0s linear 0.3s;
+}
+.site-header__drawer.open { transform: none; visibility: visible; transition: transform 0.3s ease; }
+
+.site-header__drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.75rem;
+  padding: 0 0.6rem 0 1.25rem;
+  border-bottom: 1px solid var(--sh-panel-line);
+}
+.site-header__drawer-close {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--sh-panel-fg);
+  cursor: pointer;
+}
+
+.site-header__drawer-list { list-style: none; margin: 0; padding: 0.5rem 0; }
+.site-header__drawer-list > li { margin: 0; padding: 0; border-bottom: 1px solid var(--sh-panel-line); }
+.site-header__drawer-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 3.25rem;
+  margin: 0;
+  padding: 0 1.25rem;
+  border: 0;
+  background: none;
+  color: var(--sh-panel-fg);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+.site-header__drawer-sub { list-style: none; margin: 0; padding: 0 1.25rem 1rem; display: grid; gap: 0.15rem; }
+/* display: grid above would otherwise override the hidden attribute and keep every section open */
+.site-header__drawer-sub[hidden] { display: none; }
+.site-header__drawer-sub li { margin: 0; padding: 0; }
+.site-header__drawer-sub a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 2.75rem;
+  padding: 0 0.5rem;
+  margin: 0 -0.5rem;
+  border-radius: 6px;
+  color: var(--sh-panel-fg);
+  text-decoration: none;
+}
+.site-header__drawer-link[aria-expanded="true"] {
+  text-decoration: underline 2px var(--sh-panel-active-line);
+  text-underline-offset: 0.45em;
+}
+.site-header__drawer-link:hover,
+.site-header__drawer-link:focus-visible,
+.site-header__drawer-sub a:hover,
+.site-header__drawer-sub a:focus-visible { background: var(--sh-panel-hover); }
+.site-header__drawer-link .site-header__chevron { color: var(--sh-panel-muted); }
+.site-header__drawer-close:hover,
+.site-header__drawer-close:focus-visible { background: var(--sh-panel-hover); }
+.site-header__sub-card { font-weight: 500; }
+.site-header__sub-card img { width: 4rem; }
+
+/* The page doesn't scroll behind the open drawer */
+html.site-header-locked { overflow: hidden; }
+
+/* ---- Hero behind the glass bar ---- */
+/* The hero moves up under the bar and gains the bar's height on top of its own top padding, so its
+   content stays where it was. Each page's CSS gives the hero's own values, next to them:
+   --site-header-hero-pad (its padding-top) and, if it has one, --site-header-hero-min (its min-height).
+   !important because some heroes set their padding with !important on small screens. */
+.site-header-glass [data-site-header-hero] {
+  margin-top: calc(-1 * var(--site-header-h));
+  padding-top: calc(var(--site-header-hero-pad, 0px) + var(--site-header-h)) !important;
+  min-height: calc(var(--site-header-hero-min, 0px) + var(--site-header-h));
+}
+
+/* In-page links (#section) land below the sticky header, not under it */
+html { scroll-padding-top: calc(var(--site-header-h) + 1rem); }
+
+@media (min-width: 900px) {
+  :root { --site-header-h: 4.5rem; }
+  /* Wide layout, as on the cards site's card pages */
+  .site-header__wrap { width: min(100% - 2.5rem, min(50vw + 560px, 1600px)); }
+  .site-header__logo { height: 2.5rem; }
+  .site-header__desktop { display: block; }
+  .site-header__menu-button,
+  .site-header__scrim,
+  .site-header__drawer { display: none; }
+}
+@media (max-width: 899.98px) {
+  .site-header__panel { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header__panel-inner, .site-header__drawer, .site-header__scrim,
+  .site-header__arrow, .site-header__chevron,
+  .site-header.is-ready .site-header__bar::before,
+  .site-header.is-ready .site-header__bar::after { transition: none; }
+  .site-header__panel, .site-header__panel.open, .site-header__drawer, .site-header__drawer.open,
+  .site-header__scrim, .site-header__scrim.open { transition: none; }
+}
