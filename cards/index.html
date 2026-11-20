@@ -13,6 +13,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <!-- Styles (modelled on links.css) live at the site root, not under /cards/ (the cards site's Worker serves /cards/images/ and /cards/_astro/) -->
   <link rel="stylesheet" href="/all-cards.css" />
+  <!-- Preload the background photo the page will use: the portrait crop on portrait screens, otherwise 1200w or 2400w -->
+  <link rel="preload" as="image" type="image/webp" media="(max-aspect-ratio: 4/5)" href="/TCJ%20Website%20Assets/icons/cards-mountain-lake-portrait.webp" fetchpriority="high" />
+  <link rel="preload" as="image" type="image/webp" media="not all and (max-aspect-ratio: 4/5)" imagesrcset="/TCJ%20Website%20Assets/icons/cards-mountain-lake-1200.webp 1200w, /TCJ%20Website%20Assets/icons/cards-mountain-lake.webp 2400w" imagesizes="100vw" fetchpriority="high" />
   <!-- site-header-head-start -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -128,6 +131,16 @@
   </header>
   <!-- site-header-end -->
 
+  <!-- Fixed full-page background photo (behind the header, content and footer) -->
+  <div class="page-bg" aria-hidden="true">
+    <picture>
+      <source media="(max-aspect-ratio: 4/5)" type="image/webp" srcset="/TCJ%20Website%20Assets/icons/cards-mountain-lake-portrait.webp" />
+      <source media="(max-aspect-ratio: 4/5)" srcset="/TCJ%20Website%20Assets/icons/cards-mountain-lake-portrait.jpg" />
+      <source type="image/webp" srcset="/TCJ%20Website%20Assets/icons/cards-mountain-lake-1200.webp 1200w, /TCJ%20Website%20Assets/icons/cards-mountain-lake.webp 2400w" sizes="100vw" />
+      <img src="/TCJ%20Website%20Assets/icons/cards-mountain-lake.jpg" srcset="/TCJ%20Website%20Assets/icons/cards-mountain-lake-1200.jpg 1200w, /TCJ%20Website%20Assets/icons/cards-mountain-lake.jpg 2400w" sizes="100vw" alt="" width="2400" height="1602" fetchpriority="high" decoding="async" />
+    </picture>
+  </div>
+
   <main>
 
     <!-- ══════════════════════════════════════════
@@ -136,7 +149,7 @@
     <section class="hero" data-site-header-hero aria-labelledby="hero-heading">
       <div class="container">
         <h1 id="hero-heading">Travel credit cards</h1>
-        <p class="hero-sub">Explore the travel credit cards we love, and see what each has to offer.</p>
+        <p class="hero-sub">Explore the travel credit cards we love,<br class="mobile-break" /> and see what each has to offer.</p>
       </div>
     </section>
 
@@ -178,8 +191,6 @@
             </a>
           </li>
         </ul>
-
-        <p class="affiliate-note">The Canadian Jetsetter may receive compensation when you apply for a card through links on our card pages.</p>
       </div>
     </section>
 
@@ -191,6 +202,9 @@
   <footer role="contentinfo">
     <div class="container">
       <div class="footer-inner">
+
+        <!-- This page only (not part of the shared footer): affiliate disclosure, first in the footer -->
+        <p class="footer-note">The Canadian Jetsetter may receive compensation when you apply for a card through links on our card pages.</p>
 
         <a href="/index.html" class="footer-logo" aria-label="The Canadian Jetsetter — Home">
           <img

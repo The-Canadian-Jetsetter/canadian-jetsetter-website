@@ -1,6 +1,6 @@
 /* ============================================
    THE CANADIAN JETSETTER — ALL CARDS PAGE (/cards/, cards/index.html)
-   Modelled on links.css: same dark gradient page background, slim photo hero, heading and
+   Modelled on links.css: same dark gradient page background, slim hero (now over a fixed full-page photo), heading and
    intro styles, and footer. Card names in the cream boxes use links.css's .cc-card-name type.
    Kept at the site root: /cards/images/ and /cards/_astro/ belong to the cards site's Worker.
    ============================================ */
@@ -29,13 +29,64 @@ h1, h2, h3 {
   --panel-bg:     #ffffff;  /* the expanded menu's background: --sh-panel-bg in site-header.css */
 }
 
-/* ── PAGE BACKGROUND (links.css) ───────────── */
+/* ── PAGE BACKGROUND ───────────────────────── */
 body {
-  background: linear-gradient(180deg, #000000 0%, #6C0000 50%, #000000 100%);
+  background: #000000;  /* shows only while the photo loads, or in an overscroll bounce */
   color: var(--white);
   font-family: var(--font);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Fixed photo layer behind everything (not background-attachment: fixed, which iOS Safari ignores).
+   Its own compositing layer, so scrolling only moves the content over it and never repaints it.
+   100lvh (the largest viewport height) means no gap appears when mobile browser bars hide or show. */
+.page-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.page-bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;  /* desktop: the whole scene, sunrise and peaks */
+}
+
+/* Portrait screens get the portrait crop, already centred on the sunrise and valley */
+@media (max-aspect-ratio: 4/5) {
+  .page-bg img { object-position: 55% 50%; }
+}
+
+/* Dark gradient over the top of the photo for the heading's contrast, gone by about a third of the way down.
+   The px minimums only matter on short screens (under ~650px tall), where the intro sits lower in the viewport. */
+.page-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0.62) 0%,
+    rgba(0, 0, 0, 0.6) max(22%, 155px),
+    rgba(0, 0, 0, 0.45) max(29%, 205px),
+    rgba(0, 0, 0, 0.18) max(34%, 235px),
+    rgba(0, 0, 0, 0) max(40%, 268px));
+}
+
+/* Page content and footer scroll over the photo */
+main,
+footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* ── UTILITY ───────────────────────────────── */
@@ -47,24 +98,12 @@ body {
 
 /* ── HERO (links.css .hero, .hero h1, .hero-sub) ── */
 .hero {
-  padding: 56px 0 60px;
-  --site-header-hero-pad: 56px;  /* site-header.css adds the header height on top */
+  padding: 50px 0 27px;
+  --site-header-hero-pad: 50px;  /* site-header.css adds the header height on top */
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-image: url('/TCJ Website Assets/icons/plane banner.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, #761915 0%, #000000 100%);
-  opacity: 0.5;
-  z-index: 1;
+  background: none;  /* the heading floats over the fixed photo */
 }
 
 .hero .container {
@@ -92,9 +131,13 @@ body {
   opacity: 0.9;
 }
 
+/* The intro's line break is forced on mobile only */
+.hero-sub .mobile-break { display: none; }
+
 /* ── CARD GRID ─────────────────────────────── */
+/* Intro to first card: 27px (hero bottom padding) + 26px = 53px */
 .cards-section {
-  padding: 48px 0 64px;
+  padding: 26px 0 64px;
 }
 
 /* 3 per row on desktop, 2 on tablets, 1 on phones; a short last row is centred */
@@ -196,15 +239,6 @@ body {
   outline-offset: 6px;
 }
 
-.affiliate-note {
-  max-width: 640px;
-  margin: 48px auto 0;
-  font-size: 0.85rem;
-  color: var(--cream);
-  opacity: 0.85;
-  text-align: center;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .card-tile, .card-box, .card-name { transition: none; }
   .card-tile:hover, .card-tile:focus-visible { transform: none; }
@@ -214,7 +248,7 @@ body {
 footer {
   background: #0a0000;
   border-top: 1px solid var(--border);
-  padding: 40px 0 32px;
+  padding: 20px 0 32px;  /* 40px in links.css; 20px here so the affiliate note sits near the top */
 }
 
 .footer-inner {
@@ -249,6 +283,15 @@ footer {
 
 .footer-nav a:hover { color: var(--cream); }
 
+/* This page only: the affiliate note, the first line in the footer */
+.footer-note {
+  max-width: 560px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #a08888;  /* 6.3:1 on the footer's #0a0000 */
+  letter-spacing: 0.02em;
+}
+
 .footer-copy {
   font-size: 0.75rem;
   color: #5a3a3a;
@@ -260,22 +303,122 @@ footer {
   .card-grid li { flex-basis: calc((100% - 28px) / 2); }
 }
 
-/* links.css hero sizes on phones (Links hides its hero there; this page keeps it, as it holds the heading) */
-@media (max-width: 640px) {
+/* ── MOBILE (up to tablet width, 768px) ─────
+   Shorter banner, one-line heading, two-line intro, and the cards as a compact list. */
+@media (max-width: 768px) {
   .hero {
-    padding: 36px 0 40px;
-    --site-header-hero-pad: 36px;  /* site-header.css adds the header height on top */
+    padding: 42px 0 20px;
+    --site-header-hero-pad: 42px;  /* site-header.css adds the header height on top */
   }
 
+  .hero .container { padding: 0 16px; }
+
+  /* One line down to 320px: the heading is ~13.05em wide, so 6.3vw leaves room inside the 16px gutters */
   .hero h1 {
-    font-size: clamp(1.6rem, 8vw, 2.4rem);
+    font-size: clamp(1.25rem, 6.3vw, 2.4rem);
+    margin-bottom: 10px;
+    white-space: nowrap;
   }
 
-  .cards-section { padding: 36px 0 48px; }
+  .hero-sub { font-size: clamp(0.875rem, 4.6vw, 0.95rem); }
+  .hero-sub .mobile-break { display: inline; }
+
+  /* Intro to first card: 20px (hero bottom padding) + 28px = 48px */
+  .cards-section { padding: 28px 0 48px; }
+  .cards-section .container { padding: 0 16px; }
+
+  /* Rows: the card on the left, a shorter white box tucked behind its right edge */
+  .card-grid {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 20px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .card-grid li { flex: none; max-width: none; }
+
+  .card-tile {
+    --overlap: 18px;  /* how far the card covers the box's left edge */
+    flex-direction: row;
+    align-items: center;
+    min-height: 44px;
+    border-radius: 12px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Card art: 40% of the row, above the box, shadow falling right and down onto it */
+  .card-tile img {
+    flex: 0 0 40%;
+    width: 40%;
+    border-radius: 8px;
+    box-shadow: 6px 8px 16px -4px rgba(0, 0, 0, 0.55);
+  }
+
+  /* Every box the same height (fits a two-line name); the name is centred between the card's overlap and the chevron */
+  .card-box {
+    flex: 1 1 auto;
+    min-width: 0;
+    align-self: center;
+    justify-content: flex-start;
+    gap: 8px;  /* = the left padding past the overlap, so the name is centred between the card and the chevron */
+    height: 64px;
+    margin: 0 0 0 calc(-1 * var(--overlap));
+    padding: 0 10px 0 calc(var(--overlap) + 8px);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    transition: background-color 0.15s ease;
+  }
+
+  .card-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 0.875rem;
+    line-height: 1.25;
+  }
+
+  /* Chevron at the box's far right */
+  .card-box::after {
+    content: '';
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    margin-right: 2px;
+    border-top: 2px solid var(--cranberry);
+    border-right: 2px solid var(--cranberry);
+    transform: rotate(45deg);
+  }
+
+  /* Tap, hover and focus: a cream box with a cranberry name; no lift */
+  .card-tile:hover,
+  .card-tile:focus-visible,
+  .card-tile:active { transform: none; }
+
+  .card-tile:hover .card-box,
+  .card-tile:focus-visible .card-box,
+  .card-tile:active .card-box {
+    background: var(--cream);
+    box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.6);
+  }
+
+  .card-tile:active .card-name { color: var(--cranberry); }
+
+  .card-tile:focus-visible { outline-offset: 4px; }
 }
 
-/* Phones: one card per row, a little narrower so it doesn't fill the screen */
-@media (max-width: 560px) {
-  .card-grid { gap: 28px; }
-  .card-grid li { flex-basis: 100%; max-width: 340px; }
+/* Narrower phones (up to 380px): 13px names (the floor), tighter padding, shorter boxes */
+@media (max-width: 380px) {
+  .card-tile { --overlap: 15px; }
+  .card-box { height: 56px; padding: 0 8px 0 calc(var(--overlap) + 8px); }
+  .card-name { font-size: 0.8125rem; }
+}
+
+/* Narrowest phones (up to 340px): to keep every name on two lines at 13px, a 12px gutter and the card at 35% of the row */
+@media (max-width: 340px) {
+  .cards-section .container { padding: 0 12px; }
+  .card-tile img { flex-basis: 35%; width: 35%; }
+  .card-box { padding-right: 6px; }
+  .card-box::after { margin-right: 0; }
 }
