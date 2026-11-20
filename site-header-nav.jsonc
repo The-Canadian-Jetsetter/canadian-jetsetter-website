@@ -4,9 +4,6 @@
 // Lines starting with // are comments (the script removes them before reading the JSON).
 // Labels are written in title case; the top-level ones are shown in capitals by CSS.
 {
-  // The cards site. Change this one line when the cards site moves to its launch address.
-  "cardsSiteBase": "https://travel-cards-site.canadianjetsetter.workers.dev",
-
   "logo": {
     "href": "/",
     "src": "/TCJ Website Assets/logos/site-header-logo-white.png",
@@ -34,19 +31,22 @@
       "kind": "cards",
       "id": "cards",
       "label": "Cards",
-      // To show the Cards menu, change the next line to:  "enabled": true,
-      "enabled": false,
-      // Card links and images are paths on the cards site (cardsSiteBase is added in front)
+      // To hide the Cards menu, change the next line to:  "enabled": false,
+      "enabled": true,
+      // The card pages live on the main domain under /cards/ (served by the cards site's Cloudflare Worker route).
+      // Links and images use the full live address below, so they also work in a local preview.
+      // Same order and names as the cards site's Scotiabank menu.
+      "cardsBase": "https://thecanadianjetsetter.com",
       "cards": [
-        { "name": "The Platinum Card®", "href": "/cards/amex-platinum/", "image": "/images/cards/amex-platinum.webp", "width": 480, "height": 304 },
-        { "name": "American Express Cobalt® Card", "href": "/cards/amex-cobalt/", "image": "/images/cards/amex-cobalt.webp", "width": 480, "height": 304 },
-        { "name": "American Express® Gold Rewards Card", "href": "/cards/amex-gold-rewards/", "image": "/images/cards/amex-gold-rewards.webp", "width": 480, "height": 304 },
-        { "name": "American Express® Aeroplan®* Reserve Card", "href": "/cards/amex-aeroplan-reserve/", "image": "/images/cards/amex-aeroplan-reserve.webp", "width": 480, "height": 304 },
-        { "name": "American Express® Aeroplan®* Card", "href": "/cards/amex-aeroplan/", "image": "/images/cards/amex-aeroplan.webp", "width": 480, "height": 304 },
-        { "name": "Marriott Bonvoy® American Express®* Card", "href": "/cards/marriott-bonvoy-amex/", "image": "/images/cards/marriott-bonvoy-amex.webp", "width": 320, "height": 202 }
+        { "name": "Scotiabank Passport® Visa Infinite +* Card", "href": "/cards/scotiabank-passport-visa-infinite-plus/", "image": "/cards/images/cards/scotiabank-passport-visa-infinite-plus.webp", "width": 828, "height": 521 },
+        { "name": "Scotiabank Passport® Visa Infinite Privilege* Card", "href": "/cards/scotiabank-passport-visa-infinite-privilege/", "image": "/cards/images/cards/scotiabank-passport-visa-infinite-privilege.webp", "width": 828, "height": 522 },
+        { "name": "Scotiabank Gold American Express® Card", "href": "/cards/scotiabank-gold-amex/", "image": "/cards/images/cards/scotiabank-gold-amex.webp", "width": 828, "height": 521 },
+        { "name": "Scotiabank Platinum American Express® Card", "href": "/cards/scotiabank-platinum-amex/", "image": "/cards/images/cards/scotiabank-platinum-amex.webp", "width": 828, "height": 522 },
+        { "name": "Scotiabank American Express® Card", "href": "/cards/scotiabank-amex/", "image": "/cards/images/cards/scotiabank-amex.webp", "width": 828, "height": 521 }
       ],
-      // "All cards" link under the list; hidden on the cards site too. Set "show": true to add it.
-      "allCards": { "label": "All cards", "href": "/", "show": false }
+      // "All cards" link to this site's /cards/ page (cards/index.html): first in the dropdown, as the first column
+      // of the card row on desktop and the first row on mobile. Set "show": false to hide it.
+      "allCards": { "label": "All cards", "href": "/cards/", "show": true }
     },
     { "kind": "link", "label": "Links", "href": "/links.html" },
     { "kind": "link", "label": "Blog", "href": "/blog.html" },

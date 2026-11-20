@@ -84,22 +84,32 @@ Adding or changing a post, in order:
 1. Put the post HTML in `posts/` (the filename becomes the `slug`).
 2. Add/edit its entry in `posts.json`. Every entry needs: `slug` (= filename without `.html`), `date` as `YYYY-MM-DD`, `excerpt`, a LOCAL `featured_image` (`blog-images/…`, never an off-site URL), and `categories`/`tags`.
 3. Run `python3 inject_posts.py` to regenerate `blog.html` and `index.html`.
-4. Run `python3 check_posts.py` — it must pass before committing.
+4. Run `python3 check_posts.py` — it must pass before committing. It also checks that every page, posts included, has the current site header (see Site header).
 
 ---
 
 ## Site header
 
-The header is shared with the cards site and written into every page by `inject_header.py`, between `<!-- site-header-head-start/end -->` (in `<head>`) and `<!-- site-header-start/end -->` (in `<body>`) markers. Never hand-edit between the markers.
+**Every page has the same header, CARDS included, and it is never copied by hand.** The single source is `site-header-nav.jsonc` (menu data) plus `site-header.css` / `site-header.js`. `inject_header.py` writes the header into every page between `<!-- site-header-head-start/end -->` (in `<head>`) and `<!-- site-header-start/end -->` (in `<body>`) markers. Never hand-edit between the markers; edit the menu data and re-run the script.
 
-- **Files:** `site-header.css` (styles), `site-header.js` (dropdown, mobile menu, glass-to-solid on scroll), `site-header-nav.jsonc` (menu data: every link, the logos, and the cards site address `cardsSiteBase`).
+```bash
+python3 inject_header.py            # write the current header into every page that has the markers
+python3 inject_header.py --check    # report pages with no header or an out-of-date one (changes nothing)
+```
+
+`check_posts.py` runs the same check, so a page or post with a missing or stale header fails it before commit.
+
+- **Files:** `site-header.css` (styles), `site-header.js` (dropdown, mobile menu, glass-to-solid on scroll), `site-header-nav.jsonc` (menu data: every link, the logos, and the CARDS dropdown's cards).
 - **After any change** to the menu data, `site-header.css`, `site-header.js` or `blog-post-template.css`, run `python3 inject_header.py`. It rewrites the header on every page with the markers and refreshes the `?v=` version tags so browsers load the change.
-- **CARDS menu:** switched off for now. To show it, change `"enabled": false` to `"enabled": true` on the Cards entry in `site-header-nav.jsonc` (a comment marks the line), then run `inject_header.py`.
+- **CARDS menu:** on, listing the five Scotiabank cards. The card pages and their images are served on the live domain at `/cards/…` by the cards site's Cloudflare Worker route; the menu uses full `https://thecanadianjetsetter.com/cards/…` URLs (set by `cardsBase` on the Cards entry), so they also work in a local preview. To hide the menu, set `"enabled": false` on the Cards entry in `site-header-nav.jsonc`, then run `inject_header.py`.
 - **Glass or solid bar, per page:**
   - Glass (over a hero photo): `<body class="site-header-glass">` and `data-site-header-hero` on the hero element. The hero extends up behind the bar; the page's own CSS sets `--site-header-hero-pad` (and `--site-header-hero-min` if the hero has a min-height) next to the hero's own values, so its content stays in place.
   - Solid (no photo behind the header): no body class.
 - **Option C** (darker near-black maroon solid bar plus a soft drop shadow) is set for posts in `blog-post-template.css` and for Points Handbook in `points-handbook.css`.
-- **Still on the old header** (not converted yet): `landing-pages/`, `AprilDeal/`, `backend/`, `yvr-manila/`, `flying-with-your-dog.html`, the top-level post-style pages (`newsletter-april-9-2026.html`, `newsletter-april-13-2026.html`, `scotiabank-fx-fees.html`, `westjet-triangle-rewards.html`, `blog-post.html`), and `blog-accordion.html` (no header at all). The old `.top-nav` CSS stays in the per-page CSS files for them.
+- **New pages and posts:** copy the two marker pairs from any page (or start from `blog-post-template.html` / `_templates/newsletter-post-template.html`, which already contain the full header), then run `python3 inject_header.py`. `convert_wp_to_html.py` builds posts from `blog-post-template.html`, so they get the header too. `inject_posts.py` only regenerates the blog listing and doesn't touch headers.
+- **Pages without a header:** only `blog-accordion.html` (a transparent embed widget; listed in `NO_HEADER` in `inject_header.py`). `backend/` is the separate checkout Worker (excluded by `.assetsignore`) and is skipped.
+- **Active-page highlighting:** none. The header doesn't mark the current page; the underline only shows on the dropdown that's open.
+- The old `.top-nav` header markup and its JS were removed from every page (landing pages, `AprilDeal/`, `yvr-manila/`, the top-level post-style pages). The old `.top-nav` CSS still sits unused in the per-page CSS files.
 
 ---
 

@@ -1,0 +1,281 @@
+/* ============================================
+   THE CANADIAN JETSETTER — ALL CARDS PAGE (/cards/, cards/index.html)
+   Modelled on links.css: same dark gradient page background, slim photo hero, heading and
+   intro styles, and footer. Card names in the cream boxes use links.css's .cc-card-name type.
+   Kept at the site root: /cards/images/ and /cards/_astro/ belong to the cards site's Worker.
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+:root {
+  /* From links.css */
+  --black:        #1a0000;
+  --border:       #3d0000;
+  --white:        #ffffff;
+  --cream:        #F6F2E7;
+  --cream-muted:  #6b4a4a;
+  --font:         'Inter', 'Helvetica Neue', Arial, sans-serif;
+  /* From the site header's design tokens (site-header.css) */
+  --charcoal:     #2b2a2c;
+  --cranberry:    #9E3440;
+  --panel-bg:     #ffffff;  /* the expanded menu's background: --sh-panel-bg in site-header.css */
+}
+
+/* ── PAGE BACKGROUND (links.css) ───────────── */
+body {
+  background: linear-gradient(180deg, #000000 0%, #6C0000 50%, #000000 100%);
+  color: var(--white);
+  font-family: var(--font);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── UTILITY ───────────────────────────────── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── HERO (links.css .hero, .hero h1, .hero-sub) ── */
+.hero {
+  padding: 56px 0 60px;
+  --site-header-hero-pad: 56px;  /* site-header.css adds the header height on top */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-image: url('/TCJ Website Assets/icons/plane banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #761915 0%, #000000 100%);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+  color: #e8e8e8;
+  text-transform: uppercase;
+}
+
+.hero-sub {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-weight: 500;
+  color: var(--white);
+  max-width: 620px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* ── CARD GRID ─────────────────────────────── */
+.cards-section {
+  padding: 48px 0 64px;
+}
+
+/* 3 per row on desktop, 2 on tablets, 1 on phones; a short last row is centred */
+.card-grid {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px 28px;
+}
+
+.card-grid li {
+  flex: 0 1 calc((100% - 56px) / 3);
+  display: flex;
+}
+
+/* A tile: the card art, then a cream box tucked under its bottom edge.
+   Overlap = 18% of the image's height. The image is 84% of the tile's width and 828 × 521, so that's
+   0.18 × 0.84 × 521 / 828 ≈ 9.5% of the tile's width (vertical margins and padding in % use the width). */
+.card-tile {
+  --overlap: 9.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: var(--charcoal);
+  text-decoration: none;
+  border-radius: 14px;
+  transition: transform 0.2s ease;
+}
+
+/* Card art above the box, proportions kept, rounded like a real card */
+.card-tile img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 84%;
+  height: auto;
+  aspect-ratio: 828 / 521;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 14px 24px -10px rgba(0, 0, 0, 0.6);
+}
+
+.card-box {
+  position: relative;
+  z-index: 1;
+  align-self: stretch;
+  flex: 1;                       /* equal heights across a row */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: calc(-1 * var(--overlap));
+  padding: calc(var(--overlap) + 18px) 22px 22px;
+  background: var(--panel-bg);
+  border-radius: 14px;
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.55);
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+}
+
+/* links.css .cc-card-name type, in charcoal */
+.card-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--charcoal);
+  transition: color 0.2s ease;
+}
+
+/* ® and * as small superscripts that don't change the line height */
+.card-name sup {
+  font-size: 0.6em;
+  line-height: 0;
+  vertical-align: 0.55em;
+  margin-left: 0.04em;
+}
+
+/* Hover and keyboard focus: the whole tile lifts; cranberry name and a cranberry bar along the box's bottom */
+.card-tile:hover,
+.card-tile:focus-visible {
+  transform: translateY(-4px);
+}
+
+.card-tile:hover .card-box,
+.card-tile:focus-visible .card-box {
+  box-shadow: inset 0 -4px 0 var(--cranberry), 0 18px 32px -10px rgba(0, 0, 0, 0.65);
+}
+
+.card-tile:hover .card-name,
+.card-tile:focus-visible .card-name {
+  color: var(--cranberry);
+}
+
+/* Keyboard focus: a cream ring that stands out on the dark background */
+.card-tile:focus-visible {
+  outline: 3px solid var(--cream);
+  outline-offset: 6px;
+}
+
+.affiliate-note {
+  max-width: 640px;
+  margin: 48px auto 0;
+  font-size: 0.85rem;
+  color: var(--cream);
+  opacity: 0.85;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-tile, .card-box, .card-name { transition: none; }
+  .card-tile:hover, .card-tile:focus-visible { transform: none; }
+}
+
+/* ── FOOTER (links.css) ────────────────────── */
+footer {
+  background: #0a0000;
+  border-top: 1px solid var(--border);
+  padding: 40px 0 32px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.footer-logo img {
+  height: 36px;
+  width: auto;
+  opacity: 0.85;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 20px;
+}
+
+.footer-nav a {
+  color: var(--cream-muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+}
+
+.footer-nav a:hover { color: var(--cream); }
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: #5a3a3a;
+  letter-spacing: 0.02em;
+}
+
+/* ── RESPONSIVE ────────────────────────────── */
+@media (max-width: 900px) {
+  .card-grid li { flex-basis: calc((100% - 28px) / 2); }
+}
+
+/* links.css hero sizes on phones (Links hides its hero there; this page keeps it, as it holds the heading) */
+@media (max-width: 640px) {
+  .hero {
+    padding: 36px 0 40px;
+    --site-header-hero-pad: 36px;  /* site-header.css adds the header height on top */
+  }
+
+  .hero h1 {
+    font-size: clamp(1.6rem, 8vw, 2.4rem);
+  }
+
+  .cards-section { padding: 36px 0 48px; }
+}
+
+/* Phones: one card per row, a little narrower so it doesn't fill the screen */
+@media (max-width: 560px) {
+  .card-grid { gap: 28px; }
+  .card-grid li { flex-basis: 100%; max-width: 340px; }
+}

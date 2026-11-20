@@ -45,7 +45,10 @@ FONTS_HREF = "https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&
 CHEVRON = ('<svg class="site-header__chevron" viewBox="0 0 24 24" width="14" height="14" '
            'aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>')
 
+# backend/ is the separate checkout Worker (excluded from this site by .assetsignore)
 SKIP_DIRS = {"node_modules", "backend"}
+# Pages with no site header on purpose (blog-accordion.html is a transparent embed widget, not a page)
+NO_HEADER = {"blog-accordion.html"}
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -91,8 +94,9 @@ def head_block():
     ]
 
 
-def cards_href(nav, path):
-    return url(nav["cardsSiteBase"].rstrip("/") + path)
+def cards_href(item, path):
+    """Full live URL for a card page or image: the Cards entry's cardsBase + the path."""
+    return url(item["cardsBase"].rstrip("/") + path)
 
 
 def desktop_item(nav, item):
@@ -116,17 +120,16 @@ def desktop_item(nav, item):
     else:  # cards
         out += ['        <div class="site-header__panel-cards">',
                 '          <ul class="site-header__card-links">']
+        all_cards = item.get("allCards", {})
+        if all_cards.get("show"):  # first in the row, a text link the width of a card
+            out.append(f'            <li><a class="site-header__all-cards" href="{url(all_cards["href"])}">'
+                       f'{esc(all_cards["label"])}</a></li>')
         for c in item["cards"]:
             out.append(
-                f'            <li><a href="{cards_href(nav, c["href"])}">'
-                f'<img src="{cards_href(nav, c["image"])}" alt="" width="{c["width"]}" height="{c["height"]}" loading="lazy" />'
+                f'            <li><a href="{cards_href(item, c["href"])}">'
+                f'<img src="{cards_href(item, c["image"])}" alt="" width="{c["width"]}" height="{c["height"]}" loading="lazy" />'
                 f'<span>{card_name(c["name"])}</span></a></li>')
-        out.append('          </ul>')
-        all_cards = item.get("allCards", {})
-        if all_cards.get("show"):
-            out.append(f'          <a class="site-header__all-cards" href="{cards_href(nav, all_cards["href"])}">'
-                       f'{esc(all_cards["label"])}<span class="site-header__arrow" aria-hidden="true">→</span></a>')
-        out.append('        </div>')
+        out += ['          </ul>', '        </div>']
     out += ['      </div>', '    </div>', '  </div>', '</li>']
     return out
 
@@ -145,15 +148,15 @@ def drawer_item(nav, item):
     if item["kind"] == "dropdown":
         out += [f'    <li><a href="{url(l["href"])}">{esc(l["label"])}</a></li>' for l in item["items"]]
     else:  # cards
+        all_cards = item.get("allCards", {})
+        if all_cards.get("show"):  # first in the list, above the cards
+            out.append(f'    <li><a class="site-header__sub-all" href="{url(all_cards["href"])}"><span>{esc(all_cards["label"])} '
+                       f'<span class="site-header__arrow" aria-hidden="true">→</span></span></a></li>')
         for c in item["cards"]:
             out.append(
-                f'    <li><a class="site-header__sub-card" href="{cards_href(nav, c["href"])}">'
-                f'<img src="{cards_href(nav, c["image"])}" alt="" width="{c["width"]}" height="{c["height"]}" loading="lazy" />'
+                f'    <li><a class="site-header__sub-card" href="{cards_href(item, c["href"])}">'
+                f'<img src="{cards_href(item, c["image"])}" alt="" width="{c["width"]}" height="{c["height"]}" loading="lazy" />'
                 f'<span>{card_name(c["name"])}</span></a></li>')
-        all_cards = item.get("allCards", {})
-        if all_cards.get("show"):
-            out.append(f'    <li><a href="{cards_href(nav, all_cards["href"])}"><span>{esc(all_cards["label"])} '
-                       f'<span class="site-header__arrow" aria-hidden="true">→</span></span></a></li>')
     out += ['  </ul>', '</li>']
     return out
 
@@ -227,15 +230,22 @@ def replace_between(html, start, end, lines):
     return html[:m.start()] + f"{pad}{start}\n{block}\n{pad}{end}" + html[m.end():]
 
 
-def inject(path, head, body):
-    with open(path, "r", encoding="utf-8") as f:
-        html = f.read()
+def render(html, head, body):
+    """The page with its header blocks rewritten, or None if it lacks the markers."""
     new = replace_between(html, HEAD_START, HEAD_END, head)
     new = new and replace_between(new, BODY_START, BODY_END, body)
     if new is None:
+        return None
+    return re.sub(r'(href="(?:\.\./)?' + re.escape(POST_CSS) + r')(?:\?v=[0-9a-f]+)?"',
+                  rf'\1?v={version(POST_CSS)}"', new)
+
+
+def inject(path, head, body):
+    with open(path, "r", encoding="utf-8") as f:
+        html = f.read()
+    new = render(html, head, body)
+    if new is None:
         return "missing markers"
-    new = re.sub(r'(href="(?:\.\./)?' + re.escape(POST_CSS) + r')(?:\?v=[0-9a-f]+)?"',
-                 rf'\1?v={version(POST_CSS)}"', new)
     if new == html:
         return "unchanged"
     with open(path, "w", encoding="utf-8") as f:
@@ -243,22 +253,59 @@ def inject(path, head, body):
     return "updated"
 
 
-def pages_with_markers():
+def all_pages():
+    """Every .html file in the site (skipping SKIP_DIRS and hidden folders)."""
     found = []
     for d, dirs, files in os.walk("."):
         dirs[:] = sorted(x for x in dirs if not x.startswith(".") and x not in SKIP_DIRS)
-        for name in sorted(files):
-            if name.endswith(".html"):
-                path = os.path.normpath(os.path.join(d, name))
-                with open(path, "r", encoding="utf-8", errors="replace") as f:
-                    if BODY_START in f.read():
-                        found.append(path)
+        found += [os.path.normpath(os.path.join(d, n)) for n in sorted(files) if n.endswith(".html")]
     return found
+
+
+def read(path):
+    with open(path, "r", encoding="utf-8", errors="replace") as f:
+        return f.read()
+
+
+def pages_with_markers():
+    return [p for p in all_pages() if BODY_START in read(p)]
+
+
+def check():
+    """(missing, stale): pages with no site header (other than NO_HEADER), and pages whose header
+    doesn't match the menu data (fixed by running this script). Paths are relative to the site root."""
+    here = os.getcwd()
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    try:
+        nav = load_nav()
+        head, body = head_block(), body_block(nav)
+        missing, stale = [], []
+        for path in all_pages():
+            html = read(path)
+            if BODY_START not in html:
+                if path not in NO_HEADER:
+                    missing.append(path)
+            elif render(html, head, body) != html:
+                stale.append(path)
+        return missing, stale
+    finally:
+        os.chdir(here)
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    if sys.argv[1:] == ["--check"]:
+        missing, stale = check()
+        for p in missing:
+            print(f"  NO HEADER  {p}  (add the site-header markers, then run inject_header.py)")
+        for p in stale:
+            print(f"  OUT OF DATE  {p}  (run python3 inject_header.py)")
+        if missing or stale:
+            sys.exit(f"\n{len(missing) + len(stale)} page(s) need fixing.")
+        print("OK - every page has the current site header.")
+        return
+
     given = [os.path.abspath(p) for p in sys.argv[1:]]
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     nav = load_nav()

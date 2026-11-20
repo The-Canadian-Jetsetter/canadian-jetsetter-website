@@ -4,7 +4,8 @@ check_posts.py — sanity-check posts.json against the posts/ folder.
 Run BEFORE committing any blog change. posts.json is the single source of
 truth; inject_posts.py regenerates blog.html and index.html from it.
 Catches: (1) a posts/ file with no entry (invisible on site), (2) an entry
-whose file is missing, (3) off-site or missing featured images, (4) bad dates.
+whose file is missing, (3) off-site or missing featured images, (4) bad dates,
+(5) a page (post or otherwise) without the current shared site header (see inject_header.py).
 Exits non-zero on any problem.
 """
 import json, os, re, sys
@@ -33,10 +34,18 @@ for p in d:
     elif not fi:
         problems.append(f"NO IMAGE   : {slug} has no featured_image")
 
+# (5) every page, posts included, has the shared site header (with CARDS) and it's up to date
+import inject_header
+no_header, stale = inject_header.check()
+for p in no_header:
+    problems.append(f"NO HEADER  : {p} has no site-header markers (copy them from blog-post-template.html)")
+for p in stale:
+    problems.append(f"OLD HEADER : {p} header is out of date (run python3 inject_header.py)")
+
 if problems:
     print(f"{len(problems)} problem(s) found:\n")
     for x in problems: print("  " + x)
-    print("\nFix these (usually: add the post to posts.json, then run inject_posts.py) before committing.")
+    print("\nFix these (usually: add the post to posts.json, then run inject_posts.py / inject_header.py) before committing.")
     sys.exit(1)
-print(f"OK - posts.json clean: {len(d)} entries, all with files, local images, valid dates.")
+print(f"OK - posts.json clean: {len(d)} entries, all with files, local images, valid dates; every page has the current site header.")
 sys.exit(0)
