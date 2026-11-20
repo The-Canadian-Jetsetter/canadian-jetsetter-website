@@ -93,14 +93,14 @@ Adding or changing a post, in order:
 **Every page has the same header, CARDS included, and it is never copied by hand.** The single source is `site-header-nav.jsonc` (menu data) plus `site-header.css` / `site-header.js`. `inject_header.py` writes the header into every page between `<!-- site-header-head-start/end -->` (in `<head>`) and `<!-- site-header-start/end -->` (in `<body>`) markers. Never hand-edit between the markers; edit the menu data and re-run the script.
 
 ```bash
-python3 inject_header.py            # write the current header into every page that has the markers
-python3 inject_header.py --check    # report pages with no header or an out-of-date one (changes nothing)
+python3 inject_header.py            # write the current header into every page that has the markers, and refresh every page's CSS/JS ?v= versions
+python3 inject_header.py --check    # report pages with no header, an out-of-date one, or out-of-date CSS/JS versions (changes nothing)
 ```
 
 `check_posts.py` runs the same check, so a page or post with a missing or stale header fails it before commit.
 
 - **Files:** `site-header.css` (styles), `site-header.js` (dropdown, mobile menu, glass-to-solid on scroll), `site-header-nav.jsonc` (menu data: every link, the logos, and the CARDS dropdown's cards).
-- **After any change** to the menu data, `site-header.css`, `site-header.js` or `blog-post-template.css`, run `python3 inject_header.py`. It rewrites the header on every page with the markers and refreshes the `?v=` version tags so browsers load the change.
+- **After any change** to the menu data, `site-header.css`, `site-header.js` or any other CSS/JS file, run `python3 inject_header.py`. It rewrites the header on every page with the markers and refreshes the `?v=` version tags so browsers load the change (see Caching and cache-busting).
 - **CARDS menu:** on, listing the five Scotiabank cards. The card pages and their images are served on the live domain at `/cards/…` by the cards site's Cloudflare Worker route; the menu uses full `https://thecanadianjetsetter.com/cards/…` URLs (set by `cardsBase` on the Cards entry), so they also work in a local preview. To hide the menu, set `"enabled": false` on the Cards entry in `site-header-nav.jsonc`, then run `inject_header.py`.
 - **Glass or solid bar, per page:**
   - Glass (over a hero photo): `<body class="site-header-glass">` and `data-site-header-hero` on the hero element. The hero extends up behind the bar; the page's own CSS sets `--site-header-hero-pad` (and `--site-header-hero-min` if the hero has a min-height) next to the hero's own values, so its content stays in place.
@@ -112,6 +112,17 @@ python3 inject_header.py --check    # report pages with no header or an out-of-d
 - The old `.top-nav` header markup and its JS were removed from every page (landing pages, `AprilDeal/`, `yvr-manila/`, the top-level post-style pages). The old `.top-nav` CSS still sits unused in the per-page CSS files.
 
 ---
+
+## Caching and cache-busting
+
+Returning visitors' browsers keep CSS and JS, so **every local CSS and JS link on every page carries a version**: `href="/all-cards.css?v=ae70a534"`, `src="/site-header.js?v=18effb22"`. The version is a short hash of the file's contents, written by `inject_header.py` (the same script that writes the header).
+
+- **To bump it:** after changing any `.css` or `.js` file, run `python3 inject_header.py`. Every page that uses the changed file gets its new version; files you didn't change keep theirs (and stay cached). There's no number to edit by hand.
+- **New pages:** link CSS/JS normally (`<link rel="stylesheet" href="my-page.css" />`), then run `inject_header.py`; it adds the `?v=`.
+- **Check:** `python3 inject_header.py --check` (also run by `check_posts.py`) fails if any page has an out-of-date version, so a forgotten bump is caught before commit.
+- **`_headers`** (Cloudflare) lets browsers keep `*.css` and `*.js` for a year (`public, max-age=31536000, immutable`). That's safe only because every link is versioned: always run `inject_header.py` after editing CSS/JS, or visitors keep the old file.
+- **HTML** keeps Cloudflare's default, `public, max-age=0, must-revalidate` (browsers re-check it on every visit), so new `?v=` links reach visitors straight away. Don't add a `/*` rule to `_headers`: Cloudflare merges the headers of every matching rule, which would clash with the CSS/JS rules.
+- Off-site links (fonts, Instagram) and `backend/` (the separate checkout Worker) aren't versioned.
 
 ## Git
 

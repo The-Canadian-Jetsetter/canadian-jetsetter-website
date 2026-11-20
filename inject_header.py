@@ -14,14 +14,19 @@ Each page needs two pairs of marker comments; everything between them is replace
 The head block loads the fonts, site-header.css and site-header.js (with a ?v= version taken from
 their contents, so browsers pick up changes). The body block is the header itself.
 
-Posts and templates also get their blog-post-template.css link's ?v= version refreshed the same way
-(it holds the posts' header styling, Option C).
+Cache-busting: every page (with or without the markers) also gets a ?v= version on each of its own CSS and
+JS links (<link ... href="x.css"> and <script src="x.js">), taken from that file's contents. Changing a file
+changes its version on every page that uses it, so browsers fetch the new copy; unchanged files keep their
+version and stay cached (see _headers). Off-site links (https://, //) are left alone.
 
 Re-running is idempotent; files are only written when something changed.
 
 Usage:
-    python3 inject_header.py                  every .html file in the site that has the markers
+    python3 inject_header.py                  every .html file in the site (header where it has the markers,
+                                              versions everywhere)
     python3 inject_header.py index.html ...   just these files (each must have the markers)
+    python3 inject_header.py --check          report pages with no header, an out-of-date header or an
+                                              out-of-date CSS/JS version (changes nothing)
 """
 
 import hashlib
@@ -30,12 +35,11 @@ import json
 import os
 import re
 import sys
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 
 NAV_DATA = "site-header-nav.jsonc"
 CSS_FILE = "site-header.css"
 JS_FILE  = "site-header.js"
-POST_CSS = "blog-post-template.css"
 
 HEAD_START, HEAD_END = "<!-- site-header-head-start -->", "<!-- site-header-head-end -->"
 BODY_START, BODY_END = "<!-- site-header-start -->", "<!-- site-header-end -->"
@@ -230,20 +234,48 @@ def replace_between(html, start, end, lines):
     return html[:m.start()] + f"{pad}{start}\n{block}\n{pad}{end}" + html[m.end():]
 
 
-def render(html, head, body):
-    """The page with its header blocks rewritten, or None if it lacks the markers."""
-    new = replace_between(html, HEAD_START, HEAD_END, head)
-    new = new and replace_between(new, BODY_START, BODY_END, body)
-    if new is None:
-        return None
-    return re.sub(r'(href="(?:\.\./)?' + re.escape(POST_CSS) + r')(?:\?v=[0-9a-f]+)?"',
-                  rf'\1?v={version(POST_CSS)}"', new)
+# A local stylesheet or script link: <link ... href="x.css"> or <script ... src="x.js">, with or without ?v=
+ASSET_RE = re.compile(r'(<(?:link|script)\b[^>]*?\b(?:href|src)=")([^"?#]+\.(?:css|js))(?:\?v=[0-9a-f]*)?(")')
 
 
-def inject(path, head, body):
+def version_assets(html, path, missing=None):
+    """Every local CSS/JS link in the page gets ?v=<hash of the file's contents>. Links to files that don't
+    exist are left as they are (and listed in `missing`, if given)."""
+    page_dir = os.path.dirname(path)
+
+    def repl(m):
+        ref = m.group(2)
+        if re.match(r"^(?:[a-z]+:)?//", ref, re.I):
+            return m.group(0)  # off-site
+        file = unquote(ref.lstrip("/")) if ref.startswith("/") else os.path.join(page_dir, unquote(ref))
+        file = os.path.normpath(file)
+        if not os.path.isfile(file):
+            if missing is not None:
+                missing.append(ref)
+            return m.group(0)
+        return f"{m.group(1)}{ref}?v={version(file)}{m.group(3)}"
+
+    return ASSET_RE.sub(repl, html)
+
+
+def render(html, head, body, path):
+    """The page with its header blocks rewritten (if it has the markers; None if it should and doesn't) and
+    its CSS/JS versions refreshed."""
+    if BODY_START in html or HEAD_START in html:
+        new = replace_between(html, HEAD_START, HEAD_END, head)
+        new = new and replace_between(new, BODY_START, BODY_END, body)
+        if new is None:
+            return None
+        html = new
+    return version_assets(html, path)
+
+
+def inject(path, head, body, need_markers=False):
     with open(path, "r", encoding="utf-8") as f:
         html = f.read()
-    new = render(html, head, body)
+    if need_markers and BODY_START not in html:
+        return "missing markers"
+    new = render(html, head, body, path)
     if new is None:
         return "missing markers"
     if new == html:
@@ -273,7 +305,8 @@ def pages_with_markers():
 
 def check():
     """(missing, stale): pages with no site header (other than NO_HEADER), and pages whose header
-    doesn't match the menu data (fixed by running this script). Paths are relative to the site root."""
+    doesn't match the menu data or whose CSS/JS versions are out of date (both fixed by running this
+    script). Paths are relative to the site root."""
     here = os.getcwd()
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     try:
@@ -285,7 +318,9 @@ def check():
             if BODY_START not in html:
                 if path not in NO_HEADER:
                     missing.append(path)
-            elif render(html, head, body) != html:
+                elif version_assets(html, path) != html:
+                    stale.append(path)
+            elif render(html, head, body, path) != html:
                 stale.append(path)
         return missing, stale
     finally:
@@ -300,10 +335,10 @@ def main():
         for p in missing:
             print(f"  NO HEADER  {p}  (add the site-header markers, then run inject_header.py)")
         for p in stale:
-            print(f"  OUT OF DATE  {p}  (run python3 inject_header.py)")
+            print(f"  OUT OF DATE  {p}  (header or CSS/JS versions; run python3 inject_header.py)")
         if missing or stale:
             sys.exit(f"\n{len(missing) + len(stale)} page(s) need fixing.")
-        print("OK - every page has the current site header.")
+        print("OK - every page has the current site header and CSS/JS versions.")
         return
 
     given = [os.path.abspath(p) for p in sys.argv[1:]]
@@ -311,10 +346,10 @@ def main():
     nav = load_nav()
     head, body = head_block(), body_block(nav)
 
-    paths = [os.path.relpath(p) for p in given] or pages_with_markers()
+    paths = [os.path.relpath(p) for p in given] or all_pages()
     failed = False
     for path in paths:
-        result = inject(path, head, body)
+        result = inject(path, head, body, need_markers=bool(given))
         failed |= result == "missing markers"
         print(f"  {result:<16} {path}")
 
