@@ -107,7 +107,7 @@ python3 inject_header.py --check    # report pages with no header, an out-of-dat
   - Solid (no photo behind the header): no body class.
 - **Option C** (darker near-black maroon solid bar plus a soft drop shadow) is set for posts in `blog-post-template.css` and for Points Handbook in `points-handbook.css`.
 - **New pages and posts:** copy the two marker pairs from any page (or start from `blog-post-template.html` / `_templates/newsletter-post-template.html`, which already contain the full header), then run `python3 inject_header.py`. `convert_wp_to_html.py` builds posts from `blog-post-template.html`, so they get the header too. `inject_posts.py` only regenerates the blog listing and doesn't touch headers.
-- **Pages without a header:** only `blog-accordion.html` (a transparent embed widget; listed in `NO_HEADER` in `inject_header.py`). `backend/` is the separate checkout Worker (excluded by `.assetsignore`) and is skipped.
+- **Pages without a header:** `blog-accordion.html` (a transparent embed widget) and `links.html` (the link-in-bio page, which starts with a black subscribe bar); both are listed in `NO_HEADER` in `inject_header.py`. `backend/` is the separate checkout Worker (excluded by `.assetsignore`) and is skipped.
 - **Active-page highlighting:** none. The header doesn't mark the current page; the underline only shows on the dropdown that's open.
 - The old `.top-nav` header markup and its JS were removed from every page (landing pages, `AprilDeal/`, `yvr-manila/`, the top-level post-style pages). The old `.top-nav` CSS still sits unused in the per-page CSS files.
 

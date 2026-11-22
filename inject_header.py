@@ -51,8 +51,9 @@ CHEVRON = ('<svg class="site-header__chevron" viewBox="0 0 24 24" width="14" hei
 
 # backend/ is the separate checkout Worker (excluded from this site by .assetsignore)
 SKIP_DIRS = {"node_modules", "backend"}
-# Pages with no site header on purpose (blog-accordion.html is a transparent embed widget, not a page)
-NO_HEADER = {"blog-accordion.html"}
+# Pages with no site header on purpose (blog-accordion.html is a transparent embed widget, not a page;
+# links.html is the link-in-bio page, which starts with the subscribe bar)
+NO_HEADER = {"blog-accordion.html", "links.html"}
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
