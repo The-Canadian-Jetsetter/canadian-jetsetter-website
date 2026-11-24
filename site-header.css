@@ -244,17 +244,51 @@
 .site-header__card-links a:focus-visible { color: var(--sh-panel-hover-fg); }
 
 .site-header__panel-cards { display: grid; gap: 1.5rem; }
-/* Cards: one row of equal columns, "All cards" first, then each card's full name centred under its
-   image. Never wraps: columns share the panel width (about 180px each at the 1120px max width). */
+/* Cards: "All cards" in a column on the left, then one group per bank stacked on the right (a small
+   heading, then its cards, each card's full name centred under its image). Same design as the cards
+   site's grouped menu (travel-cards-site src/styles/cards-menu.css). Both groups' cards share one column
+   width, so the shorter Scotiabank row lines up under the Amex row: 7 columns at 1440px wide; fewer,
+   wrapping onto more rows, on narrower screens. */
 .site-header__card-links {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(0, 1fr);
-  gap: 1rem 0.5rem;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 0 2rem;
 }
+.site-header__card-links .cards-menu__all {
+  padding-right: 2rem;
+  border-right: 1px solid var(--sh-panel-line);
+}
+/* With "All cards" turned off, the groups take the full width */
+.site-header__card-links .cards-menu__groups:only-child { grid-column: 1 / -1; }
+.site-header__card-links .cards-menu__groups { display: grid; gap: 1.25rem; }
+.site-header__card-links .cards-menu__heading {
+  margin: 0 0.5rem 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--sh-panel-line);
+}
+.site-header__card-links .cards-menu__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+  gap: 0.25rem 0.5rem;
+}
+/* A little tighter top and bottom than the other panels, so two rows of cards stay compact */
+.site-header__panel-inner:has(.cards-menu__groups) { padding: 2rem 0; }
+
+/* Group headings (desktop and mobile): small uppercase labels in the muted stone colour */
+.site-header .cards-menu__heading {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sh-panel-muted);
+}
+.site-header .cards-menu__cards { list-style: none; margin: 0; padding: 0; }
+.site-header .cards-menu__cards li { margin: 0; padding: 0; }
 .site-header__card-links a {
   display: grid;
   justify-items: center;
@@ -403,6 +437,16 @@
 /* Mobile "All cards": first row in the Cards section, above the cards */
 .site-header__sub-all { font-weight: 700; }
 .site-header__sub-card img { width: 4rem; }
+/* Mobile Cards section: "All cards →" first, then each group under its heading, in compact rows.
+   Rows keep the 2.75rem (44px) tap height; the card images are a little smaller than in other lists. */
+.site-header__drawer-sub .cards-menu__heading { padding: 0.9rem 0 0.35rem; }
+.site-header__drawer-sub .cards-menu__cards { display: grid; gap: 0.1rem; }
+.site-header__drawer-sub .cards-menu__cards .site-header__sub-card {
+  gap: 0.85rem;
+  font-size: 0.875rem;
+  line-height: 1.3;
+}
+.site-header__drawer-sub .cards-menu__cards .site-header__sub-card img { width: 3.25rem; }
 
 /* The page doesn't scroll behind the open drawer */
 html.site-header-locked { overflow: hidden; }

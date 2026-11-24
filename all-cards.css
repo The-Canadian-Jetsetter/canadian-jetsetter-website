@@ -135,22 +135,70 @@ footer {
 .hero-sub .mobile-break { display: none; }
 
 /* ── CARD GRID ─────────────────────────────── */
-/* Intro to first card: 27px (hero bottom padding) + 26px = 53px */
+/* Intro to first group heading: 27px (hero bottom padding) + 26px = 53px */
 .cards-section {
   padding: 26px 0 64px;
 }
 
-/* 3 per row on desktop, 2 on tablets, 1 on phones; a short last row is centred */
+/* ── CARD GROUPS (one per bank, in the CARDS menu's order) ── */
+/* Tile widths come from the container's width (container query units), so every group's tiles match */
+.cards-section .container { container-type: inline-size; }
+
+.card-group + .card-group { margin-top: 56px; }
+
+/* Group heading: a small uppercase label in a dark frosted pill, so the white text keeps WCAG AA contrast
+   wherever it lands on the photo (the pill alone gives at least 5.9:1, even over pure white), with thin
+   lines out to each side */
+.card-group-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 auto 28px;
+  max-width: 760px;
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.card-group-heading::before,
+.card-group-heading::after {
+  content: '';
+  flex: 1 1 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.card-group-heading > span {
+  flex: none;
+  padding: 9px 18px 8px;
+  background: rgba(10, 0, 0, 0.62);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+/* Desktop: up to 4 tiles per row, the same width in every group. Each group's rows are balanced by
+   sync_cards.py, which sets --per-row (7 cards: 4 + 3; 5 cards: 3 + 2); short rows are centred.
+   2 per row on tablets, 1 on phones. */
 .card-grid {
+  --gap-x: 28px;
+  --tile: calc((100cqw - 3 * var(--gap-x)) / 4);
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 32px 28px;
+  gap: 32px var(--gap-x);
+  max-width: calc(var(--per-row, 4) * var(--tile) + (var(--per-row, 4) - 1) * var(--gap-x));
+  margin: 0 auto;
 }
 
 .card-grid li {
-  flex: 0 1 calc((100% - 56px) / 3);
+  flex: 0 0 var(--tile);
   display: flex;
 }
 
@@ -177,7 +225,7 @@ footer {
   width: 84%;
   height: auto;
   aspect-ratio: 828 / 521;
-  object-fit: contain;
+  object-fit: cover;  /* the Amex images are a hair narrower (480 × 304); cover keeps every card edge-to-edge */
   border-radius: 12px;
   box-shadow: 0 14px 24px -10px rgba(0, 0, 0, 0.6);
 }
@@ -300,7 +348,8 @@ footer {
 
 /* ── RESPONSIVE ────────────────────────────── */
 @media (max-width: 900px) {
-  .card-grid li { flex-basis: calc((100% - 28px) / 2); }
+  .card-grid { max-width: none; }
+  .card-grid li { flex-basis: calc((100% - var(--gap-x)) / 2); }
 }
 
 /* ── MOBILE (up to tablet width, 768px) ─────
@@ -323,9 +372,13 @@ footer {
   .hero-sub { font-size: clamp(0.875rem, 4.6vw, 0.95rem); }
   .hero-sub .mobile-break { display: inline; }
 
-  /* Intro to first card: 20px (hero bottom padding) + 28px = 48px */
+  /* Intro to first heading: 20px (hero bottom padding) + 28px = 48px */
   .cards-section { padding: 28px 0 48px; }
   .cards-section .container { padding: 0 16px; }
+
+  .card-group + .card-group { margin-top: 40px; }
+  .card-group-heading { margin-bottom: 20px; gap: 12px; font-size: 0.8125rem; letter-spacing: 0.12em; }
+  .card-group-heading > span { padding: 8px 16px 7px; }
 
   /* Rows: the card on the left, a shorter white box tucked behind its right edge */
   .card-grid {

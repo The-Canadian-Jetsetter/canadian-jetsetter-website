@@ -72,6 +72,11 @@ def card_name(name):
     return re.sub(r"([®™*])", r'<span class="site-header__reg">\1</span>', esc(name))
 
 
+def group_id(heading):
+    """"American Express" -> "american-express", for the group heading's id."""
+    return re.sub(r"[^a-z0-9]+", "-", heading.lower()).strip("-")
+
+
 def version(path):
     with open(path, "rb") as f:
         return hashlib.sha1(f.read()).hexdigest()[:8]
@@ -123,18 +128,29 @@ def desktop_item(nav, item):
         out += [f'          <li><a href="{url(l["href"])}">{esc(l["label"])}</a></li>' for l in item["items"]]
         out.append('        </ul>')
     else:  # cards
+        # "All cards" in a column on the left, then the groups stacked on the right (one heading each).
+        # Keep this shape: the cards site's sync-header (travel-cards-site/scripts/sync-header.mjs) reads it.
+        # It needs the exact opening <ul> tags below, every card item on one line, and no nested </ul>
+        # inside a card list (so the group lists are <ol>).
         out += ['        <div class="site-header__panel-cards">',
                 '          <ul class="site-header__card-links">']
         all_cards = item.get("allCards", {})
-        if all_cards.get("show"):  # first in the row, a text link the width of a card
-            out.append(f'            <li><a class="site-header__all-cards" href="{url(all_cards["href"])}">'
+        if all_cards.get("show"):
+            out.append(f'            <li class="cards-menu__all"><a class="site-header__all-cards" href="{url(all_cards["href"])}">'
                        f'{esc(all_cards["label"])}</a></li>')
-        for c in item["cards"]:
-            out.append(
-                f'            <li><a href="{cards_href(item, c["href"])}">'
-                f'<img src="{cards_href(item, c["image"])}" alt="" width="{c["width"]}" height="{c["height"]}" loading="lazy" />'
-                f'<span>{card_name(c["name"])}</span></a></li>')
-        out += ['          </ul>', '        </div>']
+        out.append('            <li class="cards-menu__groups">')
+        for g in item["groups"]:
+            gid = f'cards-menu-desktop-{group_id(g["heading"])}'
+            out += ['              <div class="cards-menu__group">',
+                    f'                <span class="cards-menu__heading" id="{gid}">{esc(g["heading"])}</span>',
+                    f'                <ol class="cards-menu__cards" aria-labelledby="{gid}">']
+            for c in g["cards"]:
+                out.append(
+                    f'                  <li><a href="{cards_href(item, c["href"])}">'
+                    f'<img src="{cards_href(item, c["image"])}" alt="" width="{c["width"]}" height="{c["height"]}" loading="lazy" />'
+                    f'<span>{card_name(c["name"])}</span></a></li>')
+            out += ['                </ol>', '              </div>']
+        out += ['            </li>', '          </ul>', '        </div>']
     out += ['      </div>', '    </div>', '  </div>', '</li>']
     return out
 
@@ -153,15 +169,22 @@ def drawer_item(nav, item):
     if item["kind"] == "dropdown":
         out += [f'    <li><a href="{url(l["href"])}">{esc(l["label"])}</a></li>' for l in item["items"]]
     else:  # cards
+        # "All cards →" first, then each group under its heading (same shape rules as the desktop list)
         all_cards = item.get("allCards", {})
-        if all_cards.get("show"):  # first in the list, above the cards
-            out.append(f'    <li><a class="site-header__sub-all" href="{url(all_cards["href"])}"><span>{esc(all_cards["label"])} '
+        if all_cards.get("show"):
+            out.append(f'    <li class="cards-menu__all"><a class="site-header__sub-all" href="{url(all_cards["href"])}"><span>{esc(all_cards["label"])} '
                        f'<span class="site-header__arrow" aria-hidden="true">→</span></span></a></li>')
-        for c in item["cards"]:
-            out.append(
-                f'    <li><a class="site-header__sub-card" href="{cards_href(item, c["href"])}">'
-                f'<img src="{cards_href(item, c["image"])}" alt="" width="{c["width"]}" height="{c["height"]}" loading="lazy" />'
-                f'<span>{card_name(c["name"])}</span></a></li>')
+        for g in item["groups"]:
+            gid = f'cards-menu-mobile-{group_id(g["heading"])}'
+            out += ['    <li class="cards-menu__group">',
+                    f'      <span class="cards-menu__heading" id="{gid}">{esc(g["heading"])}</span>',
+                    f'      <ol class="cards-menu__cards" aria-labelledby="{gid}">']
+            for c in g["cards"]:
+                out.append(
+                    f'        <li><a class="site-header__sub-card" href="{cards_href(item, c["href"])}">'
+                    f'<img src="{cards_href(item, c["image"])}" alt="" width="{c["width"]}" height="{c["height"]}" loading="lazy" />'
+                    f'<span>{card_name(c["name"])}</span></a></li>')
+            out += ['      </ol>', '    </li>']
     out += ['  </ul>', '</li>']
     return out
 

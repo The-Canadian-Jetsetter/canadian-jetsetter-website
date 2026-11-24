@@ -101,7 +101,8 @@ python3 inject_header.py --check    # report pages with no header, an out-of-dat
 
 - **Files:** `site-header.css` (styles), `site-header.js` (dropdown, mobile menu, glass-to-solid on scroll), `site-header-nav.jsonc` (menu data: every link, the logos, and the CARDS dropdown's cards).
 - **After any change** to the menu data, `site-header.css`, `site-header.js` or any other CSS/JS file, run `python3 inject_header.py`. It rewrites the header on every page with the markers and refreshes the `?v=` version tags so browsers load the change (see Caching and cache-busting).
-- **CARDS menu:** on, listing the five Scotiabank cards. The card pages and their images are served on the live domain at `/cards/…` by the cards site's Cloudflare Worker route; the menu uses full `https://thecanadianjetsetter.com/cards/…` URLs (set by `cardsBase` on the Cards entry), so they also work in a local preview. To hide the menu, set `"enabled": false` on the Cards entry in `site-header-nav.jsonc`, then run `inject_header.py`.
+- **CARDS menu:** on, grouped like the cards site's menu: "All cards" on the left, then an "American Express" group (7 cards) and a "Scotiabank" group (5 cards); on mobile, "All cards →" then each group under a small heading. The card pages and their images are served on the live domain at `/cards/…` by the cards site's Cloudflare Worker route; the menu uses full `https://thecanadianjetsetter.com/cards/…` URLs (set by `cardsBase` on the Cards entry), so they also work in a local preview. To hide the menu, set `"enabled": false` on the Cards entry in `site-header-nav.jsonc`, then run `inject_header.py`.
+- **Keep the card menu markup's shape:** the cards site's `npm run sync-header` copies this header and reads the CARDS lists, so keep the exact opening tags `<ul class="site-header__card-links">` and `<ul class="site-header__drawer-sub" id="site-header-sub-cards" hidden>`, each card item on one line, and the group lists as `<ol>` (a nested `</ul>` would cut its list short).
 - **Glass or solid bar, per page:**
   - Glass (over a hero photo): `<body class="site-header-glass">` and `data-site-header-hero` on the hero element. The hero extends up behind the bar; the page's own CSS sets `--site-header-hero-pad` (and `--site-header-hero-min` if the hero has a min-height) next to the hero's own values, so its content stays in place.
   - Solid (no photo behind the header): no body class.
@@ -110,6 +111,23 @@ python3 inject_header.py --check    # report pages with no header, an out-of-dat
 - **Pages without a header:** `blog-accordion.html` (a transparent embed widget) and `links.html` (the link-in-bio page, which starts with a black subscribe bar); both are listed in `NO_HEADER` in `inject_header.py`. `backend/` is the separate checkout Worker (excluded by `.assetsignore`) and is skipped.
 - **Active-page highlighting:** none. The header doesn't mark the current page; the underline only shows on the dropdown that's open.
 - The old `.top-nav` header markup and its JS were removed from every page (landing pages, `AprilDeal/`, `yvr-manila/`, the top-level post-style pages). The old `.top-nav` CSS still sits unused in the per-page CSS files.
+
+---
+
+## Cards (CARDS menu and the All cards page)
+
+**After card changes, build travel-cards-site, then run sync_cards.py here.**
+
+```bash
+cd ~/travel-cards-site && npm run build      # writes dist/cards/cards.json (public cards only)
+cd -  && python3 sync_cards.py               # updates the menu data and /cards/, then runs inject_header.py
+python3 sync_cards.py --check                # exit 1 if either is out of date with cards.json (changes nothing)
+```
+
+- **Source:** the cards site (`~/travel-cards-site`, `CARDS_SITE_DIR` to override) is the single source for which cards are public, their full official names, images, groups and order. Its build exports them to `dist/cards/cards.json`; if that file is missing, `sync_cards.py` runs `npm run build` there first. Nothing else in the cards site is touched.
+- **Generated, never hand-edited:** the Cards entry's `"groups"` in `site-header-nav.jsonc` (between `// cards-sync-start/end`) and the grid in `cards/index.html` (between `<!-- cards-grid-start/end -->`).
+- **No hidden or test cards:** only cards in `cards.json` are listed, and the script refuses slugs like `example`/`test`/`demo`.
+- **All cards page:** one group per bank under a white heading in a dark pill (AA contrast over the photo). Desktop has up to 4 tiles per row, the same size in every group; the script balances each group's rows (`--per-row`: 7 cards → 4 + 3, 5 → 3 + 2). Styles in `all-cards.css`.
 
 ---
 
